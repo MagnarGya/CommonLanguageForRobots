@@ -1,4 +1,4 @@
-package OLTRTA;
+package parser;
 
 public class CommonToCParser implements CommonToLanguageParser{
 

@@ -1,4 +1,4 @@
-package OLTRTA;
+package parser;
 
 public interface CommonToLanguageParser {
 	String parseBlock(Block _bl);
