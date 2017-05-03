@@ -9,12 +9,12 @@ public class CommonToCParser implements CommonToLanguageParser{
 		String returnString = "";
         for (Expression ex : _bl.exs) {
             returnString += parseExpression(ex);
-            if(ex.getClass() == Expression){
+            if(ex.getClass() == Expression.class){
                 returnString += ";\n";
             }
         }
         
-        String[] lines = returnString.Split(new String[] { "\r\n", "\n" }, StringSplitOptions.None);
+        String[] lines = returnString.split("\\r\\n|\\n|\\r");
         for (int i = 0; i < lines.length-1; i++) {
             lines[i] = "    " + lines[i] +"\n";
         }
@@ -40,7 +40,7 @@ public class CommonToCParser implements CommonToLanguageParser{
 
 	@Override
 	public String parseExpression(Expression _exp) {
-		switch (_exp.GetType().ToString()) {
+		switch (_exp.getClass().toString()) {
         case "OLTRTA.CommonLanguageObjects.If": return parseIf((If)_exp);
         case "OLTRTA.CommonLanguageObjects.Else": return parseElse((Else)_exp);
         case "OLTRTA.CommonLanguageObjects.Block": return parseBlock((Block)_exp);
@@ -79,7 +79,7 @@ public class CommonToCParser implements CommonToLanguageParser{
         if (_method.parameters != null) {
             for (Parameter param : _method.parameters) {
                 returnString += parseParameter(param);
-                if (param != _method.parameters.Last()) {
+                if (param != _method.parameters[_method.parameters.length-1]) {
                     returnString += ",";
                 }
             }
