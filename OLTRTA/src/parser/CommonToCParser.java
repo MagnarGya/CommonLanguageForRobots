@@ -1,5 +1,7 @@
 package parser;
 
+import CommonLanguageObjects.*;
+
 public class CommonToCParser implements CommonToLanguageParser{
 
 	@Override
@@ -7,7 +9,7 @@ public class CommonToCParser implements CommonToLanguageParser{
 		String returnString = "";
         for (Expression ex : _bl.exs) {
             returnString += parseExpression(ex);
-            if(ex.GetType() == typeof(Expression)){
+            if(ex.getClass() == Expression){
                 returnString += ";\n";
             }
         }

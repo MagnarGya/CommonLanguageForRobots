@@ -1,5 +1,8 @@
 package parser;
 
+import CommonLanguageObjects.*;
+
+
 public interface CommonToLanguageParser {
 	String parseBlock(Block _bl);
     String parseElse(Else _else);

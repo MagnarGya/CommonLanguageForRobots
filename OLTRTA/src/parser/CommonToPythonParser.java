@@ -1,5 +1,8 @@
 package parser;
 
+import CommonLanguageObjects.*;
+
+
 public class CommonToPythonParser implements CommonToLanguageParser{
 
 	@Override
