@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<robot>
+  <setup>
+    <extension>.ino</extension>
+    <globalvariables>
+      <e name="&lt;Servo.h&gt;" type="#include"/>
+      <e name="servoRight" type="Servo"/>
+      <e name="servoLeft" type="Servo"/>
+      <e name="touchingLeft" type="int"/>
+      <e name="touchingRight" type="int"/>
+      <e name="seeingLeft" type="int"/>
+      <e name="seeingRight" type="int"/>
+    </globalvariables>
+    <method>
+      <setup parameters="" return="void">servoRight.attach(ServoRight);
+servoLeft.attach(ServoLeft);
+Serial.begin(9600)</setup>
+    </method>
+  </setup>
+<methods>
+  <moveForward parameter="int time" return="void">servoLeft.writeMicroseconds(1700);
+servoRight.writeMicroseconds(1300);
+delay(time);
+servoLeft.writeMicroseconds(1500);
+servoRight.writeMicroseconds(1500);
+delay(5)</moveForward>
+  <moveBackward parameter="int time" return="void">servoLeft.writeMicroseconds(1300);
+servoRight.writeMicroseconds(1700);
+delay(time);
+servoLeft.writeMicroseconds(1500);
+servoRight.writeMicroseconds(1500);
+delay(5)</moveBackward>
+  <turnLeft parameter="int degrees" return="void">servoLeft.writeMicroseconds(1300);
+servoRight.writeMicroseconds(1300);
+delay(degrees*5);
+servoLeft.writeMicroseconds(1500);
+servoRight.writeMicroseconds(1500);
+delay(5)</turnLeft>
+  <turnRight parameter="int degrees" return="void">servoLeft.writeMicroseconds(1700);
+servoRight.writeMicroseconds(1700);
+delay(degrees*5);
+servoLeft.writeMicroseconds(1500);
+servoRight.writeMicroseconds(1500);
+delay(5)</turnRight>
+  <InfraredSensor parameter="int pin,int pout" return="int">tone(pout, 38000, 8);
+delay(1);
+int ir = digitalRead(pin);
+return !(ir)</InfraredSensor>
+  <WhiskerSensor parameter="int pin" return="int">delay(1);
+int w = digitalRead(pin);
+return !(w)</WhiskerSensor>
+  <idle parameter="int time" return="void">servoLeft.writeMicroseconds(1500);
+servoRight.writeMicroseconds(1500);
+delay(time)</idle>
+</methods>
+<metamethods>
+  <ReadSensors parameter="" return="void">touchingLeft = WhiskerSensor(LeftWhisker);
+touchingRight = WhiskerSensor(RightWhisker);
+delay(10);
+seeingLeft = InfraredSensor(LeftInfraredSensor, LeftInfraredEmitter);
+delay(10);
+seeingRight = InfraredSensor(RightInfraredSensor, RightInfraredEmitter)</ReadSensors>
+  <Touching parameter="" return="bool">return (touchingLeft || touchingRight)</Touching>
+  <TouchingBoth parameter="" return="bool">return (touchingLeft &amp;&amp; touchingRight)</TouchingBoth>
+  <TouchingLeft parameter="" return="bool">return touchingLeft</TouchingLeft>
+  <TouchingRight parameter="" return="bool">return touchingRight</TouchingRight>
+  <Seeing parameter="" return="bool">return (seeingLeft || seeingRight)</Seeing>
+  <SeeingBoth parameter="" return="bool">return (seeingLeft &amp;&amp; seeingRight)</SeeingBoth>
+  <SeeingLeft parameter="" return="bool">return seeingLeft</SeeingLeft>
+  <SeeingRight parameter="" return="bool">return seeingRight</SeeingRight>
+  <MoveForward parameter="int time" return="void">moveForward(time)</MoveForward>
+  <MoveBackward parameter="int time" return="void">moveBackward(time)</MoveBackward>
+  <TurnRight parameter="int degrees" return="void">turnRight(degrees)</TurnRight>
+  <TurnLeft parameter="int degrees" return="void">turnLeft(degrees)</TurnLeft>
+  <Idle parameter="int time" return="void">idle(time)</Idle>
+</metamethods>
+</robot>
