@@ -17,6 +17,7 @@ public class Testrun {
 		for(Method method : bm.metamethods){
 			System.out.println(cp.parseMethod(method));
 		}
+		System.out.println(bm.extension);
 	}
 
 }

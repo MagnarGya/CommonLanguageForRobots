@@ -2,6 +2,7 @@ package CommonLanguageObjects;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,11 @@ import org.xml.sax.SAXException;
 
 import parser.Assignment;
 
-public class BotMethods {
+public class BotMethods implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5303195830741992275L;
 	public String name;
     public String robot;
     public Declaration[] global_variables;
@@ -239,6 +244,9 @@ List<Method> methods = new ArrayList<Method>();
 			Document xml = db.parse(file);
 			NodeList nl = xml.getElementsByTagName("setup");
 			Element setup = (Element)nl.item(0);
+			NodeList nl1 = setup.getElementsByTagName("extension");
+			Element ext = (Element)nl1.item(0);
+			extent = ext.getTextContent();
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
