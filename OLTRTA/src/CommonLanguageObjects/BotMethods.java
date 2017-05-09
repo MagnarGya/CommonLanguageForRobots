@@ -46,7 +46,8 @@ public class BotMethods implements Serializable {
 	private Declaration[] getGlobalVariables() {
 		try {
 			List<Declaration> declarations = new ArrayList<Declaration>();
-			File file = new File("C:\\Users\\Magnar\\git\\CommonLanguageForRobots\\OLTRTA\\src\\ArduinoShieldBot\\ArduinoShieldBot.xml");
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document xml = db.parse(file);
@@ -83,7 +84,8 @@ public class BotMethods implements Serializable {
 		
 		try {
 			Assignment[] assign = getAssignments();
-			File file = new File("C:\\Users\\Magnar\\git\\CommonLanguageForRobots\\OLTRTA\\src\\ArduinoShieldBot\\ArduinoShieldBot.xml");
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document xml = db.parse(file);
@@ -122,7 +124,8 @@ public class BotMethods implements Serializable {
 		List<Method> methods = new ArrayList<Method>();
 		
 		try{
-			File file = new File("C:\\Users\\Magnar\\git\\CommonLanguageForRobots\\OLTRTA\\src\\ArduinoShieldBot\\ArduinoShieldBot.xml");
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Assignment[] assignments = getAssignments();
@@ -180,7 +183,8 @@ public class BotMethods implements Serializable {
 List<Method> methods = new ArrayList<Method>();
 		
 		try{
-			File file = new File("C:\\Users\\Magnar\\git\\CommonLanguageForRobots\\OLTRTA\\src\\ArduinoShieldBot\\ArduinoShieldBot.xml");
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Assignment[] assignments = getAssignments();
@@ -195,16 +199,15 @@ List<Method> methods = new ArrayList<Method>();
 				String type = method.getAttribute("return");
 				String name = method.getNodeName();
 				String[] parameter = method.getAttribute("parameter").split(",");
-				String[] block = method.getTextContent().split(";");
+				String block = method.getTextContent();
 				for(Assignment assign : assignments){
+					System.out.print(assign.word + " " + assign.value + " ");
 					type = type.replaceAll(assign.word, assign.value);
 					name = name.replaceAll(assign.word, assign.value);
 					for(String param : parameter){
 						param = param.replaceAll(assign.word, assign.value);
 					}
-					for(String bl : block){
-						bl = bl.replaceAll(assign.word, assign.value);
-					}
+					block = block.replaceAll(assign.word, assign.value);
 				}
 				List<Parameter> para = new ArrayList<Parameter>();
 				for(String param : parameter){
@@ -214,7 +217,8 @@ List<Method> methods = new ArrayList<Method>();
 					}
 				}
 				List<Expression> exp = new ArrayList<Expression>();
-				for(String bl : block){
+				String[] blocklines = block.split(";");
+				for(String bl : blocklines){
 					exp.add(new Expression(bl));
 				}
 				methods.add(new Method(type, name, para.toArray(new Parameter[0]),new Block(exp.toArray(new Expression[0]))));
@@ -237,7 +241,8 @@ List<Method> methods = new ArrayList<Method>();
 	private String getExtension() {
 		String extent = "";
 		try {
-			File file = new File("C:\\Users\\Magnar\\git\\CommonLanguageForRobots\\OLTRTA\\src\\ArduinoShieldBot\\ArduinoShieldBot.xml");
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db;
 			db = dbf.newDocumentBuilder();
@@ -263,7 +268,8 @@ List<Method> methods = new ArrayList<Method>();
 	private Assignment[] getAssignments(){
 		List<Assignment> assignments = new ArrayList<Assignment>();
 		try {
-			File file = new File("C:\\Users\\Magnar\\git\\CommonLanguageForRobots\\OLTRTA\\src\\ArduinoShieldBot\\ShieldBot1(standard).xml");
+			String path = new File(".\\src\\"+robot+"\\"+name+".xml").getCanonicalPath();
+			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document xml = db.parse(file);
@@ -272,6 +278,7 @@ List<Method> methods = new ArrayList<Method>();
 			NodeList assigns = tag.getChildNodes();
 			for(int i = 1; i < assigns.getLength(); i+=2){
 				Element assign = (Element)assigns.item(i);
+				System.out.println(assign.getNodeName() + " " + assign.getAttribute("value"));
 				assignments.add(new Assignment(assign.getNodeName(),assign.getAttribute("value")));
 			}
 		} catch (ParserConfigurationException e) {
