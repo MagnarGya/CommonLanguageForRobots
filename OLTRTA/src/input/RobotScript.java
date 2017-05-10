@@ -15,7 +15,7 @@ public class RobotScript {
 			String[] robotdetails = robot.split(",");
 			BotMethods bm = new BotMethods(robotdetails[0],robotdetails[1]);
 			CodeOutputWriter COW = new CodeOutputWriter(bm, sc);
-			
+			COW.writeToFile();
 		}
 	}
 }
