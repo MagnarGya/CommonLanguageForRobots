@@ -7,8 +7,8 @@ import CommonLanguageObjects.BotMethods;
 import CommonLanguageObjects.Script;
 
 public class RobotScript {
-	ArrayList<String> robotlist;
-	Script sc;
+	protected ArrayList<String> robotlist;
+	protected Script sc;
 	
 	void generateCode(){
 		for(String robot : robotlist){
