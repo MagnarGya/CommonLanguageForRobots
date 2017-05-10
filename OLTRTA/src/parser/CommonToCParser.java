@@ -15,7 +15,7 @@ public class CommonToCParser implements CommonToLanguageParser{
         }
         
         String[] lines = returnString.split("\\r\\n|\\n|\\r");
-        for (int i = 0; i < lines.length-1; i++) {
+        for (int i = 0; i < lines.length; i++) {
         	
             lines[i] = "    " + lines[i] +"\n";
         }
@@ -24,7 +24,7 @@ public class CommonToCParser implements CommonToLanguageParser{
         for (String str : lines) {
             returnString += str;
         }
-        returnString += "\n}	\n";
+        returnString += "}	\n";
 
         return returnString;
 	}

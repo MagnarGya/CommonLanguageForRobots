@@ -16,7 +16,7 @@ public class CommonToPythonParser implements CommonToLanguageParser{
         }
 
         String[] lines = returnString.split("\\r\\n|\\n|\\r");
-        for (int i = 0; i < lines.length - 1; i++) {
+        for (int i = 0; i < lines.length; i++) {
             lines[i] = "    " + lines[i] + "\n";
         }
         returnString = "";
@@ -45,12 +45,12 @@ public class CommonToPythonParser implements CommonToLanguageParser{
 	@Override
 	public String parseExpression(Expression _exp) {
 		switch (_exp.getClass().toString()) {
-        case "OLTRTA.CommonLanguageObjects.If": return parseIf((If)_exp);
-        case "OLTRTA.CommonLanguageObjects.Else": return parseElse((Else)_exp);
-        case "OLTRTA.CommonLanguageObjects.Block": return parseBlock((Block)_exp);
-        case "OLTRTA.CommonLanguageObjects.While": return parseWhile((While)_exp);
-        case "OLTRTA.CommonLanguageObjects.For": return parseFor((For)_exp);
-        case "OLTRTA.CommonLanguageObjects.Declaration": return _exp.content + "\n";
+        case "class CommonLanguageObjects.If": return parseIf((If)_exp);
+        case "class CommonLanguageObjects.Else": return parseElse((Else)_exp);
+        case "class CommonLanguageObjects.Block": return parseBlock((Block)_exp);
+        case "class CommonLanguageObjects.While": return parseWhile((While)_exp);
+        case "class CommonLanguageObjects.For": return parseFor((For)_exp);
+        case "class CommonLanguageObjects.Declaration": return _exp.content + "\n";
         default: return _exp.content;
     }
 	}
@@ -83,7 +83,7 @@ public class CommonToPythonParser implements CommonToLanguageParser{
         if (_method.parameters != null) {
             for(Parameter param : _method.parameters) {
                 returnString += parseParameter(param);
-                if (param != _method.parameters[_method.parameters.length]) {
+                if (param != _method.parameters[_method.parameters.length-1]) {
                     returnString += ",";
                 }
             }

@@ -18,6 +18,9 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import parser.Assignment;
+import parser.CommonToCParser;
+import parser.CommonToLanguageParser;
+import parser.CommonToPythonParser;
 
 public class BotMethods implements Serializable {
 	/**
@@ -31,6 +34,7 @@ public class BotMethods implements Serializable {
     public Method[] methods;
     public Method[] metamethods;
     public String extension;
+    public CommonToLanguageParser parser;
     
     public BotMethods(String _robot, String _name) {
         name = _name;
@@ -40,13 +44,13 @@ public class BotMethods implements Serializable {
         methods = getMethods();
         metamethods = getMetamethods();
         extension = getExtension();
-        
+        parser = getParser();
     }
 
 	private Declaration[] getGlobalVariables() {
 		try {
 			List<Declaration> declarations = new ArrayList<Declaration>();
-			String path = new File(".\\src\\"+robot+"\\"+name+".xml").getCanonicalPath();
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
 			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
@@ -87,7 +91,7 @@ public class BotMethods implements Serializable {
 		
 		try {
 			Assignment[] assign = getAssignments();
-			String path = new File(".\\src\\"+robot+"\\"+name+".xml").getCanonicalPath();
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
 			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
@@ -99,9 +103,9 @@ public class BotMethods implements Serializable {
 			NodeList nl2 = method.getElementsByTagName("setup");
 			Element setupmethod = (Element)nl2.item(0);
 			String expressiontext = setupmethod.getTextContent();
-			String[] expressions = expressiontext.split(";\n");
+			String[] expressions = expressiontext.split("\n			");
 			List<Expression> expressionlist = new ArrayList<Expression>();
-			for(int i = 0; i < expressions.length; i++){
+			for(int i = 1; i < expressions.length; i++){
 				for(Assignment as : assign){
 					expressions[i] = expressions[i].replaceAll(as.word,as.value);
 				}
@@ -160,9 +164,9 @@ public class BotMethods implements Serializable {
 					}
 				}
 				List<Expression> exp = new ArrayList<Expression>();
-				String[] blocklines = block.split(";\n");
-				for(String bl : blocklines){
-					exp.add(new Expression(bl));
+				String[] blocklines = block.split("\n		");
+				for(int j = 1; j < blocklines.length; j++){
+					exp.add(new Expression(blocklines[j]));
 				}
 				methods.add(new Method(type, name, para.toArray(new Parameter[0]),new Block(exp.toArray(new Expression[0]))));
 						
@@ -218,7 +222,7 @@ List<Method> methods = new ArrayList<Method>();
 					}
 				}
 				List<Expression> exp = new ArrayList<Expression>();
-				String[] blocklines = block.split(";\n");
+				String[] blocklines = block.split("\n		");
 				for(String bl : blocklines){
 					exp.add(new Expression(bl));
 				}
@@ -248,8 +252,10 @@ List<Method> methods = new ArrayList<Method>();
 			DocumentBuilder db;
 			db = dbf.newDocumentBuilder();
 			Document xml = db.parse(file);
-			NodeList nl = xml.getElementsByTagName("extension");
-			Element ext = (Element)nl.item(0);
+			NodeList nl = xml.getElementsByTagName("setup");
+			Element set = (Element)nl.item(0);
+			NodeList nl1 = set.getElementsByTagName("extension");
+			Element ext = (Element)nl1.item(0);
 			extent = ext.getTextContent();
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
@@ -292,5 +298,38 @@ List<Method> methods = new ArrayList<Method>();
 		
 		
 		return assignments.toArray(new Assignment[0]);
+	}
+	
+	private CommonToLanguageParser getParser() {
+		try {
+			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			File file = new File(path);
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document xml = db.parse(file);
+			NodeList nl = xml.getElementsByTagName("setup");
+			Element setup = (Element)nl.item(0);
+			NodeList nl1 = setup.getElementsByTagName("parsertype");
+			Element parsertype = (Element)nl1.item(0);
+			String parser = parsertype.getTextContent();
+			
+			switch(parser){
+			case "C" : return new CommonToCParser();
+			case "Python" : return new CommonToPythonParser();
+			default : return null;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return null;
 	}
 }

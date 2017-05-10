@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <robot>
-<extension>.ino</extension>
-<metamethods>
-  <ReadSensors parameter="" return="void">touchingLeft = WhiskerSensor(LeftWhisker);
-touchingRight = WhiskerSensor(RightWhisker);
-delay(10);
-seeingLeft = InfraredSensor(LeftInfraredSensor, LeftInfraredEmitter);
-delay(10);
-seeingRight = InfraredSensor(RightInfraredSensor, RightInfraredEmitter)</ReadSensors>
-  <Touching parameter="" return="bool">return (touchingLeft || touchingRight)</Touching>
-  <TouchingBoth parameter="" return="bool">return (touchingLeft &amp;&amp; touchingRight)</TouchingBoth>
-  <TouchingLeft parameter="" return="bool">return touchingLeft</TouchingLeft>
-  <TouchingRight parameter="" return="bool">return touchingRight</TouchingRight>
-  <Seeing parameter="" return="bool">return (seeingLeft || seeingRight)</Seeing>
-  <SeeingBoth parameter="" return="bool">return (seeingLeft &amp;&amp; seeingRight)</SeeingBoth>
-  <SeeingLeft parameter="" return="bool">return seeingLeft</SeeingLeft>
-  <SeeingRight parameter="" return="bool">return seeingRight</SeeingRight>
-  <MoveForward parameter="int time" return="void">moveForward(time)</MoveForward>
-  <MoveBackward parameter="int time" return="void">moveBackward(time)</MoveBackward>
-  <TurnRight parameter="int degrees" return="void">turnRight(degrees)</TurnRight>
-  <TurnLeft parameter="int degrees" return="void">turnLeft(degrees)</TurnLeft>
-  <Idle parameter="int time" return="void">idle(time)</Idle>
-</metamethods>
+	<setup>
+	<parsertype>C</parsertype>
+		<globalvariables>
+      		<e name="&lt;Servo.h&gt;" type="#include"/>
+		    <e name="servoRight" type="Servo"/>
+	  	    <e name="servoLeft" type="Servo"/>
+      		<e name="touchingLeft" type="int"/>
+	      	<e name="touchingRight" type="int"/>
+      		<e name="seeingLeft" type="int"/>
+      		<e name="seeingRight" type="int"/>
+    	</globalvariables>
+    	<method>
+			<setup parameters="" return="void">
+			servoRight.attach(ServoRight)
+			servoLeft.attach(ServoLeft)
+			Serial.begin(9600)</setup>
+    	</method>
+		<extension>.ino</extension>
+	</setup>
+	<metamethods>
+  		<ReadSensors parameter="" return="void">touchingLeft = WhiskerSensor(LeftWhisker)
+		touchingRight = WhiskerSensor(RightWhisker)
+		delay(10)
+		seeingLeft = InfraredSensor(LeftInfraredSensor, LeftInfraredEmitter)
+		delay(10)
+		seeingRight = InfraredSensor(RightInfraredSensor, RightInfraredEmitter)</ReadSensors>
+  		<Touching parameter="" return="bool">return (touchingLeft || touchingRight)</Touching>
+  		<TouchingBoth parameter="" return="bool">return (touchingLeft &amp;&amp; touchingRight)</TouchingBoth>
+  		<TouchingLeft parameter="" return="bool">return touchingLeft</TouchingLeft>
+  		<TouchingRight parameter="" return="bool">return touchingRight</TouchingRight>
+  		<Seeing parameter="" return="bool">return (seeingLeft || seeingRight)</Seeing>
+  		<SeeingBoth parameter="" return="bool">return (seeingLeft &amp;&amp; seeingRight)</SeeingBoth>
+  		<SeeingLeft parameter="" return="bool">return seeingLeft</SeeingLeft>
+  		<SeeingRight parameter="" return="bool">return seeingRight</SeeingRight>
+  		<MoveForward parameter="int time" return="void">moveForward(time)</MoveForward>
+  		<MoveBackward parameter="int time" return="void">moveBackward(time)</MoveBackward>
+  		<TurnRight parameter="int degrees" return="void">turnRight(degrees)</TurnRight>
+  		<TurnLeft parameter="int degrees" return="void">turnLeft(degrees)</TurnLeft>
+  		<Idle parameter="int time" return="void">idle(time)</Idle>
+	</metamethods>
 </robot>

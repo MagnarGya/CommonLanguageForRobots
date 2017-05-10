@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<assignments>
-  <LeftWhisker value="10"/>
-  <RightWhisker value="11"/>
-  <ServoLeft value="13"/>
-  <ServoRight value="12"/>
-  <LeftInfraredEmitter value="4"/>
-  <LeftInfraredSensor value="5"/>
-  <RightInfraredEmitter value="2"/>
-  <RightInfraredSensor value="3"/>
-</assignments>
+<robot>
+	<methods>
+		<moveForward parameter="int time" return="void">
+		rightMotor.run_timed(time_sp=time, duty_cycle_sp=75)
+		leftMotor.run_timed(time_sp=time, duty_cycle_sp=75)</moveForward>
+    	<moveBackward parameter="int time" return="void">
+    	rightMotor.run_timed(time_sp=time, duty_cycle_sp=-75)
+		leftMotor.run_timed(time_sp=time, duty_cycle_sp=-75)</moveBackward>
+  		<turnLeft parameter="int degrees" return="void">
+  		rightMotor.run_timed(time_sp=1000, duty_cycle_sp=75)
+		leftMotor.run_timed(time_sp=1000, duty_cycle_sp=-75)</turnLeft>
+  		<turnRight parameter="int degrees" return="void">
+  		rightMotor.run_timed(time_sp=1000, duty_cycle_sp=-75)
+		leftMotor.run_timed(time_sp=1000, duty_cycle_sp=75)</turnRight>
+  		<idle parameter="int time" return="void">
+  		rightMotor.run_timed(time_sp=time, duty_cycle_sp=0)
+		leftMotor.run_timed(time_sp=time, duty_cycle_sp=0)</idle>
+	</methods>
+	<assignments>
+	</assignments>
+</robot>

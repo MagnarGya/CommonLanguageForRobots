@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <robot>
   <setup>
+  	<parsertype>Python</parsertype>
     <extension>.py</extension>
     <globalvariables>
       <e name="ev3dev.ev3 as ev3" type="import"/>
@@ -13,52 +14,28 @@
     </globalvariables>
     <method>
       <setup parameters="" return="void">
-        rightMotor = ev3.LargeMotor('outA')
-        leftMotor = ev3.LargeMotor('outB')
+			rightMotor = ev3.LargeMotor('outA')
+			leftMotor = ev3.LargeMotor('outB')
       </setup>
     </method>
   </setup>
-  <methods>
-    <moveForward parameter="int time" return="void">
-      rightMotor.run_timed(time_sp=time, duty_cycle_sp=75)
-      leftMotor.run_timed(time_sp=time, duty_cycle_sp=75)
-    </moveForward>
-    <moveBackward parameter="int time" return="void">
-      rightMotor.run_timed(time_sp=time, duty_cycle_sp=-75)
-      leftMotor.run_timed(time_sp=time, duty_cycle_sp=-75)
-    </moveBackward>
-    <turnLeft parameter="int degrees" return="void">
-      rightMotor.run_timed(time_sp=1000, duty_cycle_sp=75)
-      leftMotor.run_timed(time_sp=1000, duty_cycle_sp=-75)
-    </turnLeft>
-    <turnRight parameter="int degrees" return="void">
-      rightMotor.run_timed(time_sp=1000, duty_cycle_sp=-75)
-      leftMotor.run_timed(time_sp=1000, duty_cycle_sp=75)
-    </turnRight>
-    <idle parameter="int time" return="void">
-      rightMotor.run_timed(time_sp=time, duty_cycle_sp=0)
-      leftMotor.run_timed(time_sp=time, duty_cycle_sp=0)
-    </idle>
-  </methods>
   <metamethods>
-    <ReadSensors parameter="" return="void">
-      touchingLeft = ev3.TouchSensor().is_pressed()
-      touchingRight = ev3.TouchSensor().is_pressed()
-      seeingLeft = ev3.UltrasonicSensor().distance_centimeters() &lt; 5
-      seeingRight = ev3.UltrasonicSensor().distance_centimeters() &lt; 5
-    </ReadSensors>
-    <Touching parameter="" return="bool">return touchingLeft || touchingRight</Touching>
-    <TouchingBoth parameter="" return="bool">return touchingLeft &amp;&amp; touchingRight</TouchingBoth>
-    <TouchingLeft parameter="" return="bool">return touchingLeft</TouchingLeft>
-    <TouchingRight parameter="" return="bool">return touchingRight</TouchingRight>
-    <Seeing parameter="" return="bool">return seeingLeft || seeingRight</Seeing>
-    <SeeingBoth parameter="" return="bool">return seeingLeft &amp;&amp; seeingRight</SeeingBoth>
-    <SeeingLeft parameter="" return="bool">return seeingLeft</SeeingLeft>
-    <SeeingRight parameter="" return="bool">return seeingRight</SeeingRight>
-    <MoveForward parameter="int time" return="void">moveForward(time)</MoveForward>
-    <MoveBackward parameter="int time" return="void">moveBackward(time)</MoveBackward>
-    <TurnRight parameter="int degrees" return="void">turnRight(degrees)</TurnRight>
-    <TurnLeft parameter="int degrees" return="void">turnLeft(degrees)</TurnLeft>
-    <Idle parameter="int time" return="void">idle(time)</Idle>
+		<ReadSensors parameter="" return="void">touchingLeft = ev3.TouchSensor().is_pressed()
+		touchingRight = ev3.TouchSensor().is_pressed()
+		seeingLeft = ev3.UltrasonicSensor().distance_centimeters() &lt; 5
+		seeingRight = ev3.UltrasonicSensor().distance_centimeters() &lt; 5</ReadSensors>
+    	<Touching parameter="" return="bool">return touchingLeft || touchingRight</Touching>
+    	<TouchingBoth parameter="" return="bool">return touchingLeft &amp;&amp; touchingRight</TouchingBoth>
+    	<TouchingLeft parameter="" return="bool">return touchingLeft</TouchingLeft>
+    	<TouchingRight parameter="" return="bool">return touchingRight</TouchingRight>
+    	<Seeing parameter="" return="bool">return seeingLeft || seeingRight</Seeing>
+    	<SeeingBoth parameter="" return="bool">return seeingLeft &amp;&amp; seeingRight</SeeingBoth>
+    	<SeeingLeft parameter="" return="bool">return seeingLeft</SeeingLeft>
+    	<SeeingRight parameter="" return="bool">return seeingRight</SeeingRight>
+    	<MoveForward parameter="int time" return="void">moveForward(time)</MoveForward>
+    	<MoveBackward parameter="int time" return="void">moveBackward(time)</MoveBackward>
+    	<TurnRight parameter="int degrees" return="void">turnRight(degrees)</TurnRight>
+    	<TurnLeft parameter="int degrees" return="void">turnLeft(degrees)</TurnLeft>
+    	<Idle parameter="int time" return="void">idle(time)</Idle>
   </metamethods>
 </robot>

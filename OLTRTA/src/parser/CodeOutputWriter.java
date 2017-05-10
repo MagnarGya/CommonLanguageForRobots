@@ -9,12 +9,10 @@ import java.io.UnsupportedEncodingException;
 import CommonLanguageObjects.*;
 
 public class CodeOutputWriter {
-	CommonToLanguageParser parser;
 	BotMethods botmethods;
 	Method loop;
 	
-	public CodeOutputWriter(CommonToLanguageParser _parser, BotMethods _botmethods, Method _loop){
-		parser = _parser;
+	public CodeOutputWriter(BotMethods _botmethods, Method _loop){
 		botmethods = _botmethods;
 		loop = _loop;
 	}
@@ -22,15 +20,15 @@ public class CodeOutputWriter {
 	public void writeToFile(){
 		String script = "";
 		for (int i = 0; i < botmethods.global_variables.length; i++){
-			script += parser.parseExpression(botmethods.global_variables[i]);
+			script += botmethods.parser.parseExpression(botmethods.global_variables[i]);
 		}
-        script += parser.parseMethod(botmethods.setup);
-        script += parser.parseMethod(loop);
+        script += botmethods.parser.parseMethod(botmethods.setup);
+        script += botmethods.parser.parseMethod(loop);
         for (int i = 0; i < botmethods.methods.length; i++) {
-            script += parser.parseMethod(botmethods.methods[i]);
+            script += botmethods.parser.parseMethod(botmethods.methods[i]);
         }
         for (int i = 0; i < botmethods.metamethods.length; i++) {
-            script += parser.parseMethod(botmethods.metamethods[i]);
+            script += botmethods.parser.parseMethod(botmethods.metamethods[i]);
         }
         
         

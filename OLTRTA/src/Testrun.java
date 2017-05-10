@@ -5,7 +5,6 @@ import CommonLanguageObjects.*;
 public class Testrun {
 
 	public static void main(String[] args) {
-		CommonToCParser cp = new CommonToCParser();
 		BotMethods bm = new BotMethods("ArduinoShieldBot","ShieldBot1");
 		
 		
@@ -34,10 +33,10 @@ public class Testrun {
 
         Method loop = new Method("void","loop",new Block(exs));
 		
-		CodeOutputWriter COW = new CodeOutputWriter(cp,bm,loop);
+		CodeOutputWriter COW = new CodeOutputWriter(bm,loop);
+		CodeOutputWriter COW2 = new CodeOutputWriter(new BotMethods("LegoMindstormsEv3","EV3_1(standard)"),loop);
 		COW.writeToFile();
-		System.out.println(If.class.toString());
-		
+		COW2.writeToFile();
 	}
 
 }
