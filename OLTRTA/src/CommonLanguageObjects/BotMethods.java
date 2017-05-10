@@ -46,13 +46,16 @@ public class BotMethods implements Serializable {
 	private Declaration[] getGlobalVariables() {
 		try {
 			List<Declaration> declarations = new ArrayList<Declaration>();
-			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			String path = new File(".\\src\\"+robot+"\\"+name+".xml").getCanonicalPath();
 			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document xml = db.parse(file);
-			NodeList variablelist = xml.getChildNodes().item(0).getChildNodes().item(1).getChildNodes().item(3).getChildNodes();
-			
+			NodeList nl = xml.getElementsByTagName("setup");
+			Element setup = (Element)nl.item(0);
+			NodeList nl1 = setup.getElementsByTagName("globalvariables");
+			Element method = (Element)nl1.item(0);
+			NodeList variablelist = method.getChildNodes();
 			Assignment[] assign = getAssignments();
 			
 			for(int i = 1; i < variablelist.getLength(); i+=2){
@@ -84,7 +87,7 @@ public class BotMethods implements Serializable {
 		
 		try {
 			Assignment[] assign = getAssignments();
-			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			String path = new File(".\\src\\"+robot+"\\"+name+".xml").getCanonicalPath();
 			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
@@ -96,7 +99,7 @@ public class BotMethods implements Serializable {
 			NodeList nl2 = method.getElementsByTagName("setup");
 			Element setupmethod = (Element)nl2.item(0);
 			String expressiontext = setupmethod.getTextContent();
-			String[] expressions = expressiontext.split(",");
+			String[] expressions = expressiontext.split(";\n");
 			List<Expression> expressionlist = new ArrayList<Expression>();
 			for(int i = 0; i < expressions.length; i++){
 				for(Assignment as : assign){
@@ -124,7 +127,7 @@ public class BotMethods implements Serializable {
 		List<Method> methods = new ArrayList<Method>();
 		
 		try{
-			String path = new File(".\\src\\"+robot+"\\"+robot+".xml").getCanonicalPath();
+			String path = new File(".\\src\\"+robot+"\\"+name+".xml").getCanonicalPath();
 			File file = new File(path);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
@@ -140,16 +143,14 @@ public class BotMethods implements Serializable {
 				String type = method.getAttribute("return");
 				String name = method.getNodeName();
 				String[] parameter = method.getAttribute("parameter").split(",");
-				String[] block = method.getTextContent().split(";");
+				String block = method.getTextContent();
 				for(Assignment assign : assignments){
 					type = type.replaceAll(assign.word, assign.value);
 					name = name.replaceAll(assign.word, assign.value);
 					for(String param : parameter){
 						param = param.replaceAll(assign.word, assign.value);
 					}
-					for(String bl : block){
-						bl = bl.replaceAll(assign.word, assign.value);
-					}
+					block = block.replaceAll(assign.word, assign.value);
 				}
 				List<Parameter> para = new ArrayList<Parameter>();
 				for(String param : parameter){
@@ -159,7 +160,8 @@ public class BotMethods implements Serializable {
 					}
 				}
 				List<Expression> exp = new ArrayList<Expression>();
-				for(String bl : block){
+				String[] blocklines = block.split(";\n");
+				for(String bl : blocklines){
 					exp.add(new Expression(bl));
 				}
 				methods.add(new Method(type, name, para.toArray(new Parameter[0]),new Block(exp.toArray(new Expression[0]))));
@@ -201,7 +203,6 @@ List<Method> methods = new ArrayList<Method>();
 				String[] parameter = method.getAttribute("parameter").split(",");
 				String block = method.getTextContent();
 				for(Assignment assign : assignments){
-					System.out.print(assign.word + " " + assign.value + " ");
 					type = type.replaceAll(assign.word, assign.value);
 					name = name.replaceAll(assign.word, assign.value);
 					for(String param : parameter){
@@ -217,7 +218,7 @@ List<Method> methods = new ArrayList<Method>();
 					}
 				}
 				List<Expression> exp = new ArrayList<Expression>();
-				String[] blocklines = block.split(";");
+				String[] blocklines = block.split(";\n");
 				for(String bl : blocklines){
 					exp.add(new Expression(bl));
 				}
@@ -247,10 +248,8 @@ List<Method> methods = new ArrayList<Method>();
 			DocumentBuilder db;
 			db = dbf.newDocumentBuilder();
 			Document xml = db.parse(file);
-			NodeList nl = xml.getElementsByTagName("setup");
-			Element setup = (Element)nl.item(0);
-			NodeList nl1 = setup.getElementsByTagName("extension");
-			Element ext = (Element)nl1.item(0);
+			NodeList nl = xml.getElementsByTagName("extension");
+			Element ext = (Element)nl.item(0);
 			extent = ext.getTextContent();
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
@@ -278,7 +277,6 @@ List<Method> methods = new ArrayList<Method>();
 			NodeList assigns = tag.getChildNodes();
 			for(int i = 1; i < assigns.getLength(); i+=2){
 				Element assign = (Element)assigns.item(i);
-				System.out.println(assign.getNodeName() + " " + assign.getAttribute("value"));
 				assignments.add(new Assignment(assign.getNodeName(),assign.getAttribute("value")));
 			}
 		} catch (ParserConfigurationException e) {

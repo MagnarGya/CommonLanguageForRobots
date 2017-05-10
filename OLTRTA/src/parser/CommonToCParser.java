@@ -9,13 +9,14 @@ public class CommonToCParser implements CommonToLanguageParser{
 		String returnString = "";
         for (Expression ex : _bl.exs) {
             returnString += parseExpression(ex);
-            if(ex.getClass() == Expression.class){
-                returnString += ";\n";
+            if(ex.getClass().toString()=="class CommonLanguageObjects.Expression"){
+            	returnString += ";";
             }
         }
         
         String[] lines = returnString.split("\\r\\n|\\n|\\r");
         for (int i = 0; i < lines.length-1; i++) {
+        	
             lines[i] = "    " + lines[i] +"\n";
         }
         returnString = "";
@@ -23,7 +24,7 @@ public class CommonToCParser implements CommonToLanguageParser{
         for (String str : lines) {
             returnString += str;
         }
-        returnString += "} \n";
+        returnString += "\n}	\n";
 
         return returnString;
 	}
@@ -41,13 +42,13 @@ public class CommonToCParser implements CommonToLanguageParser{
 	@Override
 	public String parseExpression(Expression _exp) {
 		switch (_exp.getClass().toString()) {
-        case "OLTRTA.CommonLanguageObjects.If": return parseIf((If)_exp);
-        case "OLTRTA.CommonLanguageObjects.Else": return parseElse((Else)_exp);
-        case "OLTRTA.CommonLanguageObjects.Block": return parseBlock((Block)_exp);
-        case "OLTRTA.CommonLanguageObjects.While": return parseWhile((While)_exp);
-        case "OLTRTA.CommonLanguageObjects.For": return parseFor((For)_exp);
-        case "OLTRTA.CommonLanguageObjects.Declaration": return _exp.content + ";\n";
-        default: return _exp.content;
+        case "class CommonLanguageObjects.If": return parseIf((If)_exp);
+        case "class CommonLanguageObjects.Else": return parseElse((Else)_exp);
+        case "class CommonLanguageObjects.Block": return parseBlock((Block)_exp);
+        case "class CommonLanguageObjects.While": return parseWhile((While)_exp);
+        case "class CommonLanguageObjects.For": return parseFor((For)_exp);
+        case "class CommonLanguageObjects.Declaration": return _exp.content + ";\n";
+        default: return _exp.content+";\n";
     }
 	}
 
@@ -65,7 +66,7 @@ public class CommonToCParser implements CommonToLanguageParser{
 	public String parseIf(If _if) {
 		String returnString = "";
 
-        returnString += "if (" + parseExpression(_if.ex) + ")";
+        returnString += "if (" + parseExpression(_if.ex).replaceAll(";\n", "") + ")";
         returnString += parseBlock(_if.bl);
 
         return returnString;
