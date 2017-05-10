@@ -31,7 +31,9 @@ public class Testrun {
         Block block5 = new Block(bl5Exs);
         exs[5] = new Else(block5);
 
-        Method loop = new Method("void","loop",new Block(exs));
+        Method method = new Method("void","loop",new Block(exs));
+        Method[] methodarray = {method};
+        Script loop = new Script(methodarray);
 		
 		CodeOutputWriter COW = new CodeOutputWriter(bm,loop);
 		CodeOutputWriter COW2 = new CodeOutputWriter(new BotMethods("LegoMindstormsEv3","EV3_1(standard)"),loop);

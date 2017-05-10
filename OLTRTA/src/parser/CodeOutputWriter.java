@@ -10,9 +10,9 @@ import CommonLanguageObjects.*;
 
 public class CodeOutputWriter {
 	BotMethods botmethods;
-	Method loop;
+	Script loop;
 	
-	public CodeOutputWriter(BotMethods _botmethods, Method _loop){
+	public CodeOutputWriter(BotMethods _botmethods, Script _loop){
 		botmethods = _botmethods;
 		loop = _loop;
 	}
@@ -23,7 +23,7 @@ public class CodeOutputWriter {
 			script += botmethods.parser.parseExpression(botmethods.global_variables[i]);
 		}
         script += botmethods.parser.parseMethod(botmethods.setup);
-        script += botmethods.parser.parseMethod(loop);
+        script += botmethods.parser.parseScript(loop);
         for (int i = 0; i < botmethods.methods.length; i++) {
             script += botmethods.parser.parseMethod(botmethods.methods[i]);
         }

@@ -1,16 +1,13 @@
 package CommonLanguageObjects;
 
 public class Script {
-	public Expression[] header;
     public Method[] body;
 
     public Script() {
-        header = null;
         body = null;
     }
 
-    public Script(Expression[] _header, Method[] _body) {
-        header = _header;
+    public Script(Method[] _body) {
         body = _body;
     }
 }

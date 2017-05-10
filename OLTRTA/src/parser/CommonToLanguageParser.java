@@ -12,4 +12,5 @@ public interface CommonToLanguageParser {
     String parseMethod(Method _method);
     String parseParameter(Parameter _parameter);
     String parseWhile(While _while);
+    String parseScript(Script _script);
 }

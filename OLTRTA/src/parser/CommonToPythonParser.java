@@ -113,4 +113,14 @@ public class CommonToPythonParser implements CommonToLanguageParser{
         return returnString;
 	}
 	
+	public String parseScript(Script _script){
+		String returnString = "";
+		
+		for(int i = 0; i < _script.body.length; i++){
+			returnString += parseMethod(_script.body[i]) + "\n";
+		}
+		
+		return returnString;
+	}
+	
 }
