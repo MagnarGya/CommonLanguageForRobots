@@ -10,7 +10,7 @@ public class RobotScript {
 	protected ArrayList<String> robotlist;
 	protected Script sc;
 	
-	void generateCode(){
+	protected void generateCode(){
 		for(String robot : robotlist){
 			String[] robotdetails = robot.split(",");
 			BotMethods bm = new BotMethods(robotdetails[0],robotdetails[1]);
