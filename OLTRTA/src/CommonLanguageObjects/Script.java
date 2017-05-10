@@ -8,6 +8,7 @@ public class Script {
     }
 
     public Script(Method[] _body) {
-        body = _body;
+        
+    	body = _body;
     }
 }
