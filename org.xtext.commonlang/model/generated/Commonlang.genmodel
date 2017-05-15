@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.commonlang/src-gen" editDirectory="/org.xtext.commonlang.edit/src"
+    editorDirectory="/org.xtext.commonlang.editor/src" modelPluginID="org.xtext.commonlang"
+    forceOverwrite="true" modelName="Commonlang" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.commonlang.edit"
+    editorPluginID="org.xtext.commonlang.editor" runtimeVersion="2.10">
+  <genPackages prefix="Commonlang" basePackage="org.xtext" disposableProviderFactory="true"
+      fileExtensions="commonlang" ecorePackage="Commonlang.ecore#/">
+    <genClasses ecoreClass="Commonlang.ecore#//CLfile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//CLfile/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Script/robottypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Script/robotconfigs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Script/methods"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//MetaMethods">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//MetaMethods/methods"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Block/exs"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//SimpleExpression"/>
+    <genClasses ecoreClass="Commonlang.ecore#//StructureExpression"/>
+    <genClasses ecoreClass="Commonlang.ecore#//Expression"/>
+    <genClasses ecoreClass="Commonlang.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Assignment/vari"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Assignment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Method/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Method/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Method/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Call">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Call/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Call/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//UserMethod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//UserMethod/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//UserMethod/bl"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//MetaMethod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//MetaMethod/method"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//MetaMetaMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//MetaMetaMethod/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Comparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Comparison/varleft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Comparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Comparison/varright"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/ex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/bl"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Else">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Else/ex"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//For">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//For/init"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//For/check"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//For/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//For/bl"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//While">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//While/ex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//While/bl"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Value"/>
+    <genClasses ecoreClass="Commonlang.ecore#//BasicValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//BasicValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//BooleanValue"/>
+    <genClasses ecoreClass="Commonlang.ecore#//StringValue"/>
+    <genClasses ecoreClass="Commonlang.ecore#//NumberValue"/>
+    <genClasses ecoreClass="Commonlang.ecore#//VarReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Commonlang.ecore#//VarReference/vari"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Declaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Declaration/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
