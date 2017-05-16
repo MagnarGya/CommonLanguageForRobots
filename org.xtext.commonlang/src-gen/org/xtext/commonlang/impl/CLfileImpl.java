@@ -2,12 +2,20 @@
  */
 package org.xtext.commonlang.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.commonlang.CLfile;
 import org.xtext.commonlang.CommonlangPackage;
@@ -19,7 +27,7 @@ import org.xtext.commonlang.CommonlangPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.CLfileImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.CLfileImpl#getMets <em>Mets</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +36,14 @@ import org.xtext.commonlang.CommonlangPackage;
 public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getMets() <em>Mets</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getMets()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<EObject> mets;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +71,13 @@ public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<EObject> getMets()
   {
-    return name;
+    if (mets == null)
+    {
+      mets = new EObjectContainmentEList<EObject>(EObject.class, this, CommonlangPackage.CLFILE__METS);
+    }
+    return mets;
   }
 
   /**
@@ -83,12 +85,15 @@ public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.CLFILE__NAME, oldName, name));
+    switch (featureID)
+    {
+      case CommonlangPackage.CLFILE__METS:
+        return ((InternalEList<?>)getMets()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -101,8 +106,8 @@ public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
   {
     switch (featureID)
     {
-      case CommonlangPackage.CLFILE__NAME:
-        return getName();
+      case CommonlangPackage.CLFILE__METS:
+        return getMets();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,13 +117,15 @@ public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case CommonlangPackage.CLFILE__NAME:
-        setName((String)newValue);
+      case CommonlangPackage.CLFILE__METS:
+        getMets().clear();
+        getMets().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +141,8 @@ public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
   {
     switch (featureID)
     {
-      case CommonlangPackage.CLFILE__NAME:
-        setName(NAME_EDEFAULT);
+      case CommonlangPackage.CLFILE__METS:
+        getMets().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,27 +158,10 @@ public class CLfileImpl extends MinimalEObjectImpl.Container implements CLfile
   {
     switch (featureID)
     {
-      case CommonlangPackage.CLFILE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CommonlangPackage.CLFILE__METS:
+        return mets != null && !mets.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //CLfileImpl

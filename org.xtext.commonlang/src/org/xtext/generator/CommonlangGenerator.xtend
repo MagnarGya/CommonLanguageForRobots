@@ -14,8 +14,9 @@ import org.xtext.commonlang.While
 import org.xtext.commonlang.Else
 import org.xtext.commonlang.Assignment
 import org.xtext.commonlang.Block
-import org.xtext.commonlang.Call
-import org.xtext.commonlang.Comparison
+import org.xtext.commonlang.UserMethodCall
+import org.xtext.commonlang.MetaMethodCall
+import org.xtext.commonlang.Bool
 import org.xtext.commonlang.Method
 import org.xtext.commonlang.Declaration
 import org.xtext.commonlang.BasicValue
@@ -26,6 +27,8 @@ import java.util.ArrayList
 import org.xtext.commonlang.StringValue
 import org.xtext.commonlang.MetaMethods
 import org.xtext.commonlang.UserMethod
+import org.xtext.commonlang.Call
+import org.eclipse.emf.common.util.EList
 
 /**
  * Generates code from your model files on save.
@@ -76,13 +79,13 @@ class CommonlangGenerator implements IGenerator {
 	
 	def compile(UserMethod e) {
 	val parlist = new ArrayList<CharSequence>();
-	for (par:e.method.parameters) {
+	for (par:e.parameters) {
 		parlist.add(par.compile);
 	}
 	'''
 	new Method(
-		"«e.method.type»",
-		"«e.method.name»",
+		"«e.type»",
+		"«e.name»",
 		new Parameter[] {
 			«parlist.join(',')»
 		},
@@ -99,7 +102,6 @@ class CommonlangGenerator implements IGenerator {
 			Assignment : e.compile
 			Block : e.compile
 			Call : e.compile
-			Comparison : e.compile
 		}
 	}
 	
@@ -143,8 +145,10 @@ class CommonlangGenerator implements IGenerator {
 			«exlist.join(',')»
 		})'''
 	}
+	
 	def makeString(Value e) {
 		switch e {
+			Call : (e as Call).makeString
 			BasicValue : (e as BasicValue).makeString
 			VarReference : (e as VarReference).makeString
 		}
@@ -156,6 +160,14 @@ class CommonlangGenerator implements IGenerator {
 		)'''
 	
 	def compile(Call e) {
+	
+	'''
+		new Expression(
+			"«e.makeString»"
+		)'''
+	}
+	
+	def makeString(Call e) {
 	val parlist = new ArrayList<CharSequence>();
 	for (par:e.parameters) {
 		
@@ -165,15 +177,17 @@ class CommonlangGenerator implements IGenerator {
 		}
 	}
 	'''
-		new Expression(
-			"«e.name.name»(«parlist.join(',')»)"
-		)'''
+		«e.method.name»(«parlist.join(',')»)'''
 	}
 	
-	def compile(Comparison e) '''
+	def compile(Bool e) '''
 		new Expression(
-			"«e.varleft.makeString» «e.op» «e.varright.makeString»"
+			"«e.makeString»"
 		)'''
+		
+	def CharSequence makeString(Bool e) '''
+		«e.varleft.makeString» «e.op» «e.varright.makeString» «e.bop» «IF e.bnext != null» «e.bnext.makeString»«ENDIF» 
+	'''
 	
 	def makeString(Declaration e) '''
 		«e.type» «e.name»'''

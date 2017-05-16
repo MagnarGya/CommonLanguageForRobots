@@ -29,8 +29,8 @@ import org.xtext.commonlang.Value;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.CallImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.CallImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.CallImpl#getMethod <em>Method</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,16 +38,6 @@ import org.xtext.commonlang.Value;
  */
 public class CallImpl extends SimpleExpressionImpl implements Call
 {
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected Method name;
-
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -57,6 +47,16 @@ public class CallImpl extends SimpleExpressionImpl implements Call
    * @ordered
    */
   protected EList<Value> parameters;
+
+  /**
+   * The cached value of the '{@link #getMethod() <em>Method</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMethod()
+   * @generated
+   * @ordered
+   */
+  protected Method method;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,49 +84,6 @@ public class CallImpl extends SimpleExpressionImpl implements Call
    * <!-- end-user-doc -->
    * @generated
    */
-  public Method getName()
-  {
-    if (name != null && name.eIsProxy())
-    {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (Method)eResolveProxy(oldName);
-      if (name != oldName)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonlangPackage.CALL__NAME, oldName, name));
-      }
-    }
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Method basicGetName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(Method newName)
-  {
-    Method oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.CALL__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Value> getParameters()
   {
     if (parameters == null)
@@ -134,6 +91,49 @@ public class CallImpl extends SimpleExpressionImpl implements Call
       parameters = new EObjectContainmentEList<Value>(Value.class, this, CommonlangPackage.CALL__PARAMETERS);
     }
     return parameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Method getMethod()
+  {
+    if (method != null && method.eIsProxy())
+    {
+      InternalEObject oldMethod = (InternalEObject)method;
+      method = (Method)eResolveProxy(oldMethod);
+      if (method != oldMethod)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonlangPackage.CALL__METHOD, oldMethod, method));
+      }
+    }
+    return method;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Method basicGetMethod()
+  {
+    return method;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMethod(Method newMethod)
+  {
+    Method oldMethod = method;
+    method = newMethod;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.CALL__METHOD, oldMethod, method));
   }
 
   /**
@@ -162,11 +162,11 @@ public class CallImpl extends SimpleExpressionImpl implements Call
   {
     switch (featureID)
     {
-      case CommonlangPackage.CALL__NAME:
-        if (resolve) return getName();
-        return basicGetName();
       case CommonlangPackage.CALL__PARAMETERS:
         return getParameters();
+      case CommonlangPackage.CALL__METHOD:
+        if (resolve) return getMethod();
+        return basicGetMethod();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -182,12 +182,12 @@ public class CallImpl extends SimpleExpressionImpl implements Call
   {
     switch (featureID)
     {
-      case CommonlangPackage.CALL__NAME:
-        setName((Method)newValue);
-        return;
       case CommonlangPackage.CALL__PARAMETERS:
         getParameters().clear();
         getParameters().addAll((Collection<? extends Value>)newValue);
+        return;
+      case CommonlangPackage.CALL__METHOD:
+        setMethod((Method)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -203,11 +203,11 @@ public class CallImpl extends SimpleExpressionImpl implements Call
   {
     switch (featureID)
     {
-      case CommonlangPackage.CALL__NAME:
-        setName((Method)null);
-        return;
       case CommonlangPackage.CALL__PARAMETERS:
         getParameters().clear();
+        return;
+      case CommonlangPackage.CALL__METHOD:
+        setMethod((Method)null);
         return;
     }
     super.eUnset(featureID);
@@ -223,10 +223,10 @@ public class CallImpl extends SimpleExpressionImpl implements Call
   {
     switch (featureID)
     {
-      case CommonlangPackage.CALL__NAME:
-        return name != null;
       case CommonlangPackage.CALL__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
+      case CommonlangPackage.CALL__METHOD:
+        return method != null;
     }
     return super.eIsSet(featureID);
   }

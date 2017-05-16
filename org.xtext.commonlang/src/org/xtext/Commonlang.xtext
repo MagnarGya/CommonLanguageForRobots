@@ -3,17 +3,17 @@ grammar org.xtext.Commonlang  with org.eclipse.xtext.common.Terminals
 generate commonlang "http://www.xtext.org/Commonlang"
 
 CLfile:
-	Script | MetaMethods
+	mets+=(Script | MetaMethods)*
 ;
 
 Script:
-	'script' name=ID 'targets' ('('robottypes+=ID ',' robotconfigs+=ID | '('('('robottypes+=ID ',' robotconfigs+=ID')')* )')' '{'
+	'script' name=CAPITALFIRST 'targets' ('('robottypes+=LOWERFIRST ',' robotconfigs+=LOWERFIRST | '('('('robottypes+=LOWERFIRST ',' robotconfigs+=LOWERFIRST')')* )')' '{'
 		(methods+=UserMethod*)
 	'}'
 ;
 
 MetaMethods:
-	'metamethodscollection' name=ID '{'
+	'metamethodscollection' name=LOWERFIRST '{'
 		(methods+=MetaMethod)*
 	'}'
 ;
@@ -23,7 +23,7 @@ Block:
 ;
 
 SimpleExpression:
-	Assignment | Call | Comparison
+	Call | Assignment | Return
 ;
 
 StructureExpression:
@@ -36,24 +36,36 @@ Expression:
 
 
 Assignment:
-	vari=([Declaration] | Declaration) '=' value=Value
-;
-
-Method:
-	type=Methodtype name=ID '(' parameters+=Declaration? (','+ parameters+=Declaration)* ')'
+	vari=([Declaration|LOWERFIRST] | Declaration) ( => '=' value=Value)
 ;
 
 Call:
-	name=[Method] '('parameters+=Value? (','+ parameters+=Value)*')'
+	(UserMethodCall | MetaMethodCall) '('parameters+=Value? (','+ parameters+=Value)*')'
 ;
 
-UserMethod:
-	method=Method bl=Block
+Method:
+	(UserMethod | MetaMethod)
 ;
 
 MetaMethod:
-	method=Method ';'
+	'meta' type=Methodtype name=CAPITALFIRST '(' parameters+=Declaration? (','+ parameters+=Declaration)* ')' ';'
 ;
+
+UserMethod:
+	type=Methodtype name=LOWERFIRST '(' parameters+=Declaration? (','+ parameters+=Declaration)* ')' bl=Block
+;
+
+UserMethodCall:
+	method=([Method|LOWERFIRST])
+;
+
+MetaMethodCall:
+	method=([Method|CAPITALFIRST])
+;
+
+terminal LOWERFIRST: ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal CAPITALFIRST: ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
 
 MetaMetaMethod:
 	name='ReadSensors'
@@ -72,16 +84,20 @@ MetaMetaMethod:
 	| name='Idle'
 ;
 
-Comparison:
-	varleft=Value op=ComparisonOperator varright=Value
+Bool:
+	varleft=Value (=> op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?
 ;
 
 ComparisonOperator:
 	'==' | '!=' | '<' | '>' | '<=' | '>='
 ;
 
+BooleanOperator:
+	'&&' | '||' | '!&&' | '!||'
+;
+
 If:
-	'if' '(' ex=Expression ')' bl=Block
+	'if' '(' ex=Bool ')' bl=Block
 ;
 
 Else:
@@ -89,15 +105,15 @@ Else:
 ;
 
 For:
-	'for' '(' init=Expression ';' check=Expression ';' action=Expression')' bl=Block
+	'for' '(' init=Expression ';' check=Bool ';' action=Expression')' bl=Block
 ;
 
 While:
-	'while' '(' ex=Expression ')' bl=Block
+	'while' '(' ex=Bool ')' bl=Block
 ;
 
 Value:
-	VarReference | BasicValue
+	 Call | VarReference | BasicValue
 ;
 
 BasicValue:
@@ -117,11 +133,15 @@ NumberValue:
 ;
 
 VarReference:
-	vari=[Declaration]
+	vari=[Declaration|LOWERFIRST]
 ;
 
 Declaration: 
-	type=Datatype name=ID
+	type=Datatype name=LOWERFIRST
+;
+
+Return:
+	'return' val=Value
 ;
 
 Methodtype:

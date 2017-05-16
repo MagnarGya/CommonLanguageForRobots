@@ -4,12 +4,16 @@ package org.xtext.commonlang.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -26,6 +30,7 @@ import org.xtext.commonlang.UserMethod;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.commonlang.impl.ScriptImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.ScriptImpl#getRobottypes <em>Robottypes</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.ScriptImpl#getRobotconfigs <em>Robotconfigs</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.ScriptImpl#getMethods <em>Methods</em>}</li>
@@ -34,8 +39,28 @@ import org.xtext.commonlang.UserMethod;
  *
  * @generated
  */
-public class ScriptImpl extends CLfileImpl implements Script
+public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getRobottypes() <em>Robottypes</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -85,6 +110,29 @@ public class ScriptImpl extends CLfileImpl implements Script
   protected EClass eStaticClass()
   {
     return CommonlangPackage.Literals.SCRIPT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.SCRIPT__NAME, oldName, name));
   }
 
   /**
@@ -155,6 +203,8 @@ public class ScriptImpl extends CLfileImpl implements Script
   {
     switch (featureID)
     {
+      case CommonlangPackage.SCRIPT__NAME:
+        return getName();
       case CommonlangPackage.SCRIPT__ROBOTTYPES:
         return getRobottypes();
       case CommonlangPackage.SCRIPT__ROBOTCONFIGS:
@@ -176,6 +226,9 @@ public class ScriptImpl extends CLfileImpl implements Script
   {
     switch (featureID)
     {
+      case CommonlangPackage.SCRIPT__NAME:
+        setName((String)newValue);
+        return;
       case CommonlangPackage.SCRIPT__ROBOTTYPES:
         getRobottypes().clear();
         getRobottypes().addAll((Collection<? extends String>)newValue);
@@ -202,6 +255,9 @@ public class ScriptImpl extends CLfileImpl implements Script
   {
     switch (featureID)
     {
+      case CommonlangPackage.SCRIPT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case CommonlangPackage.SCRIPT__ROBOTTYPES:
         getRobottypes().clear();
         return;
@@ -225,6 +281,8 @@ public class ScriptImpl extends CLfileImpl implements Script
   {
     switch (featureID)
     {
+      case CommonlangPackage.SCRIPT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CommonlangPackage.SCRIPT__ROBOTTYPES:
         return robottypes != null && !robottypes.isEmpty();
       case CommonlangPackage.SCRIPT__ROBOTCONFIGS:
@@ -246,7 +304,9 @@ public class ScriptImpl extends CLfileImpl implements Script
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (robottypes: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", robottypes: ");
     result.append(robottypes);
     result.append(", robotconfigs: ");
     result.append(robotconfigs);

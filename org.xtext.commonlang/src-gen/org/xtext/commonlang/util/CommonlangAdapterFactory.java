@@ -115,19 +115,14 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
         return createAssignmentAdapter();
       }
       @Override
-      public Adapter caseMethod(Method object)
-      {
-        return createMethodAdapter();
-      }
-      @Override
       public Adapter caseCall(Call object)
       {
         return createCallAdapter();
       }
       @Override
-      public Adapter caseUserMethod(UserMethod object)
+      public Adapter caseMethod(Method object)
       {
-        return createUserMethodAdapter();
+        return createMethodAdapter();
       }
       @Override
       public Adapter caseMetaMethod(MetaMethod object)
@@ -135,14 +130,29 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
         return createMetaMethodAdapter();
       }
       @Override
+      public Adapter caseUserMethod(UserMethod object)
+      {
+        return createUserMethodAdapter();
+      }
+      @Override
+      public Adapter caseUserMethodCall(UserMethodCall object)
+      {
+        return createUserMethodCallAdapter();
+      }
+      @Override
+      public Adapter caseMetaMethodCall(MetaMethodCall object)
+      {
+        return createMetaMethodCallAdapter();
+      }
+      @Override
       public Adapter caseMetaMetaMethod(MetaMetaMethod object)
       {
         return createMetaMetaMethodAdapter();
       }
       @Override
-      public Adapter caseComparison(Comparison object)
+      public Adapter caseBool(Bool object)
       {
-        return createComparisonAdapter();
+        return createBoolAdapter();
       }
       @Override
       public Adapter caseIf(If object)
@@ -198,6 +208,11 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDeclaration(Declaration object)
       {
         return createDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseReturn(Return object)
+      {
+        return createReturnAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -342,21 +357,6 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Method <em>Method</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.commonlang.Method
-   * @generated
-   */
-  public Adapter createMethodAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Call <em>Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -372,16 +372,16 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.UserMethod <em>User Method</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Method <em>Method</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.commonlang.UserMethod
+   * @see org.xtext.commonlang.Method
    * @generated
    */
-  public Adapter createUserMethodAdapter()
+  public Adapter createMethodAdapter()
   {
     return null;
   }
@@ -402,6 +402,51 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.UserMethod <em>User Method</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.UserMethod
+   * @generated
+   */
+  public Adapter createUserMethodAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.UserMethodCall <em>User Method Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.UserMethodCall
+   * @generated
+   */
+  public Adapter createUserMethodCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.MetaMethodCall <em>Meta Method Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.MetaMethodCall
+   * @generated
+   */
+  public Adapter createMetaMethodCallAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.commonlang.MetaMetaMethod <em>Meta Meta Method</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -417,16 +462,16 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Comparison <em>Comparison</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Bool <em>Bool</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.commonlang.Comparison
+   * @see org.xtext.commonlang.Bool
    * @generated
    */
-  public Adapter createComparisonAdapter()
+  public Adapter createBoolAdapter()
   {
     return null;
   }
@@ -592,6 +637,21 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Return <em>Return</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.Return
+   * @generated
+   */
+  public Adapter createReturnAdapter()
   {
     return null;
   }

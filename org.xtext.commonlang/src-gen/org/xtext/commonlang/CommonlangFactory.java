@@ -95,15 +95,6 @@ public interface CommonlangFactory extends EFactory
   Assignment createAssignment();
 
   /**
-   * Returns a new object of class '<em>Method</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Method</em>'.
-   * @generated
-   */
-  Method createMethod();
-
-  /**
    * Returns a new object of class '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,13 +104,13 @@ public interface CommonlangFactory extends EFactory
   Call createCall();
 
   /**
-   * Returns a new object of class '<em>User Method</em>'.
+   * Returns a new object of class '<em>Method</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>User Method</em>'.
+   * @return a new object of class '<em>Method</em>'.
    * @generated
    */
-  UserMethod createUserMethod();
+  Method createMethod();
 
   /**
    * Returns a new object of class '<em>Meta Method</em>'.
@@ -131,6 +122,33 @@ public interface CommonlangFactory extends EFactory
   MetaMethod createMetaMethod();
 
   /**
+   * Returns a new object of class '<em>User Method</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>User Method</em>'.
+   * @generated
+   */
+  UserMethod createUserMethod();
+
+  /**
+   * Returns a new object of class '<em>User Method Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>User Method Call</em>'.
+   * @generated
+   */
+  UserMethodCall createUserMethodCall();
+
+  /**
+   * Returns a new object of class '<em>Meta Method Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Meta Method Call</em>'.
+   * @generated
+   */
+  MetaMethodCall createMetaMethodCall();
+
+  /**
    * Returns a new object of class '<em>Meta Meta Method</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -140,13 +158,13 @@ public interface CommonlangFactory extends EFactory
   MetaMetaMethod createMetaMetaMethod();
 
   /**
-   * Returns a new object of class '<em>Comparison</em>'.
+   * Returns a new object of class '<em>Bool</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comparison</em>'.
+   * @return a new object of class '<em>Bool</em>'.
    * @generated
    */
-  Comparison createComparison();
+  Bool createBool();
 
   /**
    * Returns a new object of class '<em>If</em>'.
@@ -246,6 +264,15 @@ public interface CommonlangFactory extends EFactory
    * @generated
    */
   Declaration createDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Return</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return</em>'.
+   * @generated
+   */
+  Return createReturn();
 
   /**
    * Returns the package supported by this factory.

@@ -59,12 +59,12 @@ public interface For extends StructureExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Check</em>' containment reference.
-   * @see #setCheck(Expression)
+   * @see #setCheck(Bool)
    * @see org.xtext.commonlang.CommonlangPackage#getFor_Check()
    * @model containment="true"
    * @generated
    */
-  Expression getCheck();
+  Bool getCheck();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.For#getCheck <em>Check</em>}' containment reference.
@@ -74,7 +74,7 @@ public interface For extends StructureExpression
    * @see #getCheck()
    * @generated
    */
-  void setCheck(Expression value);
+  void setCheck(Bool value);
 
   /**
    * Returns the value of the '<em><b>Action</b></em>' containment reference.

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Block;
+import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.CommonlangPackage;
 import org.xtext.commonlang.Expression;
 import org.xtext.commonlang.For;
@@ -51,7 +52,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * @generated
    * @ordered
    */
-  protected Expression check;
+  protected Bool check;
 
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
@@ -147,7 +148,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCheck()
+  public Bool getCheck()
   {
     return check;
   }
@@ -157,9 +158,9 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCheck(Expression newCheck, NotificationChain msgs)
+  public NotificationChain basicSetCheck(Bool newCheck, NotificationChain msgs)
   {
-    Expression oldCheck = check;
+    Bool oldCheck = check;
     check = newCheck;
     if (eNotificationRequired())
     {
@@ -174,7 +175,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCheck(Expression newCheck)
+  public void setCheck(Bool newCheck)
   {
     if (newCheck != check)
     {
@@ -344,7 +345,7 @@ public class ForImpl extends StructureExpressionImpl implements For
         setInit((Expression)newValue);
         return;
       case CommonlangPackage.FOR__CHECK:
-        setCheck((Expression)newValue);
+        setCheck((Bool)newValue);
         return;
       case CommonlangPackage.FOR__ACTION:
         setAction((Expression)newValue);
@@ -370,7 +371,7 @@ public class ForImpl extends StructureExpressionImpl implements For
         setInit((Expression)null);
         return;
       case CommonlangPackage.FOR__CHECK:
-        setCheck((Expression)null);
+        setCheck((Bool)null);
         return;
       case CommonlangPackage.FOR__ACTION:
         setAction((Expression)null);

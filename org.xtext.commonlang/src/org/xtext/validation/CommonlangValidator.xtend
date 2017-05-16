@@ -13,7 +13,7 @@ import org.xtext.commonlang.BooleanValue
 import org.xtext.commonlang.BasicValue
 import org.xtext.commonlang.Value
 import org.xtext.commonlang.Assignment
-import org.xtext.commonlang.Comparison
+import org.xtext.commonlang.Bool
 
 /**
  * This class contains custom validation rules. 
@@ -24,12 +24,12 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 
 	@Check
 	def checkCallParametersMatch(Call call) {
-		if (call.getParameters().size() != call.getName().getParameters().size()) {
+		if (call.getParameters().size() != call.getMethod().getParameters().size()) {
 			error("Wrong number of arguments!",null)
 		} else {
 			for (var i = 0; i < call.getParameters().size(); i++) {
 				var thisParam = call.getParameters().get(i)
-				var thatType = call.getName().getParameters().get(i).getType();
+				var thatType = call.getMethod().getParameters().get(i).getType();
 				var thisType = getTypeOfValue(thisParam)
 				
 				if (thisType != thatType) {
@@ -38,7 +38,6 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 			}
 		}
 	}
-	
 	
 	@Check
 	def checkAssignments(Assignment assignment) {
@@ -51,18 +50,23 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 	}
 	
 	@Check
-	def checkComparisons(Comparison comparison) {
-		var thisType = comparison.varleft.getTypeOfValue
-		var thatType = comparison.varright.getTypeOfValue;
+	def checkBools(Bool bool) {
+		var thisType = bool.varleft.getTypeOfValue
+		var thatType = bool.varright.getTypeOfValue;
 		
-		if (thisType != thatType) {
+		if (thisType != thatType && bool.op != null) {
 			error("Type mismatch: Cannot compare "+ thatType +" to " + thisType,null)
+		}
+		
+		if (thisType != "boolean" && bool.op == null) {
+			error("Boolean expression expected",null)
 		}
 	}
 	
 	def String getTypeOfValue(Value thisVal) {
 		var thisType = "";
 		switch (thisVal) {
+			Call : thisType = thisVal.method.type
 			VarReference : thisType = thisVal.vari.type
 			NumberValue : thisType = "int"
 			StringValue : thisType = "string"

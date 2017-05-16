@@ -18,22 +18,24 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.Block;
+import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.BooleanValue;
-import org.xtext.commonlang.Call;
+import org.xtext.commonlang.CLfile;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Comparison;
 import org.xtext.commonlang.Declaration;
 import org.xtext.commonlang.Else;
 import org.xtext.commonlang.For;
 import org.xtext.commonlang.If;
 import org.xtext.commonlang.MetaMetaMethod;
 import org.xtext.commonlang.MetaMethod;
+import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
-import org.xtext.commonlang.Method;
 import org.xtext.commonlang.NumberValue;
+import org.xtext.commonlang.Return;
 import org.xtext.commonlang.Script;
 import org.xtext.commonlang.StringValue;
 import org.xtext.commonlang.UserMethod;
+import org.xtext.commonlang.UserMethodCall;
 import org.xtext.commonlang.VarReference;
 import org.xtext.commonlang.While;
 import org.xtext.services.CommonlangGrammarAccess;
@@ -53,14 +55,14 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case CommonlangPackage.BLOCK:
 				sequence_Block(context, (Block) semanticObject); 
 				return; 
+			case CommonlangPackage.BOOL:
+				sequence_Bool(context, (Bool) semanticObject); 
+				return; 
 			case CommonlangPackage.BOOLEAN_VALUE:
 				sequence_BooleanValue(context, (BooleanValue) semanticObject); 
 				return; 
-			case CommonlangPackage.CALL:
-				sequence_Call(context, (Call) semanticObject); 
-				return; 
-			case CommonlangPackage.COMPARISON:
-				sequence_Comparison(context, (Comparison) semanticObject); 
+			case CommonlangPackage.CLFILE:
+				sequence_CLfile(context, (CLfile) semanticObject); 
 				return; 
 			case CommonlangPackage.DECLARATION:
 				sequence_Declaration(context, (Declaration) semanticObject); 
@@ -80,14 +82,27 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case CommonlangPackage.META_METHOD:
 				sequence_MetaMethod(context, (MetaMethod) semanticObject); 
 				return; 
+			case CommonlangPackage.META_METHOD_CALL:
+				if(context == grammarAccess.getCallRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getSimpleExpressionRule() ||
+				   context == grammarAccess.getValueRule()) {
+					sequence_Call_MetaMethodCall(context, (MetaMethodCall) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getMetaMethodCallRule()) {
+					sequence_MetaMethodCall(context, (MetaMethodCall) semanticObject); 
+					return; 
+				}
+				else break;
 			case CommonlangPackage.META_METHODS:
 				sequence_MetaMethods(context, (MetaMethods) semanticObject); 
 				return; 
-			case CommonlangPackage.METHOD:
-				sequence_Method(context, (Method) semanticObject); 
-				return; 
 			case CommonlangPackage.NUMBER_VALUE:
 				sequence_NumberValue(context, (NumberValue) semanticObject); 
+				return; 
+			case CommonlangPackage.RETURN:
+				sequence_Return(context, (Return) semanticObject); 
 				return; 
 			case CommonlangPackage.SCRIPT:
 				sequence_Script(context, (Script) semanticObject); 
@@ -98,6 +113,19 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case CommonlangPackage.USER_METHOD:
 				sequence_UserMethod(context, (UserMethod) semanticObject); 
 				return; 
+			case CommonlangPackage.USER_METHOD_CALL:
+				if(context == grammarAccess.getCallRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getSimpleExpressionRule() ||
+				   context == grammarAccess.getValueRule()) {
+					sequence_Call_UserMethodCall(context, (UserMethodCall) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getUserMethodCallRule()) {
+					sequence_UserMethodCall(context, (UserMethodCall) semanticObject); 
+					return; 
+				}
+				else break;
 			case CommonlangPackage.VAR_REFERENCE:
 				sequence_VarReference(context, (VarReference) semanticObject); 
 				return; 
@@ -110,7 +138,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     ((vari=[Declaration|ID] | vari=Declaration) value=Value)
+	 *     ((vari=[Declaration|LOWERFIRST] | vari=Declaration) value=Value)
 	 */
 	protected void sequence_Assignment(EObject context, Assignment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -128,6 +156,15 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     (varleft=Value (op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?)
+	 */
+	protected void sequence_Bool(EObject context, Bool semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (value='true' | value='false')
 	 */
 	protected void sequence_BooleanValue(EObject context, BooleanValue semanticObject) {
@@ -137,38 +174,34 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=[Method|ID] parameters+=Value? parameters+=Value*)
+	 *     (mets+=Script | mets+=MetaMethods)*
 	 */
-	protected void sequence_Call(EObject context, Call semanticObject) {
+	protected void sequence_CLfile(EObject context, CLfile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (varleft=Value op=ComparisonOperator varright=Value)
+	 *     (method=[Method|CAPITALFIRST] parameters+=Value? parameters+=Value*)
 	 */
-	protected void sequence_Comparison(EObject context, Comparison semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.COMPARISON__VARLEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.COMPARISON__VARLEFT));
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.COMPARISON__OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.COMPARISON__OP));
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.COMPARISON__VARRIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.COMPARISON__VARRIGHT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getComparisonAccess().getVarleftValueParserRuleCall_0_0(), semanticObject.getVarleft());
-		feeder.accept(grammarAccess.getComparisonAccess().getOpComparisonOperatorParserRuleCall_1_0(), semanticObject.getOp());
-		feeder.accept(grammarAccess.getComparisonAccess().getVarrightValueParserRuleCall_2_0(), semanticObject.getVarright());
-		feeder.finish();
+	protected void sequence_Call_MetaMethodCall(EObject context, MetaMethodCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (type=Datatype name=ID)
+	 *     (method=[Method|LOWERFIRST] parameters+=Value? parameters+=Value*)
+	 */
+	protected void sequence_Call_UserMethodCall(EObject context, UserMethodCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=Datatype name=LOWERFIRST)
 	 */
 	protected void sequence_Declaration(EObject context, Declaration semanticObject) {
 		if(errorAcceptor != null) {
@@ -180,7 +213,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDeclarationAccess().getTypeDatatypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDeclarationAccess().getNameLOWERFIRSTTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -203,7 +236,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (init=Expression check=Expression action=Expression bl=Block)
+	 *     (init=Expression check=Bool action=Expression bl=Block)
 	 */
 	protected void sequence_For(EObject context, For semanticObject) {
 		if(errorAcceptor != null) {
@@ -219,7 +252,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getForAccess().getInitExpressionParserRuleCall_2_0(), semanticObject.getInit());
-		feeder.accept(grammarAccess.getForAccess().getCheckExpressionParserRuleCall_4_0(), semanticObject.getCheck());
+		feeder.accept(grammarAccess.getForAccess().getCheckBoolParserRuleCall_4_0(), semanticObject.getCheck());
 		feeder.accept(grammarAccess.getForAccess().getActionExpressionParserRuleCall_6_0(), semanticObject.getAction());
 		feeder.accept(grammarAccess.getForAccess().getBlBlockParserRuleCall_8_0(), semanticObject.getBl());
 		feeder.finish();
@@ -228,7 +261,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (ex=Expression bl=Block)
+	 *     (ex=Bool bl=Block)
 	 */
 	protected void sequence_If(EObject context, If semanticObject) {
 		if(errorAcceptor != null) {
@@ -239,7 +272,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIfAccess().getExExpressionParserRuleCall_2_0(), semanticObject.getEx());
+		feeder.accept(grammarAccess.getIfAccess().getExBoolParserRuleCall_2_0(), semanticObject.getEx());
 		feeder.accept(grammarAccess.getIfAccess().getBlBlockParserRuleCall_4_0(), semanticObject.getBl());
 		feeder.finish();
 	}
@@ -271,34 +304,27 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     method=Method
+	 *     method=[Method|CAPITALFIRST]
 	 */
-	protected void sequence_MetaMethod(EObject context, MetaMethod semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.META_METHOD__METHOD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.META_METHOD__METHOD));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getMetaMethodAccess().getMethodMethodParserRuleCall_0_0(), semanticObject.getMethod());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID methods+=MetaMethod*)
-	 */
-	protected void sequence_MetaMethods(EObject context, MetaMethods semanticObject) {
+	protected void sequence_MetaMethodCall(EObject context, MetaMethodCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (type=Methodtype name=ID parameters+=Declaration? parameters+=Declaration*)
+	 *     (type=Methodtype name=CAPITALFIRST parameters+=Declaration? parameters+=Declaration*)
 	 */
-	protected void sequence_Method(EObject context, Method semanticObject) {
+	protected void sequence_MetaMethod(EObject context, MetaMethod semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LOWERFIRST methods+=MetaMethod*)
+	 */
+	protected void sequence_MetaMethods(EObject context, MetaMethods semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -321,7 +347,27 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID ((robottypes+=ID robotconfigs+=ID) | (robottypes+=ID robotconfigs+=ID)*) methods+=UserMethod*)
+	 *     val=Value
+	 */
+	protected void sequence_Return(EObject context, Return semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.RETURN__VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.RETURN__VAL));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getReturnAccess().getValValueParserRuleCall_1_0(), semanticObject.getVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         name=CAPITALFIRST 
+	 *         ((robottypes+=LOWERFIRST robotconfigs+=LOWERFIRST) | (robottypes+=LOWERFIRST robotconfigs+=LOWERFIRST)*) 
+	 *         methods+=UserMethod*
+	 *     )
 	 */
 	protected void sequence_Script(EObject context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -346,26 +392,25 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (method=Method bl=Block)
+	 *     method=[Method|LOWERFIRST]
 	 */
-	protected void sequence_UserMethod(EObject context, UserMethod semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.USER_METHOD__METHOD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.USER_METHOD__METHOD));
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.USER_METHOD__BL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.USER_METHOD__BL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUserMethodAccess().getMethodMethodParserRuleCall_0_0(), semanticObject.getMethod());
-		feeder.accept(grammarAccess.getUserMethodAccess().getBlBlockParserRuleCall_1_0(), semanticObject.getBl());
-		feeder.finish();
+	protected void sequence_UserMethodCall(EObject context, UserMethodCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     vari=[Declaration|ID]
+	 *     (type=Methodtype name=LOWERFIRST parameters+=Declaration? parameters+=Declaration* bl=Block)
+	 */
+	protected void sequence_UserMethod(EObject context, UserMethod semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     vari=[Declaration|LOWERFIRST]
 	 */
 	protected void sequence_VarReference(EObject context, VarReference semanticObject) {
 		if(errorAcceptor != null) {
@@ -374,14 +419,14 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVarReferenceAccess().getVariDeclarationIDTerminalRuleCall_0_1(), semanticObject.getVari());
+		feeder.accept(grammarAccess.getVarReferenceAccess().getVariDeclarationLOWERFIRSTTerminalRuleCall_0_1(), semanticObject.getVari());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (ex=Expression bl=Block)
+	 *     (ex=Bool bl=Block)
 	 */
 	protected void sequence_While(EObject context, While semanticObject) {
 		if(errorAcceptor != null) {
@@ -392,7 +437,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getWhileAccess().getExExpressionParserRuleCall_2_0(), semanticObject.getEx());
+		feeder.accept(grammarAccess.getWhileAccess().getExBoolParserRuleCall_2_0(), semanticObject.getEx());
 		feeder.accept(grammarAccess.getWhileAccess().getBlBlockParserRuleCall_4_0(), semanticObject.getBl());
 		feeder.finish();
 	}

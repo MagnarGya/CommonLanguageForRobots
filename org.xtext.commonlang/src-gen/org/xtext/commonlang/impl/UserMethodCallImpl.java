@@ -5,25 +5,25 @@ package org.xtext.commonlang.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.MetaMethod;
+import org.xtext.commonlang.UserMethodCall;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Meta Method</b></em>'.
+ * An implementation of the model object '<em><b>User Method Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class MetaMethodImpl extends MethodImpl implements MetaMethod
+public class UserMethodCallImpl extends CallImpl implements UserMethodCall
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MetaMethodImpl()
+  protected UserMethodCallImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class MetaMethodImpl extends MethodImpl implements MetaMethod
   @Override
   protected EClass eStaticClass()
   {
-    return CommonlangPackage.Literals.META_METHOD;
+    return CommonlangPackage.Literals.USER_METHOD_CALL;
   }
 
-} //MetaMethodImpl
+} //UserMethodCallImpl

@@ -2,7 +2,6 @@
  */
 package org.xtext.commonlang;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.commonlang.UserMethod#getMethod <em>Method</em>}</li>
  *   <li>{@link org.xtext.commonlang.UserMethod#getBl <em>Bl</em>}</li>
  * </ul>
  * </p>
@@ -21,34 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface UserMethod extends EObject
+public interface UserMethod extends Method
 {
-  /**
-   * Returns the value of the '<em><b>Method</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Method</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Method</em>' containment reference.
-   * @see #setMethod(Method)
-   * @see org.xtext.commonlang.CommonlangPackage#getUserMethod_Method()
-   * @model containment="true"
-   * @generated
-   */
-  Method getMethod();
-
-  /**
-   * Sets the value of the '{@link org.xtext.commonlang.UserMethod#getMethod <em>Method</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method</em>' containment reference.
-   * @see #getMethod()
-   * @generated
-   */
-  void setMethod(Method value);
-
   /**
    * Returns the value of the '<em><b>Bl</b></em>' containment reference.
    * <!-- begin-user-doc -->

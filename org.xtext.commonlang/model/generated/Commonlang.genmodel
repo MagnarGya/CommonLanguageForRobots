@@ -8,14 +8,16 @@
   <genPackages prefix="Commonlang" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="commonlang" ecorePackage="Commonlang.ecore#/">
     <genClasses ecoreClass="Commonlang.ecore#//CLfile">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//CLfile/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//CLfile/mets"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Script/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Script/robottypes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Script/robotconfigs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Script/methods"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//MetaMethods">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//MetaMethods/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//MetaMethods/methods"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Block">
@@ -28,29 +30,30 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Assignment/vari"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Assignment/value"/>
     </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Call">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Call/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Call/method"/>
+    </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Method">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Method/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Method/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Method/parameters"/>
     </genClasses>
-    <genClasses ecoreClass="Commonlang.ecore#//Call">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Call/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Call/parameters"/>
-    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//MetaMethod"/>
     <genClasses ecoreClass="Commonlang.ecore#//UserMethod">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//UserMethod/method"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//UserMethod/bl"/>
     </genClasses>
-    <genClasses ecoreClass="Commonlang.ecore#//MetaMethod">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//MetaMethod/method"/>
-    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//UserMethodCall"/>
+    <genClasses ecoreClass="Commonlang.ecore#//MetaMethodCall"/>
     <genClasses ecoreClass="Commonlang.ecore#//MetaMetaMethod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//MetaMetaMethod/name"/>
     </genClasses>
-    <genClasses ecoreClass="Commonlang.ecore#//Comparison">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Comparison/varleft"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Comparison/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Comparison/varright"/>
+    <genClasses ecoreClass="Commonlang.ecore#//Bool">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Bool/varleft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Bool/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Bool/varright"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Bool/bop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Bool/bnext"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//If">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/ex"/>
@@ -82,6 +85,9 @@
     <genClasses ecoreClass="Commonlang.ecore#//Declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Declaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Declaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Return">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Return/val"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

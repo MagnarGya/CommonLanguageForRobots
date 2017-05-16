@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.BasicValue;
 import org.xtext.commonlang.Block;
+import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.BooleanValue;
 import org.xtext.commonlang.CLfile;
 import org.xtext.commonlang.Call;
 import org.xtext.commonlang.CommonlangFactory;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Comparison;
 import org.xtext.commonlang.Declaration;
 import org.xtext.commonlang.Else;
 import org.xtext.commonlang.Expression;
@@ -25,14 +25,17 @@ import org.xtext.commonlang.For;
 import org.xtext.commonlang.If;
 import org.xtext.commonlang.MetaMetaMethod;
 import org.xtext.commonlang.MetaMethod;
+import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
 import org.xtext.commonlang.Method;
 import org.xtext.commonlang.NumberValue;
+import org.xtext.commonlang.Return;
 import org.xtext.commonlang.Script;
 import org.xtext.commonlang.SimpleExpression;
 import org.xtext.commonlang.StringValue;
 import org.xtext.commonlang.StructureExpression;
 import org.xtext.commonlang.UserMethod;
+import org.xtext.commonlang.UserMethodCall;
 import org.xtext.commonlang.Value;
 import org.xtext.commonlang.VarReference;
 import org.xtext.commonlang.While;
@@ -106,13 +109,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass methodEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass callEClass = null;
 
   /**
@@ -120,7 +116,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass userMethodEClass = null;
+  private EClass methodEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,6 +130,27 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass userMethodEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass userMethodCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metaMethodCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass metaMetaMethodEClass = null;
 
   /**
@@ -141,7 +158,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass comparisonEClass = null;
+  private EClass boolEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -221,6 +238,13 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
   private EClass declarationEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnEClass = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -298,9 +322,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCLfile_Name()
+  public EReference getCLfile_Mets()
   {
-    return (EAttribute)cLfileEClass.getEStructuralFeatures().get(0);
+    return (EReference)cLfileEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -318,7 +342,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScript_Robottypes()
+  public EAttribute getScript_Name()
   {
     return (EAttribute)scriptEClass.getEStructuralFeatures().get(0);
   }
@@ -328,7 +352,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScript_Robotconfigs()
+  public EAttribute getScript_Robottypes()
   {
     return (EAttribute)scriptEClass.getEStructuralFeatures().get(1);
   }
@@ -338,9 +362,19 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getScript_Robotconfigs()
+  {
+    return (EAttribute)scriptEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getScript_Methods()
   {
-    return (EReference)scriptEClass.getEStructuralFeatures().get(2);
+    return (EReference)scriptEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -358,9 +392,19 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getMetaMethods_Name()
+  {
+    return (EAttribute)metaMethodsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getMetaMethods_Methods()
   {
-    return (EReference)metaMethodsEClass.getEStructuralFeatures().get(0);
+    return (EReference)metaMethodsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -448,6 +492,36 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCall()
+  {
+    return callEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCall_Parameters()
+  {
+    return (EReference)callEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCall_Method()
+  {
+    return (EReference)callEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMethod()
   {
     return methodEClass;
@@ -488,29 +562,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCall()
+  public EClass getMetaMethod()
   {
-    return callEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCall_Name()
-  {
-    return (EReference)callEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCall_Parameters()
-  {
-    return (EReference)callEClass.getEStructuralFeatures().get(1);
+    return metaMethodEClass;
   }
 
   /**
@@ -528,7 +582,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUserMethod_Method()
+  public EReference getUserMethod_Bl()
   {
     return (EReference)userMethodEClass.getEStructuralFeatures().get(0);
   }
@@ -538,9 +592,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUserMethod_Bl()
+  public EClass getUserMethodCall()
   {
-    return (EReference)userMethodEClass.getEStructuralFeatures().get(1);
+    return userMethodCallEClass;
   }
 
   /**
@@ -548,19 +602,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMetaMethod()
+  public EClass getMetaMethodCall()
   {
-    return metaMethodEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMetaMethod_Method()
-  {
-    return (EReference)metaMethodEClass.getEStructuralFeatures().get(0);
+    return metaMethodCallEClass;
   }
 
   /**
@@ -588,9 +632,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComparison()
+  public EClass getBool()
   {
-    return comparisonEClass;
+    return boolEClass;
   }
 
   /**
@@ -598,9 +642,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComparison_Varleft()
+  public EReference getBool_Varleft()
   {
-    return (EReference)comparisonEClass.getEStructuralFeatures().get(0);
+    return (EReference)boolEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -608,9 +652,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComparison_Op()
+  public EAttribute getBool_Op()
   {
-    return (EAttribute)comparisonEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -618,9 +662,29 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComparison_Varright()
+  public EReference getBool_Varright()
   {
-    return (EReference)comparisonEClass.getEStructuralFeatures().get(2);
+    return (EReference)boolEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBool_Bop()
+  {
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBool_Bnext()
+  {
+    return (EReference)boolEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -868,6 +932,26 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getReturn()
+  {
+    return returnEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturn_Val()
+  {
+    return (EReference)returnEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public CommonlangFactory getCommonlangFactory()
   {
     return (CommonlangFactory)getEFactoryInstance();
@@ -894,14 +978,16 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     // Create classes and their features
     cLfileEClass = createEClass(CLFILE);
-    createEAttribute(cLfileEClass, CLFILE__NAME);
+    createEReference(cLfileEClass, CLFILE__METS);
 
     scriptEClass = createEClass(SCRIPT);
+    createEAttribute(scriptEClass, SCRIPT__NAME);
     createEAttribute(scriptEClass, SCRIPT__ROBOTTYPES);
     createEAttribute(scriptEClass, SCRIPT__ROBOTCONFIGS);
     createEReference(scriptEClass, SCRIPT__METHODS);
 
     metaMethodsEClass = createEClass(META_METHODS);
+    createEAttribute(metaMethodsEClass, META_METHODS__NAME);
     createEReference(metaMethodsEClass, META_METHODS__METHODS);
 
     blockEClass = createEClass(BLOCK);
@@ -917,29 +1003,33 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     createEReference(assignmentEClass, ASSIGNMENT__VARI);
     createEReference(assignmentEClass, ASSIGNMENT__VALUE);
 
+    callEClass = createEClass(CALL);
+    createEReference(callEClass, CALL__PARAMETERS);
+    createEReference(callEClass, CALL__METHOD);
+
     methodEClass = createEClass(METHOD);
     createEAttribute(methodEClass, METHOD__TYPE);
     createEAttribute(methodEClass, METHOD__NAME);
     createEReference(methodEClass, METHOD__PARAMETERS);
 
-    callEClass = createEClass(CALL);
-    createEReference(callEClass, CALL__NAME);
-    createEReference(callEClass, CALL__PARAMETERS);
+    metaMethodEClass = createEClass(META_METHOD);
 
     userMethodEClass = createEClass(USER_METHOD);
-    createEReference(userMethodEClass, USER_METHOD__METHOD);
     createEReference(userMethodEClass, USER_METHOD__BL);
 
-    metaMethodEClass = createEClass(META_METHOD);
-    createEReference(metaMethodEClass, META_METHOD__METHOD);
+    userMethodCallEClass = createEClass(USER_METHOD_CALL);
+
+    metaMethodCallEClass = createEClass(META_METHOD_CALL);
 
     metaMetaMethodEClass = createEClass(META_META_METHOD);
     createEAttribute(metaMetaMethodEClass, META_META_METHOD__NAME);
 
-    comparisonEClass = createEClass(COMPARISON);
-    createEReference(comparisonEClass, COMPARISON__VARLEFT);
-    createEAttribute(comparisonEClass, COMPARISON__OP);
-    createEReference(comparisonEClass, COMPARISON__VARRIGHT);
+    boolEClass = createEClass(BOOL);
+    createEReference(boolEClass, BOOL__VARLEFT);
+    createEAttribute(boolEClass, BOOL__OP);
+    createEReference(boolEClass, BOOL__VARRIGHT);
+    createEAttribute(boolEClass, BOOL__BOP);
+    createEReference(boolEClass, BOOL__BNEXT);
 
     ifEClass = createEClass(IF);
     createEReference(ifEClass, IF__EX);
@@ -975,6 +1065,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     declarationEClass = createEClass(DECLARATION);
     createEAttribute(declarationEClass, DECLARATION__TYPE);
     createEAttribute(declarationEClass, DECLARATION__NAME);
+
+    returnEClass = createEClass(RETURN);
+    createEReference(returnEClass, RETURN__VAL);
   }
 
   /**
@@ -1006,14 +1099,16 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    scriptEClass.getESuperTypes().add(this.getCLfile());
-    metaMethodsEClass.getESuperTypes().add(this.getCLfile());
     blockEClass.getESuperTypes().add(this.getStructureExpression());
     simpleExpressionEClass.getESuperTypes().add(this.getExpression());
     structureExpressionEClass.getESuperTypes().add(this.getExpression());
     assignmentEClass.getESuperTypes().add(this.getSimpleExpression());
     callEClass.getESuperTypes().add(this.getSimpleExpression());
-    comparisonEClass.getESuperTypes().add(this.getSimpleExpression());
+    callEClass.getESuperTypes().add(this.getValue());
+    metaMethodEClass.getESuperTypes().add(this.getMethod());
+    userMethodEClass.getESuperTypes().add(this.getMethod());
+    userMethodCallEClass.getESuperTypes().add(this.getCall());
+    metaMethodCallEClass.getESuperTypes().add(this.getCall());
     ifEClass.getESuperTypes().add(this.getStructureExpression());
     elseEClass.getESuperTypes().add(this.getStructureExpression());
     forEClass.getESuperTypes().add(this.getStructureExpression());
@@ -1023,17 +1118,20 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     stringValueEClass.getESuperTypes().add(this.getBasicValue());
     numberValueEClass.getESuperTypes().add(this.getBasicValue());
     varReferenceEClass.getESuperTypes().add(this.getValue());
+    returnEClass.getESuperTypes().add(this.getSimpleExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(cLfileEClass, CLfile.class, "CLfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCLfile_Name(), ecorePackage.getEString(), "name", null, 0, 1, CLfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCLfile_Mets(), ecorePackage.getEObject(), null, "mets", null, 0, -1, CLfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScript_Robottypes(), ecorePackage.getEString(), "robottypes", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScript_Robotconfigs(), ecorePackage.getEString(), "robotconfigs", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScript_Methods(), this.getUserMethod(), null, "methods", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(metaMethodsEClass, MetaMethods.class, "MetaMethods", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMetaMethods_Name(), ecorePackage.getEString(), "name", null, 0, 1, MetaMethods.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMetaMethods_Methods(), this.getMetaMethod(), null, "methods", null, 0, -1, MetaMethods.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1049,32 +1147,36 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEReference(getAssignment_Vari(), this.getDeclaration(), null, "vari", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAssignment_Value(), this.getValue(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCall_Parameters(), this.getValue(), null, "parameters", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCall_Method(), this.getMethod(), null, "method", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMethod_Type(), ecorePackage.getEString(), "type", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMethod_Parameters(), this.getDeclaration(), null, "parameters", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCall_Name(), this.getMethod(), null, "name", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCall_Parameters(), this.getValue(), null, "parameters", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(metaMethodEClass, MetaMethod.class, "MetaMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(userMethodEClass, UserMethod.class, "UserMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUserMethod_Method(), this.getMethod(), null, "method", null, 0, 1, UserMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUserMethod_Bl(), this.getBlock(), null, "bl", null, 0, 1, UserMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(metaMethodEClass, MetaMethod.class, "MetaMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMetaMethod_Method(), this.getMethod(), null, "method", null, 0, 1, MetaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(userMethodCallEClass, UserMethodCall.class, "UserMethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(metaMethodCallEClass, MetaMethodCall.class, "MetaMethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(metaMetaMethodEClass, MetaMetaMethod.class, "MetaMetaMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMetaMetaMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, MetaMetaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(comparisonEClass, Comparison.class, "Comparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComparison_Varleft(), this.getValue(), null, "varleft", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComparison_Op(), ecorePackage.getEString(), "op", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComparison_Varright(), this.getValue(), null, "varright", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBool_Varleft(), this.getValue(), null, "varleft", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBool_Op(), ecorePackage.getEString(), "op", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBool_Varright(), this.getValue(), null, "varright", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBool_Bop(), ecorePackage.getEString(), "bop", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBool_Bnext(), this.getBool(), null, "bnext", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIf_Ex(), this.getExpression(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Ex(), this.getBool(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIf_Bl(), this.getBlock(), null, "bl", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1082,12 +1184,12 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     initEClass(forEClass, For.class, "For", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFor_Init(), this.getExpression(), null, "init", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFor_Check(), this.getExpression(), null, "check", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFor_Check(), this.getBool(), null, "check", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFor_Action(), this.getExpression(), null, "action", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFor_Bl(), this.getBlock(), null, "bl", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhile_Ex(), this.getExpression(), null, "ex", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhile_Ex(), this.getBool(), null, "ex", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWhile_Bl(), this.getBlock(), null, "bl", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1107,6 +1209,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDeclaration_Type(), ecorePackage.getEString(), "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnEClass, Return.class, "Return", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturn_Val(), this.getValue(), null, "val", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -21,13 +21,15 @@ public class CommonlangSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CommonlangGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Call_CommaKeyword_3_0_p;
-	protected AbstractElementAlias match_Method_CommaKeyword_4_0_p;
+	protected AbstractElementAlias match_MetaMethod_CommaKeyword_5_0_p;
+	protected AbstractElementAlias match_UserMethod_CommaKeyword_4_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CommonlangGrammarAccess) access;
 		match_Call_CommaKeyword_3_0_p = new TokenAlias(true, false, grammarAccess.getCallAccess().getCommaKeyword_3_0());
-		match_Method_CommaKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getMethodAccess().getCommaKeyword_4_0());
+		match_MetaMethod_CommaKeyword_5_0_p = new TokenAlias(true, false, grammarAccess.getMetaMethodAccess().getCommaKeyword_5_0());
+		match_UserMethod_CommaKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getUserMethodAccess().getCommaKeyword_4_0());
 	}
 	
 	@Override
@@ -44,8 +46,10 @@ public class CommonlangSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Call_CommaKeyword_3_0_p.equals(syntax))
 				emit_Call_CommaKeyword_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Method_CommaKeyword_4_0_p.equals(syntax))
-				emit_Method_CommaKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_MetaMethod_CommaKeyword_5_0_p.equals(syntax))
+				emit_MetaMethod_CommaKeyword_5_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_UserMethod_CommaKeyword_4_0_p.equals(syntax))
+				emit_UserMethod_CommaKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -55,7 +59,8 @@ public class CommonlangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=[Method|ID] '(' (ambiguity) parameters+=Value
+	 *     method=[Method|CAPITALFIRST] '(' (ambiguity) parameters+=Value
+	 *     method=[Method|LOWERFIRST] '(' (ambiguity) parameters+=Value
 	 *     parameters+=Value (ambiguity) parameters+=Value
 	 */
 	protected void emit_Call_CommaKeyword_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -67,10 +72,22 @@ public class CommonlangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID '(' (ambiguity) parameters+=Declaration
+	 *     name=CAPITALFIRST '(' (ambiguity) parameters+=Declaration
 	 *     parameters+=Declaration (ambiguity) parameters+=Declaration
 	 */
-	protected void emit_Method_CommaKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_MetaMethod_CommaKeyword_5_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=LOWERFIRST '(' (ambiguity) parameters+=Declaration
+	 *     parameters+=Declaration (ambiguity) parameters+=Declaration
+	 */
+	protected void emit_UserMethod_CommaKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

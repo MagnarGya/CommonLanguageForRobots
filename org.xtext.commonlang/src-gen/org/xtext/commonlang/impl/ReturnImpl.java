@@ -10,41 +10,41 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.xtext.commonlang.Block;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.UserMethod;
+import org.xtext.commonlang.Return;
+import org.xtext.commonlang.Value;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>User Method</b></em>'.
+ * An implementation of the model object '<em><b>Return</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.UserMethodImpl#getBl <em>Bl</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.ReturnImpl#getVal <em>Val</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UserMethodImpl extends MethodImpl implements UserMethod
+public class ReturnImpl extends SimpleExpressionImpl implements Return
 {
   /**
-   * The cached value of the '{@link #getBl() <em>Bl</em>}' containment reference.
+   * The cached value of the '{@link #getVal() <em>Val</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBl()
+   * @see #getVal()
    * @generated
    * @ordered
    */
-  protected Block bl;
+  protected Value val;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UserMethodImpl()
+  protected ReturnImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
   @Override
   protected EClass eStaticClass()
   {
-    return CommonlangPackage.Literals.USER_METHOD;
+    return CommonlangPackage.Literals.RETURN;
   }
 
   /**
@@ -65,9 +65,9 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
    * <!-- end-user-doc -->
    * @generated
    */
-  public Block getBl()
+  public Value getVal()
   {
-    return bl;
+    return val;
   }
 
   /**
@@ -75,13 +75,13 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBl(Block newBl, NotificationChain msgs)
+  public NotificationChain basicSetVal(Value newVal, NotificationChain msgs)
   {
-    Block oldBl = bl;
-    bl = newBl;
+    Value oldVal = val;
+    val = newVal;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.USER_METHOD__BL, oldBl, newBl);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.RETURN__VAL, oldVal, newVal);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBl(Block newBl)
+  public void setVal(Value newVal)
   {
-    if (newBl != bl)
+    if (newVal != val)
     {
       NotificationChain msgs = null;
-      if (bl != null)
-        msgs = ((InternalEObject)bl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.USER_METHOD__BL, null, msgs);
-      if (newBl != null)
-        msgs = ((InternalEObject)newBl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.USER_METHOD__BL, null, msgs);
-      msgs = basicSetBl(newBl, msgs);
+      if (val != null)
+        msgs = ((InternalEObject)val).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.RETURN__VAL, null, msgs);
+      if (newVal != null)
+        msgs = ((InternalEObject)newVal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.RETURN__VAL, null, msgs);
+      msgs = basicSetVal(newVal, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.USER_METHOD__BL, newBl, newBl));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.RETURN__VAL, newVal, newVal));
   }
 
   /**
@@ -118,8 +118,8 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
   {
     switch (featureID)
     {
-      case CommonlangPackage.USER_METHOD__BL:
-        return basicSetBl(null, msgs);
+      case CommonlangPackage.RETURN__VAL:
+        return basicSetVal(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
   {
     switch (featureID)
     {
-      case CommonlangPackage.USER_METHOD__BL:
-        return getBl();
+      case CommonlangPackage.RETURN__VAL:
+        return getVal();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
   {
     switch (featureID)
     {
-      case CommonlangPackage.USER_METHOD__BL:
-        setBl((Block)newValue);
+      case CommonlangPackage.RETURN__VAL:
+        setVal((Value)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
   {
     switch (featureID)
     {
-      case CommonlangPackage.USER_METHOD__BL:
-        setBl((Block)null);
+      case CommonlangPackage.RETURN__VAL:
+        setVal((Value)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class UserMethodImpl extends MethodImpl implements UserMethod
   {
     switch (featureID)
     {
-      case CommonlangPackage.USER_METHOD__BL:
-        return bl != null;
+      case CommonlangPackage.RETURN__VAL:
+        return val != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //UserMethodImpl
+} //ReturnImpl

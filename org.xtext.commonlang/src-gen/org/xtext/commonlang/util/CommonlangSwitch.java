@@ -83,7 +83,6 @@ public class CommonlangSwitch<T> extends Switch<T>
       {
         Script script = (Script)theEObject;
         T result = caseScript(script);
-        if (result == null) result = caseCLfile(script);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -91,7 +90,6 @@ public class CommonlangSwitch<T> extends Switch<T>
       {
         MetaMethods metaMethods = (MetaMethods)theEObject;
         T result = caseMetaMethods(metaMethods);
-        if (result == null) result = caseCLfile(metaMethods);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,6 +134,16 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CommonlangPackage.CALL:
+      {
+        Call call = (Call)theEObject;
+        T result = caseCall(call);
+        if (result == null) result = caseSimpleExpression(call);
+        if (result == null) result = caseValue(call);
+        if (result == null) result = caseExpression(call);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CommonlangPackage.METHOD:
       {
         Method method = (Method)theEObject;
@@ -143,12 +151,11 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CommonlangPackage.CALL:
+      case CommonlangPackage.META_METHOD:
       {
-        Call call = (Call)theEObject;
-        T result = caseCall(call);
-        if (result == null) result = caseSimpleExpression(call);
-        if (result == null) result = caseExpression(call);
+        MetaMethod metaMethod = (MetaMethod)theEObject;
+        T result = caseMetaMethod(metaMethod);
+        if (result == null) result = caseMethod(metaMethod);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,13 +163,29 @@ public class CommonlangSwitch<T> extends Switch<T>
       {
         UserMethod userMethod = (UserMethod)theEObject;
         T result = caseUserMethod(userMethod);
+        if (result == null) result = caseMethod(userMethod);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CommonlangPackage.META_METHOD:
+      case CommonlangPackage.USER_METHOD_CALL:
       {
-        MetaMethod metaMethod = (MetaMethod)theEObject;
-        T result = caseMetaMethod(metaMethod);
+        UserMethodCall userMethodCall = (UserMethodCall)theEObject;
+        T result = caseUserMethodCall(userMethodCall);
+        if (result == null) result = caseCall(userMethodCall);
+        if (result == null) result = caseSimpleExpression(userMethodCall);
+        if (result == null) result = caseValue(userMethodCall);
+        if (result == null) result = caseExpression(userMethodCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CommonlangPackage.META_METHOD_CALL:
+      {
+        MetaMethodCall metaMethodCall = (MetaMethodCall)theEObject;
+        T result = caseMetaMethodCall(metaMethodCall);
+        if (result == null) result = caseCall(metaMethodCall);
+        if (result == null) result = caseSimpleExpression(metaMethodCall);
+        if (result == null) result = caseValue(metaMethodCall);
+        if (result == null) result = caseExpression(metaMethodCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -173,12 +196,10 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CommonlangPackage.COMPARISON:
+      case CommonlangPackage.BOOL:
       {
-        Comparison comparison = (Comparison)theEObject;
-        T result = caseComparison(comparison);
-        if (result == null) result = caseSimpleExpression(comparison);
-        if (result == null) result = caseExpression(comparison);
+        Bool bool = (Bool)theEObject;
+        T result = caseBool(bool);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -272,6 +293,15 @@ public class CommonlangSwitch<T> extends Switch<T>
       {
         Declaration declaration = (Declaration)theEObject;
         T result = caseDeclaration(declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CommonlangPackage.RETURN:
+      {
+        Return return_ = (Return)theEObject;
+        T result = caseReturn(return_);
+        if (result == null) result = caseSimpleExpression(return_);
+        if (result == null) result = caseExpression(return_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -408,22 +438,6 @@ public class CommonlangSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Method</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Method</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMethod(Method object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -440,17 +454,17 @@ public class CommonlangSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>User Method</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Method</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>User Method</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Method</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUserMethod(UserMethod object)
+  public T caseMethod(Method object)
   {
     return null;
   }
@@ -472,6 +486,54 @@ public class CommonlangSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>User Method</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>User Method</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUserMethod(UserMethod object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>User Method Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>User Method Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUserMethodCall(UserMethodCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Meta Method Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Meta Method Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetaMethodCall(MetaMethodCall object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Meta Meta Method</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -488,17 +550,17 @@ public class CommonlangSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Comparison</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Bool</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comparison</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Bool</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComparison(Comparison object)
+  public T caseBool(Bool object)
   {
     return null;
   }
@@ -675,6 +737,22 @@ public class CommonlangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDeclaration(Declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturn(Return object)
   {
     return null;
   }

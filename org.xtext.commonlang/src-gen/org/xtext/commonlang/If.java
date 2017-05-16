@@ -31,12 +31,12 @@ public interface If extends StructureExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ex</em>' containment reference.
-   * @see #setEx(Expression)
+   * @see #setEx(Bool)
    * @see org.xtext.commonlang.CommonlangPackage#getIf_Ex()
    * @model containment="true"
    * @generated
    */
-  Expression getEx();
+  Bool getEx();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.If#getEx <em>Ex</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface If extends StructureExpression
    * @see #getEx()
    * @generated
    */
-  void setEx(Expression value);
+  void setEx(Bool value);
 
   /**
    * Returns the value of the '<em><b>Bl</b></em>' containment reference.

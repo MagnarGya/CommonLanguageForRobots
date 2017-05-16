@@ -72,12 +72,14 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.STRUCTURE_EXPRESSION: return createStructureExpression();
       case CommonlangPackage.EXPRESSION: return createExpression();
       case CommonlangPackage.ASSIGNMENT: return createAssignment();
-      case CommonlangPackage.METHOD: return createMethod();
       case CommonlangPackage.CALL: return createCall();
-      case CommonlangPackage.USER_METHOD: return createUserMethod();
+      case CommonlangPackage.METHOD: return createMethod();
       case CommonlangPackage.META_METHOD: return createMetaMethod();
+      case CommonlangPackage.USER_METHOD: return createUserMethod();
+      case CommonlangPackage.USER_METHOD_CALL: return createUserMethodCall();
+      case CommonlangPackage.META_METHOD_CALL: return createMetaMethodCall();
       case CommonlangPackage.META_META_METHOD: return createMetaMetaMethod();
-      case CommonlangPackage.COMPARISON: return createComparison();
+      case CommonlangPackage.BOOL: return createBool();
       case CommonlangPackage.IF: return createIf();
       case CommonlangPackage.ELSE: return createElse();
       case CommonlangPackage.FOR: return createFor();
@@ -89,6 +91,7 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.NUMBER_VALUE: return createNumberValue();
       case CommonlangPackage.VAR_REFERENCE: return createVarReference();
       case CommonlangPackage.DECLARATION: return createDeclaration();
+      case CommonlangPackage.RETURN: return createReturn();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -187,17 +190,6 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public Method createMethod()
-  {
-    MethodImpl method = new MethodImpl();
-    return method;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Call createCall()
   {
     CallImpl call = new CallImpl();
@@ -209,10 +201,10 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public UserMethod createUserMethod()
+  public Method createMethod()
   {
-    UserMethodImpl userMethod = new UserMethodImpl();
-    return userMethod;
+    MethodImpl method = new MethodImpl();
+    return method;
   }
 
   /**
@@ -231,6 +223,39 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
    * <!-- end-user-doc -->
    * @generated
    */
+  public UserMethod createUserMethod()
+  {
+    UserMethodImpl userMethod = new UserMethodImpl();
+    return userMethod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UserMethodCall createUserMethodCall()
+  {
+    UserMethodCallImpl userMethodCall = new UserMethodCallImpl();
+    return userMethodCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MetaMethodCall createMetaMethodCall()
+  {
+    MetaMethodCallImpl metaMethodCall = new MetaMethodCallImpl();
+    return metaMethodCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MetaMetaMethod createMetaMetaMethod()
   {
     MetaMetaMethodImpl metaMetaMethod = new MetaMetaMethodImpl();
@@ -242,10 +267,10 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public Comparison createComparison()
+  public Bool createBool()
   {
-    ComparisonImpl comparison = new ComparisonImpl();
-    return comparison;
+    BoolImpl bool = new BoolImpl();
+    return bool;
   }
 
   /**
@@ -367,6 +392,17 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
   {
     DeclarationImpl declaration = new DeclarationImpl();
     return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return createReturn()
+  {
+    ReturnImpl return_ = new ReturnImpl();
+    return return_;
   }
 
   /**

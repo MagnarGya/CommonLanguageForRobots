@@ -3,6 +3,16 @@
  */
 package org.xtext.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import org.xtext.commonlang.CommonlangPackage.Literals
+import org.xtext.commonlang.MetaMethod
+import org.xtext.commonlang.MetaMethodCall
+import com.google.inject.Inject
+
 /**
  * This class contains custom scoping description.
  * 
@@ -10,6 +20,18 @@ package org.xtext.scoping
  * on how and when to use it.
  *
  */
-class CommonlangScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+class CommonlangScopeProvider extends AbstractDeclarativeScopeProvider {
+	override getScope(EObject context, EReference reference) {
+	    if (context instanceof MetaMethodCall
+	            && reference == Literals.CALL__METHOD) {
+	
+	        var rootElement = EcoreUtil2.getRootContainer(context)
+	        val candidates = EcoreUtil2.getAllContentsOfType(rootElement, MetaMethod)
 
+			
+
+			return Scopes.scopeFor(candidates);
+	    }
+		return super.getScope(context, reference);
+	}
 }

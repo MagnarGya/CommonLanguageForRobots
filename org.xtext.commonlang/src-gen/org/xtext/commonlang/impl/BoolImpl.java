@@ -9,27 +9,30 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Comparison;
 import org.xtext.commonlang.Value;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Comparison</b></em>'.
+ * An implementation of the model object '<em><b>Bool</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.ComparisonImpl#getVarleft <em>Varleft</em>}</li>
- *   <li>{@link org.xtext.commonlang.impl.ComparisonImpl#getOp <em>Op</em>}</li>
- *   <li>{@link org.xtext.commonlang.impl.ComparisonImpl#getVarright <em>Varright</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.BoolImpl#getVarleft <em>Varleft</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.BoolImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.BoolImpl#getVarright <em>Varright</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.BoolImpl#getBop <em>Bop</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.BoolImpl#getBnext <em>Bnext</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
+public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
 {
   /**
    * The cached value of the '{@link #getVarleft() <em>Varleft</em>}' containment reference.
@@ -72,11 +75,41 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   protected Value varright;
 
   /**
+   * The default value of the '{@link #getBop() <em>Bop</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBop()
+   * @generated
+   * @ordered
+   */
+  protected static final String BOP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getBop() <em>Bop</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBop()
+   * @generated
+   * @ordered
+   */
+  protected String bop = BOP_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getBnext() <em>Bnext</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBnext()
+   * @generated
+   * @ordered
+   */
+  protected Bool bnext;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComparisonImpl()
+  protected BoolImpl()
   {
     super();
   }
@@ -89,7 +122,7 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   @Override
   protected EClass eStaticClass()
   {
-    return CommonlangPackage.Literals.COMPARISON;
+    return CommonlangPackage.Literals.BOOL;
   }
 
   /**
@@ -113,7 +146,7 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
     varleft = newVarleft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.COMPARISON__VARLEFT, oldVarleft, newVarleft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__VARLEFT, oldVarleft, newVarleft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -130,14 +163,14 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
     {
       NotificationChain msgs = null;
       if (varleft != null)
-        msgs = ((InternalEObject)varleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.COMPARISON__VARLEFT, null, msgs);
+        msgs = ((InternalEObject)varleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BOOL__VARLEFT, null, msgs);
       if (newVarleft != null)
-        msgs = ((InternalEObject)newVarleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.COMPARISON__VARLEFT, null, msgs);
+        msgs = ((InternalEObject)newVarleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BOOL__VARLEFT, null, msgs);
       msgs = basicSetVarleft(newVarleft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.COMPARISON__VARLEFT, newVarleft, newVarleft));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__VARLEFT, newVarleft, newVarleft));
   }
 
   /**
@@ -160,7 +193,7 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
     String oldOp = op;
     op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.COMPARISON__OP, oldOp, op));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__OP, oldOp, op));
   }
 
   /**
@@ -184,7 +217,7 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
     varright = newVarright;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.COMPARISON__VARRIGHT, oldVarright, newVarright);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__VARRIGHT, oldVarright, newVarright);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -201,14 +234,85 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
     {
       NotificationChain msgs = null;
       if (varright != null)
-        msgs = ((InternalEObject)varright).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.COMPARISON__VARRIGHT, null, msgs);
+        msgs = ((InternalEObject)varright).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BOOL__VARRIGHT, null, msgs);
       if (newVarright != null)
-        msgs = ((InternalEObject)newVarright).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.COMPARISON__VARRIGHT, null, msgs);
+        msgs = ((InternalEObject)newVarright).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BOOL__VARRIGHT, null, msgs);
       msgs = basicSetVarright(newVarright, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.COMPARISON__VARRIGHT, newVarright, newVarright));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__VARRIGHT, newVarright, newVarright));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getBop()
+  {
+    return bop;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBop(String newBop)
+  {
+    String oldBop = bop;
+    bop = newBop;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__BOP, oldBop, bop));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Bool getBnext()
+  {
+    return bnext;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBnext(Bool newBnext, NotificationChain msgs)
+  {
+    Bool oldBnext = bnext;
+    bnext = newBnext;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__BNEXT, oldBnext, newBnext);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBnext(Bool newBnext)
+  {
+    if (newBnext != bnext)
+    {
+      NotificationChain msgs = null;
+      if (bnext != null)
+        msgs = ((InternalEObject)bnext).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BOOL__BNEXT, null, msgs);
+      if (newBnext != null)
+        msgs = ((InternalEObject)newBnext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BOOL__BNEXT, null, msgs);
+      msgs = basicSetBnext(newBnext, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.BOOL__BNEXT, newBnext, newBnext));
   }
 
   /**
@@ -221,10 +325,12 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   {
     switch (featureID)
     {
-      case CommonlangPackage.COMPARISON__VARLEFT:
+      case CommonlangPackage.BOOL__VARLEFT:
         return basicSetVarleft(null, msgs);
-      case CommonlangPackage.COMPARISON__VARRIGHT:
+      case CommonlangPackage.BOOL__VARRIGHT:
         return basicSetVarright(null, msgs);
+      case CommonlangPackage.BOOL__BNEXT:
+        return basicSetBnext(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -239,12 +345,16 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   {
     switch (featureID)
     {
-      case CommonlangPackage.COMPARISON__VARLEFT:
+      case CommonlangPackage.BOOL__VARLEFT:
         return getVarleft();
-      case CommonlangPackage.COMPARISON__OP:
+      case CommonlangPackage.BOOL__OP:
         return getOp();
-      case CommonlangPackage.COMPARISON__VARRIGHT:
+      case CommonlangPackage.BOOL__VARRIGHT:
         return getVarright();
+      case CommonlangPackage.BOOL__BOP:
+        return getBop();
+      case CommonlangPackage.BOOL__BNEXT:
+        return getBnext();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -259,14 +369,20 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   {
     switch (featureID)
     {
-      case CommonlangPackage.COMPARISON__VARLEFT:
+      case CommonlangPackage.BOOL__VARLEFT:
         setVarleft((Value)newValue);
         return;
-      case CommonlangPackage.COMPARISON__OP:
+      case CommonlangPackage.BOOL__OP:
         setOp((String)newValue);
         return;
-      case CommonlangPackage.COMPARISON__VARRIGHT:
+      case CommonlangPackage.BOOL__VARRIGHT:
         setVarright((Value)newValue);
+        return;
+      case CommonlangPackage.BOOL__BOP:
+        setBop((String)newValue);
+        return;
+      case CommonlangPackage.BOOL__BNEXT:
+        setBnext((Bool)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -282,14 +398,20 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   {
     switch (featureID)
     {
-      case CommonlangPackage.COMPARISON__VARLEFT:
+      case CommonlangPackage.BOOL__VARLEFT:
         setVarleft((Value)null);
         return;
-      case CommonlangPackage.COMPARISON__OP:
+      case CommonlangPackage.BOOL__OP:
         setOp(OP_EDEFAULT);
         return;
-      case CommonlangPackage.COMPARISON__VARRIGHT:
+      case CommonlangPackage.BOOL__VARRIGHT:
         setVarright((Value)null);
+        return;
+      case CommonlangPackage.BOOL__BOP:
+        setBop(BOP_EDEFAULT);
+        return;
+      case CommonlangPackage.BOOL__BNEXT:
+        setBnext((Bool)null);
         return;
     }
     super.eUnset(featureID);
@@ -305,12 +427,16 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
   {
     switch (featureID)
     {
-      case CommonlangPackage.COMPARISON__VARLEFT:
+      case CommonlangPackage.BOOL__VARLEFT:
         return varleft != null;
-      case CommonlangPackage.COMPARISON__OP:
+      case CommonlangPackage.BOOL__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case CommonlangPackage.COMPARISON__VARRIGHT:
+      case CommonlangPackage.BOOL__VARRIGHT:
         return varright != null;
+      case CommonlangPackage.BOOL__BOP:
+        return BOP_EDEFAULT == null ? bop != null : !BOP_EDEFAULT.equals(bop);
+      case CommonlangPackage.BOOL__BNEXT:
+        return bnext != null;
     }
     return super.eIsSet(featureID);
   }
@@ -328,8 +454,10 @@ public class ComparisonImpl extends SimpleExpressionImpl implements Comparison
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");
     result.append(op);
+    result.append(", bop: ");
+    result.append(bop);
     result.append(')');
     return result.toString();
   }
 
-} //ComparisonImpl
+} //BoolImpl
