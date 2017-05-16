@@ -174,7 +174,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (mets+=Script | mets+=MetaMethods)*
+	 *     (scripts+=Script* mets=MetaMethods)
 	 */
 	protected void sequence_CLfile(EObject context, CLfile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -322,7 +322,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWERFIRST methods+=MetaMethod*)
+	 *     (methods+=MetaMethod*)
 	 */
 	protected void sequence_MetaMethods(EObject context, MetaMethods semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

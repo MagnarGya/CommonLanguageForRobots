@@ -20,26 +20,30 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class CLfileElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CLfile");
-		private final Assignment cMetsAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cMetsAlternatives_0 = (Alternatives)cMetsAssignment.eContents().get(0);
-		private final RuleCall cMetsScriptParserRuleCall_0_0 = (RuleCall)cMetsAlternatives_0.eContents().get(0);
-		private final RuleCall cMetsMetaMethodsParserRuleCall_0_1 = (RuleCall)cMetsAlternatives_0.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cScriptsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cScriptsScriptParserRuleCall_0_0 = (RuleCall)cScriptsAssignment_0.eContents().get(0);
+		private final Assignment cMetsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMetsMetaMethodsParserRuleCall_1_0 = (RuleCall)cMetsAssignment_1.eContents().get(0);
 		
 		//CLfile:
-		//	mets+=(Script | MetaMethods)*;
+		//	scripts+=Script* mets=MetaMethods;
 		@Override public ParserRule getRule() { return rule; }
 
-		//mets+=(Script | MetaMethods)*
-		public Assignment getMetsAssignment() { return cMetsAssignment; }
+		//scripts+=Script* mets=MetaMethods
+		public Group getGroup() { return cGroup; }
 
-		//Script | MetaMethods
-		public Alternatives getMetsAlternatives_0() { return cMetsAlternatives_0; }
+		//scripts+=Script*
+		public Assignment getScriptsAssignment_0() { return cScriptsAssignment_0; }
 
 		//Script
-		public RuleCall getMetsScriptParserRuleCall_0_0() { return cMetsScriptParserRuleCall_0_0; }
+		public RuleCall getScriptsScriptParserRuleCall_0_0() { return cScriptsScriptParserRuleCall_0_0; }
+
+		//mets=MetaMethods
+		public Assignment getMetsAssignment_1() { return cMetsAssignment_1; }
 
 		//MetaMethods
-		public RuleCall getMetsMetaMethodsParserRuleCall_0_1() { return cMetsMetaMethodsParserRuleCall_0_1; }
+		public RuleCall getMetsMetaMethodsParserRuleCall_1_0() { return cMetsMetaMethodsParserRuleCall_1_0; }
 	}
 
 	public class ScriptElements extends AbstractParserRuleElementFinder {
@@ -168,29 +172,25 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	public class MetaMethodsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MetaMethods");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMetamethodscollectionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameLOWERFIRSTTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Action cMetaMethodsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cMetamethodscollectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cMethodsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cMethodsMetaMethodParserRuleCall_3_0 = (RuleCall)cMethodsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//MetaMethods:
-		//	"metamethodscollection" name=LOWERFIRST "{" methods+=MetaMethod* "}";
+		//	{MetaMethods} "metamethodscollection" "{" methods+=MetaMethod* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"metamethodscollection" name=LOWERFIRST "{" methods+=MetaMethod* "}"
+		//{MetaMethods} "metamethodscollection" "{" methods+=MetaMethod* "}"
 		public Group getGroup() { return cGroup; }
 
+		//{MetaMethods}
+		public Action getMetaMethodsAction_0() { return cMetaMethodsAction_0; }
+
 		//"metamethodscollection"
-		public Keyword getMetamethodscollectionKeyword_0() { return cMetamethodscollectionKeyword_0; }
-
-		//name=LOWERFIRST
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//LOWERFIRST
-		public RuleCall getNameLOWERFIRSTTerminalRuleCall_1_0() { return cNameLOWERFIRSTTerminalRuleCall_1_0; }
+		public Keyword getMetamethodscollectionKeyword_1() { return cMetamethodscollectionKeyword_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -1396,7 +1396,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//CLfile:
-	//	mets+=(Script | MetaMethods)*;
+	//	scripts+=Script* mets=MetaMethods;
 	public CLfileElements getCLfileAccess() {
 		return pCLfile;
 	}
@@ -1417,7 +1417,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MetaMethods:
-	//	"metamethodscollection" name=LOWERFIRST "{" methods+=MetaMethod* "}";
+	//	{MetaMethods} "metamethodscollection" "{" methods+=MetaMethod* "}";
 	public MetaMethodsElements getMetaMethodsAccess() {
 		return pMetaMethods;
 	}

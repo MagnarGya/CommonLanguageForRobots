@@ -77,43 +77,43 @@ ruleCLfile returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCLfileAccess().getMetsScriptParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getCLfileAccess().getScriptsScriptParserRuleCall_0_0()); 
 	    }
-		lv_mets_0_1=ruleScript		{
+		lv_scripts_0_0=ruleScript		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCLfileRule());
 	        }
        		add(
        			$current, 
-       			"mets",
-        		lv_mets_0_1, 
+       			"scripts",
+        		lv_scripts_0_0, 
         		"Script");
 	        afterParserOrEnumRuleCall();
 	    }
 
-    |		{ 
-	        newCompositeNode(grammarAccess.getCLfileAccess().getMetsMetaMethodsParserRuleCall_0_1()); 
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCLfileAccess().getMetsMetaMethodsParserRuleCall_1_0()); 
 	    }
-		lv_mets_0_2=ruleMetaMethods		{
+		lv_mets_1_0=ruleMetaMethods		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCLfileRule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"mets",
-        		lv_mets_0_2, 
+        		lv_mets_1_0, 
         		"MetaMethods");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-
-)
-)*
+))
 ;
 
 
@@ -308,29 +308,17 @@ ruleMetaMethods returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='metamethodscollection' 
+((
     {
-    	newLeafNode(otherlv_0, grammarAccess.getMetaMethodsAccess().getMetamethodscollectionKeyword_0());
+        $current = forceCreateModelElement(
+            grammarAccess.getMetaMethodsAccess().getMetaMethodsAction_0(),
+            $current);
     }
-(
-(
-		lv_name_1_0=RULE_LOWERFIRST
-		{
-			newLeafNode(lv_name_1_0, grammarAccess.getMetaMethodsAccess().getNameLOWERFIRSTTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMetaMethodsRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"LOWERFIRST");
-	    }
-
-)
-)	otherlv_2='{' 
+)	otherlv_1='metamethodscollection' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getMetaMethodsAccess().getMetamethodscollectionKeyword_1());
+    }
+	otherlv_2='{' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getMetaMethodsAccess().getLeftCurlyBracketKeyword_2());
     }

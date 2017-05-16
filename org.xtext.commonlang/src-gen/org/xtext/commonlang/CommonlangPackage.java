@@ -67,13 +67,22 @@ public interface CommonlangPackage extends EPackage
   int CLFILE = 0;
 
   /**
-   * The feature id for the '<em><b>Mets</b></em>' containment reference list.
+   * The feature id for the '<em><b>Scripts</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLFILE__METS = 0;
+  int CLFILE__SCRIPTS = 0;
+
+  /**
+   * The feature id for the '<em><b>Mets</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLFILE__METS = 1;
 
   /**
    * The number of structural features of the '<em>CLfile</em>' class.
@@ -82,7 +91,7 @@ public interface CommonlangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLFILE_FEATURE_COUNT = 1;
+  int CLFILE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.ScriptImpl <em>Script</em>}' class.
@@ -150,22 +159,13 @@ public interface CommonlangPackage extends EPackage
   int META_METHODS = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int META_METHODS__NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Methods</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int META_METHODS__METHODS = 1;
+  int META_METHODS__METHODS = 0;
 
   /**
    * The number of structural features of the '<em>Meta Methods</em>' class.
@@ -174,7 +174,7 @@ public interface CommonlangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int META_METHODS_FEATURE_COUNT = 2;
+  int META_METHODS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -1041,10 +1041,21 @@ public interface CommonlangPackage extends EPackage
   EClass getCLfile();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.commonlang.CLfile#getMets <em>Mets</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.commonlang.CLfile#getScripts <em>Scripts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Mets</em>'.
+   * @return the meta object for the containment reference list '<em>Scripts</em>'.
+   * @see org.xtext.commonlang.CLfile#getScripts()
+   * @see #getCLfile()
+   * @generated
+   */
+  EReference getCLfile_Scripts();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.CLfile#getMets <em>Mets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mets</em>'.
    * @see org.xtext.commonlang.CLfile#getMets()
    * @see #getCLfile()
    * @generated
@@ -1114,17 +1125,6 @@ public interface CommonlangPackage extends EPackage
    * @generated
    */
   EClass getMetaMethods();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.commonlang.MetaMethods#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.commonlang.MetaMethods#getName()
-   * @see #getMetaMethods()
-   * @generated
-   */
-  EAttribute getMetaMethods_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.commonlang.MetaMethods#getMethods <em>Methods</em>}'.
@@ -1740,7 +1740,15 @@ public interface CommonlangPackage extends EPackage
     EClass CLFILE = eINSTANCE.getCLfile();
 
     /**
-     * The meta object literal for the '<em><b>Mets</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Scripts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLFILE__SCRIPTS = eINSTANCE.getCLfile_Scripts();
+
+    /**
+     * The meta object literal for the '<em><b>Mets</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1798,14 +1806,6 @@ public interface CommonlangPackage extends EPackage
      * @generated
      */
     EClass META_METHODS = eINSTANCE.getMetaMethods();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute META_METHODS__NAME = eINSTANCE.getMetaMethods_Name();
 
     /**
      * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.

@@ -3,7 +3,8 @@ grammar org.xtext.Commonlang  with org.eclipse.xtext.common.Terminals
 generate commonlang "http://www.xtext.org/Commonlang"
 
 CLfile:
-	mets+=(Script | MetaMethods)*
+	scripts+=(Script)*
+	mets=MetaMethods
 ;
 
 Script:
@@ -13,7 +14,7 @@ Script:
 ;
 
 MetaMethods:
-	'metamethodscollection' name=LOWERFIRST '{'
+	{MetaMethods}'metamethodscollection''{'
 		(methods+=MetaMethod)*
 	'}'
 ;

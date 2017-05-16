@@ -322,9 +322,19 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCLfile_Mets()
+  public EReference getCLfile_Scripts()
   {
     return (EReference)cLfileEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCLfile_Mets()
+  {
+    return (EReference)cLfileEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -392,19 +402,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMetaMethods_Name()
-  {
-    return (EAttribute)metaMethodsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMetaMethods_Methods()
   {
-    return (EReference)metaMethodsEClass.getEStructuralFeatures().get(1);
+    return (EReference)metaMethodsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -978,6 +978,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     // Create classes and their features
     cLfileEClass = createEClass(CLFILE);
+    createEReference(cLfileEClass, CLFILE__SCRIPTS);
     createEReference(cLfileEClass, CLFILE__METS);
 
     scriptEClass = createEClass(SCRIPT);
@@ -987,7 +988,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     createEReference(scriptEClass, SCRIPT__METHODS);
 
     metaMethodsEClass = createEClass(META_METHODS);
-    createEAttribute(metaMethodsEClass, META_METHODS__NAME);
     createEReference(metaMethodsEClass, META_METHODS__METHODS);
 
     blockEClass = createEClass(BLOCK);
@@ -1122,7 +1122,8 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     // Initialize classes and features; add operations and parameters
     initEClass(cLfileEClass, CLfile.class, "CLfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCLfile_Mets(), ecorePackage.getEObject(), null, "mets", null, 0, -1, CLfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCLfile_Scripts(), this.getScript(), null, "scripts", null, 0, -1, CLfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCLfile_Mets(), this.getMetaMethods(), null, "mets", null, 0, 1, CLfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1131,7 +1132,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEReference(getScript_Methods(), this.getUserMethod(), null, "methods", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(metaMethodsEClass, MetaMethods.class, "MetaMethods", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMetaMethods_Name(), ecorePackage.getEString(), "name", null, 0, 1, MetaMethods.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMetaMethods_Methods(), this.getMetaMethod(), null, "methods", null, 0, -1, MetaMethods.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

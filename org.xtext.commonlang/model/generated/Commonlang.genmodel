@@ -8,6 +8,7 @@
   <genPackages prefix="Commonlang" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="commonlang" ecorePackage="Commonlang.ecore#/">
     <genClasses ecoreClass="Commonlang.ecore#//CLfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//CLfile/scripts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//CLfile/mets"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Script">
@@ -17,7 +18,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Script/methods"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//MetaMethods">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//MetaMethods/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//MetaMethods/methods"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Block">
