@@ -186,7 +186,7 @@ class CommonlangGenerator implements IGenerator {
 		)'''
 		
 	def CharSequence makeString(Bool e) '''
-		«e.varleft.makeString» «e.op» «e.varright.makeString» «e.bop» «IF e.bnext != null» «e.bnext.makeString»«ENDIF» 
+		«e.varleft.makeString»«e.op»«e.varright.makeString»«e.bop»«IF e.bnext != null»«e.bnext.makeString»«ENDIF» 
 	'''
 	
 	def makeString(Declaration e) '''
