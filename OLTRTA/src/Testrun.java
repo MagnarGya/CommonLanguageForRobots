@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+import input.RobotScript;
 import parser.*;
 import CommonLanguageObjects.*;
 
@@ -15,7 +18,7 @@ public class Testrun {
         Block block1 = new Block(bl1Exs);
         exs[1] = new If(new Expression("Touching()"), block1);
 
-        Expression[] bl2Exs = { new Expression("MoveBackward(300)") };
+        Expression[] bl2Exs = { new Expression("MoveBackward(100)") };
         Block block2 = new Block(bl2Exs);
         exs[2] = new If(new Expression("SeeingBoth()"), block2);
 
@@ -35,10 +38,15 @@ public class Testrun {
         Method[] methodarray = {method};
         Script loop = new Script(methodarray);
 		
+        RobotScript rs = new RobotScript();
+        rs.robotlist = new ArrayList<String>();
+        rs.robotlist.add("ArduinoShieldBot,ShieldBot1");
+        rs.sc = loop;
+        rs.generateCode();/*
 		CodeOutputWriter COW = new CodeOutputWriter(bm,loop);
 		CodeOutputWriter COW2 = new CodeOutputWriter(new BotMethods("LegoMindstormsEv3","EV3_1(standard)"),loop);
 		COW.writeToFile();
-		COW2.writeToFile();
+		COW2.writeToFile();*/
 	}
 
 }
