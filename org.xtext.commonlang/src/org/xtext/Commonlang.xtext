@@ -1,0 +1,137 @@
+grammar org.xtext.Commonlang  with org.eclipse.xtext.common.Terminals
+
+generate commonlang "http://www.xtext.org/Commonlang"
+
+CLfile:
+	Script | MetaMethods
+;
+
+Script:
+	'script' name=ID 'targets' ('('robottypes+=ID ',' robotconfigs+=ID | '('('('robottypes+=ID ',' robotconfigs+=ID')')* )')' '{'
+		(methods+=UserMethod*)
+	'}'
+;
+
+MetaMethods:
+	'metamethodscollection' name=ID '{'
+		(methods+=MetaMethod)*
+	'}'
+;
+
+Block:
+	{Block} '{' ( (exs+=SimpleExpression ';' | exs+=StructureExpression))* '}'
+;
+
+SimpleExpression:
+	Assignment | Call | Comparison
+;
+
+StructureExpression:
+	Block | If | Else | For | While
+;
+
+Expression:
+	SimpleExpression | StructureExpression
+;
+
+
+Assignment:
+	vari=([Declaration] | Declaration) '=' value=Value
+;
+
+Method:
+	type=Methodtype name=ID '(' parameters+=Declaration? (','+ parameters+=Declaration)* ')'
+;
+
+Call:
+	name=[Method] '('parameters+=Value? (','+ parameters+=Value)*')'
+;
+
+UserMethod:
+	method=Method bl=Block
+;
+
+MetaMethod:
+	method=Method ';'
+;
+
+MetaMetaMethod:
+	name='ReadSensors'
+	| name='Touching' 
+	| name='TouchingBoth'
+	| name='TouchingLeft' 
+	| name='TouchingRight' 
+	| name='Seeing'
+	| name='SeeingBoth'
+	| name='SeeingLeft'
+	| name='SeeingRight'
+	| name='MoveForward'
+	| name='MoveBackward'
+	| name='TurnRight'
+	| name='TurnLeft' 
+	| name='Idle'
+;
+
+Comparison:
+	varleft=Value op=ComparisonOperator varright=Value
+;
+
+ComparisonOperator:
+	'==' | '!=' | '<' | '>' | '<=' | '>='
+;
+
+If:
+	'if' '(' ex=Expression ')' bl=Block
+;
+
+Else:
+	'else' ex=Expression
+;
+
+For:
+	'for' '(' init=Expression ';' check=Expression ';' action=Expression')' bl=Block
+;
+
+While:
+	'while' '(' ex=Expression ')' bl=Block
+;
+
+Value:
+	VarReference | BasicValue
+;
+
+BasicValue:
+	BooleanValue | NumberValue | StringValue
+;
+
+BooleanValue:
+	value=('true' | 'false')
+;
+
+StringValue:
+	value=STRING
+;
+
+NumberValue:
+	value=INTSTRING
+;
+
+VarReference:
+	vari=[Declaration]
+;
+
+Declaration: 
+	type=Datatype name=ID
+;
+
+Methodtype:
+	'void' | Datatype
+;
+
+Datatype:
+	'int' | 'string' | 'boolean'
+;
+
+INTSTRING:
+	INT
+;
