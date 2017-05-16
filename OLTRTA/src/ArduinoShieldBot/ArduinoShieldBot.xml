@@ -4,6 +4,9 @@
 	<parsertype>C</parsertype>
 		<globalvariables>
       		<e name="&lt;Servo.h&gt;" type="#include"/>
+      		<e name="&lt;SPI.h&gt;" type="#include"/>
+      		<e name="&lt;Pixy.h&gt;" type="#include"/>
+      		<e name="pixy" type="Pixy"/>
 		    <e name="servoRight" type="Servo"/>
 	  	    <e name="servoLeft" type="Servo"/>
       		<e name="touchingLeft" type="int"/>
@@ -15,6 +18,8 @@
 			<setup parameters="" return="void">
 			servoRight.attach(ServoRight)
 			servoLeft.attach(ServoLeft)
+			pinMode(LED, OUTPUT)
+			Blink()
 			Serial.begin(9600)</setup>
     	</method>
 		<extension>.ino</extension>
@@ -39,5 +44,7 @@
   		<TurnRight parameter="int degrees" return="void">turnRight(degrees)</TurnRight>
   		<TurnLeft parameter="int degrees" return="void">turnLeft(degrees)</TurnLeft>
   		<Idle parameter="int time" return="void">idle(time)</Idle>
+  		<LightOn parameter="" return="void">lightOn(LED)</LightOn>
+  		<LightOff parameter="" return="void">lightOff(LED)</LightOff>
 	</metamethods>
 </robot>

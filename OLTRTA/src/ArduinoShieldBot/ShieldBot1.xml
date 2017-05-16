@@ -41,6 +41,10 @@
   		<idle parameter="int time" return="void">servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(time)</idle>
+		<lightOn parameter="int pout" return="void">
+		digitalWrite(pout, HIGH)</lightOn>
+		<lightOff parameter="int pout" return="void">
+		digitalWrite(pout, LOW)</lightOff>
 	</methods>
 	<assignments>
   		<LeftWhisker value="10"/>
@@ -51,5 +55,6 @@
   		<LeftInfraredSensor value="5"/>
   		<RightInfraredEmitter value="2"/>
   		<RightInfraredSensor value="3"/>
+  		<LED value="8"/>
 	</assignments>
 </robot>
