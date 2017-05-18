@@ -17,6 +17,7 @@ import CommonLanguageObjects.While;
 public class RobotScript {
 	public ArrayList<String> robotlist;
 	public Script sc;
+	public String name;
 	protected ArrayList<Method> methodlist;
 	
 	public void generateCode(){
@@ -36,7 +37,7 @@ public class RobotScript {
 				}
 			}
 			sc.body = blocklist.toArray(new Method[0]);
-			CodeOutputWriter COW = new CodeOutputWriter(bm, sc);
+			CodeOutputWriter COW = new CodeOutputWriter(bm, sc, name);
 			COW.writeToFile();
 		}
 	}

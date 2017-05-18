@@ -5,6 +5,7 @@ import CommonLanguageObjects.*;
 
 public class Navigate extends RobotScript {
 	public void buildModel() {
+		name = "Navigate";
 		robotlist = new ArrayList<String>();
 		sc = new Script(
 			new Method[] {
@@ -18,50 +19,13 @@ public class Navigate extends RobotScript {
 							"ReadSensors()"
 						),new If(
 							new Expression(
-								"Peeing()"
+								"SeeingLeft()"
 							),
 							new Block(new Expression[] {
 								new Expression(
-									"TurnLeft(69)"
+									"TurnRight(45)"
 								)
 							})
-						),new Else(
-							new Block(new Expression[] {
-								new Expression(
-									"MoveBackward(4)"
-								),new Expression(
-									"MoveForward(6)"
-								),new While(
-									new Expression(
-										"true"
-									),
-									new Block(new Expression[] {
-										new Expression(
-											"TurnRight(22)"
-										)
-									})
-								)
-							})
-						),new If(
-							new Expression(
-								"Seeing()"
-							),
-							new Block(new Expression[] {
-								new Expression(
-									"MoveBackward(1)"
-								)
-							})
-						),new Else(
-							new If(
-								new Expression(
-									"KeeingLeft()"
-								),
-								new Block(new Expression[] {
-									new Expression(
-										"TurnRight(45)"
-									)
-								})
-							)
 						),new Else(
 							new If(
 								new Expression(
@@ -87,7 +51,7 @@ public class Navigate extends RobotScript {
 						),new Else(
 							new Block(new Expression[] {
 								new Expression(
-									"MoveForward(500)"
+									"MoveForward(100)"
 								)
 							})
 						)

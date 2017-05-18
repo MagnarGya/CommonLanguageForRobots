@@ -40,7 +40,7 @@ class CommonlangGenerator implements IGenerator {
 	@Override
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		for (e : resource.allContents.toIterable.filter(Script)) {
-			fsa.generateFile(e.name + ".java",e.compile)
+			fsa.generateFile("/input/"+e.name + ".java",e.compile)
 		}
 	}
 	
@@ -62,7 +62,12 @@ class CommonlangGenerator implements IGenerator {
 	import CommonLanguageObjects.*;
 	
 	public class «e.name» extends RobotScript {
+		public static void main(String[] args) {
+			«e.name» roboscript = new «e.name»();
+			roboscript.buildModel();
+		}
 		public void buildModel() {
+			name = "«e.name»";
 			robotlist = new ArrayList<String>();
 			sc = new Script(
 				new Method[] {
