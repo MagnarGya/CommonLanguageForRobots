@@ -46,8 +46,8 @@
 		digitalWrite(pout, HIGH)</lightOn>
 		<lightOff parameter="int pout" return="void">
 		digitalWrite(pout, LOW)</lightOff>
-		<scan parameter="" return="void">
-		pixy.getBlocks()</scan>
+		<scan parameter="" return="int">
+		return pixy.getBlocks()</scan>
 		<followObject parameter="" return="void">
 		if(pixy.blocks[0].x&lt;100){turnLeft(-(pixy.blocks[0].x-145))
 		}else if(pixy.blocks[0].x&gt;180){turnRight(pixy.blocks[0].x-145)

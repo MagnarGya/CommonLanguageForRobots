@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 
 import input.Navigate;
+import input.RobberAndPoliceScenario;
 import input.RobotScript;
 import parser.*;
 import CommonLanguageObjects.*;
@@ -46,9 +47,11 @@ public class Testrun {
         rs.robotlist.add("LegoMindstormsEV3,EV3_1");
         rs.sc = loop;
         rs.generateCode();*/
-		
+		/*
 		Navigate nav = new Navigate();
-		nav.buildModel();
+		nav.buildModel();*/
+		RobberAndPoliceScenario Raps = new RobberAndPoliceScenario();
+		Raps.buildModel();
 	}
 
 }

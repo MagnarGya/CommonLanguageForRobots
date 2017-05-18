@@ -13,6 +13,7 @@
 	      	<e name="touchingRight" type="int"/>
       		<e name="seeingLeft" type="int"/>
       		<e name="seeingRight" type="int"/>
+      		<e name="blocks" type="int"/>
     	</globalvariables>
     	<method>
 			<setup parameters="" return="void">
@@ -47,6 +48,8 @@
   		<Idle parameter="int time" return="void">idle(time)</Idle>
   		<LightOn parameter="" return="void">lightOn(LED)</LightOn>
   		<LightOff parameter="" return="void">lightOff(LED)</LightOff>
-  		<FoundObject parameter="" return="bool">return pixy.blocks[0]!=null</FoundObject>
+  		<FoundObject parameter="" return="bool">return blocks&gt;0</FoundObject>
+  		<FollowObject parameter="" return="void">followObject()</FollowObject>
+  		<Delay parameter="int time" return="void">delay(time)</Delay>
 	</metamethods>
 </robot>
