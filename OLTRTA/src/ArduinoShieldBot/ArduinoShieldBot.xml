@@ -20,7 +20,8 @@
 			servoLeft.attach(ServoLeft)
 			pinMode(LED, OUTPUT)
 			Blink()
-			Serial.begin(9600)</setup>
+			Serial.begin(9600)
+			pixy.init()</setup>
     	</method>
 		<extension>.ino</extension>
 	</setup>
@@ -30,7 +31,8 @@
 		delay(10)
 		seeingLeft = InfraredSensor(LeftInfraredSensor, LeftInfraredEmitter)
 		delay(10)
-		seeingRight = InfraredSensor(RightInfraredSensor, RightInfraredEmitter)</ReadSensors>
+		seeingRight = InfraredSensor(RightInfraredSensor, RightInfraredEmitter)
+		scan()</ReadSensors>
   		<Touching parameter="" return="bool">return (touchingLeft || touchingRight)</Touching>
   		<TouchingBoth parameter="" return="bool">return (touchingLeft &amp;&amp; touchingRight)</TouchingBoth>
   		<TouchingLeft parameter="" return="bool">return touchingLeft</TouchingLeft>
@@ -46,5 +48,6 @@
   		<Idle parameter="int time" return="void">idle(time)</Idle>
   		<LightOn parameter="" return="void">lightOn(LED)</LightOn>
   		<LightOff parameter="" return="void">lightOff(LED)</LightOff>
+  		<FoundObject parameter="" return="bool">return pixy.blocks[0]!=null</FoundObject>
 	</metamethods>
 </robot>

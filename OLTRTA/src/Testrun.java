@@ -13,13 +13,13 @@ public class Testrun {
 		exs[0] = new Expression("LightOn()");
         exs[1] = new Expression("ReadSensors()");
 
-        Expression[] bl1Exs = { new Expression("MoveBackward(300)")};
+        Expression[] bl1Exs = { new Expression("followObject()")};
         Block block1 = new Block(bl1Exs);
-        exs[2] = new If(new Expression("Touching()"), block1);
+        exs[2] = new If(new Expression("FoundObject()"), block1);
 
         Expression[] bl2Exs = { new Expression("MoveBackward(100)") };
         Block block2 = new Block(bl2Exs);
-        exs[3] = new If(new Expression("SeeingBoth()"), block2);
+        exs[3] = new Else(new If(new Expression("SeeingBoth()"), block2));
 
         Expression[] bl3Exs = { new Expression("TurnRight(90)") };
         Block block3 = new Block(bl3Exs);

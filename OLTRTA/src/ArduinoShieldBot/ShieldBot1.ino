@@ -1,4 +1,7 @@
 #include <Servo.h>;
+#include <SPI.h>;
+#include <Pixy.h>;
+Pixy pixy;
 Servo servoRight;
 Servo servoLeft;
 int touchingLeft;
@@ -6,62 +9,42 @@ int touchingRight;
 int seeingLeft;
 int seeingRight;
 void setup(){
-    servoRight.attach(12);
-    servoLeft.attach(13);
+    servoRight.attach(ServoRight);
+    servoLeft.attach(ServoLeft);
+    pinMode(LED, OUTPUT);
+    Blink();
     Serial.begin(9600);
+    pixy.init();
 }	
 void loop(){
-    
+    LightOn();
+    ReadSensors();
+    if (FoundObject()){
+        
+    }	
+    else if (SeeingBoth()){
+        MoveBackward(100);
+    }	
+    else if (SeeingLeft()){
+        TurnRight(90);
+    }	
+    else if (SeeingRight()){
+        TurnLeft(90);
+    }	
+    else {
+        MoveForward(300);
+    }	
+    LightOff();
 }	
 
-void moveForward(int time){
-    servoRight.writeMicroseconds(1300);
-    delay(time);
-    servoLeft.writeMicroseconds(1500);
-    servoRight.writeMicroseconds(1500);
-    delay(5);
-}	
-void moveBackward(int time){
-    servoRight.writeMicroseconds(1700);
-    delay(time);
-    servoLeft.writeMicroseconds(1500);
-    servoRight.writeMicroseconds(1500);
-    delay(5);
-}	
-void turnLeft(int degrees){
-    servoRight.writeMicroseconds(1300);
-    delay(degrees*5);
-    servoLeft.writeMicroseconds(1500);
-    servoRight.writeMicroseconds(1500);
-    delay(5);
-}	
-void turnRight(int degrees){
-    servoRight.writeMicroseconds(1700);
-    delay(degrees*5);
-    servoLeft.writeMicroseconds(1500);
-    servoRight.writeMicroseconds(1500);
-    delay(5);
-}	
-int InfraredSensor(int pin,int pout){
-    delay(1);
-    int ir = digitalRead(pin);
-    return !(ir);
-}	
-int WhiskerSensor(int pin){
-    int w = digitalRead(pin);
-    return !(w);
-}	
-void idle(int time){
-    servoRight.writeMicroseconds(1500);
-    delay(time);
-}	
 void ReadSensors(){
-    touchingLeft = WhiskerSensor(10);
-    touchingRight = WhiskerSensor(11);
+    touchingLeft = WhiskerSensor(LeftWhisker);
+    touchingRight = WhiskerSensor(RightWhisker);
     delay(10);
-    seeingLeft = InfraredSensor(5, 4);
+    seeingLeft = InfraredSensor(LeftInfraredSensor, LeftInfraredEmitter);
     delay(10);
-    seeingRight = InfraredSensor(3, 2);
+    seeingRight = InfraredSensor(RightInfraredSensor, RightInfraredEmitter);
+    scan();
 }	
 bool Touching(){
     return (touchingLeft || touchingRight);
@@ -101,4 +84,13 @@ void TurnLeft(int degrees){
 }	
 void Idle(int time){
     idle(time);
+}	
+void LightOn(){
+    lightOn(LED);
+}	
+void LightOff(){
+    lightOff(LED);
+}	
+bool FoundObject(){
+    return pixy.blocks[0]!=null;
 }	
