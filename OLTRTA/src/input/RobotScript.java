@@ -63,7 +63,7 @@ public class RobotScript {
         case "class CommonLanguageObjects.Block": return checkBlock((Block)exp);
         case "class CommonLanguageObjects.While": return checkWhile((While)exp);
         case "class CommonLanguageObjects.For": return checkFor((For)exp);
-        default: if(exp.content.matches(".*(.*).*")){
+        default: if(exp.content.matches(".*[(].*[)].*")) {
         	String checkstring = exp.content.substring(0,exp.content.lastIndexOf('('));
         	checkstring = checkstring.substring(getIndex(checkstring));
         	boolean isMethod = false;
