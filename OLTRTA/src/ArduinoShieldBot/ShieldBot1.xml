@@ -2,35 +2,35 @@
 <robot>
 	<methods>
   		<moveForward parameter="int time" return="void">
-  		servoLeft.writeMicroseconds(1700)
+		servoLeft.writeMicroseconds(1700)
 		servoRight.writeMicroseconds(1300)
 		delay(time)
 		servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(5)</moveForward>
   		<moveBackward parameter="int time" return="void">
-  		servoLeft.writeMicroseconds(1300)
+		servoLeft.writeMicroseconds(1300)
 		servoRight.writeMicroseconds(1700)
 		delay(time)
 		servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(5)</moveBackward>
   		<turnLeft parameter="int degrees" return="void">
-  		servoLeft.writeMicroseconds(1300)
+		servoLeft.writeMicroseconds(1300)
 		servoRight.writeMicroseconds(1300)
 		delay(degrees*5)
 		servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(5)</turnLeft>
   		<turnRight parameter="int degrees" return="void">
-  		servoLeft.writeMicroseconds(1700)
+		servoLeft.writeMicroseconds(1700)
 		servoRight.writeMicroseconds(1700)
 		delay(degrees*5)
 		servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(5)</turnRight>
   		<InfraredSensor parameter="int pin,int pout" return="int">
-  		tone(pout, 38000, 8)
+		tone(pout, 38000, 8)
 		delay(1)
 		int ir = digitalRead(pin)
 		return !(ir)</InfraredSensor>
@@ -38,19 +38,27 @@
   		delay(1)
 		int w = digitalRead(pin)
 		return !(w)</WhiskerSensor>
-  		<idle parameter="int time" return="void">servoLeft.writeMicroseconds(1500)
+  		<idle parameter="int time" return="void">
+  		servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(time)</idle>
 		<lightOn parameter="int pout" return="void">
 		digitalWrite(pout, HIGH)</lightOn>
 		<lightOff parameter="int pout" return="void">
 		digitalWrite(pout, LOW)</lightOff>
+		<scan parameter="" return="void">
+		pixy.getBlocks()</scan>
+		<followObject parameter="" return="void">
+		if(pixy.blocks[0].x&lt;100){turnLeft(-(pixy.blocks[0].x-145))
+		}else if(pixy.blocks[0].x&gt;180){turnRight(pixy.blocks[0].x-145)
+		}else{ moveForward(300)
+		} int i</followObject>
 	</methods>
 	<assignments>
-  		<LeftWhisker value="10"/>
-  		<RightWhisker value="11"/>
-  		<ServoLeft value="13"/>
-  		<ServoRight value="12"/>
+  		<LeftWhisker value="6"/>
+  		<RightWhisker value="7"/>
+  		<ServoLeft value="10"/>
+  		<ServoRight value="9"/>
   		<LeftInfraredEmitter value="4"/>
   		<LeftInfraredSensor value="5"/>
   		<RightInfraredEmitter value="2"/>
