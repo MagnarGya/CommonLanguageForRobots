@@ -149,15 +149,6 @@ public interface CommonlangFactory extends EFactory
   MetaMethodCall createMetaMethodCall();
 
   /**
-   * Returns a new object of class '<em>Meta Meta Method</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Meta Meta Method</em>'.
-   * @generated
-   */
-  MetaMetaMethod createMetaMetaMethod();
-
-  /**
    * Returns a new object of class '<em>Bool</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -19,7 +19,6 @@
 			servoRight.attach(ServoRight)
 			servoLeft.attach(ServoLeft)
 			pinMode(LED, OUTPUT)
-			Blink()
 			Serial.begin(9600)
 			pixy.init()</setup>
     	</method>

@@ -159,7 +159,7 @@ public class BotMethods implements Serializable {
 				List<Parameter> para = new ArrayList<Parameter>();
 				for(String param : parameter){
 					String[] parameterdetails = param.split(" ");
-					if(!(parameterdetails.length<1)){
+					if(parameterdetails.length>0 && parameterdetails[0] != ""){
 						para.add(new Parameter(parameterdetails[0],parameterdetails[1]));
 					}
 				}

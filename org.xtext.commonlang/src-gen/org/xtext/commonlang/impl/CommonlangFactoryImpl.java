@@ -78,7 +78,6 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.USER_METHOD: return createUserMethod();
       case CommonlangPackage.USER_METHOD_CALL: return createUserMethodCall();
       case CommonlangPackage.META_METHOD_CALL: return createMetaMethodCall();
-      case CommonlangPackage.META_META_METHOD: return createMetaMetaMethod();
       case CommonlangPackage.BOOL: return createBool();
       case CommonlangPackage.IF: return createIf();
       case CommonlangPackage.ELSE: return createElse();
@@ -249,17 +248,6 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
   {
     MetaMethodCallImpl metaMethodCall = new MetaMethodCallImpl();
     return metaMethodCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MetaMetaMethod createMetaMetaMethod()
-  {
-    MetaMetaMethodImpl metaMetaMethod = new MetaMetaMethodImpl();
-    return metaMetaMethod;
   }
 
   /**

@@ -95,34 +95,48 @@ public class RobotScript {
 	}
 	
 	Block checkBlock(Block bl){
+		//Iterate through all expressions within block. Invalid ones become null
 		for(int i = 0; i < bl.exs.length; i++){
-			bl.exs[i] = checkExpression(bl.exs[i]);
+			//Store the current and next expression
+			Expression current = bl.exs[i];
+			//Next is null if current is at the end of the list
+			Expression next = null;
+			if (i+1 < bl.exs.length) {
+				next = bl.exs[i+1];
+			}
+			Expression checked = checkExpression(current);
+			
+			if (checked == null && next != null) {
+				if (current.getClass() == If.class) {
+					if (next.getClass() == Else.class) {
+						Expression elseEx = ((Else)next).ex;
+						if (elseEx.getClass() != Block.class) {
+							bl.exs[i+1] = elseEx;
+						} else {
+							//If the else expression has a block following it:
+							int elseBlockLength = ((Block)elseEx).exs.length;
+							//Create a new list for this block, with the total size of both (-2)
+							Expression[] newList = new Expression[elseBlockLength + bl.exs.length-1];
+							for (int k = 0; k < i; k++) {
+								newList[k] = bl.exs[k];
+							}
+							for (int k = i; k < i + elseBlockLength; k++) {
+								newList[k+1] = ((Block)elseEx).exs[k-i];
+							}
+							for (int k = i + elseBlockLength+1; k < newList.length; k++) {
+								newList[k] = bl.exs[k-elseBlockLength+1];
+							}
+							bl.exs = newList;
+						}
+					}
+				}
+			}
+			
+			//Finally assign the value to array at nice
+			bl.exs[i] = checked;
 		}
 		
-		ArrayList<Expression> expressionlist = new ArrayList<Expression>();
-		for(Expression exs : bl.exs){
-			if(exs!=null){
-				expressionlist.add(exs);
-			}
-		}
-		bl.exs = expressionlist.toArray(new Expression[0]);
-		for(int i = 0; i < bl.exs.length; i++){
-			if(bl.exs[i].getClass().toString().contains("Else")){
-				Else elseB = (Else) bl.exs[i];
-				int j = 1;
-				while(bl.exs[i-j]==null||i-j<0){
-					j++;
-				}
-				if(!(bl.exs[i-j].getClass().toString().contains("If")||bl.exs[i].getClass().toString().contains("Else"))){
-					bl.exs[i] = elseB.ex;
-				}
-				if(elseB.ex == null){
-					bl.exs[i] = null;
-				}
-			}
-		}
-		
-		expressionlist = new ArrayList<Expression>();
+		ArrayList<Expression>expressionlist = new ArrayList<Expression>();
 		for(Expression exs : bl.exs){
 			if(exs!=null){
 				expressionlist.add(exs);

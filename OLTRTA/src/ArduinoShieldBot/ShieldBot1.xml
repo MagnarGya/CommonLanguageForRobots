@@ -38,7 +38,8 @@
   		delay(1)
 		int w = digitalRead(pin)
 		return !(w)</WhiskerSensor>
-  		<idle parameter="int time" return="void">servoLeft.writeMicroseconds(1500)
+  		<idle parameter="int time" return="void">
+  		servoLeft.writeMicroseconds(1500)
 		servoRight.writeMicroseconds(1500)
 		delay(time)</idle>
 		<lightOn parameter="int pout" return="void">
@@ -49,7 +50,7 @@
 		pixy.getBlocks()</scan>
 		<followObject parameter="" return="void">
 		if(pixy.blocks[0].x&lt;100){turnLeft(-(pixy.blocks[0].x-145))
-		}else if(pixy.blocks[0].x&gt;180){turnRight(pixy.blocks[0].x-145))
+		}else if(pixy.blocks[0].x&gt;180){turnRight(pixy.blocks[0].x-145)
 		}else{ moveForward(300)
 		} int i</followObject>
 	</methods>

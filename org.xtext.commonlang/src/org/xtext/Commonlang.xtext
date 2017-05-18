@@ -8,7 +8,7 @@ CLfile:
 ;
 
 Script:
-	'script' name=CAPITALFIRST 'targets' ('('robottypes+=LOWERFIRST ',' robotconfigs+=LOWERFIRST | '('('('robottypes+=LOWERFIRST ',' robotconfigs+=LOWERFIRST')')* )')' '{'
+	'script' name=CAPITALFIRST 'targets' '(''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')'(',''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')')* ')' '{'
 		(methods+=UserMethod*)
 	'}'
 ;
@@ -66,24 +66,6 @@ MetaMethodCall:
 
 terminal LOWERFIRST: ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal CAPITALFIRST: ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-
-
-MetaMetaMethod:
-	name='ReadSensors'
-	| name='Touching' 
-	| name='TouchingBoth'
-	| name='TouchingLeft' 
-	| name='TouchingRight' 
-	| name='Seeing'
-	| name='SeeingBoth'
-	| name='SeeingLeft'
-	| name='SeeingRight'
-	| name='MoveForward'
-	| name='MoveBackward'
-	| name='TurnRight'
-	| name='TurnLeft' 
-	| name='Idle'
-;
 
 Bool:
 	varleft=Value (=> op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?

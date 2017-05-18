@@ -23,7 +23,6 @@ import org.xtext.commonlang.Else;
 import org.xtext.commonlang.Expression;
 import org.xtext.commonlang.For;
 import org.xtext.commonlang.If;
-import org.xtext.commonlang.MetaMetaMethod;
 import org.xtext.commonlang.MetaMethod;
 import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
@@ -145,13 +144,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * @generated
    */
   private EClass metaMethodCallEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass metaMetaMethodEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -612,26 +604,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMetaMetaMethod()
-  {
-    return metaMetaMethodEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMetaMetaMethod_Name()
-  {
-    return (EAttribute)metaMetaMethodEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getBool()
   {
     return boolEClass;
@@ -1021,9 +993,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     metaMethodCallEClass = createEClass(META_METHOD_CALL);
 
-    metaMetaMethodEClass = createEClass(META_META_METHOD);
-    createEAttribute(metaMetaMethodEClass, META_META_METHOD__NAME);
-
     boolEClass = createEClass(BOOL);
     createEReference(boolEClass, BOOL__VARLEFT);
     createEAttribute(boolEClass, BOOL__OP);
@@ -1164,9 +1133,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEClass(userMethodCallEClass, UserMethodCall.class, "UserMethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(metaMethodCallEClass, MetaMethodCall.class, "MetaMethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(metaMetaMethodEClass, MetaMetaMethod.class, "MetaMetaMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMetaMetaMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, MetaMetaMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBool_Varleft(), this.getValue(), null, "varleft", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

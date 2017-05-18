@@ -56,12 +56,13 @@ class CommonlangGenerator implements IGenerator {
 	}
 	
 	'''
+	package input;
 	import java.util.ArrayList;
 	import input.RobotScript;
 	import CommonLanguageObjects.*;
 	
 	public class «e.name» extends RobotScript {
-		void buildModel() {
+		public void buildModel() {
 			robotlist = new ArrayList<String>();
 			sc = new Script(
 				new Method[] {
@@ -186,8 +187,7 @@ class CommonlangGenerator implements IGenerator {
 		)'''
 		
 	def CharSequence makeString(Bool e) '''
-		«e.varleft.makeString» «e.op» «e.varright.makeString» «e.bop» «IF e.bnext != null» «e.bnext.makeString»«ENDIF» 
-	'''
+		«e.varleft.makeString»«e.op»«e.varright.makeString»«e.bop»«IF e.bnext != null»«e.bnext.makeString»«ENDIF»'''
 	
 	def makeString(Declaration e) '''
 		«e.type» «e.name»'''

@@ -189,13 +189,6 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CommonlangPackage.META_META_METHOD:
-      {
-        MetaMetaMethod metaMetaMethod = (MetaMetaMethod)theEObject;
-        T result = caseMetaMetaMethod(metaMetaMethod);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CommonlangPackage.BOOL:
       {
         Bool bool = (Bool)theEObject;
@@ -529,22 +522,6 @@ public class CommonlangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMetaMethodCall(MetaMethodCall object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Meta Meta Method</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Meta Meta Method</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMetaMetaMethod(MetaMetaMethod object)
   {
     return null;
   }

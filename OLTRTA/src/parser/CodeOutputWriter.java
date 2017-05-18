@@ -31,6 +31,7 @@ public class CodeOutputWriter {
             script += botmethods.parser.parseMethod(botmethods.metamethods[i]);
         }
         
+        script += postFix();
         
 		try {
 			String path = new File(".\\src\\"+botmethods.robot).getCanonicalPath();
@@ -60,5 +61,12 @@ public class CodeOutputWriter {
 		}
     	
         
+	}
+	
+	private String postFix() {
+		if (botmethods.parser.getClass() == CommonToPythonParser.class) {
+			return "main()";
+		}
+		return "";
 	}
 }

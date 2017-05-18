@@ -37,7 +37,10 @@ public class CommonlangParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getScriptAccess().getAlternatives_3(), "rule__Script__Alternatives_3");
+					put(grammarAccess.getScriptAccess().getRobottypesAlternatives_5_0(), "rule__Script__RobottypesAlternatives_5_0");
+					put(grammarAccess.getScriptAccess().getRobotconfigsAlternatives_7_0(), "rule__Script__RobotconfigsAlternatives_7_0");
+					put(grammarAccess.getScriptAccess().getRobottypesAlternatives_9_2_0(), "rule__Script__RobottypesAlternatives_9_2_0");
+					put(grammarAccess.getScriptAccess().getRobotconfigsAlternatives_9_4_0(), "rule__Script__RobotconfigsAlternatives_9_4_0");
 					put(grammarAccess.getBlockAccess().getAlternatives_2(), "rule__Block__Alternatives_2");
 					put(grammarAccess.getSimpleExpressionAccess().getAlternatives(), "rule__SimpleExpression__Alternatives");
 					put(grammarAccess.getStructureExpressionAccess().getAlternatives(), "rule__StructureExpression__Alternatives");
@@ -45,7 +48,6 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignmentAccess().getVariAlternatives_0_0(), "rule__Assignment__VariAlternatives_0_0");
 					put(grammarAccess.getCallAccess().getAlternatives_0(), "rule__Call__Alternatives_0");
 					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
-					put(grammarAccess.getMetaMetaMethodAccess().getAlternatives(), "rule__MetaMetaMethod__Alternatives");
 					put(grammarAccess.getComparisonOperatorAccess().getAlternatives(), "rule__ComparisonOperator__Alternatives");
 					put(grammarAccess.getBooleanOperatorAccess().getAlternatives(), "rule__BooleanOperator__Alternatives");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
@@ -55,9 +57,7 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDatatypeAccess().getAlternatives(), "rule__Datatype__Alternatives");
 					put(grammarAccess.getCLfileAccess().getGroup(), "rule__CLfile__Group__0");
 					put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
-					put(grammarAccess.getScriptAccess().getGroup_3_0(), "rule__Script__Group_3_0__0");
-					put(grammarAccess.getScriptAccess().getGroup_3_1(), "rule__Script__Group_3_1__0");
-					put(grammarAccess.getScriptAccess().getGroup_3_1_1(), "rule__Script__Group_3_1_1__0");
+					put(grammarAccess.getScriptAccess().getGroup_9(), "rule__Script__Group_9__0");
 					put(grammarAccess.getMetaMethodsAccess().getGroup(), "rule__MetaMethods__Group__0");
 					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
 					put(grammarAccess.getBlockAccess().getGroup_2_0(), "rule__Block__Group_2_0__0");
@@ -81,11 +81,11 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCLfileAccess().getScriptsAssignment_0(), "rule__CLfile__ScriptsAssignment_0");
 					put(grammarAccess.getCLfileAccess().getMetsAssignment_1(), "rule__CLfile__MetsAssignment_1");
 					put(grammarAccess.getScriptAccess().getNameAssignment_1(), "rule__Script__NameAssignment_1");
-					put(grammarAccess.getScriptAccess().getRobottypesAssignment_3_0_1(), "rule__Script__RobottypesAssignment_3_0_1");
-					put(grammarAccess.getScriptAccess().getRobotconfigsAssignment_3_0_3(), "rule__Script__RobotconfigsAssignment_3_0_3");
-					put(grammarAccess.getScriptAccess().getRobottypesAssignment_3_1_1_1(), "rule__Script__RobottypesAssignment_3_1_1_1");
-					put(grammarAccess.getScriptAccess().getRobotconfigsAssignment_3_1_1_3(), "rule__Script__RobotconfigsAssignment_3_1_1_3");
-					put(grammarAccess.getScriptAccess().getMethodsAssignment_6(), "rule__Script__MethodsAssignment_6");
+					put(grammarAccess.getScriptAccess().getRobottypesAssignment_5(), "rule__Script__RobottypesAssignment_5");
+					put(grammarAccess.getScriptAccess().getRobotconfigsAssignment_7(), "rule__Script__RobotconfigsAssignment_7");
+					put(grammarAccess.getScriptAccess().getRobottypesAssignment_9_2(), "rule__Script__RobottypesAssignment_9_2");
+					put(grammarAccess.getScriptAccess().getRobotconfigsAssignment_9_4(), "rule__Script__RobotconfigsAssignment_9_4");
+					put(grammarAccess.getScriptAccess().getMethodsAssignment_12(), "rule__Script__MethodsAssignment_12");
 					put(grammarAccess.getMetaMethodsAccess().getMethodsAssignment_3(), "rule__MetaMethods__MethodsAssignment_3");
 					put(grammarAccess.getBlockAccess().getExsAssignment_2_0_0(), "rule__Block__ExsAssignment_2_0_0");
 					put(grammarAccess.getBlockAccess().getExsAssignment_2_1(), "rule__Block__ExsAssignment_2_1");
@@ -104,20 +104,6 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUserMethodAccess().getBlAssignment_6(), "rule__UserMethod__BlAssignment_6");
 					put(grammarAccess.getUserMethodCallAccess().getMethodAssignment(), "rule__UserMethodCall__MethodAssignment");
 					put(grammarAccess.getMetaMethodCallAccess().getMethodAssignment(), "rule__MetaMethodCall__MethodAssignment");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_0(), "rule__MetaMetaMethod__NameAssignment_0");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_1(), "rule__MetaMetaMethod__NameAssignment_1");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_2(), "rule__MetaMetaMethod__NameAssignment_2");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_3(), "rule__MetaMetaMethod__NameAssignment_3");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_4(), "rule__MetaMetaMethod__NameAssignment_4");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_5(), "rule__MetaMetaMethod__NameAssignment_5");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_6(), "rule__MetaMetaMethod__NameAssignment_6");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_7(), "rule__MetaMetaMethod__NameAssignment_7");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_8(), "rule__MetaMetaMethod__NameAssignment_8");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_9(), "rule__MetaMetaMethod__NameAssignment_9");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_10(), "rule__MetaMetaMethod__NameAssignment_10");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_11(), "rule__MetaMetaMethod__NameAssignment_11");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_12(), "rule__MetaMetaMethod__NameAssignment_12");
-					put(grammarAccess.getMetaMetaMethodAccess().getNameAssignment_13(), "rule__MetaMetaMethod__NameAssignment_13");
 					put(grammarAccess.getBoolAccess().getVarleftAssignment_0(), "rule__Bool__VarleftAssignment_0");
 					put(grammarAccess.getBoolAccess().getOpAssignment_1_0(), "rule__Bool__OpAssignment_1_0");
 					put(grammarAccess.getBoolAccess().getVarrightAssignment_1_1(), "rule__Bool__VarrightAssignment_1_1");

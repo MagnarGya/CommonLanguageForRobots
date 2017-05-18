@@ -53,37 +53,46 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameCAPITALFIRSTTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cTargetsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cRobottypesAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cRobottypesLOWERFIRSTTerminalRuleCall_3_0_1_0 = (RuleCall)cRobottypesAssignment_3_0_1.eContents().get(0);
-		private final Keyword cCommaKeyword_3_0_2 = (Keyword)cGroup_3_0.eContents().get(2);
-		private final Assignment cRobotconfigsAssignment_3_0_3 = (Assignment)cGroup_3_0.eContents().get(3);
-		private final RuleCall cRobotconfigsLOWERFIRSTTerminalRuleCall_3_0_3_0 = (RuleCall)cRobotconfigsAssignment_3_0_3.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Group cGroup_3_1_1 = (Group)cGroup_3_1.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
-		private final Assignment cRobottypesAssignment_3_1_1_1 = (Assignment)cGroup_3_1_1.eContents().get(1);
-		private final RuleCall cRobottypesLOWERFIRSTTerminalRuleCall_3_1_1_1_0 = (RuleCall)cRobottypesAssignment_3_1_1_1.eContents().get(0);
-		private final Keyword cCommaKeyword_3_1_1_2 = (Keyword)cGroup_3_1_1.eContents().get(2);
-		private final Assignment cRobotconfigsAssignment_3_1_1_3 = (Assignment)cGroup_3_1_1.eContents().get(3);
-		private final RuleCall cRobotconfigsLOWERFIRSTTerminalRuleCall_3_1_1_3_0 = (RuleCall)cRobotconfigsAssignment_3_1_1_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3_1_1_4 = (Keyword)cGroup_3_1_1.eContents().get(4);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cMethodsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMethodsUserMethodParserRuleCall_6_0 = (RuleCall)cMethodsAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cRobottypesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final Alternatives cRobottypesAlternatives_5_0 = (Alternatives)cRobottypesAssignment_5.eContents().get(0);
+		private final RuleCall cRobottypesLOWERFIRSTTerminalRuleCall_5_0_0 = (RuleCall)cRobottypesAlternatives_5_0.eContents().get(0);
+		private final RuleCall cRobottypesCAPITALFIRSTTerminalRuleCall_5_0_1 = (RuleCall)cRobottypesAlternatives_5_0.eContents().get(1);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cRobotconfigsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final Alternatives cRobotconfigsAlternatives_7_0 = (Alternatives)cRobotconfigsAssignment_7.eContents().get(0);
+		private final RuleCall cRobotconfigsLOWERFIRSTTerminalRuleCall_7_0_0 = (RuleCall)cRobotconfigsAlternatives_7_0.eContents().get(0);
+		private final RuleCall cRobotconfigsCAPITALFIRSTTerminalRuleCall_7_0_1 = (RuleCall)cRobotconfigsAlternatives_7_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cRobottypesAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final Alternatives cRobottypesAlternatives_9_2_0 = (Alternatives)cRobottypesAssignment_9_2.eContents().get(0);
+		private final RuleCall cRobottypesLOWERFIRSTTerminalRuleCall_9_2_0_0 = (RuleCall)cRobottypesAlternatives_9_2_0.eContents().get(0);
+		private final RuleCall cRobottypesCAPITALFIRSTTerminalRuleCall_9_2_0_1 = (RuleCall)cRobottypesAlternatives_9_2_0.eContents().get(1);
+		private final Keyword cCommaKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
+		private final Assignment cRobotconfigsAssignment_9_4 = (Assignment)cGroup_9.eContents().get(4);
+		private final Alternatives cRobotconfigsAlternatives_9_4_0 = (Alternatives)cRobotconfigsAssignment_9_4.eContents().get(0);
+		private final RuleCall cRobotconfigsLOWERFIRSTTerminalRuleCall_9_4_0_0 = (RuleCall)cRobotconfigsAlternatives_9_4_0.eContents().get(0);
+		private final RuleCall cRobotconfigsCAPITALFIRSTTerminalRuleCall_9_4_0_1 = (RuleCall)cRobotconfigsAlternatives_9_4_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_9_5 = (Keyword)cGroup_9.eContents().get(5);
+		private final Keyword cRightParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cMethodsAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cMethodsUserMethodParserRuleCall_12_0 = (RuleCall)cMethodsAssignment_12.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Script:
-		//	"script" name=CAPITALFIRST "targets" ("(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST | "(" ("("
-		//	robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST ")")*) ")" "{" methods+=UserMethod* "}";
+		//	"script" name=CAPITALFIRST "targets" "(" "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST |
+		//	CAPITALFIRST) ")" ("," "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST | CAPITALFIRST)
+		//	")")* ")" "{" methods+=UserMethod* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"script" name=CAPITALFIRST "targets" ("(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST | "(" ("("
-		//robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST ")")*) ")" "{" methods+=UserMethod* "}"
+		//"script" name=CAPITALFIRST "targets" "(" "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST |
+		//CAPITALFIRST) ")" ("," "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST | CAPITALFIRST) ")")*
+		//")" "{" methods+=UserMethod* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"script"
@@ -98,75 +107,95 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		//"targets"
 		public Keyword getTargetsKeyword_2() { return cTargetsKeyword_2; }
 
-		//"(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST | "(" ("(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST
-		//")")*
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-
-		//"(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_3_0_0() { return cLeftParenthesisKeyword_3_0_0; }
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
 
-		//robottypes+=LOWERFIRST
-		public Assignment getRobottypesAssignment_3_0_1() { return cRobottypesAssignment_3_0_1; }
+		//robottypes+=(LOWERFIRST | CAPITALFIRST)
+		public Assignment getRobottypesAssignment_5() { return cRobottypesAssignment_5; }
+
+		//LOWERFIRST | CAPITALFIRST
+		public Alternatives getRobottypesAlternatives_5_0() { return cRobottypesAlternatives_5_0; }
 
 		//LOWERFIRST
-		public RuleCall getRobottypesLOWERFIRSTTerminalRuleCall_3_0_1_0() { return cRobottypesLOWERFIRSTTerminalRuleCall_3_0_1_0; }
+		public RuleCall getRobottypesLOWERFIRSTTerminalRuleCall_5_0_0() { return cRobottypesLOWERFIRSTTerminalRuleCall_5_0_0; }
+
+		//CAPITALFIRST
+		public RuleCall getRobottypesCAPITALFIRSTTerminalRuleCall_5_0_1() { return cRobottypesCAPITALFIRSTTerminalRuleCall_5_0_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_0_2() { return cCommaKeyword_3_0_2; }
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
 
-		//robotconfigs+=LOWERFIRST
-		public Assignment getRobotconfigsAssignment_3_0_3() { return cRobotconfigsAssignment_3_0_3; }
+		//robotconfigs+=(LOWERFIRST | CAPITALFIRST)
+		public Assignment getRobotconfigsAssignment_7() { return cRobotconfigsAssignment_7; }
 
-		//LOWERFIRST
-		public RuleCall getRobotconfigsLOWERFIRSTTerminalRuleCall_3_0_3_0() { return cRobotconfigsLOWERFIRSTTerminalRuleCall_3_0_3_0; }
-
-		//"(" ("(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST ")")*
-		public Group getGroup_3_1() { return cGroup_3_1; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_3_1_0() { return cLeftParenthesisKeyword_3_1_0; }
-
-		//("(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST ")")*
-		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_3_1_1_0() { return cLeftParenthesisKeyword_3_1_1_0; }
-
-		//robottypes+=LOWERFIRST
-		public Assignment getRobottypesAssignment_3_1_1_1() { return cRobottypesAssignment_3_1_1_1; }
+		//LOWERFIRST | CAPITALFIRST
+		public Alternatives getRobotconfigsAlternatives_7_0() { return cRobotconfigsAlternatives_7_0; }
 
 		//LOWERFIRST
-		public RuleCall getRobottypesLOWERFIRSTTerminalRuleCall_3_1_1_1_0() { return cRobottypesLOWERFIRSTTerminalRuleCall_3_1_1_1_0; }
+		public RuleCall getRobotconfigsLOWERFIRSTTerminalRuleCall_7_0_0() { return cRobotconfigsLOWERFIRSTTerminalRuleCall_7_0_0; }
+
+		//CAPITALFIRST
+		public RuleCall getRobotconfigsCAPITALFIRSTTerminalRuleCall_7_0_1() { return cRobotconfigsCAPITALFIRSTTerminalRuleCall_7_0_1; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
+
+		//("," "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST | CAPITALFIRST) ")")*
+		public Group getGroup_9() { return cGroup_9; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_1_2() { return cCommaKeyword_3_1_1_2; }
+		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
 
-		//robotconfigs+=LOWERFIRST
-		public Assignment getRobotconfigsAssignment_3_1_1_3() { return cRobotconfigsAssignment_3_1_1_3; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_9_1() { return cLeftParenthesisKeyword_9_1; }
+
+		//robottypes+=(LOWERFIRST | CAPITALFIRST)
+		public Assignment getRobottypesAssignment_9_2() { return cRobottypesAssignment_9_2; }
+
+		//LOWERFIRST | CAPITALFIRST
+		public Alternatives getRobottypesAlternatives_9_2_0() { return cRobottypesAlternatives_9_2_0; }
 
 		//LOWERFIRST
-		public RuleCall getRobotconfigsLOWERFIRSTTerminalRuleCall_3_1_1_3_0() { return cRobotconfigsLOWERFIRSTTerminalRuleCall_3_1_1_3_0; }
+		public RuleCall getRobottypesLOWERFIRSTTerminalRuleCall_9_2_0_0() { return cRobottypesLOWERFIRSTTerminalRuleCall_9_2_0_0; }
+
+		//CAPITALFIRST
+		public RuleCall getRobottypesCAPITALFIRSTTerminalRuleCall_9_2_0_1() { return cRobottypesCAPITALFIRSTTerminalRuleCall_9_2_0_1; }
+
+		//","
+		public Keyword getCommaKeyword_9_3() { return cCommaKeyword_9_3; }
+
+		//robotconfigs+=(LOWERFIRST | CAPITALFIRST)
+		public Assignment getRobotconfigsAssignment_9_4() { return cRobotconfigsAssignment_9_4; }
+
+		//LOWERFIRST | CAPITALFIRST
+		public Alternatives getRobotconfigsAlternatives_9_4_0() { return cRobotconfigsAlternatives_9_4_0; }
+
+		//LOWERFIRST
+		public RuleCall getRobotconfigsLOWERFIRSTTerminalRuleCall_9_4_0_0() { return cRobotconfigsLOWERFIRSTTerminalRuleCall_9_4_0_0; }
+
+		//CAPITALFIRST
+		public RuleCall getRobotconfigsCAPITALFIRSTTerminalRuleCall_9_4_0_1() { return cRobotconfigsCAPITALFIRSTTerminalRuleCall_9_4_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3_1_1_4() { return cRightParenthesisKeyword_3_1_1_4; }
+		public Keyword getRightParenthesisKeyword_9_5() { return cRightParenthesisKeyword_9_5; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_10() { return cRightParenthesisKeyword_10; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
 
 		//methods+=UserMethod*
-		public Assignment getMethodsAssignment_6() { return cMethodsAssignment_6; }
+		public Assignment getMethodsAssignment_12() { return cMethodsAssignment_12; }
 
 		//UserMethod
-		public RuleCall getMethodsUserMethodParserRuleCall_6_0() { return cMethodsUserMethodParserRuleCall_6_0; }
+		public RuleCall getMethodsUserMethodParserRuleCall_12_0() { return cMethodsUserMethodParserRuleCall_12_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 
 	public class MetaMethodsElements extends AbstractParserRuleElementFinder {
@@ -631,134 +660,6 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 
 		//CAPITALFIRST
 		public RuleCall getMethodMethodCAPITALFIRSTTerminalRuleCall_0_1() { return cMethodMethodCAPITALFIRSTTerminalRuleCall_0_1; }
-	}
-
-	public class MetaMetaMethodElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MetaMetaMethod");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cNameReadSensorsKeyword_0_0 = (Keyword)cNameAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cNameTouchingKeyword_1_0 = (Keyword)cNameAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cNameTouchingBothKeyword_2_0 = (Keyword)cNameAssignment_2.eContents().get(0);
-		private final Assignment cNameAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final Keyword cNameTouchingLeftKeyword_3_0 = (Keyword)cNameAssignment_3.eContents().get(0);
-		private final Assignment cNameAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final Keyword cNameTouchingRightKeyword_4_0 = (Keyword)cNameAssignment_4.eContents().get(0);
-		private final Assignment cNameAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final Keyword cNameSeeingKeyword_5_0 = (Keyword)cNameAssignment_5.eContents().get(0);
-		private final Assignment cNameAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final Keyword cNameSeeingBothKeyword_6_0 = (Keyword)cNameAssignment_6.eContents().get(0);
-		private final Assignment cNameAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final Keyword cNameSeeingLeftKeyword_7_0 = (Keyword)cNameAssignment_7.eContents().get(0);
-		private final Assignment cNameAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final Keyword cNameSeeingRightKeyword_8_0 = (Keyword)cNameAssignment_8.eContents().get(0);
-		private final Assignment cNameAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
-		private final Keyword cNameMoveForwardKeyword_9_0 = (Keyword)cNameAssignment_9.eContents().get(0);
-		private final Assignment cNameAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final Keyword cNameMoveBackwardKeyword_10_0 = (Keyword)cNameAssignment_10.eContents().get(0);
-		private final Assignment cNameAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
-		private final Keyword cNameTurnRightKeyword_11_0 = (Keyword)cNameAssignment_11.eContents().get(0);
-		private final Assignment cNameAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
-		private final Keyword cNameTurnLeftKeyword_12_0 = (Keyword)cNameAssignment_12.eContents().get(0);
-		private final Assignment cNameAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
-		private final Keyword cNameIdleKeyword_13_0 = (Keyword)cNameAssignment_13.eContents().get(0);
-		
-		//MetaMetaMethod:
-		//	name="ReadSensors" | name="Touching" | name="TouchingBoth" | name="TouchingLeft" | name="TouchingRight" |
-		//	name="Seeing" | name="SeeingBoth" | name="SeeingLeft" | name="SeeingRight" | name="MoveForward" | name="MoveBackward"
-		//	| name="TurnRight" | name="TurnLeft" | name="Idle";
-		@Override public ParserRule getRule() { return rule; }
-
-		//name="ReadSensors" | name="Touching" | name="TouchingBoth" | name="TouchingLeft" | name="TouchingRight" | name="Seeing"
-		//| name="SeeingBoth" | name="SeeingLeft" | name="SeeingRight" | name="MoveForward" | name="MoveBackward" |
-		//name="TurnRight" | name="TurnLeft" | name="Idle"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//name="ReadSensors"
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-
-		//"ReadSensors"
-		public Keyword getNameReadSensorsKeyword_0_0() { return cNameReadSensorsKeyword_0_0; }
-
-		//name="Touching"
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//"Touching"
-		public Keyword getNameTouchingKeyword_1_0() { return cNameTouchingKeyword_1_0; }
-
-		//name="TouchingBoth"
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//"TouchingBoth"
-		public Keyword getNameTouchingBothKeyword_2_0() { return cNameTouchingBothKeyword_2_0; }
-
-		//name="TouchingLeft"
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-		//"TouchingLeft"
-		public Keyword getNameTouchingLeftKeyword_3_0() { return cNameTouchingLeftKeyword_3_0; }
-
-		//name="TouchingRight"
-		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
-
-		//"TouchingRight"
-		public Keyword getNameTouchingRightKeyword_4_0() { return cNameTouchingRightKeyword_4_0; }
-
-		//name="Seeing"
-		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
-
-		//"Seeing"
-		public Keyword getNameSeeingKeyword_5_0() { return cNameSeeingKeyword_5_0; }
-
-		//name="SeeingBoth"
-		public Assignment getNameAssignment_6() { return cNameAssignment_6; }
-
-		//"SeeingBoth"
-		public Keyword getNameSeeingBothKeyword_6_0() { return cNameSeeingBothKeyword_6_0; }
-
-		//name="SeeingLeft"
-		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
-
-		//"SeeingLeft"
-		public Keyword getNameSeeingLeftKeyword_7_0() { return cNameSeeingLeftKeyword_7_0; }
-
-		//name="SeeingRight"
-		public Assignment getNameAssignment_8() { return cNameAssignment_8; }
-
-		//"SeeingRight"
-		public Keyword getNameSeeingRightKeyword_8_0() { return cNameSeeingRightKeyword_8_0; }
-
-		//name="MoveForward"
-		public Assignment getNameAssignment_9() { return cNameAssignment_9; }
-
-		//"MoveForward"
-		public Keyword getNameMoveForwardKeyword_9_0() { return cNameMoveForwardKeyword_9_0; }
-
-		//name="MoveBackward"
-		public Assignment getNameAssignment_10() { return cNameAssignment_10; }
-
-		//"MoveBackward"
-		public Keyword getNameMoveBackwardKeyword_10_0() { return cNameMoveBackwardKeyword_10_0; }
-
-		//name="TurnRight"
-		public Assignment getNameAssignment_11() { return cNameAssignment_11; }
-
-		//"TurnRight"
-		public Keyword getNameTurnRightKeyword_11_0() { return cNameTurnRightKeyword_11_0; }
-
-		//name="TurnLeft"
-		public Assignment getNameAssignment_12() { return cNameAssignment_12; }
-
-		//"TurnLeft"
-		public Keyword getNameTurnLeftKeyword_12_0() { return cNameTurnLeftKeyword_12_0; }
-
-		//name="Idle"
-		public Assignment getNameAssignment_13() { return cNameAssignment_13; }
-
-		//"Idle"
-		public Keyword getNameIdleKeyword_13_0() { return cNameIdleKeyword_13_0; }
 	}
 
 	public class BoolElements extends AbstractParserRuleElementFinder {
@@ -1302,7 +1203,6 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	private final MetaMethodCallElements pMetaMethodCall;
 	private final TerminalRule tLOWERFIRST;
 	private final TerminalRule tCAPITALFIRST;
-	private final MetaMetaMethodElements pMetaMetaMethod;
 	private final BoolElements pBool;
 	private final ComparisonOperatorElements pComparisonOperator;
 	private final BooleanOperatorElements pBooleanOperator;
@@ -1347,7 +1247,6 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMetaMethodCall = new MetaMethodCallElements();
 		this.tLOWERFIRST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LOWERFIRST");
 		this.tCAPITALFIRST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CAPITALFIRST");
-		this.pMetaMetaMethod = new MetaMetaMethodElements();
 		this.pBool = new BoolElements();
 		this.pComparisonOperator = new ComparisonOperatorElements();
 		this.pBooleanOperator = new BooleanOperatorElements();
@@ -1406,8 +1305,9 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Script:
-	//	"script" name=CAPITALFIRST "targets" ("(" robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST | "(" ("("
-	//	robottypes+=LOWERFIRST "," robotconfigs+=LOWERFIRST ")")*) ")" "{" methods+=UserMethod* "}";
+	//	"script" name=CAPITALFIRST "targets" "(" "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST |
+	//	CAPITALFIRST) ")" ("," "(" robottypes+=(LOWERFIRST | CAPITALFIRST) "," robotconfigs+=(LOWERFIRST | CAPITALFIRST)
+	//	")")* ")" "{" methods+=UserMethod* "}";
 	public ScriptElements getScriptAccess() {
 		return pScript;
 	}
@@ -1547,18 +1447,6 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	public TerminalRule getCAPITALFIRSTRule() {
 		return tCAPITALFIRST;
 	} 
-
-	//MetaMetaMethod:
-	//	name="ReadSensors" | name="Touching" | name="TouchingBoth" | name="TouchingLeft" | name="TouchingRight" |
-	//	name="Seeing" | name="SeeingBoth" | name="SeeingLeft" | name="SeeingRight" | name="MoveForward" | name="MoveBackward"
-	//	| name="TurnRight" | name="TurnLeft" | name="Idle";
-	public MetaMetaMethodElements getMetaMetaMethodAccess() {
-		return pMetaMetaMethod;
-	}
-	
-	public ParserRule getMetaMetaMethodRule() {
-		return getMetaMetaMethodAccess().getRule();
-	}
 
 	//Bool:
 	//	varleft=Value (=> op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?;
