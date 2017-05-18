@@ -56,12 +56,13 @@ class CommonlangGenerator implements IGenerator {
 	}
 	
 	'''
+	package input;
 	import java.util.ArrayList;
 	import input.RobotScript;
 	import CommonLanguageObjects.*;
 	
 	public class «e.name» extends RobotScript {
-		void buildModel() {
+		public void buildModel() {
 			robotlist = new ArrayList<String>();
 			sc = new Script(
 				new Method[] {

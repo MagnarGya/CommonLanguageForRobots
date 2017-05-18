@@ -26,7 +26,6 @@ import org.xtext.commonlang.Declaration;
 import org.xtext.commonlang.Else;
 import org.xtext.commonlang.For;
 import org.xtext.commonlang.If;
-import org.xtext.commonlang.MetaMetaMethod;
 import org.xtext.commonlang.MetaMethod;
 import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
@@ -75,9 +74,6 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 				return; 
 			case CommonlangPackage.IF:
 				sequence_If(context, (If) semanticObject); 
-				return; 
-			case CommonlangPackage.META_META_METHOD:
-				sequence_MetaMetaMethod(context, (MetaMetaMethod) semanticObject); 
 				return; 
 			case CommonlangPackage.META_METHOD:
 				sequence_MetaMethod(context, (MetaMethod) semanticObject); 
@@ -280,30 +276,6 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name='ReadSensors' | 
-	 *         name='Touching' | 
-	 *         name='TouchingBoth' | 
-	 *         name='TouchingLeft' | 
-	 *         name='TouchingRight' | 
-	 *         name='Seeing' | 
-	 *         name='SeeingBoth' | 
-	 *         name='SeeingLeft' | 
-	 *         name='SeeingRight' | 
-	 *         name='MoveForward' | 
-	 *         name='MoveBackward' | 
-	 *         name='TurnRight' | 
-	 *         name='TurnLeft' | 
-	 *         name='Idle'
-	 *     )
-	 */
-	protected void sequence_MetaMetaMethod(EObject context, MetaMetaMethod semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     method=[Method|CAPITALFIRST]
 	 */
 	protected void sequence_MetaMethodCall(EObject context, MetaMethodCall semanticObject) {
@@ -365,7 +337,9 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 * Constraint:
 	 *     (
 	 *         name=CAPITALFIRST 
-	 *         ((robottypes+=LOWERFIRST robotconfigs+=LOWERFIRST) | (robottypes+=LOWERFIRST robotconfigs+=LOWERFIRST)*) 
+	 *         (robottypes+=LOWERFIRST | robottypes+=CAPITALFIRST) 
+	 *         (robotconfigs+=LOWERFIRST | robotconfigs+=CAPITALFIRST) 
+	 *         ((robottypes+=LOWERFIRST | robottypes+=CAPITALFIRST) (robotconfigs+=LOWERFIRST | robotconfigs+=CAPITALFIRST))* 
 	 *         methods+=UserMethod*
 	 *     )
 	 */

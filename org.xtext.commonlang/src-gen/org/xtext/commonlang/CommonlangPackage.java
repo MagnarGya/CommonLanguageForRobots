@@ -557,34 +557,6 @@ public interface CommonlangPackage extends EPackage
   int META_METHOD_CALL_FEATURE_COUNT = CALL_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.commonlang.impl.MetaMetaMethodImpl <em>Meta Meta Method</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.commonlang.impl.MetaMetaMethodImpl
-   * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getMetaMetaMethod()
-   * @generated
-   */
-  int META_META_METHOD = 14;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int META_META_METHOD__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Meta Meta Method</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int META_META_METHOD_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.BoolImpl <em>Bool</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -592,7 +564,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBool()
    * @generated
    */
-  int BOOL = 15;
+  int BOOL = 14;
 
   /**
    * The feature id for the '<em><b>Varleft</b></em>' containment reference.
@@ -656,7 +628,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getIf()
    * @generated
    */
-  int IF = 16;
+  int IF = 15;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -693,7 +665,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getElse()
    * @generated
    */
-  int ELSE = 17;
+  int ELSE = 16;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -721,7 +693,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getFor()
    * @generated
    */
-  int FOR = 18;
+  int FOR = 17;
 
   /**
    * The feature id for the '<em><b>Init</b></em>' containment reference.
@@ -776,7 +748,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 19;
+  int WHILE = 18;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -813,7 +785,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getValue()
    * @generated
    */
-  int VALUE = 20;
+  int VALUE = 19;
 
   /**
    * The number of structural features of the '<em>Value</em>' class.
@@ -832,7 +804,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBasicValue()
    * @generated
    */
-  int BASIC_VALUE = 21;
+  int BASIC_VALUE = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -860,7 +832,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 22;
+  int BOOLEAN_VALUE = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -888,7 +860,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 23;
+  int STRING_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -916,7 +888,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNumberValue()
    * @generated
    */
-  int NUMBER_VALUE = 24;
+  int NUMBER_VALUE = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -944,7 +916,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getVarReference()
    * @generated
    */
-  int VAR_REFERENCE = 25;
+  int VAR_REFERENCE = 24;
 
   /**
    * The feature id for the '<em><b>Vari</b></em>' reference.
@@ -972,7 +944,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getDeclaration()
    * @generated
    */
-  int DECLARATION = 26;
+  int DECLARATION = 25;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1009,7 +981,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getReturn()
    * @generated
    */
-  int RETURN = 27;
+  int RETURN = 26;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' containment reference.
@@ -1345,27 +1317,6 @@ public interface CommonlangPackage extends EPackage
    * @generated
    */
   EClass getMetaMethodCall();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.commonlang.MetaMetaMethod <em>Meta Meta Method</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Meta Meta Method</em>'.
-   * @see org.xtext.commonlang.MetaMetaMethod
-   * @generated
-   */
-  EClass getMetaMetaMethod();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.commonlang.MetaMetaMethod#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.commonlang.MetaMetaMethod#getName()
-   * @see #getMetaMetaMethod()
-   * @generated
-   */
-  EAttribute getMetaMetaMethod_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.commonlang.Bool <em>Bool</em>}'.
@@ -1996,24 +1947,6 @@ public interface CommonlangPackage extends EPackage
      * @generated
      */
     EClass META_METHOD_CALL = eINSTANCE.getMetaMethodCall();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.commonlang.impl.MetaMetaMethodImpl <em>Meta Meta Method</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.commonlang.impl.MetaMetaMethodImpl
-     * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getMetaMetaMethod()
-     * @generated
-     */
-    EClass META_META_METHOD = eINSTANCE.getMetaMetaMethod();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute META_META_METHOD__NAME = eINSTANCE.getMetaMetaMethod_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.commonlang.impl.BoolImpl <em>Bool</em>}' class.

@@ -45,9 +45,6 @@
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//UserMethodCall"/>
     <genClasses ecoreClass="Commonlang.ecore#//MetaMethodCall"/>
-    <genClasses ecoreClass="Commonlang.ecore#//MetaMetaMethod">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//MetaMetaMethod/name"/>
-    </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Bool">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Bool/varleft"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Bool/op"/>

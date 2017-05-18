@@ -160,15 +160,20 @@ ruleScript returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getTargetsKeyword_2());
     }
-((	otherlv_3='(' 
+	otherlv_3='(' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getScriptAccess().getLeftParenthesisKeyword_3_0_0());
+    	newLeafNode(otherlv_3, grammarAccess.getScriptAccess().getLeftParenthesisKeyword_3());
+    }
+	otherlv_4='(' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getScriptAccess().getLeftParenthesisKeyword_4());
     }
 (
 (
-		lv_robottypes_4_0=RULE_LOWERFIRST
+(
+		lv_robottypes_5_1=RULE_LOWERFIRST
 		{
-			newLeafNode(lv_robottypes_4_0, grammarAccess.getScriptAccess().getRobottypesLOWERFIRSTTerminalRuleCall_3_0_1_0()); 
+			newLeafNode(lv_robottypes_5_1, grammarAccess.getScriptAccess().getRobottypesLOWERFIRSTTerminalRuleCall_5_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -177,47 +182,13 @@ ruleScript returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"robottypes",
-        		lv_robottypes_4_0, 
+        		lv_robottypes_5_1, 
         		"LOWERFIRST");
 	    }
 
-)
-)	otherlv_5=',' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getScriptAccess().getCommaKeyword_3_0_2());
-    }
-(
-(
-		lv_robotconfigs_6_0=RULE_LOWERFIRST
+    |		lv_robottypes_5_2=RULE_CAPITALFIRST
 		{
-			newLeafNode(lv_robotconfigs_6_0, grammarAccess.getScriptAccess().getRobotconfigsLOWERFIRSTTerminalRuleCall_3_0_3_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getScriptRule());
-	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"robotconfigs",
-        		lv_robotconfigs_6_0, 
-        		"LOWERFIRST");
-	    }
-
-)
-))
-    |(	otherlv_7='(' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getScriptAccess().getLeftParenthesisKeyword_3_1_0());
-    }
-(	otherlv_8='(' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getScriptAccess().getLeftParenthesisKeyword_3_1_1_0());
-    }
-(
-(
-		lv_robottypes_9_0=RULE_LOWERFIRST
-		{
-			newLeafNode(lv_robottypes_9_0, grammarAccess.getScriptAccess().getRobottypesLOWERFIRSTTerminalRuleCall_3_1_1_1_0()); 
+			newLeafNode(lv_robottypes_5_2, grammarAccess.getScriptAccess().getRobottypesCAPITALFIRSTTerminalRuleCall_5_0_1()); 
 		}
 		{
 	        if ($current==null) {
@@ -226,20 +197,23 @@ ruleScript returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"robottypes",
-        		lv_robottypes_9_0, 
-        		"LOWERFIRST");
+        		lv_robottypes_5_2, 
+        		"CAPITALFIRST");
 	    }
 
 )
-)	otherlv_10=',' 
+
+)
+)	otherlv_6=',' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getScriptAccess().getCommaKeyword_3_1_1_2());
+    	newLeafNode(otherlv_6, grammarAccess.getScriptAccess().getCommaKeyword_6());
     }
 (
 (
-		lv_robotconfigs_11_0=RULE_LOWERFIRST
+(
+		lv_robotconfigs_7_1=RULE_LOWERFIRST
 		{
-			newLeafNode(lv_robotconfigs_11_0, grammarAccess.getScriptAccess().getRobotconfigsLOWERFIRSTTerminalRuleCall_3_1_1_3_0()); 
+			newLeafNode(lv_robotconfigs_7_1, grammarAccess.getScriptAccess().getRobotconfigsLOWERFIRSTTerminalRuleCall_7_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -248,44 +222,149 @@ ruleScript returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"robotconfigs",
-        		lv_robotconfigs_11_0, 
+        		lv_robotconfigs_7_1, 
         		"LOWERFIRST");
 	    }
 
+    |		lv_robotconfigs_7_2=RULE_CAPITALFIRST
+		{
+			newLeafNode(lv_robotconfigs_7_2, grammarAccess.getScriptAccess().getRobotconfigsCAPITALFIRSTTerminalRuleCall_7_0_1()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getScriptRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"robotconfigs",
+        		lv_robotconfigs_7_2, 
+        		"CAPITALFIRST");
+	    }
+
 )
-)	otherlv_12=')' 
+
+)
+)	otherlv_8=')' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getScriptAccess().getRightParenthesisKeyword_3_1_1_4());
+    	newLeafNode(otherlv_8, grammarAccess.getScriptAccess().getRightParenthesisKeyword_8());
     }
-)*))	otherlv_13=')' 
+(	otherlv_9=',' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getScriptAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_9, grammarAccess.getScriptAccess().getCommaKeyword_9_0());
     }
-	otherlv_14='{' 
+	otherlv_10='(' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getScriptAccess().getLeftCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_10, grammarAccess.getScriptAccess().getLeftParenthesisKeyword_9_1());
+    }
+(
+(
+(
+		lv_robottypes_11_1=RULE_LOWERFIRST
+		{
+			newLeafNode(lv_robottypes_11_1, grammarAccess.getScriptAccess().getRobottypesLOWERFIRSTTerminalRuleCall_9_2_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getScriptRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"robottypes",
+        		lv_robottypes_11_1, 
+        		"LOWERFIRST");
+	    }
+
+    |		lv_robottypes_11_2=RULE_CAPITALFIRST
+		{
+			newLeafNode(lv_robottypes_11_2, grammarAccess.getScriptAccess().getRobottypesCAPITALFIRSTTerminalRuleCall_9_2_0_1()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getScriptRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"robottypes",
+        		lv_robottypes_11_2, 
+        		"CAPITALFIRST");
+	    }
+
+)
+
+)
+)	otherlv_12=',' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getScriptAccess().getCommaKeyword_9_3());
+    }
+(
+(
+(
+		lv_robotconfigs_13_1=RULE_LOWERFIRST
+		{
+			newLeafNode(lv_robotconfigs_13_1, grammarAccess.getScriptAccess().getRobotconfigsLOWERFIRSTTerminalRuleCall_9_4_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getScriptRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"robotconfigs",
+        		lv_robotconfigs_13_1, 
+        		"LOWERFIRST");
+	    }
+
+    |		lv_robotconfigs_13_2=RULE_CAPITALFIRST
+		{
+			newLeafNode(lv_robotconfigs_13_2, grammarAccess.getScriptAccess().getRobotconfigsCAPITALFIRSTTerminalRuleCall_9_4_0_1()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getScriptRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"robotconfigs",
+        		lv_robotconfigs_13_2, 
+        		"CAPITALFIRST");
+	    }
+
+)
+
+)
+)	otherlv_14=')' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getScriptAccess().getRightParenthesisKeyword_9_5());
+    }
+)*	otherlv_15=')' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getScriptAccess().getRightParenthesisKeyword_10());
+    }
+	otherlv_16='{' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getScriptAccess().getLeftCurlyBracketKeyword_11());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getScriptAccess().getMethodsUserMethodParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getScriptAccess().getMethodsUserMethodParserRuleCall_12_0()); 
 	    }
-		lv_methods_15_0=ruleUserMethod		{
+		lv_methods_17_0=ruleUserMethod		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getScriptRule());
 	        }
        		add(
        			$current, 
        			"methods",
-        		lv_methods_15_0, 
+        		lv_methods_17_0, 
         		"UserMethod");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_16='}' 
+)*	otherlv_18='}' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getScriptAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_18, grammarAccess.getScriptAccess().getRightCurlyBracketKeyword_13());
     }
 )
 ;
@@ -1051,8 +1130,6 @@ ruleMetaMethodCall returns [EObject current=null]
 )
 )
 ;
-
-
 
 
 

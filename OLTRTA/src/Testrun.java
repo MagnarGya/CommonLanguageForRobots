@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 
+import input.Navigate;
 import input.RobotScript;
 import parser.*;
 import CommonLanguageObjects.*;
@@ -8,7 +9,7 @@ import CommonLanguageObjects.*;
 public class Testrun {
 
 	public static void main(String[] args) {
-		
+		/*
 		Expression[] exs = new Expression[8];
 		exs[0] = new Expression("LightOn()");
         exs[1] = new Expression("ReadSensors()");
@@ -44,7 +45,10 @@ public class Testrun {
         rs.robotlist.add("ArduinoShieldBot,ShieldBot1");
         rs.robotlist.add("LegoMindstormsEV3,EV3_1");
         rs.sc = loop;
-        rs.generateCode();
+        rs.generateCode();*/
+		
+		Navigate nav = new Navigate();
+		nav.buildModel();
 	}
 
 }
