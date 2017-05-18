@@ -15,7 +15,44 @@ public class Navigate extends RobotScript {
 					},
 					new Block(new Expression[] {
 						new Expression(
-							"MoveForward(500)"
+							"ReadSensors()"
+						),new If(
+							new Expression(
+								"SeeingLeft()"
+							),
+							new Block(new Expression[] {
+								new Expression(
+									"TurnRight(90)"
+								)
+							})
+						),new Else(
+							new If(
+								new Expression(
+									"SeeingRight()"
+								),
+								new Block(new Expression[] {
+									new Expression(
+										"TurnLeft(90)"
+									)
+								})
+							)
+						),new Else(
+							new If(
+								new Expression(
+									"Touching()"
+								),
+								new Block(new Expression[] {
+									new Expression(
+										"MoveBackward(500)"
+									)
+								})
+							)
+						),new Else(
+							new Block(new Expression[] {
+								new Expression(
+									"MoveForward(500)"
+								)
+							})
 						)
 					})
 				)
