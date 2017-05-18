@@ -53,6 +53,9 @@ public class RobotScript {
 	
 	Else checkElse(Else elseb){
 		elseb.ex = checkExpression(elseb.ex);
+		if (elseb.ex == null) {
+			return null;
+		}
 		return elseb;
 	}
 	
@@ -104,34 +107,45 @@ public class RobotScript {
 			if (i+1 < bl.exs.length) {
 				next = bl.exs[i+1];
 			}
-			Expression checked = checkExpression(current);
-			
-			if (checked == null && next != null) {
-				if (current.getClass() == If.class) {
-					if (next.getClass() == Else.class) {
+			//Check the current expression. Null if current is null
+			Expression checked = null;
+			if (current != null) {	
+				checked = checkExpression(current);
+				System.out.println("Checked: "+(checked==null)+", Next: "+(next!=null));
+				//If the current expression is null, but the next isnt
+				if (checked == null && next != null) {
+					
+					//If the current is an IF and next is an ELSE
+					if (current.getClass() == If.class && next.getClass() == Else.class) {
+						//Get the else's expression
 						Expression elseEx = ((Else)next).ex;
+						//If the else is not a block, replace the else with it's expression
 						if (elseEx.getClass() != Block.class) {
 							bl.exs[i+1] = elseEx;
 						} else {
-							//If the else expression has a block following it:
+							//If the else expression has a block following it, insert it's contents into the code
+							
+							//Create a new list for the current block, with the total size of both
 							int elseBlockLength = ((Block)elseEx).exs.length;
-							//Create a new list for this block, with the total size of both (-2)
-							Expression[] newList = new Expression[elseBlockLength + bl.exs.length-1];
+							Expression[] newList = new Expression[elseBlockLength + bl.exs.length];
+
+							//Copy up to (not including) index of If statement
 							for (int k = 0; k < i; k++) {
 								newList[k] = bl.exs[k];
 							}
-							for (int k = i; k < i + elseBlockLength; k++) {
-								newList[k+1] = ((Block)elseEx).exs[k-i];
+							//Fill in the contents of the block into the current one
+							for (int k = 0; k < elseBlockLength; k++) {
+								newList[i+k+2] = ((Block)elseEx).exs[k];
 							}
-							for (int k = i + elseBlockLength+1; k < newList.length; k++) {
-								newList[k] = bl.exs[k-elseBlockLength+1];
+							//Append the last parts of the current block
+							for (int k = i+2; k < bl.exs.length; k++) {
+								newList[k+elseBlockLength] = bl.exs[k];
 							}
 							bl.exs = newList;
 						}
 					}
 				}
 			}
-			
 			//Finally assign the value to array at nice
 			bl.exs[i] = checked;
 		}
@@ -143,6 +157,12 @@ public class RobotScript {
 			}
 		}
 		bl.exs = expressionlist.toArray(new Expression[0]);
+		for (Expression ex : bl.exs) {
+			System.out.println(ex +"," + ex.content);
+			if (ex.getClass() == Else.class) {
+				System.out.println("Else ex: "+(((Else)ex).ex == null));
+			}
+		}
 		return bl;
 	}
 	
