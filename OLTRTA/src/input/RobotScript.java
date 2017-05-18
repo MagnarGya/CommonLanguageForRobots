@@ -111,7 +111,6 @@ public class RobotScript {
 			Expression checked = null;
 			if (current != null) {	
 				checked = checkExpression(current);
-				System.out.println("Checked: "+(checked==null)+", Next: "+(next!=null));
 				//If the current expression is null, but the next isnt
 				if (checked == null && next != null) {
 					
@@ -157,12 +156,6 @@ public class RobotScript {
 			}
 		}
 		bl.exs = expressionlist.toArray(new Expression[0]);
-		for (Expression ex : bl.exs) {
-			System.out.println(ex +"," + ex.content);
-			if (ex.getClass() == Else.class) {
-				System.out.println("Else ex: "+(((Else)ex).ex == null));
-			}
-		}
 		return bl;
 	}
 	
