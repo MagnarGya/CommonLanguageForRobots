@@ -5,19 +5,17 @@
     <extension>.py</extension>
     <globalvariables>
       <e name="ev3dev.ev3 as ev3" type="import"/>
-      <e name="rightMotor" type="LargeMotor"/>
-      <e name="leftMotor" type="LargeMotor"/>
-      <e name="touchingLeft" type="boolean"/>
-      <e name="touchingRight" type="boolean"/>
-      <e name="seeingLeft" type="boolean"/>
-      <e name="seeingRight" type="boolean"/>
+      <e name="rightMotor" type="global"/>
+      <e name="leftMotor" type="global"/>
+      <e name="touchingLeft" type="global"/>
+      <e name="touchingRight" type="global"/>
+      <e name="seeingLeft" type="global"/>
+      <e name="seeingRight" type="global"/>
     </globalvariables>
     <method>
-      <setup parameters="" return="void">
-			rightMotor = ev3.LargeMotor('outA')
-			leftMotor = ev3.LargeMotor('outB')
-      </setup>
-    </method>
+		<setup parameters="" return="void">
+		</setup>
+	</method>
   </setup>
   <metamethods>
 		<ReadSensors parameter="" return="void">touchingLeft = ev3.TouchSensor().is_pressed()

@@ -1,5 +1,4 @@
 package input;
-
 import java.util.ArrayList;
 import input.RobotScript;
 import CommonLanguageObjects.*;

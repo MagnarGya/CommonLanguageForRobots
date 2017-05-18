@@ -51,8 +51,18 @@ public class CommonToPythonParser implements CommonToLanguageParser{
         case "class CommonLanguageObjects.While": return parseWhile((While)_exp);
         case "class CommonLanguageObjects.For": return parseFor((For)_exp);
         case "class CommonLanguageObjects.Declaration": return _exp.content + "\n";
-        default: return _exp.content;
+        default: return convertBooleans(_exp.content);
     }
+	}
+	
+	public String convertBooleans (String str) {
+		str = str.replace("false", "False");
+		str = str.replace("true", "True");
+		str = str.replace("&&", " and ");
+		str = str.replace("||", "or");
+		str = str.replace("!", " not ");
+		
+		return str;
 	}
 
 	@Override
@@ -98,7 +108,7 @@ public class CommonToPythonParser implements CommonToLanguageParser{
 	public String parseParameter(Parameter _parameter) {
 		String returnString = "";
 
-        returnString += _parameter.type + " " + _parameter.content;
+        returnString += _parameter.content;
 
         return returnString;
 	}
