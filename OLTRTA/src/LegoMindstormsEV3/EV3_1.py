@@ -17,17 +17,12 @@ def setup():
     seeingLeft = False
 def loop():
     ReadSensors()
-    if Seeing():
-        TurnLeft(69)
-    else: 
-        MoveBackward(4)
-        MoveForward(6)
-        while (Seeing()): 
-            TurnRight(22)
+    MoveBackward(4)
+    MoveForward(6)
+    while (True): 
+        TurnRight(22)
     if Seeing():
         MoveBackward(1)
-    elif SeeingLeft():
-        TurnRight(45)
     elif SeeingRight():
         TurnLeft(45)
     elif Touching():
