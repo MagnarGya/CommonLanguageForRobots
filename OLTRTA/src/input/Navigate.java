@@ -18,7 +18,7 @@ public class Navigate extends RobotScript {
 							"ReadSensors()"
 						),new If(
 							new Expression(
-								"Seeing()"
+								"Peeing()"
 							),
 							new Block(new Expression[] {
 								new Expression(
@@ -33,7 +33,7 @@ public class Navigate extends RobotScript {
 									"MoveForward(6)"
 								),new While(
 									new Expression(
-										"Seeing()"
+										"true"
 									),
 									new Block(new Expression[] {
 										new Expression(
@@ -54,7 +54,7 @@ public class Navigate extends RobotScript {
 						),new Else(
 							new If(
 								new Expression(
-									"SeeingLeft()"
+									"KeeingLeft()"
 								),
 								new Block(new Expression[] {
 									new Expression(
