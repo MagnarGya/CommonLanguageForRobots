@@ -18,13 +18,50 @@ public class Navigate extends RobotScript {
 							"ReadSensors()"
 						),new If(
 							new Expression(
-								"SeeingLeft()"
+								"Seeing()"
 							),
 							new Block(new Expression[] {
 								new Expression(
-									"TurnRight(90)"
+									"TurnLeft(69)"
 								)
 							})
+						),new Else(
+							new Block(new Expression[] {
+								new Expression(
+									"MoveBackward(4)"
+								),new Expression(
+									"MoveForward(6)"
+								),new While(
+									new Expression(
+										"Seeing()"
+									),
+									new Block(new Expression[] {
+										new Expression(
+											"TurnRight(22)"
+										)
+									})
+								)
+							})
+						),new If(
+							new Expression(
+								"Seeing()"
+							),
+							new Block(new Expression[] {
+								new Expression(
+									"MoveBackward(1)"
+								)
+							})
+						),new Else(
+							new If(
+								new Expression(
+									"SeeingLeft()"
+								),
+								new Block(new Expression[] {
+									new Expression(
+										"TurnRight(45)"
+									)
+								})
+							)
 						),new Else(
 							new If(
 								new Expression(
@@ -32,7 +69,7 @@ public class Navigate extends RobotScript {
 								),
 								new Block(new Expression[] {
 									new Expression(
-										"TurnLeft(90)"
+										"TurnLeft(45)"
 									)
 								})
 							)

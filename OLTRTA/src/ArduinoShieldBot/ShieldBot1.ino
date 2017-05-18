@@ -1,4 +1,7 @@
 #include <Servo.h>;
+#include <SPI.h>;
+#include <Pixy.h>;
+Pixy pixy;
 Servo servoRight;
 Servo servoLeft;
 int touchingLeft;
@@ -8,10 +11,24 @@ int seeingRight;
 void setup(){
     servoRight.attach(12);
     servoLeft.attach(13);
+    pinMode(8, OUTPUT);
+    Blink();
     Serial.begin(9600);
 }	
 void loop(){
-    
+    ReadSensors();
+    if (SeeingLeft()){
+        TurnRight(45);
+    }	
+    else if (SeeingRight()){
+        TurnLeft(45);
+    }	
+    else if (Touching()){
+        MoveBackward(500);
+    }	
+    else {
+        MoveForward(500);
+    }	
 }	
 
 void moveForward(int time){
@@ -54,6 +71,12 @@ int WhiskerSensor(int pin){
 void idle(int time){
     servoRight.writeMicroseconds(1500);
     delay(time);
+}	
+void lightOn(int pout){
+    digitalWrite(pout, HIGH);
+}	
+void lightOff(int pout){
+    digitalWrite(pout, LOW);
 }	
 void ReadSensors(){
     touchingLeft = WhiskerSensor(10);
@@ -101,4 +124,10 @@ void TurnLeft(int degrees){
 }	
 void Idle(int time){
     idle(time);
+}	
+void LightOn(){
+    lightOn(8);
+}	
+void LightOff(){
+    lightOff(8);
 }	
