@@ -11,10 +11,12 @@ import CommonLanguageObjects.*;
 public class CodeOutputWriter {
 	BotMethods botmethods;
 	Script loop;
+	String name;
 	
-	public CodeOutputWriter(BotMethods _botmethods, Script _loop){
+	public CodeOutputWriter(BotMethods _botmethods, Script _loop, String _name){
 		botmethods = _botmethods;
 		loop = _loop;
+		name = _name;
 	}
 	
 	public void writeToFile(){
@@ -38,14 +40,14 @@ public class CodeOutputWriter {
 			File folder = new File(path);
 			File file;
 			if(folder.exists()){
-				path = new File(".\\src\\"+botmethods.robot+"\\"+botmethods.name+""+botmethods.extension).getCanonicalPath();
+				path = new File(".\\src\\"+botmethods.robot+"\\"+name+botmethods.name+""+botmethods.extension).getCanonicalPath();
 				file = new File(path);
 				if(!(file.exists())){
 					file.createNewFile();
 				}
 			}else{
 				folder.mkdir();
-				path = new File(".\\src\\"+botmethods.robot+"\\"+botmethods.name+""+botmethods.extension).getCanonicalPath();
+				path = new File(".\\src\\"+botmethods.robot+"\\"+name+botmethods.name+""+botmethods.extension).getCanonicalPath();
 				file = new File(path);
 				file.createNewFile();
 			}
