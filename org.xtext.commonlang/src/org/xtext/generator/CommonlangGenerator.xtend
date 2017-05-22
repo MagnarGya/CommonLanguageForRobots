@@ -29,6 +29,8 @@ import org.xtext.commonlang.MetaMethods
 import org.xtext.commonlang.UserMethod
 import org.xtext.commonlang.Call
 import org.eclipse.emf.common.util.EList
+import org.xtext.commonlang.ValueExpression
+import org.xtext.commonlang.Crement
 
 /**
  * Generates code from your model files on save.
@@ -108,8 +110,14 @@ class CommonlangGenerator implements IGenerator {
 			Assignment : e.compile
 			Block : e.compile
 			Call : e.compile
+			Crement : e.compile
 		}
 	}
+	
+	def compile(Crement e)'''
+		new Expression(
+			"«e.value.makeString»«e.op»"
+		)'''
 	
 	def compile(If e) '''
 		new If(
@@ -138,7 +146,7 @@ class CommonlangGenerator implements IGenerator {
 	
 	def compile(Assignment e) '''
 		new Expression(
-			"«e.vari.makeString» = «e.value.makeString»"
+			"«e.vari.makeString» «e.op»= «e.value.makeString»"
 		)'''
 	
 	def compile(Block e) {
@@ -192,7 +200,11 @@ class CommonlangGenerator implements IGenerator {
 		)'''
 		
 	def CharSequence makeString(Bool e) '''
-		«e.varleft.makeString»«e.op»«e.varright.makeString»«e.bop»«IF e.bnext != null»«e.bnext.makeString»«ENDIF»'''
+		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»«IF e.bnext != null»«e.bop»«e.bnext.makeString»«ENDIF»'''
+	
+	def CharSequence makeString(ValueExpression e) {'''
+		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
+	}
 	
 	def makeString(Declaration e) '''
 		«e.type» «e.name»'''

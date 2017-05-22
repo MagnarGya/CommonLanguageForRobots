@@ -12,6 +12,7 @@ package org.xtext.commonlang;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.commonlang.Assignment#getVari <em>Vari</em>}</li>
+ *   <li>{@link org.xtext.commonlang.Assignment#getOp <em>Op</em>}</li>
  *   <li>{@link org.xtext.commonlang.Assignment#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -49,6 +50,32 @@ public interface Assignment extends SimpleExpression
   void setVari(Declaration value);
 
   /**
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see org.xtext.commonlang.CommonlangPackage#getAssignment_Op()
+   * @model
+   * @generated
+   */
+  String getOp();
+
+  /**
+   * Sets the value of the '{@link org.xtext.commonlang.Assignment#getOp <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(String value);
+
+  /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -57,12 +84,12 @@ public interface Assignment extends SimpleExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(Value)
+   * @see #setValue(ValueExpression)
    * @see org.xtext.commonlang.CommonlangPackage#getAssignment_Value()
    * @model containment="true"
    * @generated
    */
-  Value getValue();
+  ValueExpression getValue();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.Assignment#getValue <em>Value</em>}' containment reference.
@@ -72,6 +99,6 @@ public interface Assignment extends SimpleExpression
    * @see #getValue()
    * @generated
    */
-  void setValue(Value value);
+  void setValue(ValueExpression value);
 
 } // Assignment

@@ -50,6 +50,8 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
 					put(grammarAccess.getComparisonOperatorAccess().getAlternatives(), "rule__ComparisonOperator__Alternatives");
 					put(grammarAccess.getBooleanOperatorAccess().getAlternatives(), "rule__BooleanOperator__Alternatives");
+					put(grammarAccess.getMathOperatorAccess().getAlternatives(), "rule__MathOperator__Alternatives");
+					put(grammarAccess.getCrementOperatorAccess().getAlternatives(), "rule__CrementOperator__Alternatives");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
 					put(grammarAccess.getBasicValueAccess().getAlternatives(), "rule__BasicValue__Alternatives");
 					put(grammarAccess.getBooleanValueAccess().getValueAlternatives_0(), "rule__BooleanValue__ValueAlternatives_0");
@@ -72,6 +74,9 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBoolAccess().getGroup(), "rule__Bool__Group__0");
 					put(grammarAccess.getBoolAccess().getGroup_1(), "rule__Bool__Group_1__0");
 					put(grammarAccess.getBoolAccess().getGroup_2(), "rule__Bool__Group_2__0");
+					put(grammarAccess.getValueExpressionAccess().getGroup(), "rule__ValueExpression__Group__0");
+					put(grammarAccess.getValueExpressionAccess().getGroup_1(), "rule__ValueExpression__Group_1__0");
+					put(grammarAccess.getCrementAccess().getGroup(), "rule__Crement__Group__0");
 					put(grammarAccess.getIfAccess().getGroup(), "rule__If__Group__0");
 					put(grammarAccess.getElseAccess().getGroup(), "rule__Else__Group__0");
 					put(grammarAccess.getForAccess().getGroup(), "rule__For__Group__0");
@@ -90,7 +95,8 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBlockAccess().getExsAssignment_2_0_0(), "rule__Block__ExsAssignment_2_0_0");
 					put(grammarAccess.getBlockAccess().getExsAssignment_2_1(), "rule__Block__ExsAssignment_2_1");
 					put(grammarAccess.getAssignmentAccess().getVariAssignment_0(), "rule__Assignment__VariAssignment_0");
-					put(grammarAccess.getAssignmentAccess().getValueAssignment_1_1(), "rule__Assignment__ValueAssignment_1_1");
+					put(grammarAccess.getAssignmentAccess().getOpAssignment_1_0(), "rule__Assignment__OpAssignment_1_0");
+					put(grammarAccess.getAssignmentAccess().getValueAssignment_1_2(), "rule__Assignment__ValueAssignment_1_2");
 					put(grammarAccess.getCallAccess().getParametersAssignment_2(), "rule__Call__ParametersAssignment_2");
 					put(grammarAccess.getCallAccess().getParametersAssignment_3_1(), "rule__Call__ParametersAssignment_3_1");
 					put(grammarAccess.getMetaMethodAccess().getTypeAssignment_1(), "rule__MetaMethod__TypeAssignment_1");
@@ -109,6 +115,11 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBoolAccess().getVarrightAssignment_1_1(), "rule__Bool__VarrightAssignment_1_1");
 					put(grammarAccess.getBoolAccess().getBopAssignment_2_0(), "rule__Bool__BopAssignment_2_0");
 					put(grammarAccess.getBoolAccess().getBnextAssignment_2_1(), "rule__Bool__BnextAssignment_2_1");
+					put(grammarAccess.getValueExpressionAccess().getVarleftAssignment_0(), "rule__ValueExpression__VarleftAssignment_0");
+					put(grammarAccess.getValueExpressionAccess().getOpAssignment_1_0(), "rule__ValueExpression__OpAssignment_1_0");
+					put(grammarAccess.getValueExpressionAccess().getVarrightAssignment_1_1(), "rule__ValueExpression__VarrightAssignment_1_1");
+					put(grammarAccess.getCrementAccess().getValueAssignment_0(), "rule__Crement__ValueAssignment_0");
+					put(grammarAccess.getCrementAccess().getOpAssignment_1(), "rule__Crement__OpAssignment_1");
 					put(grammarAccess.getIfAccess().getExAssignment_2(), "rule__If__ExAssignment_2");
 					put(grammarAccess.getIfAccess().getBlAssignment_4(), "rule__If__BlAssignment_4");
 					put(grammarAccess.getElseAccess().getExAssignment_1(), "rule__Else__ExAssignment_1");

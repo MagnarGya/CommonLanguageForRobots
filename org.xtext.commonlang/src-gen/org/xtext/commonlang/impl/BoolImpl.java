@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Value;
+import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * @generated
    * @ordered
    */
-  protected Value varleft;
+  protected ValueExpression varleft;
 
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -72,7 +72,7 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * @generated
    * @ordered
    */
-  protected Value varright;
+  protected ValueExpression varright;
 
   /**
    * The default value of the '{@link #getBop() <em>Bop</em>}' attribute.
@@ -130,7 +130,7 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * <!-- end-user-doc -->
    * @generated
    */
-  public Value getVarleft()
+  public ValueExpression getVarleft()
   {
     return varleft;
   }
@@ -140,9 +140,9 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVarleft(Value newVarleft, NotificationChain msgs)
+  public NotificationChain basicSetVarleft(ValueExpression newVarleft, NotificationChain msgs)
   {
-    Value oldVarleft = varleft;
+    ValueExpression oldVarleft = varleft;
     varleft = newVarleft;
     if (eNotificationRequired())
     {
@@ -157,7 +157,7 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVarleft(Value newVarleft)
+  public void setVarleft(ValueExpression newVarleft)
   {
     if (newVarleft != varleft)
     {
@@ -201,7 +201,7 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * <!-- end-user-doc -->
    * @generated
    */
-  public Value getVarright()
+  public ValueExpression getVarright()
   {
     return varright;
   }
@@ -211,9 +211,9 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVarright(Value newVarright, NotificationChain msgs)
+  public NotificationChain basicSetVarright(ValueExpression newVarright, NotificationChain msgs)
   {
-    Value oldVarright = varright;
+    ValueExpression oldVarright = varright;
     varright = newVarright;
     if (eNotificationRequired())
     {
@@ -228,7 +228,7 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVarright(Value newVarright)
+  public void setVarright(ValueExpression newVarright)
   {
     if (newVarright != varright)
     {
@@ -370,13 +370,13 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
     switch (featureID)
     {
       case CommonlangPackage.BOOL__VARLEFT:
-        setVarleft((Value)newValue);
+        setVarleft((ValueExpression)newValue);
         return;
       case CommonlangPackage.BOOL__OP:
         setOp((String)newValue);
         return;
       case CommonlangPackage.BOOL__VARRIGHT:
-        setVarright((Value)newValue);
+        setVarright((ValueExpression)newValue);
         return;
       case CommonlangPackage.BOOL__BOP:
         setBop((String)newValue);
@@ -399,13 +399,13 @@ public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
     switch (featureID)
     {
       case CommonlangPackage.BOOL__VARLEFT:
-        setVarleft((Value)null);
+        setVarleft((ValueExpression)null);
         return;
       case CommonlangPackage.BOOL__OP:
         setOp(OP_EDEFAULT);
         return;
       case CommonlangPackage.BOOL__VARRIGHT:
-        setVarright((Value)null);
+        setVarright((ValueExpression)null);
         return;
       case CommonlangPackage.BOOL__BOP:
         setBop(BOP_EDEFAULT);

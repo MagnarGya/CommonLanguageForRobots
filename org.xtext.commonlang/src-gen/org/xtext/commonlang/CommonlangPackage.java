@@ -281,13 +281,22 @@ public interface CommonlangPackage extends EPackage
   int ASSIGNMENT__VARI = SIMPLE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT__OP = SIMPLE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSIGNMENT__VALUE = SIMPLE_EXPRESSION_FEATURE_COUNT + 1;
+  int ASSIGNMENT__VALUE = SIMPLE_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Assignment</em>' class.
@@ -296,7 +305,7 @@ public interface CommonlangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_FEATURE_COUNT = SIMPLE_EXPRESSION_FEATURE_COUNT + 2;
+  int ASSIGNMENT_FEATURE_COUNT = SIMPLE_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.CallImpl <em>Call</em>}' class.
@@ -621,6 +630,89 @@ public interface CommonlangPackage extends EPackage
   int BOOL_FEATURE_COUNT = 5;
 
   /**
+   * The meta object id for the '{@link org.xtext.commonlang.impl.ValueExpressionImpl <em>Value Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.commonlang.impl.ValueExpressionImpl
+   * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getValueExpression()
+   * @generated
+   */
+  int VALUE_EXPRESSION = 15;
+
+  /**
+   * The feature id for the '<em><b>Varleft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_EXPRESSION__VARLEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_EXPRESSION__OP = 1;
+
+  /**
+   * The feature id for the '<em><b>Varright</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_EXPRESSION__VARRIGHT = 2;
+
+  /**
+   * The number of structural features of the '<em>Value Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_EXPRESSION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.commonlang.impl.CrementImpl <em>Crement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.commonlang.impl.CrementImpl
+   * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getCrement()
+   * @generated
+   */
+  int CREMENT = 16;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREMENT__VALUE = SIMPLE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREMENT__OP = SIMPLE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Crement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREMENT_FEATURE_COUNT = SIMPLE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.IfImpl <em>If</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -628,7 +720,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getIf()
    * @generated
    */
-  int IF = 15;
+  int IF = 17;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -665,7 +757,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getElse()
    * @generated
    */
-  int ELSE = 16;
+  int ELSE = 18;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -693,7 +785,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getFor()
    * @generated
    */
-  int FOR = 17;
+  int FOR = 19;
 
   /**
    * The feature id for the '<em><b>Init</b></em>' containment reference.
@@ -748,7 +840,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 18;
+  int WHILE = 20;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -785,7 +877,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getValue()
    * @generated
    */
-  int VALUE = 19;
+  int VALUE = 21;
 
   /**
    * The number of structural features of the '<em>Value</em>' class.
@@ -804,7 +896,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBasicValue()
    * @generated
    */
-  int BASIC_VALUE = 20;
+  int BASIC_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -832,7 +924,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 21;
+  int BOOLEAN_VALUE = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -860,7 +952,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 22;
+  int STRING_VALUE = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -888,7 +980,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNumberValue()
    * @generated
    */
-  int NUMBER_VALUE = 23;
+  int NUMBER_VALUE = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -916,7 +1008,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getVarReference()
    * @generated
    */
-  int VAR_REFERENCE = 24;
+  int VAR_REFERENCE = 26;
 
   /**
    * The feature id for the '<em><b>Vari</b></em>' reference.
@@ -944,7 +1036,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getDeclaration()
    * @generated
    */
-  int DECLARATION = 25;
+  int DECLARATION = 27;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -981,7 +1073,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getReturn()
    * @generated
    */
-  int RETURN = 26;
+  int RETURN = 28;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' containment reference.
@@ -1180,6 +1272,17 @@ public interface CommonlangPackage extends EPackage
    * @generated
    */
   EReference getAssignment_Vari();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.commonlang.Assignment#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.commonlang.Assignment#getOp()
+   * @see #getAssignment()
+   * @generated
+   */
+  EAttribute getAssignment_Op();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.commonlang.Assignment#getValue <em>Value</em>}'.
@@ -1382,6 +1485,81 @@ public interface CommonlangPackage extends EPackage
    * @generated
    */
   EReference getBool_Bnext();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.commonlang.ValueExpression <em>Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Value Expression</em>'.
+   * @see org.xtext.commonlang.ValueExpression
+   * @generated
+   */
+  EClass getValueExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.ValueExpression#getVarleft <em>Varleft</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Varleft</em>'.
+   * @see org.xtext.commonlang.ValueExpression#getVarleft()
+   * @see #getValueExpression()
+   * @generated
+   */
+  EReference getValueExpression_Varleft();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.commonlang.ValueExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.commonlang.ValueExpression#getOp()
+   * @see #getValueExpression()
+   * @generated
+   */
+  EAttribute getValueExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.ValueExpression#getVarright <em>Varright</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Varright</em>'.
+   * @see org.xtext.commonlang.ValueExpression#getVarright()
+   * @see #getValueExpression()
+   * @generated
+   */
+  EReference getValueExpression_Varright();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.commonlang.Crement <em>Crement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Crement</em>'.
+   * @see org.xtext.commonlang.Crement
+   * @generated
+   */
+  EClass getCrement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.Crement#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.commonlang.Crement#getValue()
+   * @see #getCrement()
+   * @generated
+   */
+  EReference getCrement_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.commonlang.Crement#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.commonlang.Crement#getOp()
+   * @see #getCrement()
+   * @generated
+   */
+  EAttribute getCrement_Op();
 
   /**
    * Returns the meta object for class '{@link org.xtext.commonlang.If <em>If</em>}'.
@@ -1833,6 +2011,14 @@ public interface CommonlangPackage extends EPackage
     EReference ASSIGNMENT__VARI = eINSTANCE.getAssignment_Vari();
 
     /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSIGNMENT__OP = eINSTANCE.getAssignment_Op();
+
+    /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1997,6 +2183,66 @@ public interface CommonlangPackage extends EPackage
      * @generated
      */
     EReference BOOL__BNEXT = eINSTANCE.getBool_Bnext();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.commonlang.impl.ValueExpressionImpl <em>Value Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.commonlang.impl.ValueExpressionImpl
+     * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getValueExpression()
+     * @generated
+     */
+    EClass VALUE_EXPRESSION = eINSTANCE.getValueExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Varleft</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VALUE_EXPRESSION__VARLEFT = eINSTANCE.getValueExpression_Varleft();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_EXPRESSION__OP = eINSTANCE.getValueExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Varright</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VALUE_EXPRESSION__VARRIGHT = eINSTANCE.getValueExpression_Varright();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.commonlang.impl.CrementImpl <em>Crement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.commonlang.impl.CrementImpl
+     * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getCrement()
+     * @generated
+     */
+    EClass CREMENT = eINSTANCE.getCrement();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREMENT__VALUE = eINSTANCE.getCrement_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREMENT__OP = eINSTANCE.getCrement_Op();
 
     /**
      * The meta object literal for the '{@link org.xtext.commonlang.impl.IfImpl <em>If</em>}' class.

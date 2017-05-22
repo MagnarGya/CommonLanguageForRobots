@@ -35,12 +35,12 @@ public interface Bool extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Varleft</em>' containment reference.
-   * @see #setVarleft(Value)
+   * @see #setVarleft(ValueExpression)
    * @see org.xtext.commonlang.CommonlangPackage#getBool_Varleft()
    * @model containment="true"
    * @generated
    */
-  Value getVarleft();
+  ValueExpression getVarleft();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.Bool#getVarleft <em>Varleft</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface Bool extends EObject
    * @see #getVarleft()
    * @generated
    */
-  void setVarleft(Value value);
+  void setVarleft(ValueExpression value);
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' attribute.
@@ -87,12 +87,12 @@ public interface Bool extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Varright</em>' containment reference.
-   * @see #setVarright(Value)
+   * @see #setVarright(ValueExpression)
    * @see org.xtext.commonlang.CommonlangPackage#getBool_Varright()
    * @model containment="true"
    * @generated
    */
-  Value getVarright();
+  ValueExpression getVarright();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.Bool#getVarright <em>Varright</em>}' containment reference.
@@ -102,7 +102,7 @@ public interface Bool extends EObject
    * @see #getVarright()
    * @generated
    */
-  void setVarright(Value value);
+  void setVarright(ValueExpression value);
 
   /**
    * Returns the value of the '<em><b>Bop</b></em>' attribute.

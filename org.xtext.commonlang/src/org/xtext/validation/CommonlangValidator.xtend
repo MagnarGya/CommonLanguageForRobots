@@ -14,6 +14,8 @@ import org.xtext.commonlang.BasicValue
 import org.xtext.commonlang.Value
 import org.xtext.commonlang.Assignment
 import org.xtext.commonlang.Bool
+import org.xtext.commonlang.ValueExpression
+import org.xtext.commonlang.Crement
 
 /**
  * This class contains custom validation rules. 
@@ -30,7 +32,7 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 			for (var i = 0; i < call.getParameters().size(); i++) {
 				var thisParam = call.getParameters().get(i)
 				var thatType = call.getMethod().getParameters().get(i).getType();
-				var thisType = getTypeOfValue(thisParam)
+				var thisType = getTypeOfValueExpression(thisParam)
 				
 				if (thisType != thatType) {
 					error("Type mismatch: Expected "+ thatType +" got " + thisType,null)
@@ -41,7 +43,7 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 	
 	@Check
 	def checkAssignments(Assignment assignment) {
-		var thisType = assignment.value.getTypeOfValue
+		var thisType = assignment.value.getTypeOfValueExpression
 		var thatType = assignment.vari.getType();
 		
 		if (thisType != thatType) {
@@ -51,8 +53,11 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 	
 	@Check
 	def checkBools(Bool bool) {
-		var thisType = bool.varleft.getTypeOfValue
-		var thatType = bool.varright.getTypeOfValue;
+		var thisType = bool.varleft.getTypeOfValueExpression
+		var thatType = "";
+		if (bool.varright != null) {
+			thatType = bool.varright.getTypeOfValueExpression
+		}
 		
 		if (thisType != thatType && bool.op != null) {
 			error("Type mismatch: Cannot compare "+ thatType +" to " + thisType,null)
@@ -61,6 +66,36 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 		if (thisType != "boolean" && bool.op == null) {
 			error("Boolean expression expected",null)
 		}
+	}
+
+	@Check
+	def checkValueExpressions(ValueExpression valExp) {
+		var thisType = valExp.varleft.getTypeOfValue
+		var thatType = valExp.varright.getTypeOfValueExpression
+		
+		if (thisType != thatType && valExp.op != null) {
+			error("Type mismatch: Cannot combine values of "+ thatType +" with " + thisType,null)
+		}
+		if (valExp.op != null) {
+			if (thisType == 'string' && valExp.op != '+') {
+				error("Invalid operation: Cannot perform "+valExp.op+" operation on string values",null)
+			}
+			if (thisType == 'boolean') {
+				error("Invalid operation: Cannot perform "+valExp.op+" operation on bool values",null)
+			}
+		}
+	}
+	
+	@Check
+	def checkCrement(Crement crem) {
+		var thisType = crem.value.getTypeOfValue
+		if (thisType != 'int') {
+			error("Invalid type: Cannot perform "+crem.op+" operation on "+thisType,null)
+		}
+	}
+	
+	def String getTypeOfValueExpression(ValueExpression thisVal) {
+		return getTypeOfValue(thisVal.varleft)
 	}
 	
 	def String getTypeOfValue(Value thisVal) {

@@ -158,6 +158,24 @@ public interface CommonlangFactory extends EFactory
   Bool createBool();
 
   /**
+   * Returns a new object of class '<em>Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Expression</em>'.
+   * @generated
+   */
+  ValueExpression createValueExpression();
+
+  /**
+   * Returns a new object of class '<em>Crement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Crement</em>'.
+   * @generated
+   */
+  Crement createCrement();
+
+  /**
    * Returns a new object of class '<em>If</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -24,7 +24,7 @@ Block:
 ;
 
 SimpleExpression:
-	Call | Assignment | Return
+	 Crement | Call | Assignment | Return
 ;
 
 StructureExpression:
@@ -37,11 +37,11 @@ Expression:
 
 
 Assignment:
-	vari=([Declaration|LOWERFIRST] | Declaration) ( => '=' value=Value)
+	vari=([Declaration|LOWERFIRST] | Declaration) ( => op=MathOperator?'=' value=ValueExpression)
 ;
 
 Call:
-	(UserMethodCall | MetaMethodCall) '('parameters+=Value? (','+ parameters+=Value)*')'
+	(UserMethodCall | MetaMethodCall) '('parameters+=ValueExpression? (','+ parameters+=ValueExpression)*')'
 ;
 
 Method:
@@ -68,7 +68,15 @@ terminal LOWERFIRST: ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal CAPITALFIRST: ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 Bool:
-	varleft=Value (=> op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?
+	varleft=ValueExpression (=> op=ComparisonOperator varright=ValueExpression)? (bop=BooleanOperator bnext=Bool)?
+;
+
+ValueExpression:
+	varleft=Value (=> op=MathOperator varright=ValueExpression)?
+;
+
+Crement:
+	value=VarReference op=CrementOperator
 ;
 
 ComparisonOperator:
@@ -79,6 +87,13 @@ BooleanOperator:
 	'&&' | '||' | '!&&' | '!||'
 ;
 
+MathOperator:
+	'+' | '-' | '*' | '/'
+;
+
+CrementOperator:
+	'++' | '--'
+;
 If:
 	'if' '(' ex=Bool ')' bl=Block
 ;
@@ -88,7 +103,7 @@ Else:
 ;
 
 For:
-	'for' '(' init=Expression ';' check=Bool ';' action=Expression')' bl=Block
+	'for' '(' init=SimpleExpression ';' check=Bool ';' action=SimpleExpression')' bl=Block
 ;
 
 While:
@@ -124,7 +139,7 @@ Declaration:
 ;
 
 Return:
-	'return' val=Value
+	'return' val=ValueExpression
 ;
 
 Methodtype:

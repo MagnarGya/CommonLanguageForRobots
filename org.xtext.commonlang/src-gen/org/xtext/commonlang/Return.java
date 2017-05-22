@@ -30,12 +30,12 @@ public interface Return extends SimpleExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Val</em>' containment reference.
-   * @see #setVal(Value)
+   * @see #setVal(ValueExpression)
    * @see org.xtext.commonlang.CommonlangPackage#getReturn_Val()
    * @model containment="true"
    * @generated
    */
-  Value getVal();
+  ValueExpression getVal();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.Return#getVal <em>Val</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface Return extends SimpleExpression
    * @see #getVal()
    * @generated
    */
-  void setVal(Value value);
+  void setVal(ValueExpression value);
 
 } // Return

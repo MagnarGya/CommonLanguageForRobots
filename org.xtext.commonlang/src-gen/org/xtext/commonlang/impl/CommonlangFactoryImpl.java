@@ -79,6 +79,8 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.USER_METHOD_CALL: return createUserMethodCall();
       case CommonlangPackage.META_METHOD_CALL: return createMetaMethodCall();
       case CommonlangPackage.BOOL: return createBool();
+      case CommonlangPackage.VALUE_EXPRESSION: return createValueExpression();
+      case CommonlangPackage.CREMENT: return createCrement();
       case CommonlangPackage.IF: return createIf();
       case CommonlangPackage.ELSE: return createElse();
       case CommonlangPackage.FOR: return createFor();
@@ -259,6 +261,28 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
   {
     BoolImpl bool = new BoolImpl();
     return bool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueExpression createValueExpression()
+  {
+    ValueExpressionImpl valueExpression = new ValueExpressionImpl();
+    return valueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Crement createCrement()
+  {
+    CrementImpl crement = new CrementImpl();
+    return crement;
   }
 
   /**

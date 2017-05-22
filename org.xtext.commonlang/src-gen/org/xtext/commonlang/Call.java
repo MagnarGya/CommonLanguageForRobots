@@ -25,7 +25,7 @@ public interface Call extends SimpleExpression, Value
 {
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.commonlang.Value}.
+   * The list contents are of type {@link org.xtext.commonlang.ValueExpression}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
@@ -37,7 +37,7 @@ public interface Call extends SimpleExpression, Value
    * @model containment="true"
    * @generated
    */
-  EList<Value> getParameters();
+  EList<ValueExpression> getParameters();
 
   /**
    * Returns the value of the '<em><b>Method</b></em>' reference.

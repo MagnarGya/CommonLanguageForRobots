@@ -196,6 +196,22 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CommonlangPackage.VALUE_EXPRESSION:
+      {
+        ValueExpression valueExpression = (ValueExpression)theEObject;
+        T result = caseValueExpression(valueExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CommonlangPackage.CREMENT:
+      {
+        Crement crement = (Crement)theEObject;
+        T result = caseCrement(crement);
+        if (result == null) result = caseSimpleExpression(crement);
+        if (result == null) result = caseExpression(crement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CommonlangPackage.IF:
       {
         If if_ = (If)theEObject;
@@ -538,6 +554,38 @@ public class CommonlangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBool(Bool object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Value Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValueExpression(ValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Crement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Crement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCrement(Crement object)
   {
     return null;
   }

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.commonlang.Call;
 import org.xtext.commonlang.CommonlangPackage;
 import org.xtext.commonlang.Method;
-import org.xtext.commonlang.Value;
+import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class CallImpl extends SimpleExpressionImpl implements Call
    * @generated
    * @ordered
    */
-  protected EList<Value> parameters;
+  protected EList<ValueExpression> parameters;
 
   /**
    * The cached value of the '{@link #getMethod() <em>Method</em>}' reference.
@@ -84,11 +84,11 @@ public class CallImpl extends SimpleExpressionImpl implements Call
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Value> getParameters()
+  public EList<ValueExpression> getParameters()
   {
     if (parameters == null)
     {
-      parameters = new EObjectContainmentEList<Value>(Value.class, this, CommonlangPackage.CALL__PARAMETERS);
+      parameters = new EObjectContainmentEList<ValueExpression>(ValueExpression.class, this, CommonlangPackage.CALL__PARAMETERS);
     }
     return parameters;
   }
@@ -184,7 +184,7 @@ public class CallImpl extends SimpleExpressionImpl implements Call
     {
       case CommonlangPackage.CALL__PARAMETERS:
         getParameters().clear();
-        getParameters().addAll((Collection<? extends Value>)newValue);
+        getParameters().addAll((Collection<? extends ValueExpression>)newValue);
         return;
       case CommonlangPackage.CALL__METHOD:
         setMethod((Method)newValue);

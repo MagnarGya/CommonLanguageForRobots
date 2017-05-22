@@ -28,6 +28,7 @@
     <genClasses ecoreClass="Commonlang.ecore#//Expression"/>
     <genClasses ecoreClass="Commonlang.ecore#//Assignment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Assignment/vari"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Assignment/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Assignment/value"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Call">
@@ -51,6 +52,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Bool/varright"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Bool/bop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Bool/bnext"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//ValueExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//ValueExpression/varleft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//ValueExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//ValueExpression/varright"/>
+    </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//Crement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Crement/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Crement/op"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//If">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/ex"/>

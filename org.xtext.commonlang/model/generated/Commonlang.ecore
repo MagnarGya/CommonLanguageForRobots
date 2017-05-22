@@ -30,12 +30,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//SimpleExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vari" eType="#//Declaration"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Value"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ValueExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="#//SimpleExpression #//Value">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Value" containment="true"/>
+        eType="#//ValueExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//Method"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Method">
@@ -51,14 +52,26 @@
   <eClassifiers xsi:type="ecore:EClass" name="UserMethodCall" eSuperTypes="#//Call"/>
   <eClassifiers xsi:type="ecore:EClass" name="MetaMethodCall" eSuperTypes="#//Call"/>
   <eClassifiers xsi:type="ecore:EClass" name="Bool">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varleft" eType="#//Value"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varleft" eType="#//ValueExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varright" eType="#//Value"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varright" eType="#//ValueExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bnext" eType="#//Bool"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varleft" eType="#//Value"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varright" eType="#//ValueExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Crement" eSuperTypes="#//SimpleExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//VarReference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//StructureExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ex" eType="#//Bool" containment="true"/>
@@ -69,11 +82,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="For" eSuperTypes="#//StructureExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//SimpleExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="check" eType="#//Bool"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//SimpleExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bl" eType="#//Block" containment="true"/>
   </eClassifiers>
@@ -96,6 +109,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="#//SimpleExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Value" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//ValueExpression"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

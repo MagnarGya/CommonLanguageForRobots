@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.CommonlangPackage;
 import org.xtext.commonlang.Return;
-import org.xtext.commonlang.Value;
+import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * @generated
    * @ordered
    */
-  protected Value val;
+  protected ValueExpression val;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public Value getVal()
+  public ValueExpression getVal()
   {
     return val;
   }
@@ -75,9 +75,9 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVal(Value newVal, NotificationChain msgs)
+  public NotificationChain basicSetVal(ValueExpression newVal, NotificationChain msgs)
   {
-    Value oldVal = val;
+    ValueExpression oldVal = val;
     val = newVal;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(Value newVal)
+  public void setVal(ValueExpression newVal)
   {
     if (newVal != val)
     {
@@ -151,7 +151,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
     switch (featureID)
     {
       case CommonlangPackage.RETURN__VAL:
-        setVal((Value)newValue);
+        setVal((ValueExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
     switch (featureID)
     {
       case CommonlangPackage.RETURN__VAL:
-        setVal((Value)null);
+        setVal((ValueExpression)null);
         return;
     }
     super.eUnset(featureID);

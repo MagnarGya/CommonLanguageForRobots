@@ -22,6 +22,7 @@ import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.BooleanValue;
 import org.xtext.commonlang.CLfile;
 import org.xtext.commonlang.CommonlangPackage;
+import org.xtext.commonlang.Crement;
 import org.xtext.commonlang.Declaration;
 import org.xtext.commonlang.Else;
 import org.xtext.commonlang.For;
@@ -35,6 +36,7 @@ import org.xtext.commonlang.Script;
 import org.xtext.commonlang.StringValue;
 import org.xtext.commonlang.UserMethod;
 import org.xtext.commonlang.UserMethodCall;
+import org.xtext.commonlang.ValueExpression;
 import org.xtext.commonlang.VarReference;
 import org.xtext.commonlang.While;
 import org.xtext.services.CommonlangGrammarAccess;
@@ -62,6 +64,9 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 				return; 
 			case CommonlangPackage.CLFILE:
 				sequence_CLfile(context, (CLfile) semanticObject); 
+				return; 
+			case CommonlangPackage.CREMENT:
+				sequence_Crement(context, (Crement) semanticObject); 
 				return; 
 			case CommonlangPackage.DECLARATION:
 				sequence_Declaration(context, (Declaration) semanticObject); 
@@ -122,6 +127,9 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 					return; 
 				}
 				else break;
+			case CommonlangPackage.VALUE_EXPRESSION:
+				sequence_ValueExpression(context, (ValueExpression) semanticObject); 
+				return; 
 			case CommonlangPackage.VAR_REFERENCE:
 				sequence_VarReference(context, (VarReference) semanticObject); 
 				return; 
@@ -134,7 +142,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     ((vari=[Declaration|LOWERFIRST] | vari=Declaration) value=Value)
+	 *     ((vari=[Declaration|LOWERFIRST] | vari=Declaration) op=MathOperator? value=ValueExpression)
 	 */
 	protected void sequence_Assignment(EObject context, Assignment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -152,7 +160,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (varleft=Value (op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?)
+	 *     (varleft=ValueExpression (op=ComparisonOperator varright=ValueExpression)? (bop=BooleanOperator bnext=Bool)?)
 	 */
 	protected void sequence_Bool(EObject context, Bool semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -179,7 +187,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (method=[Method|CAPITALFIRST] parameters+=Value? parameters+=Value*)
+	 *     (method=[Method|CAPITALFIRST] parameters+=ValueExpression? parameters+=ValueExpression*)
 	 */
 	protected void sequence_Call_MetaMethodCall(EObject context, MetaMethodCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -188,10 +196,29 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (method=[Method|LOWERFIRST] parameters+=Value? parameters+=Value*)
+	 *     (method=[Method|LOWERFIRST] parameters+=ValueExpression? parameters+=ValueExpression*)
 	 */
 	protected void sequence_Call_UserMethodCall(EObject context, UserMethodCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (value=VarReference op=CrementOperator)
+	 */
+	protected void sequence_Crement(EObject context, Crement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.CREMENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.CREMENT__VALUE));
+			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.CREMENT__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.CREMENT__OP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCrementAccess().getValueVarReferenceParserRuleCall_0_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCrementAccess().getOpCrementOperatorParserRuleCall_1_0(), semanticObject.getOp());
+		feeder.finish();
 	}
 	
 	
@@ -232,7 +259,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (init=Expression check=Bool action=Expression bl=Block)
+	 *     (init=SimpleExpression check=Bool action=SimpleExpression bl=Block)
 	 */
 	protected void sequence_For(EObject context, For semanticObject) {
 		if(errorAcceptor != null) {
@@ -247,9 +274,9 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getForAccess().getInitExpressionParserRuleCall_2_0(), semanticObject.getInit());
+		feeder.accept(grammarAccess.getForAccess().getInitSimpleExpressionParserRuleCall_2_0(), semanticObject.getInit());
 		feeder.accept(grammarAccess.getForAccess().getCheckBoolParserRuleCall_4_0(), semanticObject.getCheck());
-		feeder.accept(grammarAccess.getForAccess().getActionExpressionParserRuleCall_6_0(), semanticObject.getAction());
+		feeder.accept(grammarAccess.getForAccess().getActionSimpleExpressionParserRuleCall_6_0(), semanticObject.getAction());
 		feeder.accept(grammarAccess.getForAccess().getBlBlockParserRuleCall_8_0(), semanticObject.getBl());
 		feeder.finish();
 	}
@@ -319,7 +346,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     val=Value
+	 *     val=ValueExpression
 	 */
 	protected void sequence_Return(EObject context, Return semanticObject) {
 		if(errorAcceptor != null) {
@@ -328,7 +355,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReturnAccess().getValValueParserRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getReturnAccess().getValValueExpressionParserRuleCall_1_0(), semanticObject.getVal());
 		feeder.finish();
 	}
 	
@@ -378,6 +405,15 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     (type=Methodtype name=LOWERFIRST parameters+=Declaration? parameters+=Declaration* bl=Block)
 	 */
 	protected void sequence_UserMethod(EObject context, UserMethod semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (varleft=Value (op=MathOperator varright=ValueExpression)?)
+	 */
+	protected void sequence_ValueExpression(EObject context, ValueExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

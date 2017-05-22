@@ -9,38 +9,38 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Declaration;
+import org.xtext.commonlang.Value;
 import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Assignment</b></em>'.
+ * An implementation of the model object '<em><b>Value Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.AssignmentImpl#getVari <em>Vari</em>}</li>
- *   <li>{@link org.xtext.commonlang.impl.AssignmentImpl#getOp <em>Op</em>}</li>
- *   <li>{@link org.xtext.commonlang.impl.AssignmentImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.ValueExpressionImpl#getVarleft <em>Varleft</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.ValueExpressionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.ValueExpressionImpl#getVarright <em>Varright</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
+public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements ValueExpression
 {
   /**
-   * The cached value of the '{@link #getVari() <em>Vari</em>}' containment reference.
+   * The cached value of the '{@link #getVarleft() <em>Varleft</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVari()
+   * @see #getVarleft()
    * @generated
    * @ordered
    */
-  protected Declaration vari;
+  protected Value varleft;
 
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -63,21 +63,21 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   protected String op = OP_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getVarright() <em>Varright</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVarright()
    * @generated
    * @ordered
    */
-  protected ValueExpression value;
+  protected ValueExpression varright;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AssignmentImpl()
+  protected ValueExpressionImpl()
   {
     super();
   }
@@ -90,7 +90,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   @Override
   protected EClass eStaticClass()
   {
-    return CommonlangPackage.Literals.ASSIGNMENT;
+    return CommonlangPackage.Literals.VALUE_EXPRESSION;
   }
 
   /**
@@ -98,9 +98,9 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public Declaration getVari()
+  public Value getVarleft()
   {
-    return vari;
+    return varleft;
   }
 
   /**
@@ -108,13 +108,13 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVari(Declaration newVari, NotificationChain msgs)
+  public NotificationChain basicSetVarleft(Value newVarleft, NotificationChain msgs)
   {
-    Declaration oldVari = vari;
-    vari = newVari;
+    Value oldVarleft = varleft;
+    varleft = newVarleft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.ASSIGNMENT__VARI, oldVari, newVari);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__VARLEFT, oldVarleft, newVarleft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -125,20 +125,20 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVari(Declaration newVari)
+  public void setVarleft(Value newVarleft)
   {
-    if (newVari != vari)
+    if (newVarleft != varleft)
     {
       NotificationChain msgs = null;
-      if (vari != null)
-        msgs = ((InternalEObject)vari).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.ASSIGNMENT__VARI, null, msgs);
-      if (newVari != null)
-        msgs = ((InternalEObject)newVari).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.ASSIGNMENT__VARI, null, msgs);
-      msgs = basicSetVari(newVari, msgs);
+      if (varleft != null)
+        msgs = ((InternalEObject)varleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.VALUE_EXPRESSION__VARLEFT, null, msgs);
+      if (newVarleft != null)
+        msgs = ((InternalEObject)newVarleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.VALUE_EXPRESSION__VARLEFT, null, msgs);
+      msgs = basicSetVarleft(newVarleft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.ASSIGNMENT__VARI, newVari, newVari));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__VARLEFT, newVarleft, newVarleft));
   }
 
   /**
@@ -161,7 +161,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     String oldOp = op;
     op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.ASSIGNMENT__OP, oldOp, op));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__OP, oldOp, op));
   }
 
   /**
@@ -169,9 +169,9 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public ValueExpression getValue()
+  public ValueExpression getVarright()
   {
-    return value;
+    return varright;
   }
 
   /**
@@ -179,13 +179,13 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(ValueExpression newValue, NotificationChain msgs)
+  public NotificationChain basicSetVarright(ValueExpression newVarright, NotificationChain msgs)
   {
-    ValueExpression oldValue = value;
-    value = newValue;
+    ValueExpression oldVarright = varright;
+    varright = newVarright;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.ASSIGNMENT__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__VARRIGHT, oldVarright, newVarright);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -196,20 +196,20 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ValueExpression newValue)
+  public void setVarright(ValueExpression newVarright)
   {
-    if (newValue != value)
+    if (newVarright != varright)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.ASSIGNMENT__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.ASSIGNMENT__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (varright != null)
+        msgs = ((InternalEObject)varright).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.VALUE_EXPRESSION__VARRIGHT, null, msgs);
+      if (newVarright != null)
+        msgs = ((InternalEObject)newVarright).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.VALUE_EXPRESSION__VARRIGHT, null, msgs);
+      msgs = basicSetVarright(newVarright, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.ASSIGNMENT__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__VARRIGHT, newVarright, newVarright));
   }
 
   /**
@@ -222,10 +222,10 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   {
     switch (featureID)
     {
-      case CommonlangPackage.ASSIGNMENT__VARI:
-        return basicSetVari(null, msgs);
-      case CommonlangPackage.ASSIGNMENT__VALUE:
-        return basicSetValue(null, msgs);
+      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
+        return basicSetVarleft(null, msgs);
+      case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
+        return basicSetVarright(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -240,12 +240,12 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   {
     switch (featureID)
     {
-      case CommonlangPackage.ASSIGNMENT__VARI:
-        return getVari();
-      case CommonlangPackage.ASSIGNMENT__OP:
+      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
+        return getVarleft();
+      case CommonlangPackage.VALUE_EXPRESSION__OP:
         return getOp();
-      case CommonlangPackage.ASSIGNMENT__VALUE:
-        return getValue();
+      case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
+        return getVarright();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -260,14 +260,14 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   {
     switch (featureID)
     {
-      case CommonlangPackage.ASSIGNMENT__VARI:
-        setVari((Declaration)newValue);
+      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
+        setVarleft((Value)newValue);
         return;
-      case CommonlangPackage.ASSIGNMENT__OP:
+      case CommonlangPackage.VALUE_EXPRESSION__OP:
         setOp((String)newValue);
         return;
-      case CommonlangPackage.ASSIGNMENT__VALUE:
-        setValue((ValueExpression)newValue);
+      case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
+        setVarright((ValueExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,14 +283,14 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   {
     switch (featureID)
     {
-      case CommonlangPackage.ASSIGNMENT__VARI:
-        setVari((Declaration)null);
+      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
+        setVarleft((Value)null);
         return;
-      case CommonlangPackage.ASSIGNMENT__OP:
+      case CommonlangPackage.VALUE_EXPRESSION__OP:
         setOp(OP_EDEFAULT);
         return;
-      case CommonlangPackage.ASSIGNMENT__VALUE:
-        setValue((ValueExpression)null);
+      case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
+        setVarright((ValueExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -306,12 +306,12 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
   {
     switch (featureID)
     {
-      case CommonlangPackage.ASSIGNMENT__VARI:
-        return vari != null;
-      case CommonlangPackage.ASSIGNMENT__OP:
+      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
+        return varleft != null;
+      case CommonlangPackage.VALUE_EXPRESSION__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case CommonlangPackage.ASSIGNMENT__VALUE:
-        return value != null;
+      case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
+        return varright != null;
     }
     return super.eIsSet(featureID);
   }
@@ -333,4 +333,4 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     return result.toString();
   }
 
-} //AssignmentImpl
+} //ValueExpressionImpl
