@@ -5,17 +5,19 @@ package org.xtext.validation
 
 import org.eclipse.xtext.validation.Check
 import org.xtext.commonlang.Call
-import org.xtext.commonlang.Declaration
 import org.xtext.commonlang.VarReference
 import org.xtext.commonlang.StringValue
 import org.xtext.commonlang.NumberValue
 import org.xtext.commonlang.BooleanValue
-import org.xtext.commonlang.BasicValue
 import org.xtext.commonlang.Value
 import org.xtext.commonlang.Assignment
-import org.xtext.commonlang.Bool
 import org.xtext.commonlang.ValueExpression
 import org.xtext.commonlang.Crement
+import org.xtext.commonlang.If
+import org.xtext.commonlang.While
+import org.xtext.commonlang.For
+import org.xtext.commonlang.ParanValueExpression
+import org.xtext.commonlang.BasicValueExpression
 
 /**
  * This class contains custom validation rules. 
@@ -52,39 +54,27 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 	}
 	
 	@Check
-	def checkBools(Bool bool) {
-		var thisType = bool.varleft.getTypeOfValueExpression
-		var thatType = "";
-		if (bool.varright != null) {
-			thatType = bool.varright.getTypeOfValueExpression
+	def checkIf(If ifEx) {
+		var extype = ifEx.ex.getTypeOfValueExpression
+		if (extype != 'boolean') {
+			error("Expected boolean expression",null)
 		}
-		
-		if (thisType != thatType && bool.op != null) {
-			error("Type mismatch: Cannot compare "+ thatType +" to " + thisType,null)
+	}
+	@Check
+	def checkWhile(While whileEx) {
+		var extype = whileEx.ex.getTypeOfValueExpression
+		if (extype != 'boolean') {
+			error("Expected boolean expression",null)
 		}
-		
-		if (thisType != "boolean" && bool.op == null) {
-			error("Boolean expression expected",null)
+	}
+	@Check
+	def checkFor(For forEx) {
+		var extype = forEx.check.getTypeOfValueExpression
+		if (extype != 'boolean') {
+			error("Expected boolean expression",null)
 		}
 	}
 
-	@Check
-	def checkValueExpressions(ValueExpression valExp) {
-		var thisType = valExp.varleft.getTypeOfValue
-		var thatType = valExp.varright.getTypeOfValueExpression
-		
-		if (thisType != thatType && valExp.op != null) {
-			error("Type mismatch: Cannot combine values of "+ thatType +" with " + thisType,null)
-		}
-		if (valExp.op != null) {
-			if (thisType == 'string' && valExp.op != '+') {
-				error("Invalid operation: Cannot perform "+valExp.op+" operation on string values",null)
-			}
-			if (thisType == 'boolean') {
-				error("Invalid operation: Cannot perform "+valExp.op+" operation on bool values",null)
-			}
-		}
-	}
 	
 	@Check
 	def checkCrement(Crement crem) {
@@ -94,8 +84,78 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 		}
 	}
 	
+	@Check
+	def checkParanValueExpression(ParanValueExpression valExp) {
+		var thisType = valExp.ex.getTypeOfValueExpression
+		var thatType = "null"
+		if (valExp.varright != null) {
+			thatType = valExp.varright.getTypeOfValueExpression
+		}
+		
+		if (valExp.op != null) {
+			if (thisType != thatType) {
+				error("Type mismatch: Cannot perform "+valExp.op+" on "+thisType+" and "+thatType,null)
+			}
+			
+			if (valExp.op.isComparison) {
+				if (valExp.op.isSizeComparison) {
+					if (thisType != 'int' || thatType != 'int') {
+						error("Cannot compare sizes of "+thisType+" and "+thatType,null)
+					}
+				}
+				if (valExp.varright.op != null) {
+					if (valExp.varright.op.isComparison) {
+						error("Cannot string together comparisons",null)
+					}
+				}				
+			}
+		}
+	}
+	
+	@Check
+	def checkBasicValueExpression(BasicValueExpression valExp) {
+		var thisType = valExp.varleft.getTypeOfValue
+		var thatType = "null"
+		if (valExp.varright != null) {
+			thatType = valExp.varright.getTypeOfValueExpression
+		}
+		
+		if (valExp.op != null) {
+			if (thisType != thatType) {
+				error("Type mismatch: Cannot perform "+valExp.op+" on "+thisType+" and "+thatType,null)
+			}
+			
+			if (valExp.op.isComparison) {
+				if (valExp.op.isSizeComparison) {
+					if (thisType != 'int' || thatType != 'int') {
+						error("Cannot compare sizes of "+thisType+" and "+thatType,null)
+					}
+				}
+				if (valExp.varright.op != null) {
+					if (valExp.varright.op.isComparison) {
+						error("Cannot string together comparisons",null)
+					}
+				}				
+			}
+		}
+	}
+	
 	def String getTypeOfValueExpression(ValueExpression thisVal) {
-		return getTypeOfValue(thisVal.varleft)
+		var type ="null"
+		switch(thisVal){
+			ParanValueExpression : type = thisVal.ex.getTypeOfValueExpression
+			BasicValueExpression : type = thisVal.varleft.getTypeOfValue
+		}
+		
+		if (thisVal.op != null) {
+			if (thisVal.op.isComparison) {
+				if (type == thisVal.varright.getTypeOfValueExpression) {
+					type = 'boolean';
+				}
+			}
+		}
+
+		return type
 	}
 	
 	def String getTypeOfValue(Value thisVal) {
@@ -119,6 +179,25 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 			case 'MoveBackward' : return #["int"]
 			default : return #[]
 		}
+	}
+	
+	def isComparison(String operator) {
+		switch(operator) {
+			case "!=",
+			case "==" : return true
+		}
+		
+		return isSizeComparison(operator)
+	}
+	
+	def isSizeComparison(String operator) {
+		switch(operator) {
+			case "<",
+			case ">",
+			case "<=",
+			case ">=" : return true
+		}
+		return false
 	}
 	
 	

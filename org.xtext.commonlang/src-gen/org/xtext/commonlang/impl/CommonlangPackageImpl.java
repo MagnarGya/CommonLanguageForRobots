@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.BasicValue;
+import org.xtext.commonlang.BasicValueExpression;
 import org.xtext.commonlang.Block;
-import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.BooleanValue;
 import org.xtext.commonlang.CLfile;
 import org.xtext.commonlang.Call;
@@ -29,6 +29,7 @@ import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
 import org.xtext.commonlang.Method;
 import org.xtext.commonlang.NumberValue;
+import org.xtext.commonlang.ParanValueExpression;
 import org.xtext.commonlang.Return;
 import org.xtext.commonlang.Script;
 import org.xtext.commonlang.SimpleExpression;
@@ -152,14 +153,21 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boolEClass = null;
+  private EClass valueExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass valueExpressionEClass = null;
+  private EClass paranValueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basicValueExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -630,66 +638,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBool()
-  {
-    return boolEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBool_Varleft()
-  {
-    return (EReference)boolEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getBool_Op()
-  {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBool_Varright()
-  {
-    return (EReference)boolEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getBool_Bop()
-  {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBool_Bnext()
-  {
-    return (EReference)boolEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getValueExpression()
   {
     return valueExpressionEClass;
@@ -700,19 +648,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getValueExpression_Varleft()
-  {
-    return (EReference)valueExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getValueExpression_Op()
   {
-    return (EAttribute)valueExpressionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)valueExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -722,7 +660,47 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    */
   public EReference getValueExpression_Varright()
   {
-    return (EReference)valueExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)valueExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParanValueExpression()
+  {
+    return paranValueExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParanValueExpression_Ex()
+  {
+    return (EReference)paranValueExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBasicValueExpression()
+  {
+    return basicValueExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBasicValueExpression_Varleft()
+  {
+    return (EReference)basicValueExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1090,17 +1068,15 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     metaMethodCallEClass = createEClass(META_METHOD_CALL);
 
-    boolEClass = createEClass(BOOL);
-    createEReference(boolEClass, BOOL__VARLEFT);
-    createEAttribute(boolEClass, BOOL__OP);
-    createEReference(boolEClass, BOOL__VARRIGHT);
-    createEAttribute(boolEClass, BOOL__BOP);
-    createEReference(boolEClass, BOOL__BNEXT);
-
     valueExpressionEClass = createEClass(VALUE_EXPRESSION);
-    createEReference(valueExpressionEClass, VALUE_EXPRESSION__VARLEFT);
     createEAttribute(valueExpressionEClass, VALUE_EXPRESSION__OP);
     createEReference(valueExpressionEClass, VALUE_EXPRESSION__VARRIGHT);
+
+    paranValueExpressionEClass = createEClass(PARAN_VALUE_EXPRESSION);
+    createEReference(paranValueExpressionEClass, PARAN_VALUE_EXPRESSION__EX);
+
+    basicValueExpressionEClass = createEClass(BASIC_VALUE_EXPRESSION);
+    createEReference(basicValueExpressionEClass, BASIC_VALUE_EXPRESSION__VARLEFT);
 
     crementEClass = createEClass(CREMENT);
     createEReference(crementEClass, CREMENT__VALUE);
@@ -1184,6 +1160,8 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     userMethodEClass.getESuperTypes().add(this.getMethod());
     userMethodCallEClass.getESuperTypes().add(this.getCall());
     metaMethodCallEClass.getESuperTypes().add(this.getCall());
+    paranValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
+    basicValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
     crementEClass.getESuperTypes().add(this.getSimpleExpression());
     ifEClass.getESuperTypes().add(this.getStructureExpression());
     elseEClass.getESuperTypes().add(this.getStructureExpression());
@@ -1242,24 +1220,22 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     initEClass(metaMethodCallEClass, MetaMethodCall.class, "MetaMethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBool_Varleft(), this.getValueExpression(), null, "varleft", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_Op(), ecorePackage.getEString(), "op", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBool_Varright(), this.getValueExpression(), null, "varright", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_Bop(), ecorePackage.getEString(), "bop", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBool_Bnext(), this.getBool(), null, "bnext", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(valueExpressionEClass, ValueExpression.class, "ValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getValueExpression_Varleft(), this.getValue(), null, "varleft", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getValueExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getValueExpression_Varright(), this.getValueExpression(), null, "varright", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(paranValueExpressionEClass, ParanValueExpression.class, "ParanValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParanValueExpression_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, ParanValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(basicValueExpressionEClass, BasicValueExpression.class, "BasicValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBasicValueExpression_Varleft(), this.getValue(), null, "varleft", null, 0, 1, BasicValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(crementEClass, Crement.class, "Crement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCrement_Value(), this.getVarReference(), null, "value", null, 0, 1, Crement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCrement_Op(), ecorePackage.getEString(), "op", null, 0, 1, Crement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIf_Ex(), this.getBool(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIf_Bl(), this.getBlock(), null, "bl", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1267,12 +1243,12 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     initEClass(forEClass, For.class, "For", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFor_Init(), this.getSimpleExpression(), null, "init", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFor_Check(), this.getBool(), null, "check", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFor_Check(), this.getValueExpression(), null, "check", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFor_Action(), this.getSimpleExpression(), null, "action", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFor_Bl(), this.getBlock(), null, "bl", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhile_Ex(), this.getBool(), null, "ex", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhile_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWhile_Bl(), this.getBlock(), null, "bl", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

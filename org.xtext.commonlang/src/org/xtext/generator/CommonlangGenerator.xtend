@@ -14,10 +14,6 @@ import org.xtext.commonlang.While
 import org.xtext.commonlang.Else
 import org.xtext.commonlang.Assignment
 import org.xtext.commonlang.Block
-import org.xtext.commonlang.UserMethodCall
-import org.xtext.commonlang.MetaMethodCall
-import org.xtext.commonlang.Bool
-import org.xtext.commonlang.Method
 import org.xtext.commonlang.Declaration
 import org.xtext.commonlang.BasicValue
 import org.xtext.commonlang.VarReference
@@ -25,12 +21,12 @@ import org.xtext.commonlang.Value
 import org.eclipse.xtext.generator.IGenerator
 import java.util.ArrayList
 import org.xtext.commonlang.StringValue
-import org.xtext.commonlang.MetaMethods
 import org.xtext.commonlang.UserMethod
 import org.xtext.commonlang.Call
-import org.eclipse.emf.common.util.EList
 import org.xtext.commonlang.ValueExpression
 import org.xtext.commonlang.Crement
+import org.xtext.commonlang.ParanValueExpression
+import org.xtext.commonlang.BasicValueExpression
 
 /**
  * Generates code from your model files on save.
@@ -167,6 +163,11 @@ class CommonlangGenerator implements IGenerator {
 			VarReference : (e as VarReference).makeString
 		}
 	}
+		
+	def compile(ValueExpression e) '''
+		new Expression(
+			"«e.makeString»"
+		)'''
 	
 	def compile(Declaration e) '''
 		new Expression(
@@ -174,7 +175,6 @@ class CommonlangGenerator implements IGenerator {
 		)'''
 	
 	def compile(Call e) {
-	
 	'''
 		new Expression(
 			"«e.makeString»"
@@ -194,15 +194,14 @@ class CommonlangGenerator implements IGenerator {
 		«e.method.name»(«parlist.join(',')»)'''
 	}
 	
-	def compile(Bool e) '''
-		new Expression(
-			"«e.makeString»"
-		)'''
-		
-	def CharSequence makeString(Bool e) '''
-		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»«IF e.bnext != null»«e.bop»«e.bnext.makeString»«ENDIF»'''
+	def CharSequence makeString(ValueExpression e) {
+		switch (e) {
+			BasicValueExpression: '''«e.makeString»'''
+			ParanValueExpression: '''(«e.ex.makeString»)«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
+		}
+	}
 	
-	def CharSequence makeString(ValueExpression e) {'''
+	def CharSequence makeString(BasicValueExpression e) {'''
 		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
 	}
 	

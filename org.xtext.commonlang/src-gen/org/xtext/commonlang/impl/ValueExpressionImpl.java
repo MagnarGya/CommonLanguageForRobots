@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Value;
 import org.xtext.commonlang.ValueExpression;
 
 /**
@@ -22,7 +21,6 @@ import org.xtext.commonlang.ValueExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.ValueExpressionImpl#getVarleft <em>Varleft</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.ValueExpressionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.ValueExpressionImpl#getVarright <em>Varright</em>}</li>
  * </ul>
@@ -32,16 +30,6 @@ import org.xtext.commonlang.ValueExpression;
  */
 public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements ValueExpression
 {
-  /**
-   * The cached value of the '{@link #getVarleft() <em>Varleft</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarleft()
-   * @generated
-   * @ordered
-   */
-  protected Value varleft;
-
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -91,54 +79,6 @@ public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements
   protected EClass eStaticClass()
   {
     return CommonlangPackage.Literals.VALUE_EXPRESSION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Value getVarleft()
-  {
-    return varleft;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVarleft(Value newVarleft, NotificationChain msgs)
-  {
-    Value oldVarleft = varleft;
-    varleft = newVarleft;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__VARLEFT, oldVarleft, newVarleft);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVarleft(Value newVarleft)
-  {
-    if (newVarleft != varleft)
-    {
-      NotificationChain msgs = null;
-      if (varleft != null)
-        msgs = ((InternalEObject)varleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.VALUE_EXPRESSION__VARLEFT, null, msgs);
-      if (newVarleft != null)
-        msgs = ((InternalEObject)newVarleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.VALUE_EXPRESSION__VARLEFT, null, msgs);
-      msgs = basicSetVarleft(newVarleft, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.VALUE_EXPRESSION__VARLEFT, newVarleft, newVarleft));
   }
 
   /**
@@ -222,8 +162,6 @@ public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
-        return basicSetVarleft(null, msgs);
       case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
         return basicSetVarright(null, msgs);
     }
@@ -240,8 +178,6 @@ public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
-        return getVarleft();
       case CommonlangPackage.VALUE_EXPRESSION__OP:
         return getOp();
       case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:
@@ -260,9 +196,6 @@ public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
-        setVarleft((Value)newValue);
-        return;
       case CommonlangPackage.VALUE_EXPRESSION__OP:
         setOp((String)newValue);
         return;
@@ -283,9 +216,6 @@ public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
-        setVarleft((Value)null);
-        return;
       case CommonlangPackage.VALUE_EXPRESSION__OP:
         setOp(OP_EDEFAULT);
         return;
@@ -306,8 +236,6 @@ public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CommonlangPackage.VALUE_EXPRESSION__VARLEFT:
-        return varleft != null;
       case CommonlangPackage.VALUE_EXPRESSION__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case CommonlangPackage.VALUE_EXPRESSION__VARRIGHT:

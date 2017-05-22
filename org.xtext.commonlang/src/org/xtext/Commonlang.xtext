@@ -8,7 +8,7 @@ CLfile:
 ;
 
 Script:
-	'script' name=CAPITALFIRST 'targets' '(''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')'(',''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')')* ')' '{'
+	'script' name=CAPITALFIRST 'targets' '('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')'(',''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')')* '{'
 		(methods+=UserMethod*)
 	'}'
 ;
@@ -67,12 +67,16 @@ MetaMethodCall:
 terminal LOWERFIRST: ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal CAPITALFIRST: ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-Bool:
-	varleft=ValueExpression (=> op=ComparisonOperator varright=ValueExpression)? (bop=BooleanOperator bnext=Bool)?
+ValueExpression:
+	ParanValueExpression | BasicValueExpression
 ;
 
-ValueExpression:
-	varleft=Value (=> op=MathOperator varright=ValueExpression)?
+ParanValueExpression:
+	'('ex=ValueExpression')' (op=(MathOperator|BooleanOperator|ComparisonOperator) varright=ValueExpression)?
+;
+
+BasicValueExpression:
+	varleft=(Value) (op=(MathOperator|BooleanOperator|ComparisonOperator) varright=ValueExpression)?
 ;
 
 Crement:
@@ -95,7 +99,7 @@ CrementOperator:
 	'++' | '--'
 ;
 If:
-	'if' '(' ex=Bool ')' bl=Block
+	'if' '(' ex=ValueExpression ')' bl=Block
 ;
 
 Else:
@@ -103,11 +107,11 @@ Else:
 ;
 
 For:
-	'for' '(' init=SimpleExpression ';' check=Bool ';' action=SimpleExpression')' bl=Block
+	'for' '(' init=SimpleExpression ';' check=ValueExpression ';' action=SimpleExpression')' bl=Block
 ;
 
 While:
-	'while' '(' ex=Bool ')' bl=Block
+	'while' '(' ex=ValueExpression ')' bl=Block
 ;
 
 Value:

@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Block;
-import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.CommonlangPackage;
+import org.xtext.commonlang.ValueExpression;
 import org.xtext.commonlang.While;
 
 /**
@@ -39,7 +39,7 @@ public class WhileImpl extends StructureExpressionImpl implements While
    * @generated
    * @ordered
    */
-  protected Bool ex;
+  protected ValueExpression ex;
 
   /**
    * The cached value of the '{@link #getBl() <em>Bl</em>}' containment reference.
@@ -77,7 +77,7 @@ public class WhileImpl extends StructureExpressionImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bool getEx()
+  public ValueExpression getEx()
   {
     return ex;
   }
@@ -87,9 +87,9 @@ public class WhileImpl extends StructureExpressionImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEx(Bool newEx, NotificationChain msgs)
+  public NotificationChain basicSetEx(ValueExpression newEx, NotificationChain msgs)
   {
-    Bool oldEx = ex;
+    ValueExpression oldEx = ex;
     ex = newEx;
     if (eNotificationRequired())
     {
@@ -104,7 +104,7 @@ public class WhileImpl extends StructureExpressionImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEx(Bool newEx)
+  public void setEx(ValueExpression newEx)
   {
     if (newEx != ex)
     {
@@ -215,7 +215,7 @@ public class WhileImpl extends StructureExpressionImpl implements While
     switch (featureID)
     {
       case CommonlangPackage.WHILE__EX:
-        setEx((Bool)newValue);
+        setEx((ValueExpression)newValue);
         return;
       case CommonlangPackage.WHILE__BL:
         setBl((Block)newValue);
@@ -235,7 +235,7 @@ public class WhileImpl extends StructureExpressionImpl implements While
     switch (featureID)
     {
       case CommonlangPackage.WHILE__EX:
-        setEx((Bool)null);
+        setEx((ValueExpression)null);
         return;
       case CommonlangPackage.WHILE__BL:
         setBl((Block)null);

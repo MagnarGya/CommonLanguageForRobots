@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Block;
-import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.CommonlangPackage;
 import org.xtext.commonlang.For;
 import org.xtext.commonlang.SimpleExpression;
+import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * @generated
    * @ordered
    */
-  protected Bool check;
+  protected ValueExpression check;
 
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
@@ -148,7 +148,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bool getCheck()
+  public ValueExpression getCheck()
   {
     return check;
   }
@@ -158,9 +158,9 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCheck(Bool newCheck, NotificationChain msgs)
+  public NotificationChain basicSetCheck(ValueExpression newCheck, NotificationChain msgs)
   {
-    Bool oldCheck = check;
+    ValueExpression oldCheck = check;
     check = newCheck;
     if (eNotificationRequired())
     {
@@ -175,7 +175,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCheck(Bool newCheck)
+  public void setCheck(ValueExpression newCheck)
   {
     if (newCheck != check)
     {
@@ -345,7 +345,7 @@ public class ForImpl extends StructureExpressionImpl implements For
         setInit((SimpleExpression)newValue);
         return;
       case CommonlangPackage.FOR__CHECK:
-        setCheck((Bool)newValue);
+        setCheck((ValueExpression)newValue);
         return;
       case CommonlangPackage.FOR__ACTION:
         setAction((SimpleExpression)newValue);
@@ -371,7 +371,7 @@ public class ForImpl extends StructureExpressionImpl implements For
         setInit((SimpleExpression)null);
         return;
       case CommonlangPackage.FOR__CHECK:
-        setCheck((Bool)null);
+        setCheck((ValueExpression)null);
         return;
       case CommonlangPackage.FOR__ACTION:
         setAction((SimpleExpression)null);

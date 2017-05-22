@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.commonlang.ValueExpression#getVarleft <em>Varleft</em>}</li>
  *   <li>{@link org.xtext.commonlang.ValueExpression#getOp <em>Op</em>}</li>
  *   <li>{@link org.xtext.commonlang.ValueExpression#getVarright <em>Varright</em>}</li>
  * </ul>
@@ -24,32 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ValueExpression extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Varleft</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Varleft</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Varleft</em>' containment reference.
-   * @see #setVarleft(Value)
-   * @see org.xtext.commonlang.CommonlangPackage#getValueExpression_Varleft()
-   * @model containment="true"
-   * @generated
-   */
-  Value getVarleft();
-
-  /**
-   * Sets the value of the '{@link org.xtext.commonlang.ValueExpression#getVarleft <em>Varleft</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Varleft</em>' containment reference.
-   * @see #getVarleft()
-   * @generated
-   */
-  void setVarleft(Value value);
-
   /**
    * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
