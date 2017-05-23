@@ -16,15 +16,16 @@ def setup():
     seeingRight = False
     seeingLeft = False
 def loop():
+    int i = (2+(2)/2+((5+2)))
     ReadSensors()
-    if SeeingLeft():
-        TurnRight(45)
+    if False==("String"=="String"):
+        TurnRight()
     elif SeeingRight():
-        TurnLeft(45)
+        TurnLeft()
     elif Touching():
-        MoveBackward(500)
+        MoveBackward()
     else: 
-        MoveForward(100)
+        MoveForward()
 
 def main():
     setup()
