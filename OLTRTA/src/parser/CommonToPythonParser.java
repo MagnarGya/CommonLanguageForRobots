@@ -68,8 +68,17 @@ public class CommonToPythonParser implements CommonToLanguageParser{
 	@Override
 	public String parseFor(For _for) {
 		String returnString = "";
+		
+		returnString += parseExpression(_for.init) +"\n";
+		returnString +="while " + parseExpression(_for.check) +":";
+		
+		Expression[] blockExpressions = new Expression[_for.bl.exs.length+1];
+		for (int i = 0; i < _for.bl.exs.length; i++) {
+			blockExpressions[i] = _for.bl.exs[i];
+		}
+		blockExpressions[_for.bl.exs.length] = (_for.action);
+		_for.bl.exs = blockExpressions;
 
-        returnString += "for (" + parseExpression(_for.init) + ";" + parseExpression(_for.check) + ";" + parseExpression(_for.action) + ": ";
         returnString += parseBlock(_for.bl);
 
         return returnString;
