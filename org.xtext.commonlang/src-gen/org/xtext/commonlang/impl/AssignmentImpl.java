@@ -6,13 +6,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Declaration;
 import org.xtext.commonlang.ValueExpression;
 
 /**
@@ -40,7 +40,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * @generated
    * @ordered
    */
-  protected Declaration vari;
+  protected EObject vari;
 
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -98,7 +98,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public Declaration getVari()
+  public EObject getVari()
   {
     return vari;
   }
@@ -108,9 +108,9 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVari(Declaration newVari, NotificationChain msgs)
+  public NotificationChain basicSetVari(EObject newVari, NotificationChain msgs)
   {
-    Declaration oldVari = vari;
+    EObject oldVari = vari;
     vari = newVari;
     if (eNotificationRequired())
     {
@@ -125,7 +125,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVari(Declaration newVari)
+  public void setVari(EObject newVari)
   {
     if (newVari != vari)
     {
@@ -261,7 +261,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     switch (featureID)
     {
       case CommonlangPackage.ASSIGNMENT__VARI:
-        setVari((Declaration)newValue);
+        setVari((EObject)newValue);
         return;
       case CommonlangPackage.ASSIGNMENT__OP:
         setOp((String)newValue);
@@ -284,7 +284,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     switch (featureID)
     {
       case CommonlangPackage.ASSIGNMENT__VARI:
-        setVari((Declaration)null);
+        setVari((EObject)null);
         return;
       case CommonlangPackage.ASSIGNMENT__OP:
         setOp(OP_EDEFAULT);

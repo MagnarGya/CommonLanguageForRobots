@@ -37,7 +37,7 @@ Expression:
 
 
 Assignment:
-	vari=([Declaration|LOWERFIRST] | Declaration) ( => op=MathOperator?'=' value=ValueExpression)
+	vari=(VarReference | Declaration) ( => op=MathOperator?'=' value=ValueExpression)
 ;
 
 Call:

@@ -142,7 +142,7 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     ((vari=[Declaration|LOWERFIRST] | vari=Declaration) op=MathOperator? value=ValueExpression)
+	 *     ((vari=VarReference | vari=Declaration) op=MathOperator? value=ValueExpression)
 	 */
 	protected void sequence_Assignment(EObject context, Assignment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

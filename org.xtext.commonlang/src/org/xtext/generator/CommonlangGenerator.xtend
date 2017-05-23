@@ -140,10 +140,18 @@ class CommonlangGenerator implements IGenerator {
 			«e.ex.compile»
 		)'''
 	
-	def compile(Assignment e) '''
+	def compile(Assignment e) {
+		var varstring = ""
+		var ref = e.vari;
+		switch ref {
+			VarReference : varstring = ref.makeString.toString
+			Declaration : varstring = ref.makeString.toString
+		}
+		'''
 		new Expression(
-			"«e.vari.makeString» «e.op»= «e.value.makeString»"
+			"«varstring» «e.op»= «e.value.makeString»"
 		)'''
+	}
 	
 	def compile(Block e) {
 	val exlist = new ArrayList<CharSequence>();

@@ -1280,11 +1280,9 @@ rule__Assignment__VariAlternatives_0_0
     }
 :
 (
-{ before(grammarAccess.getAssignmentAccess().getVariDeclarationCrossReference_0_0_0()); }
-(
-
-)
-{ after(grammarAccess.getAssignmentAccess().getVariDeclarationCrossReference_0_0_0()); }
+{ before(grammarAccess.getAssignmentAccess().getVariVarReferenceParserRuleCall_0_0_0()); }
+	ruleVarReference
+{ after(grammarAccess.getAssignmentAccess().getVariVarReferenceParserRuleCall_0_0_0()); }
 )
 
     |(

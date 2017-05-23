@@ -18,6 +18,7 @@ import org.xtext.commonlang.While
 import org.xtext.commonlang.For
 import org.xtext.commonlang.ParanValueExpression
 import org.xtext.commonlang.BasicValueExpression
+import org.xtext.commonlang.Declaration
 
 /**
  * This class contains custom validation rules. 
@@ -46,7 +47,18 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 	@Check
 	def checkAssignments(Assignment assignment) {
 		var thisType = assignment.value.getTypeOfValueExpression
-		var thatType = assignment.vari.getType();
+		var ref = assignment.vari
+		var thatType = ""
+		
+		switch ref {
+			VarReference : thatType = ref.vari.type
+			Declaration : {	thatType = ref.type
+							if (assignment.op != null) {
+								error("Cannot perform mathematical operation on new variable",null)
+						  	}
+					  	}
+		}
+		
 		
 		if (thisType != thatType) {
 			error("Type mismatch: Expected "+ thatType +" got " + thisType,null)

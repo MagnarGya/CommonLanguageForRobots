@@ -3492,7 +3492,7 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( ((LA5_0>=RULE_LOWERFIRST && LA5_0<=RULE_CAPITALFIRST)||(LA5_0>=23 && LA5_0<=26)||(LA5_0>=32 && LA5_0<=34)||LA5_0==44||LA5_0==50) ) {
+            if ( ((LA5_0>=RULE_LOWERFIRST && LA5_0<=RULE_CAPITALFIRST)||(LA5_0>=32 && LA5_0<=34)||LA5_0==50) ) {
                 alt5=1;
             }
             else if ( (LA5_0==40||(LA5_0>=46 && LA5_0<=49)) ) {
@@ -3593,21 +3593,35 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             switch ( input.LA(1) ) {
             case RULE_LOWERFIRST:
                 {
-                int LA6_1 = input.LA(2);
-
-                if ( (LA6_1==37) ) {
+                switch ( input.LA(2) ) {
+                case 37:
+                    {
                     alt6=2;
-                }
-                else if ( ((LA6_1>=27 && LA6_1<=28)) ) {
+                    }
+                    break;
+                case 27:
+                case 28:
+                    {
                     alt6=1;
-                }
-                else {
+                    }
+                    break;
+                case 23:
+                case 24:
+                case 25:
+                case 26:
+                case 44:
+                    {
+                    alt6=3;
+                    }
+                    break;
+                default:
                     if (state.backtracking>0) {state.failed=true; return ;}
                     NoViableAltException nvae =
                         new NoViableAltException("", 6, 1, input);
 
                     throw nvae;
                 }
+
                 }
                 break;
             case RULE_CAPITALFIRST:
@@ -3615,14 +3629,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                 alt6=2;
                 }
                 break;
-            case 23:
-            case 24:
-            case 25:
-            case 26:
             case 32:
             case 33:
             case 34:
-            case 44:
                 {
                 alt6=3;
                 }
@@ -3937,7 +3946,7 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( ((LA8_0>=RULE_LOWERFIRST && LA8_0<=RULE_CAPITALFIRST)||(LA8_0>=23 && LA8_0<=26)||(LA8_0>=32 && LA8_0<=34)||LA8_0==44||LA8_0==50) ) {
+            if ( ((LA8_0>=RULE_LOWERFIRST && LA8_0<=RULE_CAPITALFIRST)||(LA8_0>=32 && LA8_0<=34)||LA8_0==50) ) {
                 alt8=1;
             }
             else if ( (LA8_0==40||(LA8_0>=46 && LA8_0<=49)) ) {
@@ -4015,17 +4024,17 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__VariAlternatives_0_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1277:1: rule__Assignment__VariAlternatives_0_0 : ( ( () ) | ( ruleDeclaration ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1277:1: rule__Assignment__VariAlternatives_0_0 : ( ( ruleVarReference ) | ( ruleDeclaration ) );
     public final void rule__Assignment__VariAlternatives_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1281:1: ( ( () ) | ( ruleDeclaration ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1281:1: ( ( ruleVarReference ) | ( ruleDeclaration ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( ((LA9_0>=23 && LA9_0<=26)||LA9_0==44) ) {
+            if ( (LA9_0==RULE_LOWERFIRST) ) {
                 alt9=1;
             }
             else if ( ((LA9_0>=32 && LA9_0<=34)) ) {
@@ -4040,21 +4049,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1282:1: ( () )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1282:1: ( ruleVarReference )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1282:1: ( () )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1283:1: ()
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1282:1: ( ruleVarReference )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1283:1: ruleVarReference
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getAssignmentAccess().getVariDeclarationCrossReference_0_0_0()); 
+                       before(grammarAccess.getAssignmentAccess().getVariVarReferenceParserRuleCall_0_0_0()); 
                     }
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1284:1: ()
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1286:1: 
-                    {
-                    }
+                    pushFollow(FOLLOW_ruleVarReference_in_rule__Assignment__VariAlternatives_0_02716);
+                    ruleVarReference();
 
+                    state._fsp--;
+                    if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getAssignmentAccess().getVariDeclarationCrossReference_0_0_0()); 
+                       after(grammarAccess.getAssignmentAccess().getVariVarReferenceParserRuleCall_0_0_0()); 
                     }
 
                     }
@@ -4063,15 +4072,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1290:6: ( ruleDeclaration )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1288:6: ( ruleDeclaration )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1290:6: ( ruleDeclaration )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1291:1: ruleDeclaration
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1288:6: ( ruleDeclaration )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1289:1: ruleDeclaration
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAssignmentAccess().getVariDeclarationParserRuleCall_0_0_1()); 
                     }
-                    pushFollow(FOLLOW_ruleDeclaration_in_rule__Assignment__VariAlternatives_0_02735);
+                    pushFollow(FOLLOW_ruleDeclaration_in_rule__Assignment__VariAlternatives_0_02733);
                     ruleDeclaration();
 
                     state._fsp--;
@@ -4103,13 +4112,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Alternatives_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1301:1: rule__Call__Alternatives_0 : ( ( ruleUserMethodCall ) | ( ruleMetaMethodCall ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1299:1: rule__Call__Alternatives_0 : ( ( ruleUserMethodCall ) | ( ruleMetaMethodCall ) );
     public final void rule__Call__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1305:1: ( ( ruleUserMethodCall ) | ( ruleMetaMethodCall ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1303:1: ( ( ruleUserMethodCall ) | ( ruleMetaMethodCall ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -4128,15 +4137,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1306:1: ( ruleUserMethodCall )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1304:1: ( ruleUserMethodCall )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1306:1: ( ruleUserMethodCall )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1307:1: ruleUserMethodCall
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1304:1: ( ruleUserMethodCall )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1305:1: ruleUserMethodCall
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getCallAccess().getUserMethodCallParserRuleCall_0_0()); 
                     }
-                    pushFollow(FOLLOW_ruleUserMethodCall_in_rule__Call__Alternatives_02767);
+                    pushFollow(FOLLOW_ruleUserMethodCall_in_rule__Call__Alternatives_02765);
                     ruleUserMethodCall();
 
                     state._fsp--;
@@ -4151,15 +4160,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1312:6: ( ruleMetaMethodCall )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1310:6: ( ruleMetaMethodCall )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1312:6: ( ruleMetaMethodCall )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1313:1: ruleMetaMethodCall
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1310:6: ( ruleMetaMethodCall )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1311:1: ruleMetaMethodCall
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getCallAccess().getMetaMethodCallParserRuleCall_0_1()); 
                     }
-                    pushFollow(FOLLOW_ruleMetaMethodCall_in_rule__Call__Alternatives_02784);
+                    pushFollow(FOLLOW_ruleMetaMethodCall_in_rule__Call__Alternatives_02782);
                     ruleMetaMethodCall();
 
                     state._fsp--;
@@ -4191,13 +4200,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ValueExpression__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1324:1: rule__ValueExpression__Alternatives : ( ( ruleParanValueExpression ) | ( ruleBasicValueExpression ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1322:1: rule__ValueExpression__Alternatives : ( ( ruleParanValueExpression ) | ( ruleBasicValueExpression ) );
     public final void rule__ValueExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1328:1: ( ( ruleParanValueExpression ) | ( ruleBasicValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1326:1: ( ( ruleParanValueExpression ) | ( ruleBasicValueExpression ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -4216,15 +4225,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1329:1: ( ruleParanValueExpression )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1327:1: ( ruleParanValueExpression )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1329:1: ( ruleParanValueExpression )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1330:1: ruleParanValueExpression
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1327:1: ( ruleParanValueExpression )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1328:1: ruleParanValueExpression
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getValueExpressionAccess().getParanValueExpressionParserRuleCall_0()); 
                     }
-                    pushFollow(FOLLOW_ruleParanValueExpression_in_rule__ValueExpression__Alternatives2817);
+                    pushFollow(FOLLOW_ruleParanValueExpression_in_rule__ValueExpression__Alternatives2815);
                     ruleParanValueExpression();
 
                     state._fsp--;
@@ -4239,15 +4248,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1335:6: ( ruleBasicValueExpression )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1333:6: ( ruleBasicValueExpression )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1335:6: ( ruleBasicValueExpression )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1336:1: ruleBasicValueExpression
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1333:6: ( ruleBasicValueExpression )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1334:1: ruleBasicValueExpression
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getValueExpressionAccess().getBasicValueExpressionParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleBasicValueExpression_in_rule__ValueExpression__Alternatives2834);
+                    pushFollow(FOLLOW_ruleBasicValueExpression_in_rule__ValueExpression__Alternatives2832);
                     ruleBasicValueExpression();
 
                     state._fsp--;
@@ -4279,13 +4288,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__OpAlternatives_3_0_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1346:1: rule__ParanValueExpression__OpAlternatives_3_0_0 : ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1344:1: rule__ParanValueExpression__OpAlternatives_3_0_0 : ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) );
     public final void rule__ParanValueExpression__OpAlternatives_3_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1350:1: ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1348:1: ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) )
             int alt12=3;
             switch ( input.LA(1) ) {
             case 23:
@@ -4324,15 +4333,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt12) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1351:1: ( ruleMathOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1349:1: ( ruleMathOperator )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1351:1: ( ruleMathOperator )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1352:1: ruleMathOperator
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1349:1: ( ruleMathOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1350:1: ruleMathOperator
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getParanValueExpressionAccess().getOpMathOperatorParserRuleCall_3_0_0_0()); 
                     }
-                    pushFollow(FOLLOW_ruleMathOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02866);
+                    pushFollow(FOLLOW_ruleMathOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02864);
                     ruleMathOperator();
 
                     state._fsp--;
@@ -4347,15 +4356,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1357:6: ( ruleBooleanOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1355:6: ( ruleBooleanOperator )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1357:6: ( ruleBooleanOperator )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1358:1: ruleBooleanOperator
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1355:6: ( ruleBooleanOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1356:1: ruleBooleanOperator
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getParanValueExpressionAccess().getOpBooleanOperatorParserRuleCall_3_0_0_1()); 
                     }
-                    pushFollow(FOLLOW_ruleBooleanOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02883);
+                    pushFollow(FOLLOW_ruleBooleanOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02881);
                     ruleBooleanOperator();
 
                     state._fsp--;
@@ -4370,15 +4379,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1363:6: ( ruleComparisonOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1361:6: ( ruleComparisonOperator )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1363:6: ( ruleComparisonOperator )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1364:1: ruleComparisonOperator
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1361:6: ( ruleComparisonOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1362:1: ruleComparisonOperator
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getParanValueExpressionAccess().getOpComparisonOperatorParserRuleCall_3_0_0_2()); 
                     }
-                    pushFollow(FOLLOW_ruleComparisonOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02900);
+                    pushFollow(FOLLOW_ruleComparisonOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02898);
                     ruleComparisonOperator();
 
                     state._fsp--;
@@ -4410,13 +4419,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__OpAlternatives_1_0_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1374:1: rule__BasicValueExpression__OpAlternatives_1_0_0 : ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1372:1: rule__BasicValueExpression__OpAlternatives_1_0_0 : ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) );
     public final void rule__BasicValueExpression__OpAlternatives_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1378:1: ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1376:1: ( ( ruleMathOperator ) | ( ruleBooleanOperator ) | ( ruleComparisonOperator ) )
             int alt13=3;
             switch ( input.LA(1) ) {
             case 23:
@@ -4455,15 +4464,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1379:1: ( ruleMathOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1377:1: ( ruleMathOperator )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1379:1: ( ruleMathOperator )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1380:1: ruleMathOperator
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1377:1: ( ruleMathOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1378:1: ruleMathOperator
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBasicValueExpressionAccess().getOpMathOperatorParserRuleCall_1_0_0_0()); 
                     }
-                    pushFollow(FOLLOW_ruleMathOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02932);
+                    pushFollow(FOLLOW_ruleMathOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02930);
                     ruleMathOperator();
 
                     state._fsp--;
@@ -4478,15 +4487,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1385:6: ( ruleBooleanOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1383:6: ( ruleBooleanOperator )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1385:6: ( ruleBooleanOperator )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1386:1: ruleBooleanOperator
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1383:6: ( ruleBooleanOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1384:1: ruleBooleanOperator
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBasicValueExpressionAccess().getOpBooleanOperatorParserRuleCall_1_0_0_1()); 
                     }
-                    pushFollow(FOLLOW_ruleBooleanOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02949);
+                    pushFollow(FOLLOW_ruleBooleanOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02947);
                     ruleBooleanOperator();
 
                     state._fsp--;
@@ -4501,15 +4510,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1391:6: ( ruleComparisonOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1389:6: ( ruleComparisonOperator )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1391:6: ( ruleComparisonOperator )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1392:1: ruleComparisonOperator
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1389:6: ( ruleComparisonOperator )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1390:1: ruleComparisonOperator
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBasicValueExpressionAccess().getOpComparisonOperatorParserRuleCall_1_0_0_2()); 
                     }
-                    pushFollow(FOLLOW_ruleComparisonOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02966);
+                    pushFollow(FOLLOW_ruleComparisonOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02964);
                     ruleComparisonOperator();
 
                     state._fsp--;
@@ -4541,13 +4550,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ComparisonOperator__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1402:1: rule__ComparisonOperator__Alternatives : ( ( '==' ) | ( '!=' ) | ( '<' ) | ( '>' ) | ( '<=' ) | ( '>=' ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1400:1: rule__ComparisonOperator__Alternatives : ( ( '==' ) | ( '!=' ) | ( '<' ) | ( '>' ) | ( '<=' ) | ( '>=' ) );
     public final void rule__ComparisonOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1406:1: ( ( '==' ) | ( '!=' ) | ( '<' ) | ( '>' ) | ( '<=' ) | ( '>=' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1404:1: ( ( '==' ) | ( '!=' ) | ( '<' ) | ( '>' ) | ( '<=' ) | ( '>=' ) )
             int alt14=6;
             switch ( input.LA(1) ) {
             case 13:
@@ -4590,15 +4599,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt14) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1407:1: ( '==' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1405:1: ( '==' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1407:1: ( '==' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1408:1: '=='
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1405:1: ( '==' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1406:1: '=='
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonOperatorAccess().getEqualsSignEqualsSignKeyword_0()); 
                     }
-                    match(input,13,FOLLOW_13_in_rule__ComparisonOperator__Alternatives2999); if (state.failed) return ;
+                    match(input,13,FOLLOW_13_in_rule__ComparisonOperator__Alternatives2997); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getComparisonOperatorAccess().getEqualsSignEqualsSignKeyword_0()); 
                     }
@@ -4609,15 +4618,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1415:6: ( '!=' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1413:6: ( '!=' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1415:6: ( '!=' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1416:1: '!='
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1413:6: ( '!=' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1414:1: '!='
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonOperatorAccess().getExclamationMarkEqualsSignKeyword_1()); 
                     }
-                    match(input,14,FOLLOW_14_in_rule__ComparisonOperator__Alternatives3019); if (state.failed) return ;
+                    match(input,14,FOLLOW_14_in_rule__ComparisonOperator__Alternatives3017); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getComparisonOperatorAccess().getExclamationMarkEqualsSignKeyword_1()); 
                     }
@@ -4628,15 +4637,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1423:6: ( '<' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1421:6: ( '<' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1423:6: ( '<' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1424:1: '<'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1421:6: ( '<' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1422:1: '<'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonOperatorAccess().getLessThanSignKeyword_2()); 
                     }
-                    match(input,15,FOLLOW_15_in_rule__ComparisonOperator__Alternatives3039); if (state.failed) return ;
+                    match(input,15,FOLLOW_15_in_rule__ComparisonOperator__Alternatives3037); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getComparisonOperatorAccess().getLessThanSignKeyword_2()); 
                     }
@@ -4647,15 +4656,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1431:6: ( '>' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1429:6: ( '>' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1431:6: ( '>' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1432:1: '>'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1429:6: ( '>' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1430:1: '>'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonOperatorAccess().getGreaterThanSignKeyword_3()); 
                     }
-                    match(input,16,FOLLOW_16_in_rule__ComparisonOperator__Alternatives3059); if (state.failed) return ;
+                    match(input,16,FOLLOW_16_in_rule__ComparisonOperator__Alternatives3057); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getComparisonOperatorAccess().getGreaterThanSignKeyword_3()); 
                     }
@@ -4666,15 +4675,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1439:6: ( '<=' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1437:6: ( '<=' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1439:6: ( '<=' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1440:1: '<='
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1437:6: ( '<=' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1438:1: '<='
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonOperatorAccess().getLessThanSignEqualsSignKeyword_4()); 
                     }
-                    match(input,17,FOLLOW_17_in_rule__ComparisonOperator__Alternatives3079); if (state.failed) return ;
+                    match(input,17,FOLLOW_17_in_rule__ComparisonOperator__Alternatives3077); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getComparisonOperatorAccess().getLessThanSignEqualsSignKeyword_4()); 
                     }
@@ -4685,15 +4694,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1447:6: ( '>=' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1445:6: ( '>=' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1447:6: ( '>=' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1448:1: '>='
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1445:6: ( '>=' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1446:1: '>='
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonOperatorAccess().getGreaterThanSignEqualsSignKeyword_5()); 
                     }
-                    match(input,18,FOLLOW_18_in_rule__ComparisonOperator__Alternatives3099); if (state.failed) return ;
+                    match(input,18,FOLLOW_18_in_rule__ComparisonOperator__Alternatives3097); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getComparisonOperatorAccess().getGreaterThanSignEqualsSignKeyword_5()); 
                     }
@@ -4721,13 +4730,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BooleanOperator__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1460:1: rule__BooleanOperator__Alternatives : ( ( '&&' ) | ( '||' ) | ( '!&&' ) | ( '!||' ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1458:1: rule__BooleanOperator__Alternatives : ( ( '&&' ) | ( '||' ) | ( '!&&' ) | ( '!||' ) );
     public final void rule__BooleanOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1464:1: ( ( '&&' ) | ( '||' ) | ( '!&&' ) | ( '!||' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1462:1: ( ( '&&' ) | ( '||' ) | ( '!&&' ) | ( '!||' ) )
             int alt15=4;
             switch ( input.LA(1) ) {
             case 19:
@@ -4760,15 +4769,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt15) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1465:1: ( '&&' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1463:1: ( '&&' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1465:1: ( '&&' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1466:1: '&&'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1463:1: ( '&&' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1464:1: '&&'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBooleanOperatorAccess().getAmpersandAmpersandKeyword_0()); 
                     }
-                    match(input,19,FOLLOW_19_in_rule__BooleanOperator__Alternatives3134); if (state.failed) return ;
+                    match(input,19,FOLLOW_19_in_rule__BooleanOperator__Alternatives3132); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBooleanOperatorAccess().getAmpersandAmpersandKeyword_0()); 
                     }
@@ -4779,15 +4788,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1473:6: ( '||' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1471:6: ( '||' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1473:6: ( '||' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1474:1: '||'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1471:6: ( '||' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1472:1: '||'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBooleanOperatorAccess().getVerticalLineVerticalLineKeyword_1()); 
                     }
-                    match(input,20,FOLLOW_20_in_rule__BooleanOperator__Alternatives3154); if (state.failed) return ;
+                    match(input,20,FOLLOW_20_in_rule__BooleanOperator__Alternatives3152); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBooleanOperatorAccess().getVerticalLineVerticalLineKeyword_1()); 
                     }
@@ -4798,15 +4807,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1481:6: ( '!&&' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1479:6: ( '!&&' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1481:6: ( '!&&' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1482:1: '!&&'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1479:6: ( '!&&' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1480:1: '!&&'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBooleanOperatorAccess().getExclamationMarkAmpersandAmpersandKeyword_2()); 
                     }
-                    match(input,21,FOLLOW_21_in_rule__BooleanOperator__Alternatives3174); if (state.failed) return ;
+                    match(input,21,FOLLOW_21_in_rule__BooleanOperator__Alternatives3172); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBooleanOperatorAccess().getExclamationMarkAmpersandAmpersandKeyword_2()); 
                     }
@@ -4817,15 +4826,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1489:6: ( '!||' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1487:6: ( '!||' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1489:6: ( '!||' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1490:1: '!||'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1487:6: ( '!||' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1488:1: '!||'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBooleanOperatorAccess().getExclamationMarkVerticalLineVerticalLineKeyword_3()); 
                     }
-                    match(input,22,FOLLOW_22_in_rule__BooleanOperator__Alternatives3194); if (state.failed) return ;
+                    match(input,22,FOLLOW_22_in_rule__BooleanOperator__Alternatives3192); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBooleanOperatorAccess().getExclamationMarkVerticalLineVerticalLineKeyword_3()); 
                     }
@@ -4853,13 +4862,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MathOperator__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1502:1: rule__MathOperator__Alternatives : ( ( '+' ) | ( '-' ) | ( '*' ) | ( '/' ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1500:1: rule__MathOperator__Alternatives : ( ( '+' ) | ( '-' ) | ( '*' ) | ( '/' ) );
     public final void rule__MathOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1506:1: ( ( '+' ) | ( '-' ) | ( '*' ) | ( '/' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1504:1: ( ( '+' ) | ( '-' ) | ( '*' ) | ( '/' ) )
             int alt16=4;
             switch ( input.LA(1) ) {
             case 23:
@@ -4892,15 +4901,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt16) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1507:1: ( '+' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1505:1: ( '+' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1507:1: ( '+' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1508:1: '+'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1505:1: ( '+' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1506:1: '+'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMathOperatorAccess().getPlusSignKeyword_0()); 
                     }
-                    match(input,23,FOLLOW_23_in_rule__MathOperator__Alternatives3229); if (state.failed) return ;
+                    match(input,23,FOLLOW_23_in_rule__MathOperator__Alternatives3227); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMathOperatorAccess().getPlusSignKeyword_0()); 
                     }
@@ -4911,15 +4920,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1515:6: ( '-' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1513:6: ( '-' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1515:6: ( '-' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1516:1: '-'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1513:6: ( '-' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1514:1: '-'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMathOperatorAccess().getHyphenMinusKeyword_1()); 
                     }
-                    match(input,24,FOLLOW_24_in_rule__MathOperator__Alternatives3249); if (state.failed) return ;
+                    match(input,24,FOLLOW_24_in_rule__MathOperator__Alternatives3247); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMathOperatorAccess().getHyphenMinusKeyword_1()); 
                     }
@@ -4930,15 +4939,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1523:6: ( '*' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1521:6: ( '*' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1523:6: ( '*' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1524:1: '*'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1521:6: ( '*' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1522:1: '*'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMathOperatorAccess().getAsteriskKeyword_2()); 
                     }
-                    match(input,25,FOLLOW_25_in_rule__MathOperator__Alternatives3269); if (state.failed) return ;
+                    match(input,25,FOLLOW_25_in_rule__MathOperator__Alternatives3267); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMathOperatorAccess().getAsteriskKeyword_2()); 
                     }
@@ -4949,15 +4958,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1531:6: ( '/' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1529:6: ( '/' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1531:6: ( '/' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1532:1: '/'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1529:6: ( '/' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1530:1: '/'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMathOperatorAccess().getSolidusKeyword_3()); 
                     }
-                    match(input,26,FOLLOW_26_in_rule__MathOperator__Alternatives3289); if (state.failed) return ;
+                    match(input,26,FOLLOW_26_in_rule__MathOperator__Alternatives3287); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMathOperatorAccess().getSolidusKeyword_3()); 
                     }
@@ -4985,13 +4994,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CrementOperator__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1544:1: rule__CrementOperator__Alternatives : ( ( '++' ) | ( '--' ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1542:1: rule__CrementOperator__Alternatives : ( ( '++' ) | ( '--' ) );
     public final void rule__CrementOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1548:1: ( ( '++' ) | ( '--' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1546:1: ( ( '++' ) | ( '--' ) )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -5010,15 +5019,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1549:1: ( '++' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1547:1: ( '++' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1549:1: ( '++' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1550:1: '++'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1547:1: ( '++' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1548:1: '++'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getCrementOperatorAccess().getPlusSignPlusSignKeyword_0()); 
                     }
-                    match(input,27,FOLLOW_27_in_rule__CrementOperator__Alternatives3324); if (state.failed) return ;
+                    match(input,27,FOLLOW_27_in_rule__CrementOperator__Alternatives3322); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getCrementOperatorAccess().getPlusSignPlusSignKeyword_0()); 
                     }
@@ -5029,15 +5038,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1557:6: ( '--' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1555:6: ( '--' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1557:6: ( '--' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1558:1: '--'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1555:6: ( '--' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1556:1: '--'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getCrementOperatorAccess().getHyphenMinusHyphenMinusKeyword_1()); 
                     }
-                    match(input,28,FOLLOW_28_in_rule__CrementOperator__Alternatives3344); if (state.failed) return ;
+                    match(input,28,FOLLOW_28_in_rule__CrementOperator__Alternatives3342); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getCrementOperatorAccess().getHyphenMinusHyphenMinusKeyword_1()); 
                     }
@@ -5065,20 +5074,20 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Value__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1570:1: rule__Value__Alternatives : ( ( ruleCall ) | ( ruleVarReference ) | ( ruleBasicValue ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1568:1: rule__Value__Alternatives : ( ( ruleCall ) | ( ruleVarReference ) | ( ruleBasicValue ) );
     public final void rule__Value__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1574:1: ( ( ruleCall ) | ( ruleVarReference ) | ( ruleBasicValue ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1572:1: ( ( ruleCall ) | ( ruleVarReference ) | ( ruleBasicValue ) )
             int alt18=3;
             switch ( input.LA(1) ) {
             case RULE_LOWERFIRST:
                 {
                 int LA18_1 = input.LA(2);
 
-                if ( (LA18_1==EOF||(LA18_1>=RULE_LOWERFIRST && LA18_1<=RULE_CAPITALFIRST)||(LA18_1>=13 && LA18_1<=26)||(LA18_1>=32 && LA18_1<=34)||(LA18_1>=38 && LA18_1<=41)||(LA18_1>=43 && LA18_1<=44)||(LA18_1>=46 && LA18_1<=50)) ) {
+                if ( (LA18_1==EOF||(LA18_1>=RULE_LOWERFIRST && LA18_1<=RULE_CAPITALFIRST)||(LA18_1>=13 && LA18_1<=26)||(LA18_1>=32 && LA18_1<=34)||(LA18_1>=38 && LA18_1<=41)||LA18_1==43||(LA18_1>=46 && LA18_1<=50)) ) {
                     alt18=2;
                 }
                 else if ( (LA18_1==37) ) {
@@ -5116,15 +5125,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt18) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1575:1: ( ruleCall )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1573:1: ( ruleCall )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1575:1: ( ruleCall )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1576:1: ruleCall
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1573:1: ( ruleCall )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1574:1: ruleCall
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getValueAccess().getCallParserRuleCall_0()); 
                     }
-                    pushFollow(FOLLOW_ruleCall_in_rule__Value__Alternatives3378);
+                    pushFollow(FOLLOW_ruleCall_in_rule__Value__Alternatives3376);
                     ruleCall();
 
                     state._fsp--;
@@ -5139,15 +5148,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1581:6: ( ruleVarReference )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1579:6: ( ruleVarReference )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1581:6: ( ruleVarReference )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1582:1: ruleVarReference
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1579:6: ( ruleVarReference )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1580:1: ruleVarReference
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getValueAccess().getVarReferenceParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleVarReference_in_rule__Value__Alternatives3395);
+                    pushFollow(FOLLOW_ruleVarReference_in_rule__Value__Alternatives3393);
                     ruleVarReference();
 
                     state._fsp--;
@@ -5162,15 +5171,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1587:6: ( ruleBasicValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1585:6: ( ruleBasicValue )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1587:6: ( ruleBasicValue )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1588:1: ruleBasicValue
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1585:6: ( ruleBasicValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1586:1: ruleBasicValue
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getValueAccess().getBasicValueParserRuleCall_2()); 
                     }
-                    pushFollow(FOLLOW_ruleBasicValue_in_rule__Value__Alternatives3412);
+                    pushFollow(FOLLOW_ruleBasicValue_in_rule__Value__Alternatives3410);
                     ruleBasicValue();
 
                     state._fsp--;
@@ -5202,13 +5211,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValue__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1598:1: rule__BasicValue__Alternatives : ( ( ruleBooleanValue ) | ( ruleNumberValue ) | ( ruleStringValue ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1596:1: rule__BasicValue__Alternatives : ( ( ruleBooleanValue ) | ( ruleNumberValue ) | ( ruleStringValue ) );
     public final void rule__BasicValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1602:1: ( ( ruleBooleanValue ) | ( ruleNumberValue ) | ( ruleStringValue ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1600:1: ( ( ruleBooleanValue ) | ( ruleNumberValue ) | ( ruleStringValue ) )
             int alt19=3;
             switch ( input.LA(1) ) {
             case 29:
@@ -5237,15 +5246,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt19) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1603:1: ( ruleBooleanValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1601:1: ( ruleBooleanValue )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1603:1: ( ruleBooleanValue )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1604:1: ruleBooleanValue
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1601:1: ( ruleBooleanValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1602:1: ruleBooleanValue
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBasicValueAccess().getBooleanValueParserRuleCall_0()); 
                     }
-                    pushFollow(FOLLOW_ruleBooleanValue_in_rule__BasicValue__Alternatives3444);
+                    pushFollow(FOLLOW_ruleBooleanValue_in_rule__BasicValue__Alternatives3442);
                     ruleBooleanValue();
 
                     state._fsp--;
@@ -5260,15 +5269,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1609:6: ( ruleNumberValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1607:6: ( ruleNumberValue )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1609:6: ( ruleNumberValue )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1610:1: ruleNumberValue
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1607:6: ( ruleNumberValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1608:1: ruleNumberValue
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBasicValueAccess().getNumberValueParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleNumberValue_in_rule__BasicValue__Alternatives3461);
+                    pushFollow(FOLLOW_ruleNumberValue_in_rule__BasicValue__Alternatives3459);
                     ruleNumberValue();
 
                     state._fsp--;
@@ -5283,15 +5292,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1615:6: ( ruleStringValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1613:6: ( ruleStringValue )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1615:6: ( ruleStringValue )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1616:1: ruleStringValue
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1613:6: ( ruleStringValue )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1614:1: ruleStringValue
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_2()); 
                     }
-                    pushFollow(FOLLOW_ruleStringValue_in_rule__BasicValue__Alternatives3478);
+                    pushFollow(FOLLOW_ruleStringValue_in_rule__BasicValue__Alternatives3476);
                     ruleStringValue();
 
                     state._fsp--;
@@ -5323,13 +5332,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BooleanValue__ValueAlternatives_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1626:1: rule__BooleanValue__ValueAlternatives_0 : ( ( 'true' ) | ( 'false' ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1624:1: rule__BooleanValue__ValueAlternatives_0 : ( ( 'true' ) | ( 'false' ) );
     public final void rule__BooleanValue__ValueAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1630:1: ( ( 'true' ) | ( 'false' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1628:1: ( ( 'true' ) | ( 'false' ) )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -5348,15 +5357,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1631:1: ( 'true' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1629:1: ( 'true' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1631:1: ( 'true' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1632:1: 'true'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1629:1: ( 'true' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1630:1: 'true'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
                     }
-                    match(input,29,FOLLOW_29_in_rule__BooleanValue__ValueAlternatives_03511); if (state.failed) return ;
+                    match(input,29,FOLLOW_29_in_rule__BooleanValue__ValueAlternatives_03509); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
                     }
@@ -5367,15 +5376,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1639:6: ( 'false' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1637:6: ( 'false' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1639:6: ( 'false' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1640:1: 'false'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1637:6: ( 'false' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1638:1: 'false'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_0_1()); 
                     }
-                    match(input,30,FOLLOW_30_in_rule__BooleanValue__ValueAlternatives_03531); if (state.failed) return ;
+                    match(input,30,FOLLOW_30_in_rule__BooleanValue__ValueAlternatives_03529); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_0_1()); 
                     }
@@ -5403,13 +5412,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Methodtype__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1652:1: rule__Methodtype__Alternatives : ( ( 'void' ) | ( ruleDatatype ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1650:1: rule__Methodtype__Alternatives : ( ( 'void' ) | ( ruleDatatype ) );
     public final void rule__Methodtype__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1656:1: ( ( 'void' ) | ( ruleDatatype ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1654:1: ( ( 'void' ) | ( ruleDatatype ) )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -5428,15 +5437,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt21) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1657:1: ( 'void' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1655:1: ( 'void' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1657:1: ( 'void' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1658:1: 'void'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1655:1: ( 'void' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1656:1: 'void'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMethodtypeAccess().getVoidKeyword_0()); 
                     }
-                    match(input,31,FOLLOW_31_in_rule__Methodtype__Alternatives3566); if (state.failed) return ;
+                    match(input,31,FOLLOW_31_in_rule__Methodtype__Alternatives3564); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMethodtypeAccess().getVoidKeyword_0()); 
                     }
@@ -5447,15 +5456,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1665:6: ( ruleDatatype )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1663:6: ( ruleDatatype )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1665:6: ( ruleDatatype )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1666:1: ruleDatatype
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1663:6: ( ruleDatatype )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1664:1: ruleDatatype
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMethodtypeAccess().getDatatypeParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleDatatype_in_rule__Methodtype__Alternatives3585);
+                    pushFollow(FOLLOW_ruleDatatype_in_rule__Methodtype__Alternatives3583);
                     ruleDatatype();
 
                     state._fsp--;
@@ -5487,13 +5496,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Datatype__Alternatives"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1676:1: rule__Datatype__Alternatives : ( ( 'int' ) | ( 'string' ) | ( 'boolean' ) );
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1674:1: rule__Datatype__Alternatives : ( ( 'int' ) | ( 'string' ) | ( 'boolean' ) );
     public final void rule__Datatype__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1680:1: ( ( 'int' ) | ( 'string' ) | ( 'boolean' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1678:1: ( ( 'int' ) | ( 'string' ) | ( 'boolean' ) )
             int alt22=3;
             switch ( input.LA(1) ) {
             case 32:
@@ -5521,15 +5530,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             switch (alt22) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1681:1: ( 'int' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1679:1: ( 'int' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1681:1: ( 'int' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1682:1: 'int'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1679:1: ( 'int' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1680:1: 'int'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getDatatypeAccess().getIntKeyword_0()); 
                     }
-                    match(input,32,FOLLOW_32_in_rule__Datatype__Alternatives3618); if (state.failed) return ;
+                    match(input,32,FOLLOW_32_in_rule__Datatype__Alternatives3616); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getDatatypeAccess().getIntKeyword_0()); 
                     }
@@ -5540,15 +5549,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1689:6: ( 'string' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1687:6: ( 'string' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1689:6: ( 'string' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1690:1: 'string'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1687:6: ( 'string' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1688:1: 'string'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getDatatypeAccess().getStringKeyword_1()); 
                     }
-                    match(input,33,FOLLOW_33_in_rule__Datatype__Alternatives3638); if (state.failed) return ;
+                    match(input,33,FOLLOW_33_in_rule__Datatype__Alternatives3636); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getDatatypeAccess().getStringKeyword_1()); 
                     }
@@ -5559,15 +5568,15 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1697:6: ( 'boolean' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1695:6: ( 'boolean' )
                     {
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1697:6: ( 'boolean' )
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1698:1: 'boolean'
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1695:6: ( 'boolean' )
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1696:1: 'boolean'
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getDatatypeAccess().getBooleanKeyword_2()); 
                     }
-                    match(input,34,FOLLOW_34_in_rule__Datatype__Alternatives3658); if (state.failed) return ;
+                    match(input,34,FOLLOW_34_in_rule__Datatype__Alternatives3656); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getDatatypeAccess().getBooleanKeyword_2()); 
                     }
@@ -5595,21 +5604,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CLfile__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1712:1: rule__CLfile__Group__0 : rule__CLfile__Group__0__Impl rule__CLfile__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1710:1: rule__CLfile__Group__0 : rule__CLfile__Group__0__Impl rule__CLfile__Group__1 ;
     public final void rule__CLfile__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1716:1: ( rule__CLfile__Group__0__Impl rule__CLfile__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1717:2: rule__CLfile__Group__0__Impl rule__CLfile__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1714:1: ( rule__CLfile__Group__0__Impl rule__CLfile__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1715:2: rule__CLfile__Group__0__Impl rule__CLfile__Group__1
             {
-            pushFollow(FOLLOW_rule__CLfile__Group__0__Impl_in_rule__CLfile__Group__03690);
+            pushFollow(FOLLOW_rule__CLfile__Group__0__Impl_in_rule__CLfile__Group__03688);
             rule__CLfile__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__CLfile__Group__1_in_rule__CLfile__Group__03693);
+            pushFollow(FOLLOW_rule__CLfile__Group__1_in_rule__CLfile__Group__03691);
             rule__CLfile__Group__1();
 
             state._fsp--;
@@ -5633,22 +5642,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CLfile__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1724:1: rule__CLfile__Group__0__Impl : ( ( rule__CLfile__ScriptsAssignment_0 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1722:1: rule__CLfile__Group__0__Impl : ( ( rule__CLfile__ScriptsAssignment_0 )* ) ;
     public final void rule__CLfile__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1728:1: ( ( ( rule__CLfile__ScriptsAssignment_0 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1729:1: ( ( rule__CLfile__ScriptsAssignment_0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1726:1: ( ( ( rule__CLfile__ScriptsAssignment_0 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1727:1: ( ( rule__CLfile__ScriptsAssignment_0 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1729:1: ( ( rule__CLfile__ScriptsAssignment_0 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1730:1: ( rule__CLfile__ScriptsAssignment_0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1727:1: ( ( rule__CLfile__ScriptsAssignment_0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1728:1: ( rule__CLfile__ScriptsAssignment_0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCLfileAccess().getScriptsAssignment_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1731:1: ( rule__CLfile__ScriptsAssignment_0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1729:1: ( rule__CLfile__ScriptsAssignment_0 )*
             loop23:
             do {
                 int alt23=2;
@@ -5661,9 +5670,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt23) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1731:2: rule__CLfile__ScriptsAssignment_0
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1729:2: rule__CLfile__ScriptsAssignment_0
             	    {
-            	    pushFollow(FOLLOW_rule__CLfile__ScriptsAssignment_0_in_rule__CLfile__Group__0__Impl3720);
+            	    pushFollow(FOLLOW_rule__CLfile__ScriptsAssignment_0_in_rule__CLfile__Group__0__Impl3718);
             	    rule__CLfile__ScriptsAssignment_0();
 
             	    state._fsp--;
@@ -5702,16 +5711,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CLfile__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1741:1: rule__CLfile__Group__1 : rule__CLfile__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1739:1: rule__CLfile__Group__1 : rule__CLfile__Group__1__Impl ;
     public final void rule__CLfile__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1745:1: ( rule__CLfile__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1746:2: rule__CLfile__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1743:1: ( rule__CLfile__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1744:2: rule__CLfile__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__CLfile__Group__1__Impl_in_rule__CLfile__Group__13751);
+            pushFollow(FOLLOW_rule__CLfile__Group__1__Impl_in_rule__CLfile__Group__13749);
             rule__CLfile__Group__1__Impl();
 
             state._fsp--;
@@ -5735,25 +5744,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CLfile__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1752:1: rule__CLfile__Group__1__Impl : ( ( rule__CLfile__MetsAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1750:1: rule__CLfile__Group__1__Impl : ( ( rule__CLfile__MetsAssignment_1 ) ) ;
     public final void rule__CLfile__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1756:1: ( ( ( rule__CLfile__MetsAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1757:1: ( ( rule__CLfile__MetsAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1754:1: ( ( ( rule__CLfile__MetsAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1755:1: ( ( rule__CLfile__MetsAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1757:1: ( ( rule__CLfile__MetsAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1758:1: ( rule__CLfile__MetsAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1755:1: ( ( rule__CLfile__MetsAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1756:1: ( rule__CLfile__MetsAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCLfileAccess().getMetsAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1759:1: ( rule__CLfile__MetsAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1759:2: rule__CLfile__MetsAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1757:1: ( rule__CLfile__MetsAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1757:2: rule__CLfile__MetsAssignment_1
             {
-            pushFollow(FOLLOW_rule__CLfile__MetsAssignment_1_in_rule__CLfile__Group__1__Impl3778);
+            pushFollow(FOLLOW_rule__CLfile__MetsAssignment_1_in_rule__CLfile__Group__1__Impl3776);
             rule__CLfile__MetsAssignment_1();
 
             state._fsp--;
@@ -5786,21 +5795,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1773:1: rule__Script__Group__0 : rule__Script__Group__0__Impl rule__Script__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1771:1: rule__Script__Group__0 : rule__Script__Group__0__Impl rule__Script__Group__1 ;
     public final void rule__Script__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1777:1: ( rule__Script__Group__0__Impl rule__Script__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1778:2: rule__Script__Group__0__Impl rule__Script__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1775:1: ( rule__Script__Group__0__Impl rule__Script__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1776:2: rule__Script__Group__0__Impl rule__Script__Group__1
             {
-            pushFollow(FOLLOW_rule__Script__Group__0__Impl_in_rule__Script__Group__03812);
+            pushFollow(FOLLOW_rule__Script__Group__0__Impl_in_rule__Script__Group__03810);
             rule__Script__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__1_in_rule__Script__Group__03815);
+            pushFollow(FOLLOW_rule__Script__Group__1_in_rule__Script__Group__03813);
             rule__Script__Group__1();
 
             state._fsp--;
@@ -5824,22 +5833,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1785:1: rule__Script__Group__0__Impl : ( 'script' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1783:1: rule__Script__Group__0__Impl : ( 'script' ) ;
     public final void rule__Script__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1789:1: ( ( 'script' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1790:1: ( 'script' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1787:1: ( ( 'script' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1788:1: ( 'script' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1790:1: ( 'script' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1791:1: 'script'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1788:1: ( 'script' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1789:1: 'script'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getScriptKeyword_0()); 
             }
-            match(input,35,FOLLOW_35_in_rule__Script__Group__0__Impl3843); if (state.failed) return ;
+            match(input,35,FOLLOW_35_in_rule__Script__Group__0__Impl3841); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getScriptKeyword_0()); 
             }
@@ -5865,21 +5874,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1804:1: rule__Script__Group__1 : rule__Script__Group__1__Impl rule__Script__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1802:1: rule__Script__Group__1 : rule__Script__Group__1__Impl rule__Script__Group__2 ;
     public final void rule__Script__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1808:1: ( rule__Script__Group__1__Impl rule__Script__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1809:2: rule__Script__Group__1__Impl rule__Script__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1806:1: ( rule__Script__Group__1__Impl rule__Script__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1807:2: rule__Script__Group__1__Impl rule__Script__Group__2
             {
-            pushFollow(FOLLOW_rule__Script__Group__1__Impl_in_rule__Script__Group__13874);
+            pushFollow(FOLLOW_rule__Script__Group__1__Impl_in_rule__Script__Group__13872);
             rule__Script__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__2_in_rule__Script__Group__13877);
+            pushFollow(FOLLOW_rule__Script__Group__2_in_rule__Script__Group__13875);
             rule__Script__Group__2();
 
             state._fsp--;
@@ -5903,25 +5912,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1816:1: rule__Script__Group__1__Impl : ( ( rule__Script__NameAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1814:1: rule__Script__Group__1__Impl : ( ( rule__Script__NameAssignment_1 ) ) ;
     public final void rule__Script__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1820:1: ( ( ( rule__Script__NameAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1821:1: ( ( rule__Script__NameAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1818:1: ( ( ( rule__Script__NameAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1819:1: ( ( rule__Script__NameAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1821:1: ( ( rule__Script__NameAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1822:1: ( rule__Script__NameAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1819:1: ( ( rule__Script__NameAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1820:1: ( rule__Script__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getNameAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1823:1: ( rule__Script__NameAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1823:2: rule__Script__NameAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1821:1: ( rule__Script__NameAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1821:2: rule__Script__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Script__NameAssignment_1_in_rule__Script__Group__1__Impl3904);
+            pushFollow(FOLLOW_rule__Script__NameAssignment_1_in_rule__Script__Group__1__Impl3902);
             rule__Script__NameAssignment_1();
 
             state._fsp--;
@@ -5954,21 +5963,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1833:1: rule__Script__Group__2 : rule__Script__Group__2__Impl rule__Script__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1831:1: rule__Script__Group__2 : rule__Script__Group__2__Impl rule__Script__Group__3 ;
     public final void rule__Script__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1837:1: ( rule__Script__Group__2__Impl rule__Script__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1838:2: rule__Script__Group__2__Impl rule__Script__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1835:1: ( rule__Script__Group__2__Impl rule__Script__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1836:2: rule__Script__Group__2__Impl rule__Script__Group__3
             {
-            pushFollow(FOLLOW_rule__Script__Group__2__Impl_in_rule__Script__Group__23934);
+            pushFollow(FOLLOW_rule__Script__Group__2__Impl_in_rule__Script__Group__23932);
             rule__Script__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__3_in_rule__Script__Group__23937);
+            pushFollow(FOLLOW_rule__Script__Group__3_in_rule__Script__Group__23935);
             rule__Script__Group__3();
 
             state._fsp--;
@@ -5992,22 +6001,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1845:1: rule__Script__Group__2__Impl : ( 'targets' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1843:1: rule__Script__Group__2__Impl : ( 'targets' ) ;
     public final void rule__Script__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1849:1: ( ( 'targets' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1850:1: ( 'targets' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1847:1: ( ( 'targets' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1848:1: ( 'targets' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1850:1: ( 'targets' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1851:1: 'targets'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1848:1: ( 'targets' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1849:1: 'targets'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getTargetsKeyword_2()); 
             }
-            match(input,36,FOLLOW_36_in_rule__Script__Group__2__Impl3965); if (state.failed) return ;
+            match(input,36,FOLLOW_36_in_rule__Script__Group__2__Impl3963); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getTargetsKeyword_2()); 
             }
@@ -6033,21 +6042,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1864:1: rule__Script__Group__3 : rule__Script__Group__3__Impl rule__Script__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1862:1: rule__Script__Group__3 : rule__Script__Group__3__Impl rule__Script__Group__4 ;
     public final void rule__Script__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1868:1: ( rule__Script__Group__3__Impl rule__Script__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1869:2: rule__Script__Group__3__Impl rule__Script__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1866:1: ( rule__Script__Group__3__Impl rule__Script__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1867:2: rule__Script__Group__3__Impl rule__Script__Group__4
             {
-            pushFollow(FOLLOW_rule__Script__Group__3__Impl_in_rule__Script__Group__33996);
+            pushFollow(FOLLOW_rule__Script__Group__3__Impl_in_rule__Script__Group__33994);
             rule__Script__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__4_in_rule__Script__Group__33999);
+            pushFollow(FOLLOW_rule__Script__Group__4_in_rule__Script__Group__33997);
             rule__Script__Group__4();
 
             state._fsp--;
@@ -6071,22 +6080,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1876:1: rule__Script__Group__3__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1874:1: rule__Script__Group__3__Impl : ( '(' ) ;
     public final void rule__Script__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1880:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1881:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1878:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1879:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1881:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1882:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1879:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1880:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getLeftParenthesisKeyword_3()); 
             }
-            match(input,37,FOLLOW_37_in_rule__Script__Group__3__Impl4027); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__Script__Group__3__Impl4025); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getLeftParenthesisKeyword_3()); 
             }
@@ -6112,21 +6121,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1895:1: rule__Script__Group__4 : rule__Script__Group__4__Impl rule__Script__Group__5 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1893:1: rule__Script__Group__4 : rule__Script__Group__4__Impl rule__Script__Group__5 ;
     public final void rule__Script__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1899:1: ( rule__Script__Group__4__Impl rule__Script__Group__5 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1900:2: rule__Script__Group__4__Impl rule__Script__Group__5
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1897:1: ( rule__Script__Group__4__Impl rule__Script__Group__5 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1898:2: rule__Script__Group__4__Impl rule__Script__Group__5
             {
-            pushFollow(FOLLOW_rule__Script__Group__4__Impl_in_rule__Script__Group__44058);
+            pushFollow(FOLLOW_rule__Script__Group__4__Impl_in_rule__Script__Group__44056);
             rule__Script__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__5_in_rule__Script__Group__44061);
+            pushFollow(FOLLOW_rule__Script__Group__5_in_rule__Script__Group__44059);
             rule__Script__Group__5();
 
             state._fsp--;
@@ -6150,25 +6159,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1907:1: rule__Script__Group__4__Impl : ( ( rule__Script__RobottypesAssignment_4 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1905:1: rule__Script__Group__4__Impl : ( ( rule__Script__RobottypesAssignment_4 ) ) ;
     public final void rule__Script__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1911:1: ( ( ( rule__Script__RobottypesAssignment_4 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1912:1: ( ( rule__Script__RobottypesAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1909:1: ( ( ( rule__Script__RobottypesAssignment_4 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1910:1: ( ( rule__Script__RobottypesAssignment_4 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1912:1: ( ( rule__Script__RobottypesAssignment_4 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1913:1: ( rule__Script__RobottypesAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1910:1: ( ( rule__Script__RobottypesAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1911:1: ( rule__Script__RobottypesAssignment_4 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobottypesAssignment_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1914:1: ( rule__Script__RobottypesAssignment_4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1914:2: rule__Script__RobottypesAssignment_4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1912:1: ( rule__Script__RobottypesAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1912:2: rule__Script__RobottypesAssignment_4
             {
-            pushFollow(FOLLOW_rule__Script__RobottypesAssignment_4_in_rule__Script__Group__4__Impl4088);
+            pushFollow(FOLLOW_rule__Script__RobottypesAssignment_4_in_rule__Script__Group__4__Impl4086);
             rule__Script__RobottypesAssignment_4();
 
             state._fsp--;
@@ -6201,21 +6210,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__5"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1924:1: rule__Script__Group__5 : rule__Script__Group__5__Impl rule__Script__Group__6 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1922:1: rule__Script__Group__5 : rule__Script__Group__5__Impl rule__Script__Group__6 ;
     public final void rule__Script__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1928:1: ( rule__Script__Group__5__Impl rule__Script__Group__6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1929:2: rule__Script__Group__5__Impl rule__Script__Group__6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1926:1: ( rule__Script__Group__5__Impl rule__Script__Group__6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1927:2: rule__Script__Group__5__Impl rule__Script__Group__6
             {
-            pushFollow(FOLLOW_rule__Script__Group__5__Impl_in_rule__Script__Group__54118);
+            pushFollow(FOLLOW_rule__Script__Group__5__Impl_in_rule__Script__Group__54116);
             rule__Script__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__6_in_rule__Script__Group__54121);
+            pushFollow(FOLLOW_rule__Script__Group__6_in_rule__Script__Group__54119);
             rule__Script__Group__6();
 
             state._fsp--;
@@ -6239,22 +6248,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__5__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1936:1: rule__Script__Group__5__Impl : ( ',' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1934:1: rule__Script__Group__5__Impl : ( ',' ) ;
     public final void rule__Script__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1940:1: ( ( ',' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1941:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1938:1: ( ( ',' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1939:1: ( ',' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1941:1: ( ',' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1942:1: ','
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1939:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1940:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getCommaKeyword_5()); 
             }
-            match(input,38,FOLLOW_38_in_rule__Script__Group__5__Impl4149); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__Script__Group__5__Impl4147); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getCommaKeyword_5()); 
             }
@@ -6280,21 +6289,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1955:1: rule__Script__Group__6 : rule__Script__Group__6__Impl rule__Script__Group__7 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1953:1: rule__Script__Group__6 : rule__Script__Group__6__Impl rule__Script__Group__7 ;
     public final void rule__Script__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1959:1: ( rule__Script__Group__6__Impl rule__Script__Group__7 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1960:2: rule__Script__Group__6__Impl rule__Script__Group__7
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1957:1: ( rule__Script__Group__6__Impl rule__Script__Group__7 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1958:2: rule__Script__Group__6__Impl rule__Script__Group__7
             {
-            pushFollow(FOLLOW_rule__Script__Group__6__Impl_in_rule__Script__Group__64180);
+            pushFollow(FOLLOW_rule__Script__Group__6__Impl_in_rule__Script__Group__64178);
             rule__Script__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__7_in_rule__Script__Group__64183);
+            pushFollow(FOLLOW_rule__Script__Group__7_in_rule__Script__Group__64181);
             rule__Script__Group__7();
 
             state._fsp--;
@@ -6318,25 +6327,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__6__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1967:1: rule__Script__Group__6__Impl : ( ( rule__Script__RobotconfigsAssignment_6 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1965:1: rule__Script__Group__6__Impl : ( ( rule__Script__RobotconfigsAssignment_6 ) ) ;
     public final void rule__Script__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1971:1: ( ( ( rule__Script__RobotconfigsAssignment_6 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1972:1: ( ( rule__Script__RobotconfigsAssignment_6 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1969:1: ( ( ( rule__Script__RobotconfigsAssignment_6 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1970:1: ( ( rule__Script__RobotconfigsAssignment_6 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1972:1: ( ( rule__Script__RobotconfigsAssignment_6 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1973:1: ( rule__Script__RobotconfigsAssignment_6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1970:1: ( ( rule__Script__RobotconfigsAssignment_6 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1971:1: ( rule__Script__RobotconfigsAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobotconfigsAssignment_6()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1974:1: ( rule__Script__RobotconfigsAssignment_6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1974:2: rule__Script__RobotconfigsAssignment_6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1972:1: ( rule__Script__RobotconfigsAssignment_6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1972:2: rule__Script__RobotconfigsAssignment_6
             {
-            pushFollow(FOLLOW_rule__Script__RobotconfigsAssignment_6_in_rule__Script__Group__6__Impl4210);
+            pushFollow(FOLLOW_rule__Script__RobotconfigsAssignment_6_in_rule__Script__Group__6__Impl4208);
             rule__Script__RobotconfigsAssignment_6();
 
             state._fsp--;
@@ -6369,21 +6378,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__7"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1984:1: rule__Script__Group__7 : rule__Script__Group__7__Impl rule__Script__Group__8 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1982:1: rule__Script__Group__7 : rule__Script__Group__7__Impl rule__Script__Group__8 ;
     public final void rule__Script__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1988:1: ( rule__Script__Group__7__Impl rule__Script__Group__8 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1989:2: rule__Script__Group__7__Impl rule__Script__Group__8
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1986:1: ( rule__Script__Group__7__Impl rule__Script__Group__8 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1987:2: rule__Script__Group__7__Impl rule__Script__Group__8
             {
-            pushFollow(FOLLOW_rule__Script__Group__7__Impl_in_rule__Script__Group__74240);
+            pushFollow(FOLLOW_rule__Script__Group__7__Impl_in_rule__Script__Group__74238);
             rule__Script__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__8_in_rule__Script__Group__74243);
+            pushFollow(FOLLOW_rule__Script__Group__8_in_rule__Script__Group__74241);
             rule__Script__Group__8();
 
             state._fsp--;
@@ -6407,22 +6416,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__7__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1996:1: rule__Script__Group__7__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1994:1: rule__Script__Group__7__Impl : ( ')' ) ;
     public final void rule__Script__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2000:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2001:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1998:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1999:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2001:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2002:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:1999:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2000:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRightParenthesisKeyword_7()); 
             }
-            match(input,39,FOLLOW_39_in_rule__Script__Group__7__Impl4271); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__Script__Group__7__Impl4269); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getRightParenthesisKeyword_7()); 
             }
@@ -6448,21 +6457,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__8"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2015:1: rule__Script__Group__8 : rule__Script__Group__8__Impl rule__Script__Group__9 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2013:1: rule__Script__Group__8 : rule__Script__Group__8__Impl rule__Script__Group__9 ;
     public final void rule__Script__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2019:1: ( rule__Script__Group__8__Impl rule__Script__Group__9 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2020:2: rule__Script__Group__8__Impl rule__Script__Group__9
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2017:1: ( rule__Script__Group__8__Impl rule__Script__Group__9 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2018:2: rule__Script__Group__8__Impl rule__Script__Group__9
             {
-            pushFollow(FOLLOW_rule__Script__Group__8__Impl_in_rule__Script__Group__84302);
+            pushFollow(FOLLOW_rule__Script__Group__8__Impl_in_rule__Script__Group__84300);
             rule__Script__Group__8__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__9_in_rule__Script__Group__84305);
+            pushFollow(FOLLOW_rule__Script__Group__9_in_rule__Script__Group__84303);
             rule__Script__Group__9();
 
             state._fsp--;
@@ -6486,22 +6495,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__8__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2027:1: rule__Script__Group__8__Impl : ( ( rule__Script__Group_8__0 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2025:1: rule__Script__Group__8__Impl : ( ( rule__Script__Group_8__0 )* ) ;
     public final void rule__Script__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2031:1: ( ( ( rule__Script__Group_8__0 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2032:1: ( ( rule__Script__Group_8__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2029:1: ( ( ( rule__Script__Group_8__0 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2030:1: ( ( rule__Script__Group_8__0 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2032:1: ( ( rule__Script__Group_8__0 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2033:1: ( rule__Script__Group_8__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2030:1: ( ( rule__Script__Group_8__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2031:1: ( rule__Script__Group_8__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getGroup_8()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2034:1: ( rule__Script__Group_8__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2032:1: ( rule__Script__Group_8__0 )*
             loop24:
             do {
                 int alt24=2;
@@ -6514,9 +6523,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt24) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2034:2: rule__Script__Group_8__0
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2032:2: rule__Script__Group_8__0
             	    {
-            	    pushFollow(FOLLOW_rule__Script__Group_8__0_in_rule__Script__Group__8__Impl4332);
+            	    pushFollow(FOLLOW_rule__Script__Group_8__0_in_rule__Script__Group__8__Impl4330);
             	    rule__Script__Group_8__0();
 
             	    state._fsp--;
@@ -6555,21 +6564,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__9"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2044:1: rule__Script__Group__9 : rule__Script__Group__9__Impl rule__Script__Group__10 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2042:1: rule__Script__Group__9 : rule__Script__Group__9__Impl rule__Script__Group__10 ;
     public final void rule__Script__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2048:1: ( rule__Script__Group__9__Impl rule__Script__Group__10 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2049:2: rule__Script__Group__9__Impl rule__Script__Group__10
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2046:1: ( rule__Script__Group__9__Impl rule__Script__Group__10 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2047:2: rule__Script__Group__9__Impl rule__Script__Group__10
             {
-            pushFollow(FOLLOW_rule__Script__Group__9__Impl_in_rule__Script__Group__94363);
+            pushFollow(FOLLOW_rule__Script__Group__9__Impl_in_rule__Script__Group__94361);
             rule__Script__Group__9__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__10_in_rule__Script__Group__94366);
+            pushFollow(FOLLOW_rule__Script__Group__10_in_rule__Script__Group__94364);
             rule__Script__Group__10();
 
             state._fsp--;
@@ -6593,22 +6602,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__9__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2056:1: rule__Script__Group__9__Impl : ( '{' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2054:1: rule__Script__Group__9__Impl : ( '{' ) ;
     public final void rule__Script__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2060:1: ( ( '{' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2061:1: ( '{' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2058:1: ( ( '{' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2059:1: ( '{' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2061:1: ( '{' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2062:1: '{'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2059:1: ( '{' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2060:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getLeftCurlyBracketKeyword_9()); 
             }
-            match(input,40,FOLLOW_40_in_rule__Script__Group__9__Impl4394); if (state.failed) return ;
+            match(input,40,FOLLOW_40_in_rule__Script__Group__9__Impl4392); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getLeftCurlyBracketKeyword_9()); 
             }
@@ -6634,21 +6643,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__10"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2075:1: rule__Script__Group__10 : rule__Script__Group__10__Impl rule__Script__Group__11 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2073:1: rule__Script__Group__10 : rule__Script__Group__10__Impl rule__Script__Group__11 ;
     public final void rule__Script__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2079:1: ( rule__Script__Group__10__Impl rule__Script__Group__11 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2080:2: rule__Script__Group__10__Impl rule__Script__Group__11
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2077:1: ( rule__Script__Group__10__Impl rule__Script__Group__11 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2078:2: rule__Script__Group__10__Impl rule__Script__Group__11
             {
-            pushFollow(FOLLOW_rule__Script__Group__10__Impl_in_rule__Script__Group__104425);
+            pushFollow(FOLLOW_rule__Script__Group__10__Impl_in_rule__Script__Group__104423);
             rule__Script__Group__10__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group__11_in_rule__Script__Group__104428);
+            pushFollow(FOLLOW_rule__Script__Group__11_in_rule__Script__Group__104426);
             rule__Script__Group__11();
 
             state._fsp--;
@@ -6672,22 +6681,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__10__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2087:1: rule__Script__Group__10__Impl : ( ( rule__Script__MethodsAssignment_10 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2085:1: rule__Script__Group__10__Impl : ( ( rule__Script__MethodsAssignment_10 )* ) ;
     public final void rule__Script__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2091:1: ( ( ( rule__Script__MethodsAssignment_10 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2092:1: ( ( rule__Script__MethodsAssignment_10 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2089:1: ( ( ( rule__Script__MethodsAssignment_10 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2090:1: ( ( rule__Script__MethodsAssignment_10 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2092:1: ( ( rule__Script__MethodsAssignment_10 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2093:1: ( rule__Script__MethodsAssignment_10 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2090:1: ( ( rule__Script__MethodsAssignment_10 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2091:1: ( rule__Script__MethodsAssignment_10 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getMethodsAssignment_10()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2094:1: ( rule__Script__MethodsAssignment_10 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2092:1: ( rule__Script__MethodsAssignment_10 )*
             loop25:
             do {
                 int alt25=2;
@@ -6700,9 +6709,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt25) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2094:2: rule__Script__MethodsAssignment_10
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2092:2: rule__Script__MethodsAssignment_10
             	    {
-            	    pushFollow(FOLLOW_rule__Script__MethodsAssignment_10_in_rule__Script__Group__10__Impl4455);
+            	    pushFollow(FOLLOW_rule__Script__MethodsAssignment_10_in_rule__Script__Group__10__Impl4453);
             	    rule__Script__MethodsAssignment_10();
 
             	    state._fsp--;
@@ -6741,16 +6750,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__11"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2104:1: rule__Script__Group__11 : rule__Script__Group__11__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2102:1: rule__Script__Group__11 : rule__Script__Group__11__Impl ;
     public final void rule__Script__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2108:1: ( rule__Script__Group__11__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2109:2: rule__Script__Group__11__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2106:1: ( rule__Script__Group__11__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2107:2: rule__Script__Group__11__Impl
             {
-            pushFollow(FOLLOW_rule__Script__Group__11__Impl_in_rule__Script__Group__114486);
+            pushFollow(FOLLOW_rule__Script__Group__11__Impl_in_rule__Script__Group__114484);
             rule__Script__Group__11__Impl();
 
             state._fsp--;
@@ -6774,22 +6783,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group__11__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2115:1: rule__Script__Group__11__Impl : ( '}' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2113:1: rule__Script__Group__11__Impl : ( '}' ) ;
     public final void rule__Script__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2119:1: ( ( '}' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2120:1: ( '}' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2117:1: ( ( '}' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2118:1: ( '}' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2120:1: ( '}' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2121:1: '}'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2118:1: ( '}' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2119:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRightCurlyBracketKeyword_11()); 
             }
-            match(input,41,FOLLOW_41_in_rule__Script__Group__11__Impl4514); if (state.failed) return ;
+            match(input,41,FOLLOW_41_in_rule__Script__Group__11__Impl4512); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getRightCurlyBracketKeyword_11()); 
             }
@@ -6815,21 +6824,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2158:1: rule__Script__Group_8__0 : rule__Script__Group_8__0__Impl rule__Script__Group_8__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2156:1: rule__Script__Group_8__0 : rule__Script__Group_8__0__Impl rule__Script__Group_8__1 ;
     public final void rule__Script__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2162:1: ( rule__Script__Group_8__0__Impl rule__Script__Group_8__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2163:2: rule__Script__Group_8__0__Impl rule__Script__Group_8__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2160:1: ( rule__Script__Group_8__0__Impl rule__Script__Group_8__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2161:2: rule__Script__Group_8__0__Impl rule__Script__Group_8__1
             {
-            pushFollow(FOLLOW_rule__Script__Group_8__0__Impl_in_rule__Script__Group_8__04569);
+            pushFollow(FOLLOW_rule__Script__Group_8__0__Impl_in_rule__Script__Group_8__04567);
             rule__Script__Group_8__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group_8__1_in_rule__Script__Group_8__04572);
+            pushFollow(FOLLOW_rule__Script__Group_8__1_in_rule__Script__Group_8__04570);
             rule__Script__Group_8__1();
 
             state._fsp--;
@@ -6853,22 +6862,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2170:1: rule__Script__Group_8__0__Impl : ( ',' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2168:1: rule__Script__Group_8__0__Impl : ( ',' ) ;
     public final void rule__Script__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2174:1: ( ( ',' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2175:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2172:1: ( ( ',' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2173:1: ( ',' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2175:1: ( ',' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2176:1: ','
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2173:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2174:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getCommaKeyword_8_0()); 
             }
-            match(input,38,FOLLOW_38_in_rule__Script__Group_8__0__Impl4600); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__Script__Group_8__0__Impl4598); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getCommaKeyword_8_0()); 
             }
@@ -6894,21 +6903,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2189:1: rule__Script__Group_8__1 : rule__Script__Group_8__1__Impl rule__Script__Group_8__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2187:1: rule__Script__Group_8__1 : rule__Script__Group_8__1__Impl rule__Script__Group_8__2 ;
     public final void rule__Script__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2193:1: ( rule__Script__Group_8__1__Impl rule__Script__Group_8__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2194:2: rule__Script__Group_8__1__Impl rule__Script__Group_8__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2191:1: ( rule__Script__Group_8__1__Impl rule__Script__Group_8__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2192:2: rule__Script__Group_8__1__Impl rule__Script__Group_8__2
             {
-            pushFollow(FOLLOW_rule__Script__Group_8__1__Impl_in_rule__Script__Group_8__14631);
+            pushFollow(FOLLOW_rule__Script__Group_8__1__Impl_in_rule__Script__Group_8__14629);
             rule__Script__Group_8__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group_8__2_in_rule__Script__Group_8__14634);
+            pushFollow(FOLLOW_rule__Script__Group_8__2_in_rule__Script__Group_8__14632);
             rule__Script__Group_8__2();
 
             state._fsp--;
@@ -6932,22 +6941,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2201:1: rule__Script__Group_8__1__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2199:1: rule__Script__Group_8__1__Impl : ( '(' ) ;
     public final void rule__Script__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2205:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2206:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2203:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2204:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2206:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2207:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2204:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2205:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getLeftParenthesisKeyword_8_1()); 
             }
-            match(input,37,FOLLOW_37_in_rule__Script__Group_8__1__Impl4662); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__Script__Group_8__1__Impl4660); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getLeftParenthesisKeyword_8_1()); 
             }
@@ -6973,21 +6982,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2220:1: rule__Script__Group_8__2 : rule__Script__Group_8__2__Impl rule__Script__Group_8__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2218:1: rule__Script__Group_8__2 : rule__Script__Group_8__2__Impl rule__Script__Group_8__3 ;
     public final void rule__Script__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2224:1: ( rule__Script__Group_8__2__Impl rule__Script__Group_8__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2225:2: rule__Script__Group_8__2__Impl rule__Script__Group_8__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2222:1: ( rule__Script__Group_8__2__Impl rule__Script__Group_8__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2223:2: rule__Script__Group_8__2__Impl rule__Script__Group_8__3
             {
-            pushFollow(FOLLOW_rule__Script__Group_8__2__Impl_in_rule__Script__Group_8__24693);
+            pushFollow(FOLLOW_rule__Script__Group_8__2__Impl_in_rule__Script__Group_8__24691);
             rule__Script__Group_8__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group_8__3_in_rule__Script__Group_8__24696);
+            pushFollow(FOLLOW_rule__Script__Group_8__3_in_rule__Script__Group_8__24694);
             rule__Script__Group_8__3();
 
             state._fsp--;
@@ -7011,25 +7020,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2232:1: rule__Script__Group_8__2__Impl : ( ( rule__Script__RobottypesAssignment_8_2 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2230:1: rule__Script__Group_8__2__Impl : ( ( rule__Script__RobottypesAssignment_8_2 ) ) ;
     public final void rule__Script__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2236:1: ( ( ( rule__Script__RobottypesAssignment_8_2 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2237:1: ( ( rule__Script__RobottypesAssignment_8_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2234:1: ( ( ( rule__Script__RobottypesAssignment_8_2 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2235:1: ( ( rule__Script__RobottypesAssignment_8_2 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2237:1: ( ( rule__Script__RobottypesAssignment_8_2 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2238:1: ( rule__Script__RobottypesAssignment_8_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2235:1: ( ( rule__Script__RobottypesAssignment_8_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2236:1: ( rule__Script__RobottypesAssignment_8_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobottypesAssignment_8_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2239:1: ( rule__Script__RobottypesAssignment_8_2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2239:2: rule__Script__RobottypesAssignment_8_2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2237:1: ( rule__Script__RobottypesAssignment_8_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2237:2: rule__Script__RobottypesAssignment_8_2
             {
-            pushFollow(FOLLOW_rule__Script__RobottypesAssignment_8_2_in_rule__Script__Group_8__2__Impl4723);
+            pushFollow(FOLLOW_rule__Script__RobottypesAssignment_8_2_in_rule__Script__Group_8__2__Impl4721);
             rule__Script__RobottypesAssignment_8_2();
 
             state._fsp--;
@@ -7062,21 +7071,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2249:1: rule__Script__Group_8__3 : rule__Script__Group_8__3__Impl rule__Script__Group_8__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2247:1: rule__Script__Group_8__3 : rule__Script__Group_8__3__Impl rule__Script__Group_8__4 ;
     public final void rule__Script__Group_8__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2253:1: ( rule__Script__Group_8__3__Impl rule__Script__Group_8__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2254:2: rule__Script__Group_8__3__Impl rule__Script__Group_8__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2251:1: ( rule__Script__Group_8__3__Impl rule__Script__Group_8__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2252:2: rule__Script__Group_8__3__Impl rule__Script__Group_8__4
             {
-            pushFollow(FOLLOW_rule__Script__Group_8__3__Impl_in_rule__Script__Group_8__34753);
+            pushFollow(FOLLOW_rule__Script__Group_8__3__Impl_in_rule__Script__Group_8__34751);
             rule__Script__Group_8__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group_8__4_in_rule__Script__Group_8__34756);
+            pushFollow(FOLLOW_rule__Script__Group_8__4_in_rule__Script__Group_8__34754);
             rule__Script__Group_8__4();
 
             state._fsp--;
@@ -7100,22 +7109,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2261:1: rule__Script__Group_8__3__Impl : ( ',' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2259:1: rule__Script__Group_8__3__Impl : ( ',' ) ;
     public final void rule__Script__Group_8__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2265:1: ( ( ',' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2266:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2263:1: ( ( ',' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2264:1: ( ',' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2266:1: ( ',' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2267:1: ','
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2264:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2265:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getCommaKeyword_8_3()); 
             }
-            match(input,38,FOLLOW_38_in_rule__Script__Group_8__3__Impl4784); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__Script__Group_8__3__Impl4782); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getCommaKeyword_8_3()); 
             }
@@ -7141,21 +7150,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2280:1: rule__Script__Group_8__4 : rule__Script__Group_8__4__Impl rule__Script__Group_8__5 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2278:1: rule__Script__Group_8__4 : rule__Script__Group_8__4__Impl rule__Script__Group_8__5 ;
     public final void rule__Script__Group_8__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2284:1: ( rule__Script__Group_8__4__Impl rule__Script__Group_8__5 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2285:2: rule__Script__Group_8__4__Impl rule__Script__Group_8__5
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2282:1: ( rule__Script__Group_8__4__Impl rule__Script__Group_8__5 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2283:2: rule__Script__Group_8__4__Impl rule__Script__Group_8__5
             {
-            pushFollow(FOLLOW_rule__Script__Group_8__4__Impl_in_rule__Script__Group_8__44815);
+            pushFollow(FOLLOW_rule__Script__Group_8__4__Impl_in_rule__Script__Group_8__44813);
             rule__Script__Group_8__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Script__Group_8__5_in_rule__Script__Group_8__44818);
+            pushFollow(FOLLOW_rule__Script__Group_8__5_in_rule__Script__Group_8__44816);
             rule__Script__Group_8__5();
 
             state._fsp--;
@@ -7179,25 +7188,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2292:1: rule__Script__Group_8__4__Impl : ( ( rule__Script__RobotconfigsAssignment_8_4 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2290:1: rule__Script__Group_8__4__Impl : ( ( rule__Script__RobotconfigsAssignment_8_4 ) ) ;
     public final void rule__Script__Group_8__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2296:1: ( ( ( rule__Script__RobotconfigsAssignment_8_4 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2297:1: ( ( rule__Script__RobotconfigsAssignment_8_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2294:1: ( ( ( rule__Script__RobotconfigsAssignment_8_4 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2295:1: ( ( rule__Script__RobotconfigsAssignment_8_4 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2297:1: ( ( rule__Script__RobotconfigsAssignment_8_4 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2298:1: ( rule__Script__RobotconfigsAssignment_8_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2295:1: ( ( rule__Script__RobotconfigsAssignment_8_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2296:1: ( rule__Script__RobotconfigsAssignment_8_4 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobotconfigsAssignment_8_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2299:1: ( rule__Script__RobotconfigsAssignment_8_4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2299:2: rule__Script__RobotconfigsAssignment_8_4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2297:1: ( rule__Script__RobotconfigsAssignment_8_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2297:2: rule__Script__RobotconfigsAssignment_8_4
             {
-            pushFollow(FOLLOW_rule__Script__RobotconfigsAssignment_8_4_in_rule__Script__Group_8__4__Impl4845);
+            pushFollow(FOLLOW_rule__Script__RobotconfigsAssignment_8_4_in_rule__Script__Group_8__4__Impl4843);
             rule__Script__RobotconfigsAssignment_8_4();
 
             state._fsp--;
@@ -7230,16 +7239,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__5"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2309:1: rule__Script__Group_8__5 : rule__Script__Group_8__5__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2307:1: rule__Script__Group_8__5 : rule__Script__Group_8__5__Impl ;
     public final void rule__Script__Group_8__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2313:1: ( rule__Script__Group_8__5__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2314:2: rule__Script__Group_8__5__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2311:1: ( rule__Script__Group_8__5__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2312:2: rule__Script__Group_8__5__Impl
             {
-            pushFollow(FOLLOW_rule__Script__Group_8__5__Impl_in_rule__Script__Group_8__54875);
+            pushFollow(FOLLOW_rule__Script__Group_8__5__Impl_in_rule__Script__Group_8__54873);
             rule__Script__Group_8__5__Impl();
 
             state._fsp--;
@@ -7263,22 +7272,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__Group_8__5__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2320:1: rule__Script__Group_8__5__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2318:1: rule__Script__Group_8__5__Impl : ( ')' ) ;
     public final void rule__Script__Group_8__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2324:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2325:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2322:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2323:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2325:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2326:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2323:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2324:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRightParenthesisKeyword_8_5()); 
             }
-            match(input,39,FOLLOW_39_in_rule__Script__Group_8__5__Impl4903); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__Script__Group_8__5__Impl4901); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getRightParenthesisKeyword_8_5()); 
             }
@@ -7304,21 +7313,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2351:1: rule__MetaMethods__Group__0 : rule__MetaMethods__Group__0__Impl rule__MetaMethods__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2349:1: rule__MetaMethods__Group__0 : rule__MetaMethods__Group__0__Impl rule__MetaMethods__Group__1 ;
     public final void rule__MetaMethods__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2355:1: ( rule__MetaMethods__Group__0__Impl rule__MetaMethods__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2356:2: rule__MetaMethods__Group__0__Impl rule__MetaMethods__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2353:1: ( rule__MetaMethods__Group__0__Impl rule__MetaMethods__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2354:2: rule__MetaMethods__Group__0__Impl rule__MetaMethods__Group__1
             {
-            pushFollow(FOLLOW_rule__MetaMethods__Group__0__Impl_in_rule__MetaMethods__Group__04946);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__0__Impl_in_rule__MetaMethods__Group__04944);
             rule__MetaMethods__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethods__Group__1_in_rule__MetaMethods__Group__04949);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__1_in_rule__MetaMethods__Group__04947);
             rule__MetaMethods__Group__1();
 
             state._fsp--;
@@ -7342,23 +7351,23 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2363:1: rule__MetaMethods__Group__0__Impl : ( () ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2361:1: rule__MetaMethods__Group__0__Impl : ( () ) ;
     public final void rule__MetaMethods__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2367:1: ( ( () ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2368:1: ( () )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2365:1: ( ( () ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2366:1: ( () )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2368:1: ( () )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2369:1: ()
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2366:1: ( () )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2367:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodsAccess().getMetaMethodsAction_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2370:1: ()
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2372:1: 
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2368:1: ()
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2370:1: 
             {
             }
 
@@ -7383,21 +7392,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2382:1: rule__MetaMethods__Group__1 : rule__MetaMethods__Group__1__Impl rule__MetaMethods__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2380:1: rule__MetaMethods__Group__1 : rule__MetaMethods__Group__1__Impl rule__MetaMethods__Group__2 ;
     public final void rule__MetaMethods__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2386:1: ( rule__MetaMethods__Group__1__Impl rule__MetaMethods__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2387:2: rule__MetaMethods__Group__1__Impl rule__MetaMethods__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2384:1: ( rule__MetaMethods__Group__1__Impl rule__MetaMethods__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2385:2: rule__MetaMethods__Group__1__Impl rule__MetaMethods__Group__2
             {
-            pushFollow(FOLLOW_rule__MetaMethods__Group__1__Impl_in_rule__MetaMethods__Group__15007);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__1__Impl_in_rule__MetaMethods__Group__15005);
             rule__MetaMethods__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethods__Group__2_in_rule__MetaMethods__Group__15010);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__2_in_rule__MetaMethods__Group__15008);
             rule__MetaMethods__Group__2();
 
             state._fsp--;
@@ -7421,22 +7430,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2394:1: rule__MetaMethods__Group__1__Impl : ( 'metamethodscollection' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2392:1: rule__MetaMethods__Group__1__Impl : ( 'metamethodscollection' ) ;
     public final void rule__MetaMethods__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2398:1: ( ( 'metamethodscollection' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2399:1: ( 'metamethodscollection' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2396:1: ( ( 'metamethodscollection' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2397:1: ( 'metamethodscollection' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2399:1: ( 'metamethodscollection' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2400:1: 'metamethodscollection'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2397:1: ( 'metamethodscollection' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2398:1: 'metamethodscollection'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodsAccess().getMetamethodscollectionKeyword_1()); 
             }
-            match(input,42,FOLLOW_42_in_rule__MetaMethods__Group__1__Impl5038); if (state.failed) return ;
+            match(input,42,FOLLOW_42_in_rule__MetaMethods__Group__1__Impl5036); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodsAccess().getMetamethodscollectionKeyword_1()); 
             }
@@ -7462,21 +7471,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2413:1: rule__MetaMethods__Group__2 : rule__MetaMethods__Group__2__Impl rule__MetaMethods__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2411:1: rule__MetaMethods__Group__2 : rule__MetaMethods__Group__2__Impl rule__MetaMethods__Group__3 ;
     public final void rule__MetaMethods__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2417:1: ( rule__MetaMethods__Group__2__Impl rule__MetaMethods__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2418:2: rule__MetaMethods__Group__2__Impl rule__MetaMethods__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2415:1: ( rule__MetaMethods__Group__2__Impl rule__MetaMethods__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2416:2: rule__MetaMethods__Group__2__Impl rule__MetaMethods__Group__3
             {
-            pushFollow(FOLLOW_rule__MetaMethods__Group__2__Impl_in_rule__MetaMethods__Group__25069);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__2__Impl_in_rule__MetaMethods__Group__25067);
             rule__MetaMethods__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethods__Group__3_in_rule__MetaMethods__Group__25072);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__3_in_rule__MetaMethods__Group__25070);
             rule__MetaMethods__Group__3();
 
             state._fsp--;
@@ -7500,22 +7509,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2425:1: rule__MetaMethods__Group__2__Impl : ( '{' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2423:1: rule__MetaMethods__Group__2__Impl : ( '{' ) ;
     public final void rule__MetaMethods__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2429:1: ( ( '{' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2430:1: ( '{' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2427:1: ( ( '{' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2428:1: ( '{' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2430:1: ( '{' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2431:1: '{'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2428:1: ( '{' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2429:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodsAccess().getLeftCurlyBracketKeyword_2()); 
             }
-            match(input,40,FOLLOW_40_in_rule__MetaMethods__Group__2__Impl5100); if (state.failed) return ;
+            match(input,40,FOLLOW_40_in_rule__MetaMethods__Group__2__Impl5098); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodsAccess().getLeftCurlyBracketKeyword_2()); 
             }
@@ -7541,21 +7550,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2444:1: rule__MetaMethods__Group__3 : rule__MetaMethods__Group__3__Impl rule__MetaMethods__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2442:1: rule__MetaMethods__Group__3 : rule__MetaMethods__Group__3__Impl rule__MetaMethods__Group__4 ;
     public final void rule__MetaMethods__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2448:1: ( rule__MetaMethods__Group__3__Impl rule__MetaMethods__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2449:2: rule__MetaMethods__Group__3__Impl rule__MetaMethods__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2446:1: ( rule__MetaMethods__Group__3__Impl rule__MetaMethods__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2447:2: rule__MetaMethods__Group__3__Impl rule__MetaMethods__Group__4
             {
-            pushFollow(FOLLOW_rule__MetaMethods__Group__3__Impl_in_rule__MetaMethods__Group__35131);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__3__Impl_in_rule__MetaMethods__Group__35129);
             rule__MetaMethods__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethods__Group__4_in_rule__MetaMethods__Group__35134);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__4_in_rule__MetaMethods__Group__35132);
             rule__MetaMethods__Group__4();
 
             state._fsp--;
@@ -7579,22 +7588,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2456:1: rule__MetaMethods__Group__3__Impl : ( ( rule__MetaMethods__MethodsAssignment_3 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2454:1: rule__MetaMethods__Group__3__Impl : ( ( rule__MetaMethods__MethodsAssignment_3 )* ) ;
     public final void rule__MetaMethods__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2460:1: ( ( ( rule__MetaMethods__MethodsAssignment_3 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2461:1: ( ( rule__MetaMethods__MethodsAssignment_3 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2458:1: ( ( ( rule__MetaMethods__MethodsAssignment_3 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2459:1: ( ( rule__MetaMethods__MethodsAssignment_3 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2461:1: ( ( rule__MetaMethods__MethodsAssignment_3 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2462:1: ( rule__MetaMethods__MethodsAssignment_3 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2459:1: ( ( rule__MetaMethods__MethodsAssignment_3 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2460:1: ( rule__MetaMethods__MethodsAssignment_3 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodsAccess().getMethodsAssignment_3()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2463:1: ( rule__MetaMethods__MethodsAssignment_3 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2461:1: ( rule__MetaMethods__MethodsAssignment_3 )*
             loop26:
             do {
                 int alt26=2;
@@ -7607,9 +7616,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt26) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2463:2: rule__MetaMethods__MethodsAssignment_3
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2461:2: rule__MetaMethods__MethodsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__MetaMethods__MethodsAssignment_3_in_rule__MetaMethods__Group__3__Impl5161);
+            	    pushFollow(FOLLOW_rule__MetaMethods__MethodsAssignment_3_in_rule__MetaMethods__Group__3__Impl5159);
             	    rule__MetaMethods__MethodsAssignment_3();
 
             	    state._fsp--;
@@ -7648,16 +7657,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2473:1: rule__MetaMethods__Group__4 : rule__MetaMethods__Group__4__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2471:1: rule__MetaMethods__Group__4 : rule__MetaMethods__Group__4__Impl ;
     public final void rule__MetaMethods__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2477:1: ( rule__MetaMethods__Group__4__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2478:2: rule__MetaMethods__Group__4__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2475:1: ( rule__MetaMethods__Group__4__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2476:2: rule__MetaMethods__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__MetaMethods__Group__4__Impl_in_rule__MetaMethods__Group__45192);
+            pushFollow(FOLLOW_rule__MetaMethods__Group__4__Impl_in_rule__MetaMethods__Group__45190);
             rule__MetaMethods__Group__4__Impl();
 
             state._fsp--;
@@ -7681,22 +7690,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2484:1: rule__MetaMethods__Group__4__Impl : ( '}' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2482:1: rule__MetaMethods__Group__4__Impl : ( '}' ) ;
     public final void rule__MetaMethods__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2488:1: ( ( '}' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2489:1: ( '}' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2486:1: ( ( '}' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2487:1: ( '}' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2489:1: ( '}' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2490:1: '}'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2487:1: ( '}' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2488:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodsAccess().getRightCurlyBracketKeyword_4()); 
             }
-            match(input,41,FOLLOW_41_in_rule__MetaMethods__Group__4__Impl5220); if (state.failed) return ;
+            match(input,41,FOLLOW_41_in_rule__MetaMethods__Group__4__Impl5218); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodsAccess().getRightCurlyBracketKeyword_4()); 
             }
@@ -7722,21 +7731,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2513:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2511:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
     public final void rule__Block__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2517:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2518:2: rule__Block__Group__0__Impl rule__Block__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2515:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2516:2: rule__Block__Group__0__Impl rule__Block__Group__1
             {
-            pushFollow(FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__05261);
+            pushFollow(FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__05259);
             rule__Block__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Block__Group__1_in_rule__Block__Group__05264);
+            pushFollow(FOLLOW_rule__Block__Group__1_in_rule__Block__Group__05262);
             rule__Block__Group__1();
 
             state._fsp--;
@@ -7760,23 +7769,23 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2525:1: rule__Block__Group__0__Impl : ( () ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2523:1: rule__Block__Group__0__Impl : ( () ) ;
     public final void rule__Block__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2529:1: ( ( () ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2530:1: ( () )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2527:1: ( ( () ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2528:1: ( () )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2530:1: ( () )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2531:1: ()
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2528:1: ( () )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2529:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getBlockAction_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2532:1: ()
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2534:1: 
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2530:1: ()
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2532:1: 
             {
             }
 
@@ -7801,21 +7810,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2544:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2542:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
     public final void rule__Block__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2548:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2549:2: rule__Block__Group__1__Impl rule__Block__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2546:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2547:2: rule__Block__Group__1__Impl rule__Block__Group__2
             {
-            pushFollow(FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__15322);
+            pushFollow(FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__15320);
             rule__Block__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Block__Group__2_in_rule__Block__Group__15325);
+            pushFollow(FOLLOW_rule__Block__Group__2_in_rule__Block__Group__15323);
             rule__Block__Group__2();
 
             state._fsp--;
@@ -7839,22 +7848,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2556:1: rule__Block__Group__1__Impl : ( '{' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2554:1: rule__Block__Group__1__Impl : ( '{' ) ;
     public final void rule__Block__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2560:1: ( ( '{' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2561:1: ( '{' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2558:1: ( ( '{' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2559:1: ( '{' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2561:1: ( '{' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2562:1: '{'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2559:1: ( '{' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2560:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1()); 
             }
-            match(input,40,FOLLOW_40_in_rule__Block__Group__1__Impl5353); if (state.failed) return ;
+            match(input,40,FOLLOW_40_in_rule__Block__Group__1__Impl5351); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1()); 
             }
@@ -7880,21 +7889,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2575:1: rule__Block__Group__2 : rule__Block__Group__2__Impl rule__Block__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2573:1: rule__Block__Group__2 : rule__Block__Group__2__Impl rule__Block__Group__3 ;
     public final void rule__Block__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2579:1: ( rule__Block__Group__2__Impl rule__Block__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2580:2: rule__Block__Group__2__Impl rule__Block__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2577:1: ( rule__Block__Group__2__Impl rule__Block__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2578:2: rule__Block__Group__2__Impl rule__Block__Group__3
             {
-            pushFollow(FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__25384);
+            pushFollow(FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__25382);
             rule__Block__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Block__Group__3_in_rule__Block__Group__25387);
+            pushFollow(FOLLOW_rule__Block__Group__3_in_rule__Block__Group__25385);
             rule__Block__Group__3();
 
             state._fsp--;
@@ -7918,37 +7927,37 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2587:1: rule__Block__Group__2__Impl : ( ( rule__Block__Alternatives_2 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2585:1: rule__Block__Group__2__Impl : ( ( rule__Block__Alternatives_2 )* ) ;
     public final void rule__Block__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2591:1: ( ( ( rule__Block__Alternatives_2 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2592:1: ( ( rule__Block__Alternatives_2 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2589:1: ( ( ( rule__Block__Alternatives_2 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2590:1: ( ( rule__Block__Alternatives_2 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2592:1: ( ( rule__Block__Alternatives_2 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2593:1: ( rule__Block__Alternatives_2 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2590:1: ( ( rule__Block__Alternatives_2 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2591:1: ( rule__Block__Alternatives_2 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getAlternatives_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2594:1: ( rule__Block__Alternatives_2 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2592:1: ( rule__Block__Alternatives_2 )*
             loop27:
             do {
                 int alt27=2;
                 int LA27_0 = input.LA(1);
 
-                if ( ((LA27_0>=RULE_LOWERFIRST && LA27_0<=RULE_CAPITALFIRST)||(LA27_0>=23 && LA27_0<=26)||(LA27_0>=32 && LA27_0<=34)||LA27_0==40||LA27_0==44||(LA27_0>=46 && LA27_0<=50)) ) {
+                if ( ((LA27_0>=RULE_LOWERFIRST && LA27_0<=RULE_CAPITALFIRST)||(LA27_0>=32 && LA27_0<=34)||LA27_0==40||(LA27_0>=46 && LA27_0<=50)) ) {
                     alt27=1;
                 }
 
 
                 switch (alt27) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2594:2: rule__Block__Alternatives_2
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2592:2: rule__Block__Alternatives_2
             	    {
-            	    pushFollow(FOLLOW_rule__Block__Alternatives_2_in_rule__Block__Group__2__Impl5414);
+            	    pushFollow(FOLLOW_rule__Block__Alternatives_2_in_rule__Block__Group__2__Impl5412);
             	    rule__Block__Alternatives_2();
 
             	    state._fsp--;
@@ -7987,16 +7996,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2604:1: rule__Block__Group__3 : rule__Block__Group__3__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2602:1: rule__Block__Group__3 : rule__Block__Group__3__Impl ;
     public final void rule__Block__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2608:1: ( rule__Block__Group__3__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2609:2: rule__Block__Group__3__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2606:1: ( rule__Block__Group__3__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2607:2: rule__Block__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Block__Group__3__Impl_in_rule__Block__Group__35445);
+            pushFollow(FOLLOW_rule__Block__Group__3__Impl_in_rule__Block__Group__35443);
             rule__Block__Group__3__Impl();
 
             state._fsp--;
@@ -8020,22 +8029,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2615:1: rule__Block__Group__3__Impl : ( '}' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2613:1: rule__Block__Group__3__Impl : ( '}' ) ;
     public final void rule__Block__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2619:1: ( ( '}' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2620:1: ( '}' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2617:1: ( ( '}' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2618:1: ( '}' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2620:1: ( '}' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2621:1: '}'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2618:1: ( '}' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2619:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_3()); 
             }
-            match(input,41,FOLLOW_41_in_rule__Block__Group__3__Impl5473); if (state.failed) return ;
+            match(input,41,FOLLOW_41_in_rule__Block__Group__3__Impl5471); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_3()); 
             }
@@ -8061,21 +8070,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group_2_0__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2642:1: rule__Block__Group_2_0__0 : rule__Block__Group_2_0__0__Impl rule__Block__Group_2_0__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2640:1: rule__Block__Group_2_0__0 : rule__Block__Group_2_0__0__Impl rule__Block__Group_2_0__1 ;
     public final void rule__Block__Group_2_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2646:1: ( rule__Block__Group_2_0__0__Impl rule__Block__Group_2_0__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2647:2: rule__Block__Group_2_0__0__Impl rule__Block__Group_2_0__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2644:1: ( rule__Block__Group_2_0__0__Impl rule__Block__Group_2_0__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2645:2: rule__Block__Group_2_0__0__Impl rule__Block__Group_2_0__1
             {
-            pushFollow(FOLLOW_rule__Block__Group_2_0__0__Impl_in_rule__Block__Group_2_0__05512);
+            pushFollow(FOLLOW_rule__Block__Group_2_0__0__Impl_in_rule__Block__Group_2_0__05510);
             rule__Block__Group_2_0__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Block__Group_2_0__1_in_rule__Block__Group_2_0__05515);
+            pushFollow(FOLLOW_rule__Block__Group_2_0__1_in_rule__Block__Group_2_0__05513);
             rule__Block__Group_2_0__1();
 
             state._fsp--;
@@ -8099,25 +8108,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group_2_0__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2654:1: rule__Block__Group_2_0__0__Impl : ( ( rule__Block__ExsAssignment_2_0_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2652:1: rule__Block__Group_2_0__0__Impl : ( ( rule__Block__ExsAssignment_2_0_0 ) ) ;
     public final void rule__Block__Group_2_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2658:1: ( ( ( rule__Block__ExsAssignment_2_0_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2659:1: ( ( rule__Block__ExsAssignment_2_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2656:1: ( ( ( rule__Block__ExsAssignment_2_0_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2657:1: ( ( rule__Block__ExsAssignment_2_0_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2659:1: ( ( rule__Block__ExsAssignment_2_0_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2660:1: ( rule__Block__ExsAssignment_2_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2657:1: ( ( rule__Block__ExsAssignment_2_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2658:1: ( rule__Block__ExsAssignment_2_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getExsAssignment_2_0_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2661:1: ( rule__Block__ExsAssignment_2_0_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2661:2: rule__Block__ExsAssignment_2_0_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2659:1: ( rule__Block__ExsAssignment_2_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2659:2: rule__Block__ExsAssignment_2_0_0
             {
-            pushFollow(FOLLOW_rule__Block__ExsAssignment_2_0_0_in_rule__Block__Group_2_0__0__Impl5542);
+            pushFollow(FOLLOW_rule__Block__ExsAssignment_2_0_0_in_rule__Block__Group_2_0__0__Impl5540);
             rule__Block__ExsAssignment_2_0_0();
 
             state._fsp--;
@@ -8150,16 +8159,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group_2_0__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2671:1: rule__Block__Group_2_0__1 : rule__Block__Group_2_0__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2669:1: rule__Block__Group_2_0__1 : rule__Block__Group_2_0__1__Impl ;
     public final void rule__Block__Group_2_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2675:1: ( rule__Block__Group_2_0__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2676:2: rule__Block__Group_2_0__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2673:1: ( rule__Block__Group_2_0__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2674:2: rule__Block__Group_2_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Block__Group_2_0__1__Impl_in_rule__Block__Group_2_0__15572);
+            pushFollow(FOLLOW_rule__Block__Group_2_0__1__Impl_in_rule__Block__Group_2_0__15570);
             rule__Block__Group_2_0__1__Impl();
 
             state._fsp--;
@@ -8183,22 +8192,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__Group_2_0__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2682:1: rule__Block__Group_2_0__1__Impl : ( ';' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2680:1: rule__Block__Group_2_0__1__Impl : ( ';' ) ;
     public final void rule__Block__Group_2_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2686:1: ( ( ';' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2687:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2684:1: ( ( ';' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2685:1: ( ';' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2687:1: ( ';' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2688:1: ';'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2685:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2686:1: ';'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getSemicolonKeyword_2_0_1()); 
             }
-            match(input,43,FOLLOW_43_in_rule__Block__Group_2_0__1__Impl5600); if (state.failed) return ;
+            match(input,43,FOLLOW_43_in_rule__Block__Group_2_0__1__Impl5598); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getBlockAccess().getSemicolonKeyword_2_0_1()); 
             }
@@ -8224,21 +8233,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2705:1: rule__Assignment__Group__0 : rule__Assignment__Group__0__Impl rule__Assignment__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2703:1: rule__Assignment__Group__0 : rule__Assignment__Group__0__Impl rule__Assignment__Group__1 ;
     public final void rule__Assignment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2709:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2710:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2707:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2708:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
             {
-            pushFollow(FOLLOW_rule__Assignment__Group__0__Impl_in_rule__Assignment__Group__05635);
+            pushFollow(FOLLOW_rule__Assignment__Group__0__Impl_in_rule__Assignment__Group__05633);
             rule__Assignment__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Assignment__Group__1_in_rule__Assignment__Group__05638);
+            pushFollow(FOLLOW_rule__Assignment__Group__1_in_rule__Assignment__Group__05636);
             rule__Assignment__Group__1();
 
             state._fsp--;
@@ -8262,25 +8271,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2717:1: rule__Assignment__Group__0__Impl : ( ( rule__Assignment__VariAssignment_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2715:1: rule__Assignment__Group__0__Impl : ( ( rule__Assignment__VariAssignment_0 ) ) ;
     public final void rule__Assignment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2721:1: ( ( ( rule__Assignment__VariAssignment_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2722:1: ( ( rule__Assignment__VariAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2719:1: ( ( ( rule__Assignment__VariAssignment_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2720:1: ( ( rule__Assignment__VariAssignment_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2722:1: ( ( rule__Assignment__VariAssignment_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2723:1: ( rule__Assignment__VariAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2720:1: ( ( rule__Assignment__VariAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2721:1: ( rule__Assignment__VariAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getVariAssignment_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2724:1: ( rule__Assignment__VariAssignment_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2724:2: rule__Assignment__VariAssignment_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2722:1: ( rule__Assignment__VariAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2722:2: rule__Assignment__VariAssignment_0
             {
-            pushFollow(FOLLOW_rule__Assignment__VariAssignment_0_in_rule__Assignment__Group__0__Impl5665);
+            pushFollow(FOLLOW_rule__Assignment__VariAssignment_0_in_rule__Assignment__Group__0__Impl5663);
             rule__Assignment__VariAssignment_0();
 
             state._fsp--;
@@ -8313,16 +8322,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2734:1: rule__Assignment__Group__1 : rule__Assignment__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2732:1: rule__Assignment__Group__1 : rule__Assignment__Group__1__Impl ;
     public final void rule__Assignment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2738:1: ( rule__Assignment__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2739:2: rule__Assignment__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2736:1: ( rule__Assignment__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2737:2: rule__Assignment__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Assignment__Group__1__Impl_in_rule__Assignment__Group__15695);
+            pushFollow(FOLLOW_rule__Assignment__Group__1__Impl_in_rule__Assignment__Group__15693);
             rule__Assignment__Group__1__Impl();
 
             state._fsp--;
@@ -8346,25 +8355,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2745:1: rule__Assignment__Group__1__Impl : ( ( rule__Assignment__Group_1__0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2743:1: rule__Assignment__Group__1__Impl : ( ( rule__Assignment__Group_1__0 ) ) ;
     public final void rule__Assignment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2749:1: ( ( ( rule__Assignment__Group_1__0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2750:1: ( ( rule__Assignment__Group_1__0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2747:1: ( ( ( rule__Assignment__Group_1__0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2748:1: ( ( rule__Assignment__Group_1__0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2750:1: ( ( rule__Assignment__Group_1__0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2751:1: ( rule__Assignment__Group_1__0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2748:1: ( ( rule__Assignment__Group_1__0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2749:1: ( rule__Assignment__Group_1__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getGroup_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2752:1: ( rule__Assignment__Group_1__0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2752:2: rule__Assignment__Group_1__0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2750:1: ( rule__Assignment__Group_1__0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2750:2: rule__Assignment__Group_1__0
             {
-            pushFollow(FOLLOW_rule__Assignment__Group_1__0_in_rule__Assignment__Group__1__Impl5722);
+            pushFollow(FOLLOW_rule__Assignment__Group_1__0_in_rule__Assignment__Group__1__Impl5720);
             rule__Assignment__Group_1__0();
 
             state._fsp--;
@@ -8397,21 +8406,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group_1__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2766:1: rule__Assignment__Group_1__0 : rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2764:1: rule__Assignment__Group_1__0 : rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 ;
     public final void rule__Assignment__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2770:1: ( rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2771:2: rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2768:1: ( rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2769:2: rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Assignment__Group_1__0__Impl_in_rule__Assignment__Group_1__05756);
+            pushFollow(FOLLOW_rule__Assignment__Group_1__0__Impl_in_rule__Assignment__Group_1__05754);
             rule__Assignment__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Assignment__Group_1__1_in_rule__Assignment__Group_1__05759);
+            pushFollow(FOLLOW_rule__Assignment__Group_1__1_in_rule__Assignment__Group_1__05757);
             rule__Assignment__Group_1__1();
 
             state._fsp--;
@@ -8435,22 +8444,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group_1__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2778:1: rule__Assignment__Group_1__0__Impl : ( ( rule__Assignment__OpAssignment_1_0 )? ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2776:1: rule__Assignment__Group_1__0__Impl : ( ( rule__Assignment__OpAssignment_1_0 )? ) ;
     public final void rule__Assignment__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2782:1: ( ( ( rule__Assignment__OpAssignment_1_0 )? ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2783:1: ( ( rule__Assignment__OpAssignment_1_0 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2780:1: ( ( ( rule__Assignment__OpAssignment_1_0 )? ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2781:1: ( ( rule__Assignment__OpAssignment_1_0 )? )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2783:1: ( ( rule__Assignment__OpAssignment_1_0 )? )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2784:1: ( rule__Assignment__OpAssignment_1_0 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2781:1: ( ( rule__Assignment__OpAssignment_1_0 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2782:1: ( rule__Assignment__OpAssignment_1_0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getOpAssignment_1_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2785:1: ( rule__Assignment__OpAssignment_1_0 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2783:1: ( rule__Assignment__OpAssignment_1_0 )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -8459,9 +8468,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt28) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2785:2: rule__Assignment__OpAssignment_1_0
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2783:2: rule__Assignment__OpAssignment_1_0
                     {
-                    pushFollow(FOLLOW_rule__Assignment__OpAssignment_1_0_in_rule__Assignment__Group_1__0__Impl5786);
+                    pushFollow(FOLLOW_rule__Assignment__OpAssignment_1_0_in_rule__Assignment__Group_1__0__Impl5784);
                     rule__Assignment__OpAssignment_1_0();
 
                     state._fsp--;
@@ -8497,21 +8506,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group_1__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2795:1: rule__Assignment__Group_1__1 : rule__Assignment__Group_1__1__Impl rule__Assignment__Group_1__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2793:1: rule__Assignment__Group_1__1 : rule__Assignment__Group_1__1__Impl rule__Assignment__Group_1__2 ;
     public final void rule__Assignment__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2799:1: ( rule__Assignment__Group_1__1__Impl rule__Assignment__Group_1__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2800:2: rule__Assignment__Group_1__1__Impl rule__Assignment__Group_1__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2797:1: ( rule__Assignment__Group_1__1__Impl rule__Assignment__Group_1__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2798:2: rule__Assignment__Group_1__1__Impl rule__Assignment__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Assignment__Group_1__1__Impl_in_rule__Assignment__Group_1__15817);
+            pushFollow(FOLLOW_rule__Assignment__Group_1__1__Impl_in_rule__Assignment__Group_1__15815);
             rule__Assignment__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Assignment__Group_1__2_in_rule__Assignment__Group_1__15820);
+            pushFollow(FOLLOW_rule__Assignment__Group_1__2_in_rule__Assignment__Group_1__15818);
             rule__Assignment__Group_1__2();
 
             state._fsp--;
@@ -8535,22 +8544,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group_1__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2807:1: rule__Assignment__Group_1__1__Impl : ( '=' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2805:1: rule__Assignment__Group_1__1__Impl : ( '=' ) ;
     public final void rule__Assignment__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2811:1: ( ( '=' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2812:1: ( '=' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2809:1: ( ( '=' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2810:1: ( '=' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2812:1: ( '=' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2813:1: '='
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2810:1: ( '=' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2811:1: '='
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getEqualsSignKeyword_1_1()); 
             }
-            match(input,44,FOLLOW_44_in_rule__Assignment__Group_1__1__Impl5848); if (state.failed) return ;
+            match(input,44,FOLLOW_44_in_rule__Assignment__Group_1__1__Impl5846); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAssignmentAccess().getEqualsSignKeyword_1_1()); 
             }
@@ -8576,16 +8585,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group_1__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2826:1: rule__Assignment__Group_1__2 : rule__Assignment__Group_1__2__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2824:1: rule__Assignment__Group_1__2 : rule__Assignment__Group_1__2__Impl ;
     public final void rule__Assignment__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2830:1: ( rule__Assignment__Group_1__2__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2831:2: rule__Assignment__Group_1__2__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2828:1: ( rule__Assignment__Group_1__2__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2829:2: rule__Assignment__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Assignment__Group_1__2__Impl_in_rule__Assignment__Group_1__25879);
+            pushFollow(FOLLOW_rule__Assignment__Group_1__2__Impl_in_rule__Assignment__Group_1__25877);
             rule__Assignment__Group_1__2__Impl();
 
             state._fsp--;
@@ -8609,25 +8618,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__Group_1__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2837:1: rule__Assignment__Group_1__2__Impl : ( ( rule__Assignment__ValueAssignment_1_2 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2835:1: rule__Assignment__Group_1__2__Impl : ( ( rule__Assignment__ValueAssignment_1_2 ) ) ;
     public final void rule__Assignment__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2841:1: ( ( ( rule__Assignment__ValueAssignment_1_2 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2842:1: ( ( rule__Assignment__ValueAssignment_1_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2839:1: ( ( ( rule__Assignment__ValueAssignment_1_2 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2840:1: ( ( rule__Assignment__ValueAssignment_1_2 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2842:1: ( ( rule__Assignment__ValueAssignment_1_2 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2843:1: ( rule__Assignment__ValueAssignment_1_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2840:1: ( ( rule__Assignment__ValueAssignment_1_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2841:1: ( rule__Assignment__ValueAssignment_1_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getValueAssignment_1_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2844:1: ( rule__Assignment__ValueAssignment_1_2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2844:2: rule__Assignment__ValueAssignment_1_2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2842:1: ( rule__Assignment__ValueAssignment_1_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2842:2: rule__Assignment__ValueAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Assignment__ValueAssignment_1_2_in_rule__Assignment__Group_1__2__Impl5906);
+            pushFollow(FOLLOW_rule__Assignment__ValueAssignment_1_2_in_rule__Assignment__Group_1__2__Impl5904);
             rule__Assignment__ValueAssignment_1_2();
 
             state._fsp--;
@@ -8660,21 +8669,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2860:1: rule__Call__Group__0 : rule__Call__Group__0__Impl rule__Call__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2858:1: rule__Call__Group__0 : rule__Call__Group__0__Impl rule__Call__Group__1 ;
     public final void rule__Call__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2864:1: ( rule__Call__Group__0__Impl rule__Call__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2865:2: rule__Call__Group__0__Impl rule__Call__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2862:1: ( rule__Call__Group__0__Impl rule__Call__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2863:2: rule__Call__Group__0__Impl rule__Call__Group__1
             {
-            pushFollow(FOLLOW_rule__Call__Group__0__Impl_in_rule__Call__Group__05942);
+            pushFollow(FOLLOW_rule__Call__Group__0__Impl_in_rule__Call__Group__05940);
             rule__Call__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Call__Group__1_in_rule__Call__Group__05945);
+            pushFollow(FOLLOW_rule__Call__Group__1_in_rule__Call__Group__05943);
             rule__Call__Group__1();
 
             state._fsp--;
@@ -8698,25 +8707,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2872:1: rule__Call__Group__0__Impl : ( ( rule__Call__Alternatives_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2870:1: rule__Call__Group__0__Impl : ( ( rule__Call__Alternatives_0 ) ) ;
     public final void rule__Call__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2876:1: ( ( ( rule__Call__Alternatives_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2877:1: ( ( rule__Call__Alternatives_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2874:1: ( ( ( rule__Call__Alternatives_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2875:1: ( ( rule__Call__Alternatives_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2877:1: ( ( rule__Call__Alternatives_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2878:1: ( rule__Call__Alternatives_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2875:1: ( ( rule__Call__Alternatives_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2876:1: ( rule__Call__Alternatives_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getAlternatives_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2879:1: ( rule__Call__Alternatives_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2879:2: rule__Call__Alternatives_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2877:1: ( rule__Call__Alternatives_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2877:2: rule__Call__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__Call__Alternatives_0_in_rule__Call__Group__0__Impl5972);
+            pushFollow(FOLLOW_rule__Call__Alternatives_0_in_rule__Call__Group__0__Impl5970);
             rule__Call__Alternatives_0();
 
             state._fsp--;
@@ -8749,21 +8758,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2889:1: rule__Call__Group__1 : rule__Call__Group__1__Impl rule__Call__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2887:1: rule__Call__Group__1 : rule__Call__Group__1__Impl rule__Call__Group__2 ;
     public final void rule__Call__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2893:1: ( rule__Call__Group__1__Impl rule__Call__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2894:2: rule__Call__Group__1__Impl rule__Call__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2891:1: ( rule__Call__Group__1__Impl rule__Call__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2892:2: rule__Call__Group__1__Impl rule__Call__Group__2
             {
-            pushFollow(FOLLOW_rule__Call__Group__1__Impl_in_rule__Call__Group__16002);
+            pushFollow(FOLLOW_rule__Call__Group__1__Impl_in_rule__Call__Group__16000);
             rule__Call__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Call__Group__2_in_rule__Call__Group__16005);
+            pushFollow(FOLLOW_rule__Call__Group__2_in_rule__Call__Group__16003);
             rule__Call__Group__2();
 
             state._fsp--;
@@ -8787,22 +8796,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2901:1: rule__Call__Group__1__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2899:1: rule__Call__Group__1__Impl : ( '(' ) ;
     public final void rule__Call__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2905:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2906:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2903:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2904:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2906:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2907:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2904:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2905:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getLeftParenthesisKeyword_1()); 
             }
-            match(input,37,FOLLOW_37_in_rule__Call__Group__1__Impl6033); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__Call__Group__1__Impl6031); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getCallAccess().getLeftParenthesisKeyword_1()); 
             }
@@ -8828,21 +8837,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2920:1: rule__Call__Group__2 : rule__Call__Group__2__Impl rule__Call__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2918:1: rule__Call__Group__2 : rule__Call__Group__2__Impl rule__Call__Group__3 ;
     public final void rule__Call__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2924:1: ( rule__Call__Group__2__Impl rule__Call__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2925:2: rule__Call__Group__2__Impl rule__Call__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2922:1: ( rule__Call__Group__2__Impl rule__Call__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2923:2: rule__Call__Group__2__Impl rule__Call__Group__3
             {
-            pushFollow(FOLLOW_rule__Call__Group__2__Impl_in_rule__Call__Group__26064);
+            pushFollow(FOLLOW_rule__Call__Group__2__Impl_in_rule__Call__Group__26062);
             rule__Call__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Call__Group__3_in_rule__Call__Group__26067);
+            pushFollow(FOLLOW_rule__Call__Group__3_in_rule__Call__Group__26065);
             rule__Call__Group__3();
 
             state._fsp--;
@@ -8866,22 +8875,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2932:1: rule__Call__Group__2__Impl : ( ( rule__Call__ParametersAssignment_2 )? ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2930:1: rule__Call__Group__2__Impl : ( ( rule__Call__ParametersAssignment_2 )? ) ;
     public final void rule__Call__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2936:1: ( ( ( rule__Call__ParametersAssignment_2 )? ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2937:1: ( ( rule__Call__ParametersAssignment_2 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2934:1: ( ( ( rule__Call__ParametersAssignment_2 )? ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2935:1: ( ( rule__Call__ParametersAssignment_2 )? )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2937:1: ( ( rule__Call__ParametersAssignment_2 )? )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2938:1: ( rule__Call__ParametersAssignment_2 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2935:1: ( ( rule__Call__ParametersAssignment_2 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2936:1: ( rule__Call__ParametersAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getParametersAssignment_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2939:1: ( rule__Call__ParametersAssignment_2 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2937:1: ( rule__Call__ParametersAssignment_2 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -8890,9 +8899,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt29) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2939:2: rule__Call__ParametersAssignment_2
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2937:2: rule__Call__ParametersAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__Call__ParametersAssignment_2_in_rule__Call__Group__2__Impl6094);
+                    pushFollow(FOLLOW_rule__Call__ParametersAssignment_2_in_rule__Call__Group__2__Impl6092);
                     rule__Call__ParametersAssignment_2();
 
                     state._fsp--;
@@ -8928,21 +8937,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2949:1: rule__Call__Group__3 : rule__Call__Group__3__Impl rule__Call__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2947:1: rule__Call__Group__3 : rule__Call__Group__3__Impl rule__Call__Group__4 ;
     public final void rule__Call__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2953:1: ( rule__Call__Group__3__Impl rule__Call__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2954:2: rule__Call__Group__3__Impl rule__Call__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2951:1: ( rule__Call__Group__3__Impl rule__Call__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2952:2: rule__Call__Group__3__Impl rule__Call__Group__4
             {
-            pushFollow(FOLLOW_rule__Call__Group__3__Impl_in_rule__Call__Group__36125);
+            pushFollow(FOLLOW_rule__Call__Group__3__Impl_in_rule__Call__Group__36123);
             rule__Call__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Call__Group__4_in_rule__Call__Group__36128);
+            pushFollow(FOLLOW_rule__Call__Group__4_in_rule__Call__Group__36126);
             rule__Call__Group__4();
 
             state._fsp--;
@@ -8966,22 +8975,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2961:1: rule__Call__Group__3__Impl : ( ( rule__Call__Group_3__0 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2959:1: rule__Call__Group__3__Impl : ( ( rule__Call__Group_3__0 )* ) ;
     public final void rule__Call__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2965:1: ( ( ( rule__Call__Group_3__0 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2966:1: ( ( rule__Call__Group_3__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2963:1: ( ( ( rule__Call__Group_3__0 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2964:1: ( ( rule__Call__Group_3__0 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2966:1: ( ( rule__Call__Group_3__0 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2967:1: ( rule__Call__Group_3__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2964:1: ( ( rule__Call__Group_3__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2965:1: ( rule__Call__Group_3__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getGroup_3()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2968:1: ( rule__Call__Group_3__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2966:1: ( rule__Call__Group_3__0 )*
             loop30:
             do {
                 int alt30=2;
@@ -8994,9 +9003,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt30) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2968:2: rule__Call__Group_3__0
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2966:2: rule__Call__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Call__Group_3__0_in_rule__Call__Group__3__Impl6155);
+            	    pushFollow(FOLLOW_rule__Call__Group_3__0_in_rule__Call__Group__3__Impl6153);
             	    rule__Call__Group_3__0();
 
             	    state._fsp--;
@@ -9035,16 +9044,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2978:1: rule__Call__Group__4 : rule__Call__Group__4__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2976:1: rule__Call__Group__4 : rule__Call__Group__4__Impl ;
     public final void rule__Call__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2982:1: ( rule__Call__Group__4__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2983:2: rule__Call__Group__4__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2980:1: ( rule__Call__Group__4__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2981:2: rule__Call__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Call__Group__4__Impl_in_rule__Call__Group__46186);
+            pushFollow(FOLLOW_rule__Call__Group__4__Impl_in_rule__Call__Group__46184);
             rule__Call__Group__4__Impl();
 
             state._fsp--;
@@ -9068,22 +9077,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2989:1: rule__Call__Group__4__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2987:1: rule__Call__Group__4__Impl : ( ')' ) ;
     public final void rule__Call__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2993:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2994:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2991:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2992:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2994:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2995:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2992:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:2993:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getRightParenthesisKeyword_4()); 
             }
-            match(input,39,FOLLOW_39_in_rule__Call__Group__4__Impl6214); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__Call__Group__4__Impl6212); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getCallAccess().getRightParenthesisKeyword_4()); 
             }
@@ -9109,21 +9118,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group_3__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3018:1: rule__Call__Group_3__0 : rule__Call__Group_3__0__Impl rule__Call__Group_3__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3016:1: rule__Call__Group_3__0 : rule__Call__Group_3__0__Impl rule__Call__Group_3__1 ;
     public final void rule__Call__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3022:1: ( rule__Call__Group_3__0__Impl rule__Call__Group_3__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3023:2: rule__Call__Group_3__0__Impl rule__Call__Group_3__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3020:1: ( rule__Call__Group_3__0__Impl rule__Call__Group_3__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3021:2: rule__Call__Group_3__0__Impl rule__Call__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Call__Group_3__0__Impl_in_rule__Call__Group_3__06255);
+            pushFollow(FOLLOW_rule__Call__Group_3__0__Impl_in_rule__Call__Group_3__06253);
             rule__Call__Group_3__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Call__Group_3__1_in_rule__Call__Group_3__06258);
+            pushFollow(FOLLOW_rule__Call__Group_3__1_in_rule__Call__Group_3__06256);
             rule__Call__Group_3__1();
 
             state._fsp--;
@@ -9147,28 +9156,28 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group_3__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3030:1: rule__Call__Group_3__0__Impl : ( ( ( ',' ) ) ( ( ',' )* ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3028:1: rule__Call__Group_3__0__Impl : ( ( ( ',' ) ) ( ( ',' )* ) ) ;
     public final void rule__Call__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3034:1: ( ( ( ( ',' ) ) ( ( ',' )* ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3035:1: ( ( ( ',' ) ) ( ( ',' )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3032:1: ( ( ( ( ',' ) ) ( ( ',' )* ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3033:1: ( ( ( ',' ) ) ( ( ',' )* ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3035:1: ( ( ( ',' ) ) ( ( ',' )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3036:1: ( ( ',' ) ) ( ( ',' )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3033:1: ( ( ( ',' ) ) ( ( ',' )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3034:1: ( ( ',' ) ) ( ( ',' )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3036:1: ( ( ',' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3037:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3034:1: ( ( ',' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3035:1: ( ',' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getCommaKeyword_3_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3038:1: ( ',' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3039:2: ','
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3036:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3037:2: ','
             {
-            match(input,38,FOLLOW_38_in_rule__Call__Group_3__0__Impl6289); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__Call__Group_3__0__Impl6287); if (state.failed) return ;
 
             }
 
@@ -9178,13 +9187,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             }
 
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3043:1: ( ( ',' )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3044:1: ( ',' )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3041:1: ( ( ',' )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3042:1: ( ',' )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getCommaKeyword_3_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3045:1: ( ',' )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3043:1: ( ',' )*
             loop31:
             do {
                 int alt31=2;
@@ -9197,9 +9206,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt31) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3046:2: ','
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3044:2: ','
             	    {
-            	    match(input,38,FOLLOW_38_in_rule__Call__Group_3__0__Impl6305); if (state.failed) return ;
+            	    match(input,38,FOLLOW_38_in_rule__Call__Group_3__0__Impl6303); if (state.failed) return ;
 
             	    }
             	    break;
@@ -9237,16 +9246,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group_3__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3058:1: rule__Call__Group_3__1 : rule__Call__Group_3__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3056:1: rule__Call__Group_3__1 : rule__Call__Group_3__1__Impl ;
     public final void rule__Call__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3062:1: ( rule__Call__Group_3__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3063:2: rule__Call__Group_3__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3060:1: ( rule__Call__Group_3__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3061:2: rule__Call__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Call__Group_3__1__Impl_in_rule__Call__Group_3__16340);
+            pushFollow(FOLLOW_rule__Call__Group_3__1__Impl_in_rule__Call__Group_3__16338);
             rule__Call__Group_3__1__Impl();
 
             state._fsp--;
@@ -9270,25 +9279,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__Group_3__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3069:1: rule__Call__Group_3__1__Impl : ( ( rule__Call__ParametersAssignment_3_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3067:1: rule__Call__Group_3__1__Impl : ( ( rule__Call__ParametersAssignment_3_1 ) ) ;
     public final void rule__Call__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3073:1: ( ( ( rule__Call__ParametersAssignment_3_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3074:1: ( ( rule__Call__ParametersAssignment_3_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3071:1: ( ( ( rule__Call__ParametersAssignment_3_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3072:1: ( ( rule__Call__ParametersAssignment_3_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3074:1: ( ( rule__Call__ParametersAssignment_3_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3075:1: ( rule__Call__ParametersAssignment_3_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3072:1: ( ( rule__Call__ParametersAssignment_3_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3073:1: ( rule__Call__ParametersAssignment_3_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getParametersAssignment_3_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3076:1: ( rule__Call__ParametersAssignment_3_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3076:2: rule__Call__ParametersAssignment_3_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3074:1: ( rule__Call__ParametersAssignment_3_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3074:2: rule__Call__ParametersAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Call__ParametersAssignment_3_1_in_rule__Call__Group_3__1__Impl6367);
+            pushFollow(FOLLOW_rule__Call__ParametersAssignment_3_1_in_rule__Call__Group_3__1__Impl6365);
             rule__Call__ParametersAssignment_3_1();
 
             state._fsp--;
@@ -9321,21 +9330,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3090:1: rule__MetaMethod__Group__0 : rule__MetaMethod__Group__0__Impl rule__MetaMethod__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3088:1: rule__MetaMethod__Group__0 : rule__MetaMethod__Group__0__Impl rule__MetaMethod__Group__1 ;
     public final void rule__MetaMethod__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3094:1: ( rule__MetaMethod__Group__0__Impl rule__MetaMethod__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3095:2: rule__MetaMethod__Group__0__Impl rule__MetaMethod__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3092:1: ( rule__MetaMethod__Group__0__Impl rule__MetaMethod__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3093:2: rule__MetaMethod__Group__0__Impl rule__MetaMethod__Group__1
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__0__Impl_in_rule__MetaMethod__Group__06401);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__0__Impl_in_rule__MetaMethod__Group__06399);
             rule__MetaMethod__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__1_in_rule__MetaMethod__Group__06404);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__1_in_rule__MetaMethod__Group__06402);
             rule__MetaMethod__Group__1();
 
             state._fsp--;
@@ -9359,22 +9368,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3102:1: rule__MetaMethod__Group__0__Impl : ( 'meta' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3100:1: rule__MetaMethod__Group__0__Impl : ( 'meta' ) ;
     public final void rule__MetaMethod__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3106:1: ( ( 'meta' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3107:1: ( 'meta' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3104:1: ( ( 'meta' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3105:1: ( 'meta' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3107:1: ( 'meta' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3108:1: 'meta'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3105:1: ( 'meta' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3106:1: 'meta'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getMetaKeyword_0()); 
             }
-            match(input,45,FOLLOW_45_in_rule__MetaMethod__Group__0__Impl6432); if (state.failed) return ;
+            match(input,45,FOLLOW_45_in_rule__MetaMethod__Group__0__Impl6430); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodAccess().getMetaKeyword_0()); 
             }
@@ -9400,21 +9409,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3121:1: rule__MetaMethod__Group__1 : rule__MetaMethod__Group__1__Impl rule__MetaMethod__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3119:1: rule__MetaMethod__Group__1 : rule__MetaMethod__Group__1__Impl rule__MetaMethod__Group__2 ;
     public final void rule__MetaMethod__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3125:1: ( rule__MetaMethod__Group__1__Impl rule__MetaMethod__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3126:2: rule__MetaMethod__Group__1__Impl rule__MetaMethod__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3123:1: ( rule__MetaMethod__Group__1__Impl rule__MetaMethod__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3124:2: rule__MetaMethod__Group__1__Impl rule__MetaMethod__Group__2
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__1__Impl_in_rule__MetaMethod__Group__16463);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__1__Impl_in_rule__MetaMethod__Group__16461);
             rule__MetaMethod__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__2_in_rule__MetaMethod__Group__16466);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__2_in_rule__MetaMethod__Group__16464);
             rule__MetaMethod__Group__2();
 
             state._fsp--;
@@ -9438,25 +9447,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3133:1: rule__MetaMethod__Group__1__Impl : ( ( rule__MetaMethod__TypeAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3131:1: rule__MetaMethod__Group__1__Impl : ( ( rule__MetaMethod__TypeAssignment_1 ) ) ;
     public final void rule__MetaMethod__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3137:1: ( ( ( rule__MetaMethod__TypeAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3138:1: ( ( rule__MetaMethod__TypeAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3135:1: ( ( ( rule__MetaMethod__TypeAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3136:1: ( ( rule__MetaMethod__TypeAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3138:1: ( ( rule__MetaMethod__TypeAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3139:1: ( rule__MetaMethod__TypeAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3136:1: ( ( rule__MetaMethod__TypeAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3137:1: ( rule__MetaMethod__TypeAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getTypeAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3140:1: ( rule__MetaMethod__TypeAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3140:2: rule__MetaMethod__TypeAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3138:1: ( rule__MetaMethod__TypeAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3138:2: rule__MetaMethod__TypeAssignment_1
             {
-            pushFollow(FOLLOW_rule__MetaMethod__TypeAssignment_1_in_rule__MetaMethod__Group__1__Impl6493);
+            pushFollow(FOLLOW_rule__MetaMethod__TypeAssignment_1_in_rule__MetaMethod__Group__1__Impl6491);
             rule__MetaMethod__TypeAssignment_1();
 
             state._fsp--;
@@ -9489,21 +9498,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3150:1: rule__MetaMethod__Group__2 : rule__MetaMethod__Group__2__Impl rule__MetaMethod__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3148:1: rule__MetaMethod__Group__2 : rule__MetaMethod__Group__2__Impl rule__MetaMethod__Group__3 ;
     public final void rule__MetaMethod__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3154:1: ( rule__MetaMethod__Group__2__Impl rule__MetaMethod__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3155:2: rule__MetaMethod__Group__2__Impl rule__MetaMethod__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3152:1: ( rule__MetaMethod__Group__2__Impl rule__MetaMethod__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3153:2: rule__MetaMethod__Group__2__Impl rule__MetaMethod__Group__3
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__2__Impl_in_rule__MetaMethod__Group__26523);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__2__Impl_in_rule__MetaMethod__Group__26521);
             rule__MetaMethod__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__3_in_rule__MetaMethod__Group__26526);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__3_in_rule__MetaMethod__Group__26524);
             rule__MetaMethod__Group__3();
 
             state._fsp--;
@@ -9527,25 +9536,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3162:1: rule__MetaMethod__Group__2__Impl : ( ( rule__MetaMethod__NameAssignment_2 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3160:1: rule__MetaMethod__Group__2__Impl : ( ( rule__MetaMethod__NameAssignment_2 ) ) ;
     public final void rule__MetaMethod__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3166:1: ( ( ( rule__MetaMethod__NameAssignment_2 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3167:1: ( ( rule__MetaMethod__NameAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3164:1: ( ( ( rule__MetaMethod__NameAssignment_2 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3165:1: ( ( rule__MetaMethod__NameAssignment_2 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3167:1: ( ( rule__MetaMethod__NameAssignment_2 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3168:1: ( rule__MetaMethod__NameAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3165:1: ( ( rule__MetaMethod__NameAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3166:1: ( rule__MetaMethod__NameAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getNameAssignment_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3169:1: ( rule__MetaMethod__NameAssignment_2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3169:2: rule__MetaMethod__NameAssignment_2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3167:1: ( rule__MetaMethod__NameAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3167:2: rule__MetaMethod__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__MetaMethod__NameAssignment_2_in_rule__MetaMethod__Group__2__Impl6553);
+            pushFollow(FOLLOW_rule__MetaMethod__NameAssignment_2_in_rule__MetaMethod__Group__2__Impl6551);
             rule__MetaMethod__NameAssignment_2();
 
             state._fsp--;
@@ -9578,21 +9587,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3179:1: rule__MetaMethod__Group__3 : rule__MetaMethod__Group__3__Impl rule__MetaMethod__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3177:1: rule__MetaMethod__Group__3 : rule__MetaMethod__Group__3__Impl rule__MetaMethod__Group__4 ;
     public final void rule__MetaMethod__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3183:1: ( rule__MetaMethod__Group__3__Impl rule__MetaMethod__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3184:2: rule__MetaMethod__Group__3__Impl rule__MetaMethod__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3181:1: ( rule__MetaMethod__Group__3__Impl rule__MetaMethod__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3182:2: rule__MetaMethod__Group__3__Impl rule__MetaMethod__Group__4
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__3__Impl_in_rule__MetaMethod__Group__36583);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__3__Impl_in_rule__MetaMethod__Group__36581);
             rule__MetaMethod__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__4_in_rule__MetaMethod__Group__36586);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__4_in_rule__MetaMethod__Group__36584);
             rule__MetaMethod__Group__4();
 
             state._fsp--;
@@ -9616,22 +9625,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3191:1: rule__MetaMethod__Group__3__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3189:1: rule__MetaMethod__Group__3__Impl : ( '(' ) ;
     public final void rule__MetaMethod__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3195:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3196:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3193:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3194:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3196:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3197:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3194:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3195:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getLeftParenthesisKeyword_3()); 
             }
-            match(input,37,FOLLOW_37_in_rule__MetaMethod__Group__3__Impl6614); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__MetaMethod__Group__3__Impl6612); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodAccess().getLeftParenthesisKeyword_3()); 
             }
@@ -9657,21 +9666,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3210:1: rule__MetaMethod__Group__4 : rule__MetaMethod__Group__4__Impl rule__MetaMethod__Group__5 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3208:1: rule__MetaMethod__Group__4 : rule__MetaMethod__Group__4__Impl rule__MetaMethod__Group__5 ;
     public final void rule__MetaMethod__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3214:1: ( rule__MetaMethod__Group__4__Impl rule__MetaMethod__Group__5 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3215:2: rule__MetaMethod__Group__4__Impl rule__MetaMethod__Group__5
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3212:1: ( rule__MetaMethod__Group__4__Impl rule__MetaMethod__Group__5 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3213:2: rule__MetaMethod__Group__4__Impl rule__MetaMethod__Group__5
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__4__Impl_in_rule__MetaMethod__Group__46645);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__4__Impl_in_rule__MetaMethod__Group__46643);
             rule__MetaMethod__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__5_in_rule__MetaMethod__Group__46648);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__5_in_rule__MetaMethod__Group__46646);
             rule__MetaMethod__Group__5();
 
             state._fsp--;
@@ -9695,22 +9704,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3222:1: rule__MetaMethod__Group__4__Impl : ( ( rule__MetaMethod__ParametersAssignment_4 )? ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3220:1: rule__MetaMethod__Group__4__Impl : ( ( rule__MetaMethod__ParametersAssignment_4 )? ) ;
     public final void rule__MetaMethod__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3226:1: ( ( ( rule__MetaMethod__ParametersAssignment_4 )? ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3227:1: ( ( rule__MetaMethod__ParametersAssignment_4 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3224:1: ( ( ( rule__MetaMethod__ParametersAssignment_4 )? ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3225:1: ( ( rule__MetaMethod__ParametersAssignment_4 )? )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3227:1: ( ( rule__MetaMethod__ParametersAssignment_4 )? )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3228:1: ( rule__MetaMethod__ParametersAssignment_4 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3225:1: ( ( rule__MetaMethod__ParametersAssignment_4 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3226:1: ( rule__MetaMethod__ParametersAssignment_4 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getParametersAssignment_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3229:1: ( rule__MetaMethod__ParametersAssignment_4 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3227:1: ( rule__MetaMethod__ParametersAssignment_4 )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -9719,9 +9728,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt32) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3229:2: rule__MetaMethod__ParametersAssignment_4
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3227:2: rule__MetaMethod__ParametersAssignment_4
                     {
-                    pushFollow(FOLLOW_rule__MetaMethod__ParametersAssignment_4_in_rule__MetaMethod__Group__4__Impl6675);
+                    pushFollow(FOLLOW_rule__MetaMethod__ParametersAssignment_4_in_rule__MetaMethod__Group__4__Impl6673);
                     rule__MetaMethod__ParametersAssignment_4();
 
                     state._fsp--;
@@ -9757,21 +9766,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__5"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3239:1: rule__MetaMethod__Group__5 : rule__MetaMethod__Group__5__Impl rule__MetaMethod__Group__6 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3237:1: rule__MetaMethod__Group__5 : rule__MetaMethod__Group__5__Impl rule__MetaMethod__Group__6 ;
     public final void rule__MetaMethod__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3243:1: ( rule__MetaMethod__Group__5__Impl rule__MetaMethod__Group__6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3244:2: rule__MetaMethod__Group__5__Impl rule__MetaMethod__Group__6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3241:1: ( rule__MetaMethod__Group__5__Impl rule__MetaMethod__Group__6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3242:2: rule__MetaMethod__Group__5__Impl rule__MetaMethod__Group__6
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__5__Impl_in_rule__MetaMethod__Group__56706);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__5__Impl_in_rule__MetaMethod__Group__56704);
             rule__MetaMethod__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__6_in_rule__MetaMethod__Group__56709);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__6_in_rule__MetaMethod__Group__56707);
             rule__MetaMethod__Group__6();
 
             state._fsp--;
@@ -9795,22 +9804,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__5__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3251:1: rule__MetaMethod__Group__5__Impl : ( ( rule__MetaMethod__Group_5__0 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3249:1: rule__MetaMethod__Group__5__Impl : ( ( rule__MetaMethod__Group_5__0 )* ) ;
     public final void rule__MetaMethod__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3255:1: ( ( ( rule__MetaMethod__Group_5__0 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3256:1: ( ( rule__MetaMethod__Group_5__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3253:1: ( ( ( rule__MetaMethod__Group_5__0 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3254:1: ( ( rule__MetaMethod__Group_5__0 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3256:1: ( ( rule__MetaMethod__Group_5__0 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3257:1: ( rule__MetaMethod__Group_5__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3254:1: ( ( rule__MetaMethod__Group_5__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3255:1: ( rule__MetaMethod__Group_5__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getGroup_5()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3258:1: ( rule__MetaMethod__Group_5__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3256:1: ( rule__MetaMethod__Group_5__0 )*
             loop33:
             do {
                 int alt33=2;
@@ -9823,9 +9832,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt33) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3258:2: rule__MetaMethod__Group_5__0
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3256:2: rule__MetaMethod__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_rule__MetaMethod__Group_5__0_in_rule__MetaMethod__Group__5__Impl6736);
+            	    pushFollow(FOLLOW_rule__MetaMethod__Group_5__0_in_rule__MetaMethod__Group__5__Impl6734);
             	    rule__MetaMethod__Group_5__0();
 
             	    state._fsp--;
@@ -9864,21 +9873,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3268:1: rule__MetaMethod__Group__6 : rule__MetaMethod__Group__6__Impl rule__MetaMethod__Group__7 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3266:1: rule__MetaMethod__Group__6 : rule__MetaMethod__Group__6__Impl rule__MetaMethod__Group__7 ;
     public final void rule__MetaMethod__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3272:1: ( rule__MetaMethod__Group__6__Impl rule__MetaMethod__Group__7 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3273:2: rule__MetaMethod__Group__6__Impl rule__MetaMethod__Group__7
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3270:1: ( rule__MetaMethod__Group__6__Impl rule__MetaMethod__Group__7 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3271:2: rule__MetaMethod__Group__6__Impl rule__MetaMethod__Group__7
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__6__Impl_in_rule__MetaMethod__Group__66767);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__6__Impl_in_rule__MetaMethod__Group__66765);
             rule__MetaMethod__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group__7_in_rule__MetaMethod__Group__66770);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__7_in_rule__MetaMethod__Group__66768);
             rule__MetaMethod__Group__7();
 
             state._fsp--;
@@ -9902,22 +9911,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__6__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3280:1: rule__MetaMethod__Group__6__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3278:1: rule__MetaMethod__Group__6__Impl : ( ')' ) ;
     public final void rule__MetaMethod__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3284:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3285:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3282:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3283:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3285:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3286:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3283:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3284:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getRightParenthesisKeyword_6()); 
             }
-            match(input,39,FOLLOW_39_in_rule__MetaMethod__Group__6__Impl6798); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__MetaMethod__Group__6__Impl6796); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodAccess().getRightParenthesisKeyword_6()); 
             }
@@ -9943,16 +9952,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__7"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3299:1: rule__MetaMethod__Group__7 : rule__MetaMethod__Group__7__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3297:1: rule__MetaMethod__Group__7 : rule__MetaMethod__Group__7__Impl ;
     public final void rule__MetaMethod__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3303:1: ( rule__MetaMethod__Group__7__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3304:2: rule__MetaMethod__Group__7__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3301:1: ( rule__MetaMethod__Group__7__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3302:2: rule__MetaMethod__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group__7__Impl_in_rule__MetaMethod__Group__76829);
+            pushFollow(FOLLOW_rule__MetaMethod__Group__7__Impl_in_rule__MetaMethod__Group__76827);
             rule__MetaMethod__Group__7__Impl();
 
             state._fsp--;
@@ -9976,22 +9985,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group__7__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3310:1: rule__MetaMethod__Group__7__Impl : ( ';' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3308:1: rule__MetaMethod__Group__7__Impl : ( ';' ) ;
     public final void rule__MetaMethod__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3314:1: ( ( ';' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3315:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3312:1: ( ( ';' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3313:1: ( ';' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3315:1: ( ';' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3316:1: ';'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3313:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3314:1: ';'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getSemicolonKeyword_7()); 
             }
-            match(input,43,FOLLOW_43_in_rule__MetaMethod__Group__7__Impl6857); if (state.failed) return ;
+            match(input,43,FOLLOW_43_in_rule__MetaMethod__Group__7__Impl6855); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodAccess().getSemicolonKeyword_7()); 
             }
@@ -10017,21 +10026,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group_5__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3345:1: rule__MetaMethod__Group_5__0 : rule__MetaMethod__Group_5__0__Impl rule__MetaMethod__Group_5__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3343:1: rule__MetaMethod__Group_5__0 : rule__MetaMethod__Group_5__0__Impl rule__MetaMethod__Group_5__1 ;
     public final void rule__MetaMethod__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3349:1: ( rule__MetaMethod__Group_5__0__Impl rule__MetaMethod__Group_5__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3350:2: rule__MetaMethod__Group_5__0__Impl rule__MetaMethod__Group_5__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3347:1: ( rule__MetaMethod__Group_5__0__Impl rule__MetaMethod__Group_5__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3348:2: rule__MetaMethod__Group_5__0__Impl rule__MetaMethod__Group_5__1
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group_5__0__Impl_in_rule__MetaMethod__Group_5__06904);
+            pushFollow(FOLLOW_rule__MetaMethod__Group_5__0__Impl_in_rule__MetaMethod__Group_5__06902);
             rule__MetaMethod__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MetaMethod__Group_5__1_in_rule__MetaMethod__Group_5__06907);
+            pushFollow(FOLLOW_rule__MetaMethod__Group_5__1_in_rule__MetaMethod__Group_5__06905);
             rule__MetaMethod__Group_5__1();
 
             state._fsp--;
@@ -10055,28 +10064,28 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group_5__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3357:1: rule__MetaMethod__Group_5__0__Impl : ( ( ( ',' ) ) ( ( ',' )* ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3355:1: rule__MetaMethod__Group_5__0__Impl : ( ( ( ',' ) ) ( ( ',' )* ) ) ;
     public final void rule__MetaMethod__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3361:1: ( ( ( ( ',' ) ) ( ( ',' )* ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3362:1: ( ( ( ',' ) ) ( ( ',' )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3359:1: ( ( ( ( ',' ) ) ( ( ',' )* ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3360:1: ( ( ( ',' ) ) ( ( ',' )* ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3362:1: ( ( ( ',' ) ) ( ( ',' )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3363:1: ( ( ',' ) ) ( ( ',' )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3360:1: ( ( ( ',' ) ) ( ( ',' )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3361:1: ( ( ',' ) ) ( ( ',' )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3363:1: ( ( ',' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3364:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3361:1: ( ( ',' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3362:1: ( ',' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getCommaKeyword_5_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3365:1: ( ',' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3366:2: ','
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3363:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3364:2: ','
             {
-            match(input,38,FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6938); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6936); if (state.failed) return ;
 
             }
 
@@ -10086,13 +10095,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             }
 
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3370:1: ( ( ',' )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3371:1: ( ',' )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3368:1: ( ( ',' )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3369:1: ( ',' )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getCommaKeyword_5_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3372:1: ( ',' )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3370:1: ( ',' )*
             loop34:
             do {
                 int alt34=2;
@@ -10105,9 +10114,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt34) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3373:2: ','
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3371:2: ','
             	    {
-            	    match(input,38,FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6954); if (state.failed) return ;
+            	    match(input,38,FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6952); if (state.failed) return ;
 
             	    }
             	    break;
@@ -10145,16 +10154,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group_5__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3385:1: rule__MetaMethod__Group_5__1 : rule__MetaMethod__Group_5__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3383:1: rule__MetaMethod__Group_5__1 : rule__MetaMethod__Group_5__1__Impl ;
     public final void rule__MetaMethod__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3389:1: ( rule__MetaMethod__Group_5__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3390:2: rule__MetaMethod__Group_5__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3387:1: ( rule__MetaMethod__Group_5__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3388:2: rule__MetaMethod__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__MetaMethod__Group_5__1__Impl_in_rule__MetaMethod__Group_5__16989);
+            pushFollow(FOLLOW_rule__MetaMethod__Group_5__1__Impl_in_rule__MetaMethod__Group_5__16987);
             rule__MetaMethod__Group_5__1__Impl();
 
             state._fsp--;
@@ -10178,25 +10187,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__Group_5__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3396:1: rule__MetaMethod__Group_5__1__Impl : ( ( rule__MetaMethod__ParametersAssignment_5_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3394:1: rule__MetaMethod__Group_5__1__Impl : ( ( rule__MetaMethod__ParametersAssignment_5_1 ) ) ;
     public final void rule__MetaMethod__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3400:1: ( ( ( rule__MetaMethod__ParametersAssignment_5_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3401:1: ( ( rule__MetaMethod__ParametersAssignment_5_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3398:1: ( ( ( rule__MetaMethod__ParametersAssignment_5_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3399:1: ( ( rule__MetaMethod__ParametersAssignment_5_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3401:1: ( ( rule__MetaMethod__ParametersAssignment_5_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3402:1: ( rule__MetaMethod__ParametersAssignment_5_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3399:1: ( ( rule__MetaMethod__ParametersAssignment_5_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3400:1: ( rule__MetaMethod__ParametersAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getParametersAssignment_5_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3403:1: ( rule__MetaMethod__ParametersAssignment_5_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3403:2: rule__MetaMethod__ParametersAssignment_5_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3401:1: ( rule__MetaMethod__ParametersAssignment_5_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3401:2: rule__MetaMethod__ParametersAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__MetaMethod__ParametersAssignment_5_1_in_rule__MetaMethod__Group_5__1__Impl7016);
+            pushFollow(FOLLOW_rule__MetaMethod__ParametersAssignment_5_1_in_rule__MetaMethod__Group_5__1__Impl7014);
             rule__MetaMethod__ParametersAssignment_5_1();
 
             state._fsp--;
@@ -10229,21 +10238,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3417:1: rule__UserMethod__Group__0 : rule__UserMethod__Group__0__Impl rule__UserMethod__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3415:1: rule__UserMethod__Group__0 : rule__UserMethod__Group__0__Impl rule__UserMethod__Group__1 ;
     public final void rule__UserMethod__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3421:1: ( rule__UserMethod__Group__0__Impl rule__UserMethod__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3422:2: rule__UserMethod__Group__0__Impl rule__UserMethod__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3419:1: ( rule__UserMethod__Group__0__Impl rule__UserMethod__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3420:2: rule__UserMethod__Group__0__Impl rule__UserMethod__Group__1
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__0__Impl_in_rule__UserMethod__Group__07050);
+            pushFollow(FOLLOW_rule__UserMethod__Group__0__Impl_in_rule__UserMethod__Group__07048);
             rule__UserMethod__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group__1_in_rule__UserMethod__Group__07053);
+            pushFollow(FOLLOW_rule__UserMethod__Group__1_in_rule__UserMethod__Group__07051);
             rule__UserMethod__Group__1();
 
             state._fsp--;
@@ -10267,25 +10276,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3429:1: rule__UserMethod__Group__0__Impl : ( ( rule__UserMethod__TypeAssignment_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3427:1: rule__UserMethod__Group__0__Impl : ( ( rule__UserMethod__TypeAssignment_0 ) ) ;
     public final void rule__UserMethod__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3433:1: ( ( ( rule__UserMethod__TypeAssignment_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3434:1: ( ( rule__UserMethod__TypeAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3431:1: ( ( ( rule__UserMethod__TypeAssignment_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3432:1: ( ( rule__UserMethod__TypeAssignment_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3434:1: ( ( rule__UserMethod__TypeAssignment_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3435:1: ( rule__UserMethod__TypeAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3432:1: ( ( rule__UserMethod__TypeAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3433:1: ( rule__UserMethod__TypeAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getTypeAssignment_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3436:1: ( rule__UserMethod__TypeAssignment_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3436:2: rule__UserMethod__TypeAssignment_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3434:1: ( rule__UserMethod__TypeAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3434:2: rule__UserMethod__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__UserMethod__TypeAssignment_0_in_rule__UserMethod__Group__0__Impl7080);
+            pushFollow(FOLLOW_rule__UserMethod__TypeAssignment_0_in_rule__UserMethod__Group__0__Impl7078);
             rule__UserMethod__TypeAssignment_0();
 
             state._fsp--;
@@ -10318,21 +10327,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3446:1: rule__UserMethod__Group__1 : rule__UserMethod__Group__1__Impl rule__UserMethod__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3444:1: rule__UserMethod__Group__1 : rule__UserMethod__Group__1__Impl rule__UserMethod__Group__2 ;
     public final void rule__UserMethod__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3450:1: ( rule__UserMethod__Group__1__Impl rule__UserMethod__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3451:2: rule__UserMethod__Group__1__Impl rule__UserMethod__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3448:1: ( rule__UserMethod__Group__1__Impl rule__UserMethod__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3449:2: rule__UserMethod__Group__1__Impl rule__UserMethod__Group__2
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__1__Impl_in_rule__UserMethod__Group__17110);
+            pushFollow(FOLLOW_rule__UserMethod__Group__1__Impl_in_rule__UserMethod__Group__17108);
             rule__UserMethod__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group__2_in_rule__UserMethod__Group__17113);
+            pushFollow(FOLLOW_rule__UserMethod__Group__2_in_rule__UserMethod__Group__17111);
             rule__UserMethod__Group__2();
 
             state._fsp--;
@@ -10356,25 +10365,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3458:1: rule__UserMethod__Group__1__Impl : ( ( rule__UserMethod__NameAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3456:1: rule__UserMethod__Group__1__Impl : ( ( rule__UserMethod__NameAssignment_1 ) ) ;
     public final void rule__UserMethod__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3462:1: ( ( ( rule__UserMethod__NameAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3463:1: ( ( rule__UserMethod__NameAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3460:1: ( ( ( rule__UserMethod__NameAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3461:1: ( ( rule__UserMethod__NameAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3463:1: ( ( rule__UserMethod__NameAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3464:1: ( rule__UserMethod__NameAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3461:1: ( ( rule__UserMethod__NameAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3462:1: ( rule__UserMethod__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getNameAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3465:1: ( rule__UserMethod__NameAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3465:2: rule__UserMethod__NameAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3463:1: ( rule__UserMethod__NameAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3463:2: rule__UserMethod__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__UserMethod__NameAssignment_1_in_rule__UserMethod__Group__1__Impl7140);
+            pushFollow(FOLLOW_rule__UserMethod__NameAssignment_1_in_rule__UserMethod__Group__1__Impl7138);
             rule__UserMethod__NameAssignment_1();
 
             state._fsp--;
@@ -10407,21 +10416,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3475:1: rule__UserMethod__Group__2 : rule__UserMethod__Group__2__Impl rule__UserMethod__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3473:1: rule__UserMethod__Group__2 : rule__UserMethod__Group__2__Impl rule__UserMethod__Group__3 ;
     public final void rule__UserMethod__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3479:1: ( rule__UserMethod__Group__2__Impl rule__UserMethod__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3480:2: rule__UserMethod__Group__2__Impl rule__UserMethod__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3477:1: ( rule__UserMethod__Group__2__Impl rule__UserMethod__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3478:2: rule__UserMethod__Group__2__Impl rule__UserMethod__Group__3
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__2__Impl_in_rule__UserMethod__Group__27170);
+            pushFollow(FOLLOW_rule__UserMethod__Group__2__Impl_in_rule__UserMethod__Group__27168);
             rule__UserMethod__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group__3_in_rule__UserMethod__Group__27173);
+            pushFollow(FOLLOW_rule__UserMethod__Group__3_in_rule__UserMethod__Group__27171);
             rule__UserMethod__Group__3();
 
             state._fsp--;
@@ -10445,22 +10454,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3487:1: rule__UserMethod__Group__2__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3485:1: rule__UserMethod__Group__2__Impl : ( '(' ) ;
     public final void rule__UserMethod__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3491:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3492:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3489:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3490:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3492:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3493:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3490:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3491:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getLeftParenthesisKeyword_2()); 
             }
-            match(input,37,FOLLOW_37_in_rule__UserMethod__Group__2__Impl7201); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__UserMethod__Group__2__Impl7199); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getUserMethodAccess().getLeftParenthesisKeyword_2()); 
             }
@@ -10486,21 +10495,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3506:1: rule__UserMethod__Group__3 : rule__UserMethod__Group__3__Impl rule__UserMethod__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3504:1: rule__UserMethod__Group__3 : rule__UserMethod__Group__3__Impl rule__UserMethod__Group__4 ;
     public final void rule__UserMethod__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3510:1: ( rule__UserMethod__Group__3__Impl rule__UserMethod__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3511:2: rule__UserMethod__Group__3__Impl rule__UserMethod__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3508:1: ( rule__UserMethod__Group__3__Impl rule__UserMethod__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3509:2: rule__UserMethod__Group__3__Impl rule__UserMethod__Group__4
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__3__Impl_in_rule__UserMethod__Group__37232);
+            pushFollow(FOLLOW_rule__UserMethod__Group__3__Impl_in_rule__UserMethod__Group__37230);
             rule__UserMethod__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group__4_in_rule__UserMethod__Group__37235);
+            pushFollow(FOLLOW_rule__UserMethod__Group__4_in_rule__UserMethod__Group__37233);
             rule__UserMethod__Group__4();
 
             state._fsp--;
@@ -10524,22 +10533,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3518:1: rule__UserMethod__Group__3__Impl : ( ( rule__UserMethod__ParametersAssignment_3 )? ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3516:1: rule__UserMethod__Group__3__Impl : ( ( rule__UserMethod__ParametersAssignment_3 )? ) ;
     public final void rule__UserMethod__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3522:1: ( ( ( rule__UserMethod__ParametersAssignment_3 )? ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3523:1: ( ( rule__UserMethod__ParametersAssignment_3 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3520:1: ( ( ( rule__UserMethod__ParametersAssignment_3 )? ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3521:1: ( ( rule__UserMethod__ParametersAssignment_3 )? )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3523:1: ( ( rule__UserMethod__ParametersAssignment_3 )? )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3524:1: ( rule__UserMethod__ParametersAssignment_3 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3521:1: ( ( rule__UserMethod__ParametersAssignment_3 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3522:1: ( rule__UserMethod__ParametersAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getParametersAssignment_3()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3525:1: ( rule__UserMethod__ParametersAssignment_3 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3523:1: ( rule__UserMethod__ParametersAssignment_3 )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -10548,9 +10557,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
             }
             switch (alt35) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3525:2: rule__UserMethod__ParametersAssignment_3
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3523:2: rule__UserMethod__ParametersAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__UserMethod__ParametersAssignment_3_in_rule__UserMethod__Group__3__Impl7262);
+                    pushFollow(FOLLOW_rule__UserMethod__ParametersAssignment_3_in_rule__UserMethod__Group__3__Impl7260);
                     rule__UserMethod__ParametersAssignment_3();
 
                     state._fsp--;
@@ -10586,21 +10595,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3535:1: rule__UserMethod__Group__4 : rule__UserMethod__Group__4__Impl rule__UserMethod__Group__5 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3533:1: rule__UserMethod__Group__4 : rule__UserMethod__Group__4__Impl rule__UserMethod__Group__5 ;
     public final void rule__UserMethod__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3539:1: ( rule__UserMethod__Group__4__Impl rule__UserMethod__Group__5 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3540:2: rule__UserMethod__Group__4__Impl rule__UserMethod__Group__5
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3537:1: ( rule__UserMethod__Group__4__Impl rule__UserMethod__Group__5 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3538:2: rule__UserMethod__Group__4__Impl rule__UserMethod__Group__5
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__4__Impl_in_rule__UserMethod__Group__47293);
+            pushFollow(FOLLOW_rule__UserMethod__Group__4__Impl_in_rule__UserMethod__Group__47291);
             rule__UserMethod__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group__5_in_rule__UserMethod__Group__47296);
+            pushFollow(FOLLOW_rule__UserMethod__Group__5_in_rule__UserMethod__Group__47294);
             rule__UserMethod__Group__5();
 
             state._fsp--;
@@ -10624,22 +10633,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3547:1: rule__UserMethod__Group__4__Impl : ( ( rule__UserMethod__Group_4__0 )* ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3545:1: rule__UserMethod__Group__4__Impl : ( ( rule__UserMethod__Group_4__0 )* ) ;
     public final void rule__UserMethod__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3551:1: ( ( ( rule__UserMethod__Group_4__0 )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3552:1: ( ( rule__UserMethod__Group_4__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3549:1: ( ( ( rule__UserMethod__Group_4__0 )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3550:1: ( ( rule__UserMethod__Group_4__0 )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3552:1: ( ( rule__UserMethod__Group_4__0 )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3553:1: ( rule__UserMethod__Group_4__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3550:1: ( ( rule__UserMethod__Group_4__0 )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3551:1: ( rule__UserMethod__Group_4__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getGroup_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3554:1: ( rule__UserMethod__Group_4__0 )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3552:1: ( rule__UserMethod__Group_4__0 )*
             loop36:
             do {
                 int alt36=2;
@@ -10652,9 +10661,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt36) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3554:2: rule__UserMethod__Group_4__0
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3552:2: rule__UserMethod__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__UserMethod__Group_4__0_in_rule__UserMethod__Group__4__Impl7323);
+            	    pushFollow(FOLLOW_rule__UserMethod__Group_4__0_in_rule__UserMethod__Group__4__Impl7321);
             	    rule__UserMethod__Group_4__0();
 
             	    state._fsp--;
@@ -10693,21 +10702,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__5"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3564:1: rule__UserMethod__Group__5 : rule__UserMethod__Group__5__Impl rule__UserMethod__Group__6 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3562:1: rule__UserMethod__Group__5 : rule__UserMethod__Group__5__Impl rule__UserMethod__Group__6 ;
     public final void rule__UserMethod__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3568:1: ( rule__UserMethod__Group__5__Impl rule__UserMethod__Group__6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3569:2: rule__UserMethod__Group__5__Impl rule__UserMethod__Group__6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3566:1: ( rule__UserMethod__Group__5__Impl rule__UserMethod__Group__6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3567:2: rule__UserMethod__Group__5__Impl rule__UserMethod__Group__6
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__5__Impl_in_rule__UserMethod__Group__57354);
+            pushFollow(FOLLOW_rule__UserMethod__Group__5__Impl_in_rule__UserMethod__Group__57352);
             rule__UserMethod__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group__6_in_rule__UserMethod__Group__57357);
+            pushFollow(FOLLOW_rule__UserMethod__Group__6_in_rule__UserMethod__Group__57355);
             rule__UserMethod__Group__6();
 
             state._fsp--;
@@ -10731,22 +10740,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__5__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3576:1: rule__UserMethod__Group__5__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3574:1: rule__UserMethod__Group__5__Impl : ( ')' ) ;
     public final void rule__UserMethod__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3580:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3581:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3578:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3579:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3581:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3582:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3579:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3580:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getRightParenthesisKeyword_5()); 
             }
-            match(input,39,FOLLOW_39_in_rule__UserMethod__Group__5__Impl7385); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__UserMethod__Group__5__Impl7383); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getUserMethodAccess().getRightParenthesisKeyword_5()); 
             }
@@ -10772,16 +10781,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3595:1: rule__UserMethod__Group__6 : rule__UserMethod__Group__6__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3593:1: rule__UserMethod__Group__6 : rule__UserMethod__Group__6__Impl ;
     public final void rule__UserMethod__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3599:1: ( rule__UserMethod__Group__6__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3600:2: rule__UserMethod__Group__6__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3597:1: ( rule__UserMethod__Group__6__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3598:2: rule__UserMethod__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group__6__Impl_in_rule__UserMethod__Group__67416);
+            pushFollow(FOLLOW_rule__UserMethod__Group__6__Impl_in_rule__UserMethod__Group__67414);
             rule__UserMethod__Group__6__Impl();
 
             state._fsp--;
@@ -10805,25 +10814,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group__6__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3606:1: rule__UserMethod__Group__6__Impl : ( ( rule__UserMethod__BlAssignment_6 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3604:1: rule__UserMethod__Group__6__Impl : ( ( rule__UserMethod__BlAssignment_6 ) ) ;
     public final void rule__UserMethod__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3610:1: ( ( ( rule__UserMethod__BlAssignment_6 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3611:1: ( ( rule__UserMethod__BlAssignment_6 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3608:1: ( ( ( rule__UserMethod__BlAssignment_6 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3609:1: ( ( rule__UserMethod__BlAssignment_6 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3611:1: ( ( rule__UserMethod__BlAssignment_6 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3612:1: ( rule__UserMethod__BlAssignment_6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3609:1: ( ( rule__UserMethod__BlAssignment_6 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3610:1: ( rule__UserMethod__BlAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getBlAssignment_6()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3613:1: ( rule__UserMethod__BlAssignment_6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3613:2: rule__UserMethod__BlAssignment_6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3611:1: ( rule__UserMethod__BlAssignment_6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3611:2: rule__UserMethod__BlAssignment_6
             {
-            pushFollow(FOLLOW_rule__UserMethod__BlAssignment_6_in_rule__UserMethod__Group__6__Impl7443);
+            pushFollow(FOLLOW_rule__UserMethod__BlAssignment_6_in_rule__UserMethod__Group__6__Impl7441);
             rule__UserMethod__BlAssignment_6();
 
             state._fsp--;
@@ -10856,21 +10865,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group_4__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3637:1: rule__UserMethod__Group_4__0 : rule__UserMethod__Group_4__0__Impl rule__UserMethod__Group_4__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3635:1: rule__UserMethod__Group_4__0 : rule__UserMethod__Group_4__0__Impl rule__UserMethod__Group_4__1 ;
     public final void rule__UserMethod__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3641:1: ( rule__UserMethod__Group_4__0__Impl rule__UserMethod__Group_4__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3642:2: rule__UserMethod__Group_4__0__Impl rule__UserMethod__Group_4__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3639:1: ( rule__UserMethod__Group_4__0__Impl rule__UserMethod__Group_4__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3640:2: rule__UserMethod__Group_4__0__Impl rule__UserMethod__Group_4__1
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group_4__0__Impl_in_rule__UserMethod__Group_4__07487);
+            pushFollow(FOLLOW_rule__UserMethod__Group_4__0__Impl_in_rule__UserMethod__Group_4__07485);
             rule__UserMethod__Group_4__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__UserMethod__Group_4__1_in_rule__UserMethod__Group_4__07490);
+            pushFollow(FOLLOW_rule__UserMethod__Group_4__1_in_rule__UserMethod__Group_4__07488);
             rule__UserMethod__Group_4__1();
 
             state._fsp--;
@@ -10894,28 +10903,28 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group_4__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3649:1: rule__UserMethod__Group_4__0__Impl : ( ( ( ',' ) ) ( ( ',' )* ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3647:1: rule__UserMethod__Group_4__0__Impl : ( ( ( ',' ) ) ( ( ',' )* ) ) ;
     public final void rule__UserMethod__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3653:1: ( ( ( ( ',' ) ) ( ( ',' )* ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3654:1: ( ( ( ',' ) ) ( ( ',' )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3651:1: ( ( ( ( ',' ) ) ( ( ',' )* ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3652:1: ( ( ( ',' ) ) ( ( ',' )* ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3654:1: ( ( ( ',' ) ) ( ( ',' )* ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3655:1: ( ( ',' ) ) ( ( ',' )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3652:1: ( ( ( ',' ) ) ( ( ',' )* ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3653:1: ( ( ',' ) ) ( ( ',' )* )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3655:1: ( ( ',' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3656:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3653:1: ( ( ',' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3654:1: ( ',' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getCommaKeyword_4_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3657:1: ( ',' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3658:2: ','
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3655:1: ( ',' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3656:2: ','
             {
-            match(input,38,FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7521); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7519); if (state.failed) return ;
 
             }
 
@@ -10925,13 +10934,13 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
             }
 
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3662:1: ( ( ',' )* )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3663:1: ( ',' )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3660:1: ( ( ',' )* )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3661:1: ( ',' )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getCommaKeyword_4_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3664:1: ( ',' )*
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3662:1: ( ',' )*
             loop37:
             do {
                 int alt37=2;
@@ -10944,9 +10953,9 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
                 switch (alt37) {
             	case 1 :
-            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3665:2: ','
+            	    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3663:2: ','
             	    {
-            	    match(input,38,FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7537); if (state.failed) return ;
+            	    match(input,38,FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7535); if (state.failed) return ;
 
             	    }
             	    break;
@@ -10984,16 +10993,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group_4__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3677:1: rule__UserMethod__Group_4__1 : rule__UserMethod__Group_4__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3675:1: rule__UserMethod__Group_4__1 : rule__UserMethod__Group_4__1__Impl ;
     public final void rule__UserMethod__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3681:1: ( rule__UserMethod__Group_4__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3682:2: rule__UserMethod__Group_4__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3679:1: ( rule__UserMethod__Group_4__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3680:2: rule__UserMethod__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__UserMethod__Group_4__1__Impl_in_rule__UserMethod__Group_4__17572);
+            pushFollow(FOLLOW_rule__UserMethod__Group_4__1__Impl_in_rule__UserMethod__Group_4__17570);
             rule__UserMethod__Group_4__1__Impl();
 
             state._fsp--;
@@ -11017,25 +11026,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__Group_4__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3688:1: rule__UserMethod__Group_4__1__Impl : ( ( rule__UserMethod__ParametersAssignment_4_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3686:1: rule__UserMethod__Group_4__1__Impl : ( ( rule__UserMethod__ParametersAssignment_4_1 ) ) ;
     public final void rule__UserMethod__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3692:1: ( ( ( rule__UserMethod__ParametersAssignment_4_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3693:1: ( ( rule__UserMethod__ParametersAssignment_4_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3690:1: ( ( ( rule__UserMethod__ParametersAssignment_4_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3691:1: ( ( rule__UserMethod__ParametersAssignment_4_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3693:1: ( ( rule__UserMethod__ParametersAssignment_4_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3694:1: ( rule__UserMethod__ParametersAssignment_4_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3691:1: ( ( rule__UserMethod__ParametersAssignment_4_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3692:1: ( rule__UserMethod__ParametersAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getParametersAssignment_4_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3695:1: ( rule__UserMethod__ParametersAssignment_4_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3695:2: rule__UserMethod__ParametersAssignment_4_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3693:1: ( rule__UserMethod__ParametersAssignment_4_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3693:2: rule__UserMethod__ParametersAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__UserMethod__ParametersAssignment_4_1_in_rule__UserMethod__Group_4__1__Impl7599);
+            pushFollow(FOLLOW_rule__UserMethod__ParametersAssignment_4_1_in_rule__UserMethod__Group_4__1__Impl7597);
             rule__UserMethod__ParametersAssignment_4_1();
 
             state._fsp--;
@@ -11068,21 +11077,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3709:1: rule__ParanValueExpression__Group__0 : rule__ParanValueExpression__Group__0__Impl rule__ParanValueExpression__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3707:1: rule__ParanValueExpression__Group__0 : rule__ParanValueExpression__Group__0__Impl rule__ParanValueExpression__Group__1 ;
     public final void rule__ParanValueExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3713:1: ( rule__ParanValueExpression__Group__0__Impl rule__ParanValueExpression__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3714:2: rule__ParanValueExpression__Group__0__Impl rule__ParanValueExpression__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3711:1: ( rule__ParanValueExpression__Group__0__Impl rule__ParanValueExpression__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3712:2: rule__ParanValueExpression__Group__0__Impl rule__ParanValueExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__0__Impl_in_rule__ParanValueExpression__Group__07633);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__0__Impl_in_rule__ParanValueExpression__Group__07631);
             rule__ParanValueExpression__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__1_in_rule__ParanValueExpression__Group__07636);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__1_in_rule__ParanValueExpression__Group__07634);
             rule__ParanValueExpression__Group__1();
 
             state._fsp--;
@@ -11106,22 +11115,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3721:1: rule__ParanValueExpression__Group__0__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3719:1: rule__ParanValueExpression__Group__0__Impl : ( '(' ) ;
     public final void rule__ParanValueExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3725:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3726:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3723:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3724:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3726:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3727:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3724:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3725:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getLeftParenthesisKeyword_0()); 
             }
-            match(input,37,FOLLOW_37_in_rule__ParanValueExpression__Group__0__Impl7664); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__ParanValueExpression__Group__0__Impl7662); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getParanValueExpressionAccess().getLeftParenthesisKeyword_0()); 
             }
@@ -11147,21 +11156,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3740:1: rule__ParanValueExpression__Group__1 : rule__ParanValueExpression__Group__1__Impl rule__ParanValueExpression__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3738:1: rule__ParanValueExpression__Group__1 : rule__ParanValueExpression__Group__1__Impl rule__ParanValueExpression__Group__2 ;
     public final void rule__ParanValueExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3744:1: ( rule__ParanValueExpression__Group__1__Impl rule__ParanValueExpression__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3745:2: rule__ParanValueExpression__Group__1__Impl rule__ParanValueExpression__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3742:1: ( rule__ParanValueExpression__Group__1__Impl rule__ParanValueExpression__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3743:2: rule__ParanValueExpression__Group__1__Impl rule__ParanValueExpression__Group__2
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__1__Impl_in_rule__ParanValueExpression__Group__17695);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__1__Impl_in_rule__ParanValueExpression__Group__17693);
             rule__ParanValueExpression__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__2_in_rule__ParanValueExpression__Group__17698);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__2_in_rule__ParanValueExpression__Group__17696);
             rule__ParanValueExpression__Group__2();
 
             state._fsp--;
@@ -11185,25 +11194,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3752:1: rule__ParanValueExpression__Group__1__Impl : ( ( rule__ParanValueExpression__ExAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3750:1: rule__ParanValueExpression__Group__1__Impl : ( ( rule__ParanValueExpression__ExAssignment_1 ) ) ;
     public final void rule__ParanValueExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3756:1: ( ( ( rule__ParanValueExpression__ExAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3757:1: ( ( rule__ParanValueExpression__ExAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3754:1: ( ( ( rule__ParanValueExpression__ExAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3755:1: ( ( rule__ParanValueExpression__ExAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3757:1: ( ( rule__ParanValueExpression__ExAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3758:1: ( rule__ParanValueExpression__ExAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3755:1: ( ( rule__ParanValueExpression__ExAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3756:1: ( rule__ParanValueExpression__ExAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getExAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3759:1: ( rule__ParanValueExpression__ExAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3759:2: rule__ParanValueExpression__ExAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3757:1: ( rule__ParanValueExpression__ExAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3757:2: rule__ParanValueExpression__ExAssignment_1
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__ExAssignment_1_in_rule__ParanValueExpression__Group__1__Impl7725);
+            pushFollow(FOLLOW_rule__ParanValueExpression__ExAssignment_1_in_rule__ParanValueExpression__Group__1__Impl7723);
             rule__ParanValueExpression__ExAssignment_1();
 
             state._fsp--;
@@ -11236,21 +11245,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3769:1: rule__ParanValueExpression__Group__2 : rule__ParanValueExpression__Group__2__Impl rule__ParanValueExpression__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3767:1: rule__ParanValueExpression__Group__2 : rule__ParanValueExpression__Group__2__Impl rule__ParanValueExpression__Group__3 ;
     public final void rule__ParanValueExpression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3773:1: ( rule__ParanValueExpression__Group__2__Impl rule__ParanValueExpression__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3774:2: rule__ParanValueExpression__Group__2__Impl rule__ParanValueExpression__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3771:1: ( rule__ParanValueExpression__Group__2__Impl rule__ParanValueExpression__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3772:2: rule__ParanValueExpression__Group__2__Impl rule__ParanValueExpression__Group__3
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__2__Impl_in_rule__ParanValueExpression__Group__27755);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__2__Impl_in_rule__ParanValueExpression__Group__27753);
             rule__ParanValueExpression__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__3_in_rule__ParanValueExpression__Group__27758);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__3_in_rule__ParanValueExpression__Group__27756);
             rule__ParanValueExpression__Group__3();
 
             state._fsp--;
@@ -11274,22 +11283,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3781:1: rule__ParanValueExpression__Group__2__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3779:1: rule__ParanValueExpression__Group__2__Impl : ( ')' ) ;
     public final void rule__ParanValueExpression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3785:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3786:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3783:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3784:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3786:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3787:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3784:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3785:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getRightParenthesisKeyword_2()); 
             }
-            match(input,39,FOLLOW_39_in_rule__ParanValueExpression__Group__2__Impl7786); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__ParanValueExpression__Group__2__Impl7784); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getParanValueExpressionAccess().getRightParenthesisKeyword_2()); 
             }
@@ -11315,16 +11324,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3800:1: rule__ParanValueExpression__Group__3 : rule__ParanValueExpression__Group__3__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3798:1: rule__ParanValueExpression__Group__3 : rule__ParanValueExpression__Group__3__Impl ;
     public final void rule__ParanValueExpression__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3804:1: ( rule__ParanValueExpression__Group__3__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3805:2: rule__ParanValueExpression__Group__3__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3802:1: ( rule__ParanValueExpression__Group__3__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3803:2: rule__ParanValueExpression__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group__3__Impl_in_rule__ParanValueExpression__Group__37817);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group__3__Impl_in_rule__ParanValueExpression__Group__37815);
             rule__ParanValueExpression__Group__3__Impl();
 
             state._fsp--;
@@ -11348,81 +11357,33 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3811:1: rule__ParanValueExpression__Group__3__Impl : ( ( rule__ParanValueExpression__Group_3__0 )? ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3809:1: rule__ParanValueExpression__Group__3__Impl : ( ( rule__ParanValueExpression__Group_3__0 )? ) ;
     public final void rule__ParanValueExpression__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3815:1: ( ( ( rule__ParanValueExpression__Group_3__0 )? ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3816:1: ( ( rule__ParanValueExpression__Group_3__0 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3813:1: ( ( ( rule__ParanValueExpression__Group_3__0 )? ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3814:1: ( ( rule__ParanValueExpression__Group_3__0 )? )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3816:1: ( ( rule__ParanValueExpression__Group_3__0 )? )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3817:1: ( rule__ParanValueExpression__Group_3__0 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3814:1: ( ( rule__ParanValueExpression__Group_3__0 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3815:1: ( rule__ParanValueExpression__Group_3__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getGroup_3()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3818:1: ( rule__ParanValueExpression__Group_3__0 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3816:1: ( rule__ParanValueExpression__Group_3__0 )?
             int alt38=2;
-            switch ( input.LA(1) ) {
-                case 23:
-                    {
-                    int LA38_1 = input.LA(2);
+            int LA38_0 = input.LA(1);
 
-                    if ( ((LA38_1>=RULE_INT && LA38_1<=RULE_STRING)||(LA38_1>=29 && LA38_1<=30)||LA38_1==37) ) {
-                        alt38=1;
-                    }
-                    }
-                    break;
-                case 24:
-                    {
-                    int LA38_2 = input.LA(2);
-
-                    if ( ((LA38_2>=RULE_INT && LA38_2<=RULE_STRING)||(LA38_2>=29 && LA38_2<=30)||LA38_2==37) ) {
-                        alt38=1;
-                    }
-                    }
-                    break;
-                case 25:
-                    {
-                    int LA38_3 = input.LA(2);
-
-                    if ( ((LA38_3>=RULE_INT && LA38_3<=RULE_STRING)||(LA38_3>=29 && LA38_3<=30)||LA38_3==37) ) {
-                        alt38=1;
-                    }
-                    }
-                    break;
-                case 26:
-                    {
-                    int LA38_4 = input.LA(2);
-
-                    if ( ((LA38_4>=RULE_INT && LA38_4<=RULE_STRING)||(LA38_4>=29 && LA38_4<=30)||LA38_4==37) ) {
-                        alt38=1;
-                    }
-                    }
-                    break;
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                case 17:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                case 22:
-                    {
-                    alt38=1;
-                    }
-                    break;
+            if ( ((LA38_0>=13 && LA38_0<=26)) ) {
+                alt38=1;
             }
-
             switch (alt38) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3818:2: rule__ParanValueExpression__Group_3__0
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3816:2: rule__ParanValueExpression__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__0_in_rule__ParanValueExpression__Group__3__Impl7844);
+                    pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__0_in_rule__ParanValueExpression__Group__3__Impl7842);
                     rule__ParanValueExpression__Group_3__0();
 
                     state._fsp--;
@@ -11458,21 +11419,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group_3__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3836:1: rule__ParanValueExpression__Group_3__0 : rule__ParanValueExpression__Group_3__0__Impl rule__ParanValueExpression__Group_3__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3834:1: rule__ParanValueExpression__Group_3__0 : rule__ParanValueExpression__Group_3__0__Impl rule__ParanValueExpression__Group_3__1 ;
     public final void rule__ParanValueExpression__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3840:1: ( rule__ParanValueExpression__Group_3__0__Impl rule__ParanValueExpression__Group_3__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3841:2: rule__ParanValueExpression__Group_3__0__Impl rule__ParanValueExpression__Group_3__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3838:1: ( rule__ParanValueExpression__Group_3__0__Impl rule__ParanValueExpression__Group_3__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3839:2: rule__ParanValueExpression__Group_3__0__Impl rule__ParanValueExpression__Group_3__1
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__0__Impl_in_rule__ParanValueExpression__Group_3__07883);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__0__Impl_in_rule__ParanValueExpression__Group_3__07881);
             rule__ParanValueExpression__Group_3__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__1_in_rule__ParanValueExpression__Group_3__07886);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__1_in_rule__ParanValueExpression__Group_3__07884);
             rule__ParanValueExpression__Group_3__1();
 
             state._fsp--;
@@ -11496,25 +11457,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group_3__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3848:1: rule__ParanValueExpression__Group_3__0__Impl : ( ( rule__ParanValueExpression__OpAssignment_3_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3846:1: rule__ParanValueExpression__Group_3__0__Impl : ( ( rule__ParanValueExpression__OpAssignment_3_0 ) ) ;
     public final void rule__ParanValueExpression__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3852:1: ( ( ( rule__ParanValueExpression__OpAssignment_3_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3853:1: ( ( rule__ParanValueExpression__OpAssignment_3_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3850:1: ( ( ( rule__ParanValueExpression__OpAssignment_3_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3851:1: ( ( rule__ParanValueExpression__OpAssignment_3_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3853:1: ( ( rule__ParanValueExpression__OpAssignment_3_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3854:1: ( rule__ParanValueExpression__OpAssignment_3_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3851:1: ( ( rule__ParanValueExpression__OpAssignment_3_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3852:1: ( rule__ParanValueExpression__OpAssignment_3_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getOpAssignment_3_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3855:1: ( rule__ParanValueExpression__OpAssignment_3_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3855:2: rule__ParanValueExpression__OpAssignment_3_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3853:1: ( rule__ParanValueExpression__OpAssignment_3_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3853:2: rule__ParanValueExpression__OpAssignment_3_0
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__OpAssignment_3_0_in_rule__ParanValueExpression__Group_3__0__Impl7913);
+            pushFollow(FOLLOW_rule__ParanValueExpression__OpAssignment_3_0_in_rule__ParanValueExpression__Group_3__0__Impl7911);
             rule__ParanValueExpression__OpAssignment_3_0();
 
             state._fsp--;
@@ -11547,16 +11508,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group_3__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3865:1: rule__ParanValueExpression__Group_3__1 : rule__ParanValueExpression__Group_3__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3863:1: rule__ParanValueExpression__Group_3__1 : rule__ParanValueExpression__Group_3__1__Impl ;
     public final void rule__ParanValueExpression__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3869:1: ( rule__ParanValueExpression__Group_3__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3870:2: rule__ParanValueExpression__Group_3__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3867:1: ( rule__ParanValueExpression__Group_3__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3868:2: rule__ParanValueExpression__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__1__Impl_in_rule__ParanValueExpression__Group_3__17943);
+            pushFollow(FOLLOW_rule__ParanValueExpression__Group_3__1__Impl_in_rule__ParanValueExpression__Group_3__17941);
             rule__ParanValueExpression__Group_3__1__Impl();
 
             state._fsp--;
@@ -11580,25 +11541,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__Group_3__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3876:1: rule__ParanValueExpression__Group_3__1__Impl : ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3874:1: rule__ParanValueExpression__Group_3__1__Impl : ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) ) ;
     public final void rule__ParanValueExpression__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3880:1: ( ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3881:1: ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3878:1: ( ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3879:1: ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3881:1: ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3882:1: ( rule__ParanValueExpression__VarrightAssignment_3_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3879:1: ( ( rule__ParanValueExpression__VarrightAssignment_3_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3880:1: ( rule__ParanValueExpression__VarrightAssignment_3_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getVarrightAssignment_3_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3883:1: ( rule__ParanValueExpression__VarrightAssignment_3_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3883:2: rule__ParanValueExpression__VarrightAssignment_3_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3881:1: ( rule__ParanValueExpression__VarrightAssignment_3_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3881:2: rule__ParanValueExpression__VarrightAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__VarrightAssignment_3_1_in_rule__ParanValueExpression__Group_3__1__Impl7970);
+            pushFollow(FOLLOW_rule__ParanValueExpression__VarrightAssignment_3_1_in_rule__ParanValueExpression__Group_3__1__Impl7968);
             rule__ParanValueExpression__VarrightAssignment_3_1();
 
             state._fsp--;
@@ -11631,21 +11592,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3897:1: rule__BasicValueExpression__Group__0 : rule__BasicValueExpression__Group__0__Impl rule__BasicValueExpression__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3895:1: rule__BasicValueExpression__Group__0 : rule__BasicValueExpression__Group__0__Impl rule__BasicValueExpression__Group__1 ;
     public final void rule__BasicValueExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3901:1: ( rule__BasicValueExpression__Group__0__Impl rule__BasicValueExpression__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3902:2: rule__BasicValueExpression__Group__0__Impl rule__BasicValueExpression__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3899:1: ( rule__BasicValueExpression__Group__0__Impl rule__BasicValueExpression__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3900:2: rule__BasicValueExpression__Group__0__Impl rule__BasicValueExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__Group__0__Impl_in_rule__BasicValueExpression__Group__08004);
+            pushFollow(FOLLOW_rule__BasicValueExpression__Group__0__Impl_in_rule__BasicValueExpression__Group__08002);
             rule__BasicValueExpression__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__BasicValueExpression__Group__1_in_rule__BasicValueExpression__Group__08007);
+            pushFollow(FOLLOW_rule__BasicValueExpression__Group__1_in_rule__BasicValueExpression__Group__08005);
             rule__BasicValueExpression__Group__1();
 
             state._fsp--;
@@ -11669,25 +11630,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3909:1: rule__BasicValueExpression__Group__0__Impl : ( ( rule__BasicValueExpression__VarleftAssignment_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3907:1: rule__BasicValueExpression__Group__0__Impl : ( ( rule__BasicValueExpression__VarleftAssignment_0 ) ) ;
     public final void rule__BasicValueExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3913:1: ( ( ( rule__BasicValueExpression__VarleftAssignment_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3914:1: ( ( rule__BasicValueExpression__VarleftAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3911:1: ( ( ( rule__BasicValueExpression__VarleftAssignment_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3912:1: ( ( rule__BasicValueExpression__VarleftAssignment_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3914:1: ( ( rule__BasicValueExpression__VarleftAssignment_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3915:1: ( rule__BasicValueExpression__VarleftAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3912:1: ( ( rule__BasicValueExpression__VarleftAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3913:1: ( rule__BasicValueExpression__VarleftAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getVarleftAssignment_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3916:1: ( rule__BasicValueExpression__VarleftAssignment_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3916:2: rule__BasicValueExpression__VarleftAssignment_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3914:1: ( rule__BasicValueExpression__VarleftAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3914:2: rule__BasicValueExpression__VarleftAssignment_0
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__VarleftAssignment_0_in_rule__BasicValueExpression__Group__0__Impl8034);
+            pushFollow(FOLLOW_rule__BasicValueExpression__VarleftAssignment_0_in_rule__BasicValueExpression__Group__0__Impl8032);
             rule__BasicValueExpression__VarleftAssignment_0();
 
             state._fsp--;
@@ -11720,16 +11681,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3926:1: rule__BasicValueExpression__Group__1 : rule__BasicValueExpression__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3924:1: rule__BasicValueExpression__Group__1 : rule__BasicValueExpression__Group__1__Impl ;
     public final void rule__BasicValueExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3930:1: ( rule__BasicValueExpression__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3931:2: rule__BasicValueExpression__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3928:1: ( rule__BasicValueExpression__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3929:2: rule__BasicValueExpression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__Group__1__Impl_in_rule__BasicValueExpression__Group__18064);
+            pushFollow(FOLLOW_rule__BasicValueExpression__Group__1__Impl_in_rule__BasicValueExpression__Group__18062);
             rule__BasicValueExpression__Group__1__Impl();
 
             state._fsp--;
@@ -11753,81 +11714,33 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3937:1: rule__BasicValueExpression__Group__1__Impl : ( ( rule__BasicValueExpression__Group_1__0 )? ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3935:1: rule__BasicValueExpression__Group__1__Impl : ( ( rule__BasicValueExpression__Group_1__0 )? ) ;
     public final void rule__BasicValueExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3941:1: ( ( ( rule__BasicValueExpression__Group_1__0 )? ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3942:1: ( ( rule__BasicValueExpression__Group_1__0 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3939:1: ( ( ( rule__BasicValueExpression__Group_1__0 )? ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3940:1: ( ( rule__BasicValueExpression__Group_1__0 )? )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3942:1: ( ( rule__BasicValueExpression__Group_1__0 )? )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3943:1: ( rule__BasicValueExpression__Group_1__0 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3940:1: ( ( rule__BasicValueExpression__Group_1__0 )? )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3941:1: ( rule__BasicValueExpression__Group_1__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getGroup_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3944:1: ( rule__BasicValueExpression__Group_1__0 )?
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3942:1: ( rule__BasicValueExpression__Group_1__0 )?
             int alt39=2;
-            switch ( input.LA(1) ) {
-                case 23:
-                    {
-                    int LA39_1 = input.LA(2);
+            int LA39_0 = input.LA(1);
 
-                    if ( ((LA39_1>=RULE_INT && LA39_1<=RULE_STRING)||(LA39_1>=29 && LA39_1<=30)||LA39_1==37) ) {
-                        alt39=1;
-                    }
-                    }
-                    break;
-                case 24:
-                    {
-                    int LA39_2 = input.LA(2);
-
-                    if ( ((LA39_2>=RULE_INT && LA39_2<=RULE_STRING)||(LA39_2>=29 && LA39_2<=30)||LA39_2==37) ) {
-                        alt39=1;
-                    }
-                    }
-                    break;
-                case 25:
-                    {
-                    int LA39_3 = input.LA(2);
-
-                    if ( ((LA39_3>=RULE_INT && LA39_3<=RULE_STRING)||(LA39_3>=29 && LA39_3<=30)||LA39_3==37) ) {
-                        alt39=1;
-                    }
-                    }
-                    break;
-                case 26:
-                    {
-                    int LA39_4 = input.LA(2);
-
-                    if ( ((LA39_4>=RULE_INT && LA39_4<=RULE_STRING)||(LA39_4>=29 && LA39_4<=30)||LA39_4==37) ) {
-                        alt39=1;
-                    }
-                    }
-                    break;
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                case 17:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                case 22:
-                    {
-                    alt39=1;
-                    }
-                    break;
+            if ( ((LA39_0>=13 && LA39_0<=26)) ) {
+                alt39=1;
             }
-
             switch (alt39) {
                 case 1 :
-                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3944:2: rule__BasicValueExpression__Group_1__0
+                    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3942:2: rule__BasicValueExpression__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__0_in_rule__BasicValueExpression__Group__1__Impl8091);
+                    pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__0_in_rule__BasicValueExpression__Group__1__Impl8089);
                     rule__BasicValueExpression__Group_1__0();
 
                     state._fsp--;
@@ -11863,21 +11776,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group_1__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3958:1: rule__BasicValueExpression__Group_1__0 : rule__BasicValueExpression__Group_1__0__Impl rule__BasicValueExpression__Group_1__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3956:1: rule__BasicValueExpression__Group_1__0 : rule__BasicValueExpression__Group_1__0__Impl rule__BasicValueExpression__Group_1__1 ;
     public final void rule__BasicValueExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3962:1: ( rule__BasicValueExpression__Group_1__0__Impl rule__BasicValueExpression__Group_1__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3963:2: rule__BasicValueExpression__Group_1__0__Impl rule__BasicValueExpression__Group_1__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3960:1: ( rule__BasicValueExpression__Group_1__0__Impl rule__BasicValueExpression__Group_1__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3961:2: rule__BasicValueExpression__Group_1__0__Impl rule__BasicValueExpression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__0__Impl_in_rule__BasicValueExpression__Group_1__08126);
+            pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__0__Impl_in_rule__BasicValueExpression__Group_1__08124);
             rule__BasicValueExpression__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__1_in_rule__BasicValueExpression__Group_1__08129);
+            pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__1_in_rule__BasicValueExpression__Group_1__08127);
             rule__BasicValueExpression__Group_1__1();
 
             state._fsp--;
@@ -11901,25 +11814,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group_1__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3970:1: rule__BasicValueExpression__Group_1__0__Impl : ( ( rule__BasicValueExpression__OpAssignment_1_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3968:1: rule__BasicValueExpression__Group_1__0__Impl : ( ( rule__BasicValueExpression__OpAssignment_1_0 ) ) ;
     public final void rule__BasicValueExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3974:1: ( ( ( rule__BasicValueExpression__OpAssignment_1_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3975:1: ( ( rule__BasicValueExpression__OpAssignment_1_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3972:1: ( ( ( rule__BasicValueExpression__OpAssignment_1_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3973:1: ( ( rule__BasicValueExpression__OpAssignment_1_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3975:1: ( ( rule__BasicValueExpression__OpAssignment_1_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3976:1: ( rule__BasicValueExpression__OpAssignment_1_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3973:1: ( ( rule__BasicValueExpression__OpAssignment_1_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3974:1: ( rule__BasicValueExpression__OpAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getOpAssignment_1_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3977:1: ( rule__BasicValueExpression__OpAssignment_1_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3977:2: rule__BasicValueExpression__OpAssignment_1_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3975:1: ( rule__BasicValueExpression__OpAssignment_1_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3975:2: rule__BasicValueExpression__OpAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__OpAssignment_1_0_in_rule__BasicValueExpression__Group_1__0__Impl8156);
+            pushFollow(FOLLOW_rule__BasicValueExpression__OpAssignment_1_0_in_rule__BasicValueExpression__Group_1__0__Impl8154);
             rule__BasicValueExpression__OpAssignment_1_0();
 
             state._fsp--;
@@ -11952,16 +11865,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group_1__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3987:1: rule__BasicValueExpression__Group_1__1 : rule__BasicValueExpression__Group_1__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3985:1: rule__BasicValueExpression__Group_1__1 : rule__BasicValueExpression__Group_1__1__Impl ;
     public final void rule__BasicValueExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3991:1: ( rule__BasicValueExpression__Group_1__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3992:2: rule__BasicValueExpression__Group_1__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3989:1: ( rule__BasicValueExpression__Group_1__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3990:2: rule__BasicValueExpression__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__1__Impl_in_rule__BasicValueExpression__Group_1__18186);
+            pushFollow(FOLLOW_rule__BasicValueExpression__Group_1__1__Impl_in_rule__BasicValueExpression__Group_1__18184);
             rule__BasicValueExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -11985,25 +11898,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__Group_1__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3998:1: rule__BasicValueExpression__Group_1__1__Impl : ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:3996:1: rule__BasicValueExpression__Group_1__1__Impl : ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) ) ;
     public final void rule__BasicValueExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4002:1: ( ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4003:1: ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4000:1: ( ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4001:1: ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4003:1: ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4004:1: ( rule__BasicValueExpression__VarrightAssignment_1_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4001:1: ( ( rule__BasicValueExpression__VarrightAssignment_1_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4002:1: ( rule__BasicValueExpression__VarrightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getVarrightAssignment_1_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4005:1: ( rule__BasicValueExpression__VarrightAssignment_1_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4005:2: rule__BasicValueExpression__VarrightAssignment_1_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4003:1: ( rule__BasicValueExpression__VarrightAssignment_1_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4003:2: rule__BasicValueExpression__VarrightAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__VarrightAssignment_1_1_in_rule__BasicValueExpression__Group_1__1__Impl8213);
+            pushFollow(FOLLOW_rule__BasicValueExpression__VarrightAssignment_1_1_in_rule__BasicValueExpression__Group_1__1__Impl8211);
             rule__BasicValueExpression__VarrightAssignment_1_1();
 
             state._fsp--;
@@ -12036,21 +11949,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Crement__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4019:1: rule__Crement__Group__0 : rule__Crement__Group__0__Impl rule__Crement__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4017:1: rule__Crement__Group__0 : rule__Crement__Group__0__Impl rule__Crement__Group__1 ;
     public final void rule__Crement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4023:1: ( rule__Crement__Group__0__Impl rule__Crement__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4024:2: rule__Crement__Group__0__Impl rule__Crement__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4021:1: ( rule__Crement__Group__0__Impl rule__Crement__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4022:2: rule__Crement__Group__0__Impl rule__Crement__Group__1
             {
-            pushFollow(FOLLOW_rule__Crement__Group__0__Impl_in_rule__Crement__Group__08247);
+            pushFollow(FOLLOW_rule__Crement__Group__0__Impl_in_rule__Crement__Group__08245);
             rule__Crement__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Crement__Group__1_in_rule__Crement__Group__08250);
+            pushFollow(FOLLOW_rule__Crement__Group__1_in_rule__Crement__Group__08248);
             rule__Crement__Group__1();
 
             state._fsp--;
@@ -12074,25 +11987,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Crement__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4031:1: rule__Crement__Group__0__Impl : ( ( rule__Crement__ValueAssignment_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4029:1: rule__Crement__Group__0__Impl : ( ( rule__Crement__ValueAssignment_0 ) ) ;
     public final void rule__Crement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4035:1: ( ( ( rule__Crement__ValueAssignment_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4036:1: ( ( rule__Crement__ValueAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4033:1: ( ( ( rule__Crement__ValueAssignment_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4034:1: ( ( rule__Crement__ValueAssignment_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4036:1: ( ( rule__Crement__ValueAssignment_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4037:1: ( rule__Crement__ValueAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4034:1: ( ( rule__Crement__ValueAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4035:1: ( rule__Crement__ValueAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCrementAccess().getValueAssignment_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4038:1: ( rule__Crement__ValueAssignment_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4038:2: rule__Crement__ValueAssignment_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4036:1: ( rule__Crement__ValueAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4036:2: rule__Crement__ValueAssignment_0
             {
-            pushFollow(FOLLOW_rule__Crement__ValueAssignment_0_in_rule__Crement__Group__0__Impl8277);
+            pushFollow(FOLLOW_rule__Crement__ValueAssignment_0_in_rule__Crement__Group__0__Impl8275);
             rule__Crement__ValueAssignment_0();
 
             state._fsp--;
@@ -12125,16 +12038,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Crement__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4048:1: rule__Crement__Group__1 : rule__Crement__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4046:1: rule__Crement__Group__1 : rule__Crement__Group__1__Impl ;
     public final void rule__Crement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4052:1: ( rule__Crement__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4053:2: rule__Crement__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4050:1: ( rule__Crement__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4051:2: rule__Crement__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Crement__Group__1__Impl_in_rule__Crement__Group__18307);
+            pushFollow(FOLLOW_rule__Crement__Group__1__Impl_in_rule__Crement__Group__18305);
             rule__Crement__Group__1__Impl();
 
             state._fsp--;
@@ -12158,25 +12071,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Crement__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4059:1: rule__Crement__Group__1__Impl : ( ( rule__Crement__OpAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4057:1: rule__Crement__Group__1__Impl : ( ( rule__Crement__OpAssignment_1 ) ) ;
     public final void rule__Crement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4063:1: ( ( ( rule__Crement__OpAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4064:1: ( ( rule__Crement__OpAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4061:1: ( ( ( rule__Crement__OpAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4062:1: ( ( rule__Crement__OpAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4064:1: ( ( rule__Crement__OpAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4065:1: ( rule__Crement__OpAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4062:1: ( ( rule__Crement__OpAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4063:1: ( rule__Crement__OpAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCrementAccess().getOpAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4066:1: ( rule__Crement__OpAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4066:2: rule__Crement__OpAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4064:1: ( rule__Crement__OpAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4064:2: rule__Crement__OpAssignment_1
             {
-            pushFollow(FOLLOW_rule__Crement__OpAssignment_1_in_rule__Crement__Group__1__Impl8334);
+            pushFollow(FOLLOW_rule__Crement__OpAssignment_1_in_rule__Crement__Group__1__Impl8332);
             rule__Crement__OpAssignment_1();
 
             state._fsp--;
@@ -12209,21 +12122,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4080:1: rule__If__Group__0 : rule__If__Group__0__Impl rule__If__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4078:1: rule__If__Group__0 : rule__If__Group__0__Impl rule__If__Group__1 ;
     public final void rule__If__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4084:1: ( rule__If__Group__0__Impl rule__If__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4085:2: rule__If__Group__0__Impl rule__If__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4082:1: ( rule__If__Group__0__Impl rule__If__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4083:2: rule__If__Group__0__Impl rule__If__Group__1
             {
-            pushFollow(FOLLOW_rule__If__Group__0__Impl_in_rule__If__Group__08368);
+            pushFollow(FOLLOW_rule__If__Group__0__Impl_in_rule__If__Group__08366);
             rule__If__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__If__Group__1_in_rule__If__Group__08371);
+            pushFollow(FOLLOW_rule__If__Group__1_in_rule__If__Group__08369);
             rule__If__Group__1();
 
             state._fsp--;
@@ -12247,22 +12160,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4092:1: rule__If__Group__0__Impl : ( 'if' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4090:1: rule__If__Group__0__Impl : ( 'if' ) ;
     public final void rule__If__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4096:1: ( ( 'if' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4097:1: ( 'if' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4094:1: ( ( 'if' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4095:1: ( 'if' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4097:1: ( 'if' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4098:1: 'if'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4095:1: ( 'if' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4096:1: 'if'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getIfKeyword_0()); 
             }
-            match(input,46,FOLLOW_46_in_rule__If__Group__0__Impl8399); if (state.failed) return ;
+            match(input,46,FOLLOW_46_in_rule__If__Group__0__Impl8397); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getIfAccess().getIfKeyword_0()); 
             }
@@ -12288,21 +12201,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4111:1: rule__If__Group__1 : rule__If__Group__1__Impl rule__If__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4109:1: rule__If__Group__1 : rule__If__Group__1__Impl rule__If__Group__2 ;
     public final void rule__If__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4115:1: ( rule__If__Group__1__Impl rule__If__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4116:2: rule__If__Group__1__Impl rule__If__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4113:1: ( rule__If__Group__1__Impl rule__If__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4114:2: rule__If__Group__1__Impl rule__If__Group__2
             {
-            pushFollow(FOLLOW_rule__If__Group__1__Impl_in_rule__If__Group__18430);
+            pushFollow(FOLLOW_rule__If__Group__1__Impl_in_rule__If__Group__18428);
             rule__If__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__If__Group__2_in_rule__If__Group__18433);
+            pushFollow(FOLLOW_rule__If__Group__2_in_rule__If__Group__18431);
             rule__If__Group__2();
 
             state._fsp--;
@@ -12326,22 +12239,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4123:1: rule__If__Group__1__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4121:1: rule__If__Group__1__Impl : ( '(' ) ;
     public final void rule__If__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4127:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4128:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4125:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4126:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4128:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4129:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4126:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4127:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getLeftParenthesisKeyword_1()); 
             }
-            match(input,37,FOLLOW_37_in_rule__If__Group__1__Impl8461); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__If__Group__1__Impl8459); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getIfAccess().getLeftParenthesisKeyword_1()); 
             }
@@ -12367,21 +12280,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4142:1: rule__If__Group__2 : rule__If__Group__2__Impl rule__If__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4140:1: rule__If__Group__2 : rule__If__Group__2__Impl rule__If__Group__3 ;
     public final void rule__If__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4146:1: ( rule__If__Group__2__Impl rule__If__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4147:2: rule__If__Group__2__Impl rule__If__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4144:1: ( rule__If__Group__2__Impl rule__If__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4145:2: rule__If__Group__2__Impl rule__If__Group__3
             {
-            pushFollow(FOLLOW_rule__If__Group__2__Impl_in_rule__If__Group__28492);
+            pushFollow(FOLLOW_rule__If__Group__2__Impl_in_rule__If__Group__28490);
             rule__If__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__If__Group__3_in_rule__If__Group__28495);
+            pushFollow(FOLLOW_rule__If__Group__3_in_rule__If__Group__28493);
             rule__If__Group__3();
 
             state._fsp--;
@@ -12405,25 +12318,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4154:1: rule__If__Group__2__Impl : ( ( rule__If__ExAssignment_2 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4152:1: rule__If__Group__2__Impl : ( ( rule__If__ExAssignment_2 ) ) ;
     public final void rule__If__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4158:1: ( ( ( rule__If__ExAssignment_2 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4159:1: ( ( rule__If__ExAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4156:1: ( ( ( rule__If__ExAssignment_2 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4157:1: ( ( rule__If__ExAssignment_2 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4159:1: ( ( rule__If__ExAssignment_2 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4160:1: ( rule__If__ExAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4157:1: ( ( rule__If__ExAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4158:1: ( rule__If__ExAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getExAssignment_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4161:1: ( rule__If__ExAssignment_2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4161:2: rule__If__ExAssignment_2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4159:1: ( rule__If__ExAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4159:2: rule__If__ExAssignment_2
             {
-            pushFollow(FOLLOW_rule__If__ExAssignment_2_in_rule__If__Group__2__Impl8522);
+            pushFollow(FOLLOW_rule__If__ExAssignment_2_in_rule__If__Group__2__Impl8520);
             rule__If__ExAssignment_2();
 
             state._fsp--;
@@ -12456,21 +12369,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4171:1: rule__If__Group__3 : rule__If__Group__3__Impl rule__If__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4169:1: rule__If__Group__3 : rule__If__Group__3__Impl rule__If__Group__4 ;
     public final void rule__If__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4175:1: ( rule__If__Group__3__Impl rule__If__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4176:2: rule__If__Group__3__Impl rule__If__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4173:1: ( rule__If__Group__3__Impl rule__If__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4174:2: rule__If__Group__3__Impl rule__If__Group__4
             {
-            pushFollow(FOLLOW_rule__If__Group__3__Impl_in_rule__If__Group__38552);
+            pushFollow(FOLLOW_rule__If__Group__3__Impl_in_rule__If__Group__38550);
             rule__If__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__If__Group__4_in_rule__If__Group__38555);
+            pushFollow(FOLLOW_rule__If__Group__4_in_rule__If__Group__38553);
             rule__If__Group__4();
 
             state._fsp--;
@@ -12494,22 +12407,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4183:1: rule__If__Group__3__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4181:1: rule__If__Group__3__Impl : ( ')' ) ;
     public final void rule__If__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4187:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4188:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4185:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4186:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4188:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4189:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4186:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4187:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getRightParenthesisKeyword_3()); 
             }
-            match(input,39,FOLLOW_39_in_rule__If__Group__3__Impl8583); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__If__Group__3__Impl8581); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getIfAccess().getRightParenthesisKeyword_3()); 
             }
@@ -12535,16 +12448,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4202:1: rule__If__Group__4 : rule__If__Group__4__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4200:1: rule__If__Group__4 : rule__If__Group__4__Impl ;
     public final void rule__If__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4206:1: ( rule__If__Group__4__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4207:2: rule__If__Group__4__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4204:1: ( rule__If__Group__4__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4205:2: rule__If__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__If__Group__4__Impl_in_rule__If__Group__48614);
+            pushFollow(FOLLOW_rule__If__Group__4__Impl_in_rule__If__Group__48612);
             rule__If__Group__4__Impl();
 
             state._fsp--;
@@ -12568,25 +12481,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4213:1: rule__If__Group__4__Impl : ( ( rule__If__BlAssignment_4 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4211:1: rule__If__Group__4__Impl : ( ( rule__If__BlAssignment_4 ) ) ;
     public final void rule__If__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4217:1: ( ( ( rule__If__BlAssignment_4 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4218:1: ( ( rule__If__BlAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4215:1: ( ( ( rule__If__BlAssignment_4 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4216:1: ( ( rule__If__BlAssignment_4 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4218:1: ( ( rule__If__BlAssignment_4 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4219:1: ( rule__If__BlAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4216:1: ( ( rule__If__BlAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4217:1: ( rule__If__BlAssignment_4 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getBlAssignment_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4220:1: ( rule__If__BlAssignment_4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4220:2: rule__If__BlAssignment_4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4218:1: ( rule__If__BlAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4218:2: rule__If__BlAssignment_4
             {
-            pushFollow(FOLLOW_rule__If__BlAssignment_4_in_rule__If__Group__4__Impl8641);
+            pushFollow(FOLLOW_rule__If__BlAssignment_4_in_rule__If__Group__4__Impl8639);
             rule__If__BlAssignment_4();
 
             state._fsp--;
@@ -12619,21 +12532,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Else__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4240:1: rule__Else__Group__0 : rule__Else__Group__0__Impl rule__Else__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4238:1: rule__Else__Group__0 : rule__Else__Group__0__Impl rule__Else__Group__1 ;
     public final void rule__Else__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4244:1: ( rule__Else__Group__0__Impl rule__Else__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4245:2: rule__Else__Group__0__Impl rule__Else__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4242:1: ( rule__Else__Group__0__Impl rule__Else__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4243:2: rule__Else__Group__0__Impl rule__Else__Group__1
             {
-            pushFollow(FOLLOW_rule__Else__Group__0__Impl_in_rule__Else__Group__08681);
+            pushFollow(FOLLOW_rule__Else__Group__0__Impl_in_rule__Else__Group__08679);
             rule__Else__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Else__Group__1_in_rule__Else__Group__08684);
+            pushFollow(FOLLOW_rule__Else__Group__1_in_rule__Else__Group__08682);
             rule__Else__Group__1();
 
             state._fsp--;
@@ -12657,22 +12570,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Else__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4252:1: rule__Else__Group__0__Impl : ( 'else' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4250:1: rule__Else__Group__0__Impl : ( 'else' ) ;
     public final void rule__Else__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4256:1: ( ( 'else' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4257:1: ( 'else' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4254:1: ( ( 'else' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4255:1: ( 'else' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4257:1: ( 'else' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4258:1: 'else'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4255:1: ( 'else' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4256:1: 'else'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getElseAccess().getElseKeyword_0()); 
             }
-            match(input,47,FOLLOW_47_in_rule__Else__Group__0__Impl8712); if (state.failed) return ;
+            match(input,47,FOLLOW_47_in_rule__Else__Group__0__Impl8710); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getElseAccess().getElseKeyword_0()); 
             }
@@ -12698,16 +12611,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Else__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4271:1: rule__Else__Group__1 : rule__Else__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4269:1: rule__Else__Group__1 : rule__Else__Group__1__Impl ;
     public final void rule__Else__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4275:1: ( rule__Else__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4276:2: rule__Else__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4273:1: ( rule__Else__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4274:2: rule__Else__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Else__Group__1__Impl_in_rule__Else__Group__18743);
+            pushFollow(FOLLOW_rule__Else__Group__1__Impl_in_rule__Else__Group__18741);
             rule__Else__Group__1__Impl();
 
             state._fsp--;
@@ -12731,25 +12644,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Else__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4282:1: rule__Else__Group__1__Impl : ( ( rule__Else__ExAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4280:1: rule__Else__Group__1__Impl : ( ( rule__Else__ExAssignment_1 ) ) ;
     public final void rule__Else__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4286:1: ( ( ( rule__Else__ExAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4287:1: ( ( rule__Else__ExAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4284:1: ( ( ( rule__Else__ExAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4285:1: ( ( rule__Else__ExAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4287:1: ( ( rule__Else__ExAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4288:1: ( rule__Else__ExAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4285:1: ( ( rule__Else__ExAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4286:1: ( rule__Else__ExAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getElseAccess().getExAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4289:1: ( rule__Else__ExAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4289:2: rule__Else__ExAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4287:1: ( rule__Else__ExAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4287:2: rule__Else__ExAssignment_1
             {
-            pushFollow(FOLLOW_rule__Else__ExAssignment_1_in_rule__Else__Group__1__Impl8770);
+            pushFollow(FOLLOW_rule__Else__ExAssignment_1_in_rule__Else__Group__1__Impl8768);
             rule__Else__ExAssignment_1();
 
             state._fsp--;
@@ -12782,21 +12695,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4303:1: rule__For__Group__0 : rule__For__Group__0__Impl rule__For__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4301:1: rule__For__Group__0 : rule__For__Group__0__Impl rule__For__Group__1 ;
     public final void rule__For__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4307:1: ( rule__For__Group__0__Impl rule__For__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4308:2: rule__For__Group__0__Impl rule__For__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4305:1: ( rule__For__Group__0__Impl rule__For__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4306:2: rule__For__Group__0__Impl rule__For__Group__1
             {
-            pushFollow(FOLLOW_rule__For__Group__0__Impl_in_rule__For__Group__08804);
+            pushFollow(FOLLOW_rule__For__Group__0__Impl_in_rule__For__Group__08802);
             rule__For__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__1_in_rule__For__Group__08807);
+            pushFollow(FOLLOW_rule__For__Group__1_in_rule__For__Group__08805);
             rule__For__Group__1();
 
             state._fsp--;
@@ -12820,22 +12733,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4315:1: rule__For__Group__0__Impl : ( 'for' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4313:1: rule__For__Group__0__Impl : ( 'for' ) ;
     public final void rule__For__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4319:1: ( ( 'for' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4320:1: ( 'for' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4317:1: ( ( 'for' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4318:1: ( 'for' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4320:1: ( 'for' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4321:1: 'for'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4318:1: ( 'for' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4319:1: 'for'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getForKeyword_0()); 
             }
-            match(input,48,FOLLOW_48_in_rule__For__Group__0__Impl8835); if (state.failed) return ;
+            match(input,48,FOLLOW_48_in_rule__For__Group__0__Impl8833); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getForAccess().getForKeyword_0()); 
             }
@@ -12861,21 +12774,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4334:1: rule__For__Group__1 : rule__For__Group__1__Impl rule__For__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4332:1: rule__For__Group__1 : rule__For__Group__1__Impl rule__For__Group__2 ;
     public final void rule__For__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4338:1: ( rule__For__Group__1__Impl rule__For__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4339:2: rule__For__Group__1__Impl rule__For__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4336:1: ( rule__For__Group__1__Impl rule__For__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4337:2: rule__For__Group__1__Impl rule__For__Group__2
             {
-            pushFollow(FOLLOW_rule__For__Group__1__Impl_in_rule__For__Group__18866);
+            pushFollow(FOLLOW_rule__For__Group__1__Impl_in_rule__For__Group__18864);
             rule__For__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__2_in_rule__For__Group__18869);
+            pushFollow(FOLLOW_rule__For__Group__2_in_rule__For__Group__18867);
             rule__For__Group__2();
 
             state._fsp--;
@@ -12899,22 +12812,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4346:1: rule__For__Group__1__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4344:1: rule__For__Group__1__Impl : ( '(' ) ;
     public final void rule__For__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4350:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4351:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4348:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4349:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4351:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4352:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4349:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4350:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getLeftParenthesisKeyword_1()); 
             }
-            match(input,37,FOLLOW_37_in_rule__For__Group__1__Impl8897); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__For__Group__1__Impl8895); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getForAccess().getLeftParenthesisKeyword_1()); 
             }
@@ -12940,21 +12853,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4365:1: rule__For__Group__2 : rule__For__Group__2__Impl rule__For__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4363:1: rule__For__Group__2 : rule__For__Group__2__Impl rule__For__Group__3 ;
     public final void rule__For__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4369:1: ( rule__For__Group__2__Impl rule__For__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4370:2: rule__For__Group__2__Impl rule__For__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4367:1: ( rule__For__Group__2__Impl rule__For__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4368:2: rule__For__Group__2__Impl rule__For__Group__3
             {
-            pushFollow(FOLLOW_rule__For__Group__2__Impl_in_rule__For__Group__28928);
+            pushFollow(FOLLOW_rule__For__Group__2__Impl_in_rule__For__Group__28926);
             rule__For__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__3_in_rule__For__Group__28931);
+            pushFollow(FOLLOW_rule__For__Group__3_in_rule__For__Group__28929);
             rule__For__Group__3();
 
             state._fsp--;
@@ -12978,25 +12891,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4377:1: rule__For__Group__2__Impl : ( ( rule__For__InitAssignment_2 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4375:1: rule__For__Group__2__Impl : ( ( rule__For__InitAssignment_2 ) ) ;
     public final void rule__For__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4381:1: ( ( ( rule__For__InitAssignment_2 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4382:1: ( ( rule__For__InitAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4379:1: ( ( ( rule__For__InitAssignment_2 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4380:1: ( ( rule__For__InitAssignment_2 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4382:1: ( ( rule__For__InitAssignment_2 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4383:1: ( rule__For__InitAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4380:1: ( ( rule__For__InitAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4381:1: ( rule__For__InitAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getInitAssignment_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4384:1: ( rule__For__InitAssignment_2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4384:2: rule__For__InitAssignment_2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4382:1: ( rule__For__InitAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4382:2: rule__For__InitAssignment_2
             {
-            pushFollow(FOLLOW_rule__For__InitAssignment_2_in_rule__For__Group__2__Impl8958);
+            pushFollow(FOLLOW_rule__For__InitAssignment_2_in_rule__For__Group__2__Impl8956);
             rule__For__InitAssignment_2();
 
             state._fsp--;
@@ -13029,21 +12942,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4394:1: rule__For__Group__3 : rule__For__Group__3__Impl rule__For__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4392:1: rule__For__Group__3 : rule__For__Group__3__Impl rule__For__Group__4 ;
     public final void rule__For__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4398:1: ( rule__For__Group__3__Impl rule__For__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4399:2: rule__For__Group__3__Impl rule__For__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4396:1: ( rule__For__Group__3__Impl rule__For__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4397:2: rule__For__Group__3__Impl rule__For__Group__4
             {
-            pushFollow(FOLLOW_rule__For__Group__3__Impl_in_rule__For__Group__38988);
+            pushFollow(FOLLOW_rule__For__Group__3__Impl_in_rule__For__Group__38986);
             rule__For__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__4_in_rule__For__Group__38991);
+            pushFollow(FOLLOW_rule__For__Group__4_in_rule__For__Group__38989);
             rule__For__Group__4();
 
             state._fsp--;
@@ -13067,22 +12980,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4406:1: rule__For__Group__3__Impl : ( ';' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4404:1: rule__For__Group__3__Impl : ( ';' ) ;
     public final void rule__For__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4410:1: ( ( ';' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4411:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4408:1: ( ( ';' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4409:1: ( ';' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4411:1: ( ';' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4412:1: ';'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4409:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4410:1: ';'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getSemicolonKeyword_3()); 
             }
-            match(input,43,FOLLOW_43_in_rule__For__Group__3__Impl9019); if (state.failed) return ;
+            match(input,43,FOLLOW_43_in_rule__For__Group__3__Impl9017); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getForAccess().getSemicolonKeyword_3()); 
             }
@@ -13108,21 +13021,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4425:1: rule__For__Group__4 : rule__For__Group__4__Impl rule__For__Group__5 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4423:1: rule__For__Group__4 : rule__For__Group__4__Impl rule__For__Group__5 ;
     public final void rule__For__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4429:1: ( rule__For__Group__4__Impl rule__For__Group__5 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4430:2: rule__For__Group__4__Impl rule__For__Group__5
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4427:1: ( rule__For__Group__4__Impl rule__For__Group__5 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4428:2: rule__For__Group__4__Impl rule__For__Group__5
             {
-            pushFollow(FOLLOW_rule__For__Group__4__Impl_in_rule__For__Group__49050);
+            pushFollow(FOLLOW_rule__For__Group__4__Impl_in_rule__For__Group__49048);
             rule__For__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__5_in_rule__For__Group__49053);
+            pushFollow(FOLLOW_rule__For__Group__5_in_rule__For__Group__49051);
             rule__For__Group__5();
 
             state._fsp--;
@@ -13146,25 +13059,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4437:1: rule__For__Group__4__Impl : ( ( rule__For__CheckAssignment_4 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4435:1: rule__For__Group__4__Impl : ( ( rule__For__CheckAssignment_4 ) ) ;
     public final void rule__For__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4441:1: ( ( ( rule__For__CheckAssignment_4 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4442:1: ( ( rule__For__CheckAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4439:1: ( ( ( rule__For__CheckAssignment_4 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4440:1: ( ( rule__For__CheckAssignment_4 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4442:1: ( ( rule__For__CheckAssignment_4 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4443:1: ( rule__For__CheckAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4440:1: ( ( rule__For__CheckAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4441:1: ( rule__For__CheckAssignment_4 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getCheckAssignment_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4444:1: ( rule__For__CheckAssignment_4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4444:2: rule__For__CheckAssignment_4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4442:1: ( rule__For__CheckAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4442:2: rule__For__CheckAssignment_4
             {
-            pushFollow(FOLLOW_rule__For__CheckAssignment_4_in_rule__For__Group__4__Impl9080);
+            pushFollow(FOLLOW_rule__For__CheckAssignment_4_in_rule__For__Group__4__Impl9078);
             rule__For__CheckAssignment_4();
 
             state._fsp--;
@@ -13197,21 +13110,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__5"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4454:1: rule__For__Group__5 : rule__For__Group__5__Impl rule__For__Group__6 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4452:1: rule__For__Group__5 : rule__For__Group__5__Impl rule__For__Group__6 ;
     public final void rule__For__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4458:1: ( rule__For__Group__5__Impl rule__For__Group__6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4459:2: rule__For__Group__5__Impl rule__For__Group__6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4456:1: ( rule__For__Group__5__Impl rule__For__Group__6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4457:2: rule__For__Group__5__Impl rule__For__Group__6
             {
-            pushFollow(FOLLOW_rule__For__Group__5__Impl_in_rule__For__Group__59110);
+            pushFollow(FOLLOW_rule__For__Group__5__Impl_in_rule__For__Group__59108);
             rule__For__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__6_in_rule__For__Group__59113);
+            pushFollow(FOLLOW_rule__For__Group__6_in_rule__For__Group__59111);
             rule__For__Group__6();
 
             state._fsp--;
@@ -13235,22 +13148,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__5__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4466:1: rule__For__Group__5__Impl : ( ';' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4464:1: rule__For__Group__5__Impl : ( ';' ) ;
     public final void rule__For__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4470:1: ( ( ';' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4471:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4468:1: ( ( ';' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4469:1: ( ';' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4471:1: ( ';' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4472:1: ';'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4469:1: ( ';' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4470:1: ';'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getSemicolonKeyword_5()); 
             }
-            match(input,43,FOLLOW_43_in_rule__For__Group__5__Impl9141); if (state.failed) return ;
+            match(input,43,FOLLOW_43_in_rule__For__Group__5__Impl9139); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getForAccess().getSemicolonKeyword_5()); 
             }
@@ -13276,21 +13189,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4485:1: rule__For__Group__6 : rule__For__Group__6__Impl rule__For__Group__7 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4483:1: rule__For__Group__6 : rule__For__Group__6__Impl rule__For__Group__7 ;
     public final void rule__For__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4489:1: ( rule__For__Group__6__Impl rule__For__Group__7 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4490:2: rule__For__Group__6__Impl rule__For__Group__7
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4487:1: ( rule__For__Group__6__Impl rule__For__Group__7 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4488:2: rule__For__Group__6__Impl rule__For__Group__7
             {
-            pushFollow(FOLLOW_rule__For__Group__6__Impl_in_rule__For__Group__69172);
+            pushFollow(FOLLOW_rule__For__Group__6__Impl_in_rule__For__Group__69170);
             rule__For__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__7_in_rule__For__Group__69175);
+            pushFollow(FOLLOW_rule__For__Group__7_in_rule__For__Group__69173);
             rule__For__Group__7();
 
             state._fsp--;
@@ -13314,25 +13227,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__6__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4497:1: rule__For__Group__6__Impl : ( ( rule__For__ActionAssignment_6 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4495:1: rule__For__Group__6__Impl : ( ( rule__For__ActionAssignment_6 ) ) ;
     public final void rule__For__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4501:1: ( ( ( rule__For__ActionAssignment_6 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4502:1: ( ( rule__For__ActionAssignment_6 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4499:1: ( ( ( rule__For__ActionAssignment_6 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4500:1: ( ( rule__For__ActionAssignment_6 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4502:1: ( ( rule__For__ActionAssignment_6 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4503:1: ( rule__For__ActionAssignment_6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4500:1: ( ( rule__For__ActionAssignment_6 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4501:1: ( rule__For__ActionAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getActionAssignment_6()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4504:1: ( rule__For__ActionAssignment_6 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4504:2: rule__For__ActionAssignment_6
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4502:1: ( rule__For__ActionAssignment_6 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4502:2: rule__For__ActionAssignment_6
             {
-            pushFollow(FOLLOW_rule__For__ActionAssignment_6_in_rule__For__Group__6__Impl9202);
+            pushFollow(FOLLOW_rule__For__ActionAssignment_6_in_rule__For__Group__6__Impl9200);
             rule__For__ActionAssignment_6();
 
             state._fsp--;
@@ -13365,21 +13278,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__7"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4514:1: rule__For__Group__7 : rule__For__Group__7__Impl rule__For__Group__8 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4512:1: rule__For__Group__7 : rule__For__Group__7__Impl rule__For__Group__8 ;
     public final void rule__For__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4518:1: ( rule__For__Group__7__Impl rule__For__Group__8 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4519:2: rule__For__Group__7__Impl rule__For__Group__8
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4516:1: ( rule__For__Group__7__Impl rule__For__Group__8 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4517:2: rule__For__Group__7__Impl rule__For__Group__8
             {
-            pushFollow(FOLLOW_rule__For__Group__7__Impl_in_rule__For__Group__79232);
+            pushFollow(FOLLOW_rule__For__Group__7__Impl_in_rule__For__Group__79230);
             rule__For__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__For__Group__8_in_rule__For__Group__79235);
+            pushFollow(FOLLOW_rule__For__Group__8_in_rule__For__Group__79233);
             rule__For__Group__8();
 
             state._fsp--;
@@ -13403,22 +13316,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__7__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4526:1: rule__For__Group__7__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4524:1: rule__For__Group__7__Impl : ( ')' ) ;
     public final void rule__For__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4530:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4531:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4528:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4529:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4531:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4532:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4529:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4530:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getRightParenthesisKeyword_7()); 
             }
-            match(input,39,FOLLOW_39_in_rule__For__Group__7__Impl9263); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__For__Group__7__Impl9261); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getForAccess().getRightParenthesisKeyword_7()); 
             }
@@ -13444,16 +13357,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__8"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4545:1: rule__For__Group__8 : rule__For__Group__8__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4543:1: rule__For__Group__8 : rule__For__Group__8__Impl ;
     public final void rule__For__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4549:1: ( rule__For__Group__8__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4550:2: rule__For__Group__8__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4547:1: ( rule__For__Group__8__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4548:2: rule__For__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__For__Group__8__Impl_in_rule__For__Group__89294);
+            pushFollow(FOLLOW_rule__For__Group__8__Impl_in_rule__For__Group__89292);
             rule__For__Group__8__Impl();
 
             state._fsp--;
@@ -13477,25 +13390,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__Group__8__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4556:1: rule__For__Group__8__Impl : ( ( rule__For__BlAssignment_8 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4554:1: rule__For__Group__8__Impl : ( ( rule__For__BlAssignment_8 ) ) ;
     public final void rule__For__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4560:1: ( ( ( rule__For__BlAssignment_8 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4561:1: ( ( rule__For__BlAssignment_8 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4558:1: ( ( ( rule__For__BlAssignment_8 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4559:1: ( ( rule__For__BlAssignment_8 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4561:1: ( ( rule__For__BlAssignment_8 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4562:1: ( rule__For__BlAssignment_8 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4559:1: ( ( rule__For__BlAssignment_8 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4560:1: ( rule__For__BlAssignment_8 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getBlAssignment_8()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4563:1: ( rule__For__BlAssignment_8 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4563:2: rule__For__BlAssignment_8
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4561:1: ( rule__For__BlAssignment_8 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4561:2: rule__For__BlAssignment_8
             {
-            pushFollow(FOLLOW_rule__For__BlAssignment_8_in_rule__For__Group__8__Impl9321);
+            pushFollow(FOLLOW_rule__For__BlAssignment_8_in_rule__For__Group__8__Impl9319);
             rule__For__BlAssignment_8();
 
             state._fsp--;
@@ -13528,21 +13441,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4591:1: rule__While__Group__0 : rule__While__Group__0__Impl rule__While__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4589:1: rule__While__Group__0 : rule__While__Group__0__Impl rule__While__Group__1 ;
     public final void rule__While__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4595:1: ( rule__While__Group__0__Impl rule__While__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4596:2: rule__While__Group__0__Impl rule__While__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4593:1: ( rule__While__Group__0__Impl rule__While__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4594:2: rule__While__Group__0__Impl rule__While__Group__1
             {
-            pushFollow(FOLLOW_rule__While__Group__0__Impl_in_rule__While__Group__09369);
+            pushFollow(FOLLOW_rule__While__Group__0__Impl_in_rule__While__Group__09367);
             rule__While__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__While__Group__1_in_rule__While__Group__09372);
+            pushFollow(FOLLOW_rule__While__Group__1_in_rule__While__Group__09370);
             rule__While__Group__1();
 
             state._fsp--;
@@ -13566,22 +13479,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4603:1: rule__While__Group__0__Impl : ( 'while' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4601:1: rule__While__Group__0__Impl : ( 'while' ) ;
     public final void rule__While__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4607:1: ( ( 'while' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4608:1: ( 'while' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4605:1: ( ( 'while' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4606:1: ( 'while' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4608:1: ( 'while' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4609:1: 'while'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4606:1: ( 'while' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4607:1: 'while'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getWhileKeyword_0()); 
             }
-            match(input,49,FOLLOW_49_in_rule__While__Group__0__Impl9400); if (state.failed) return ;
+            match(input,49,FOLLOW_49_in_rule__While__Group__0__Impl9398); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getWhileAccess().getWhileKeyword_0()); 
             }
@@ -13607,21 +13520,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4622:1: rule__While__Group__1 : rule__While__Group__1__Impl rule__While__Group__2 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4620:1: rule__While__Group__1 : rule__While__Group__1__Impl rule__While__Group__2 ;
     public final void rule__While__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4626:1: ( rule__While__Group__1__Impl rule__While__Group__2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4627:2: rule__While__Group__1__Impl rule__While__Group__2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4624:1: ( rule__While__Group__1__Impl rule__While__Group__2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4625:2: rule__While__Group__1__Impl rule__While__Group__2
             {
-            pushFollow(FOLLOW_rule__While__Group__1__Impl_in_rule__While__Group__19431);
+            pushFollow(FOLLOW_rule__While__Group__1__Impl_in_rule__While__Group__19429);
             rule__While__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__While__Group__2_in_rule__While__Group__19434);
+            pushFollow(FOLLOW_rule__While__Group__2_in_rule__While__Group__19432);
             rule__While__Group__2();
 
             state._fsp--;
@@ -13645,22 +13558,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4634:1: rule__While__Group__1__Impl : ( '(' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4632:1: rule__While__Group__1__Impl : ( '(' ) ;
     public final void rule__While__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4638:1: ( ( '(' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4639:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4636:1: ( ( '(' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4637:1: ( '(' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4639:1: ( '(' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4640:1: '('
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4637:1: ( '(' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4638:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getLeftParenthesisKeyword_1()); 
             }
-            match(input,37,FOLLOW_37_in_rule__While__Group__1__Impl9462); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__While__Group__1__Impl9460); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getWhileAccess().getLeftParenthesisKeyword_1()); 
             }
@@ -13686,21 +13599,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4653:1: rule__While__Group__2 : rule__While__Group__2__Impl rule__While__Group__3 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4651:1: rule__While__Group__2 : rule__While__Group__2__Impl rule__While__Group__3 ;
     public final void rule__While__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4657:1: ( rule__While__Group__2__Impl rule__While__Group__3 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4658:2: rule__While__Group__2__Impl rule__While__Group__3
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4655:1: ( rule__While__Group__2__Impl rule__While__Group__3 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4656:2: rule__While__Group__2__Impl rule__While__Group__3
             {
-            pushFollow(FOLLOW_rule__While__Group__2__Impl_in_rule__While__Group__29493);
+            pushFollow(FOLLOW_rule__While__Group__2__Impl_in_rule__While__Group__29491);
             rule__While__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__While__Group__3_in_rule__While__Group__29496);
+            pushFollow(FOLLOW_rule__While__Group__3_in_rule__While__Group__29494);
             rule__While__Group__3();
 
             state._fsp--;
@@ -13724,25 +13637,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__2__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4665:1: rule__While__Group__2__Impl : ( ( rule__While__ExAssignment_2 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4663:1: rule__While__Group__2__Impl : ( ( rule__While__ExAssignment_2 ) ) ;
     public final void rule__While__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4669:1: ( ( ( rule__While__ExAssignment_2 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4670:1: ( ( rule__While__ExAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4667:1: ( ( ( rule__While__ExAssignment_2 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4668:1: ( ( rule__While__ExAssignment_2 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4670:1: ( ( rule__While__ExAssignment_2 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4671:1: ( rule__While__ExAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4668:1: ( ( rule__While__ExAssignment_2 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4669:1: ( rule__While__ExAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getExAssignment_2()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4672:1: ( rule__While__ExAssignment_2 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4672:2: rule__While__ExAssignment_2
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4670:1: ( rule__While__ExAssignment_2 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4670:2: rule__While__ExAssignment_2
             {
-            pushFollow(FOLLOW_rule__While__ExAssignment_2_in_rule__While__Group__2__Impl9523);
+            pushFollow(FOLLOW_rule__While__ExAssignment_2_in_rule__While__Group__2__Impl9521);
             rule__While__ExAssignment_2();
 
             state._fsp--;
@@ -13775,21 +13688,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4682:1: rule__While__Group__3 : rule__While__Group__3__Impl rule__While__Group__4 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4680:1: rule__While__Group__3 : rule__While__Group__3__Impl rule__While__Group__4 ;
     public final void rule__While__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4686:1: ( rule__While__Group__3__Impl rule__While__Group__4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4687:2: rule__While__Group__3__Impl rule__While__Group__4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4684:1: ( rule__While__Group__3__Impl rule__While__Group__4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4685:2: rule__While__Group__3__Impl rule__While__Group__4
             {
-            pushFollow(FOLLOW_rule__While__Group__3__Impl_in_rule__While__Group__39553);
+            pushFollow(FOLLOW_rule__While__Group__3__Impl_in_rule__While__Group__39551);
             rule__While__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__While__Group__4_in_rule__While__Group__39556);
+            pushFollow(FOLLOW_rule__While__Group__4_in_rule__While__Group__39554);
             rule__While__Group__4();
 
             state._fsp--;
@@ -13813,22 +13726,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__3__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4694:1: rule__While__Group__3__Impl : ( ')' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4692:1: rule__While__Group__3__Impl : ( ')' ) ;
     public final void rule__While__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4698:1: ( ( ')' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4699:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4696:1: ( ( ')' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4697:1: ( ')' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4699:1: ( ')' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4700:1: ')'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4697:1: ( ')' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4698:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getRightParenthesisKeyword_3()); 
             }
-            match(input,39,FOLLOW_39_in_rule__While__Group__3__Impl9584); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__While__Group__3__Impl9582); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getWhileAccess().getRightParenthesisKeyword_3()); 
             }
@@ -13854,16 +13767,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4713:1: rule__While__Group__4 : rule__While__Group__4__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4711:1: rule__While__Group__4 : rule__While__Group__4__Impl ;
     public final void rule__While__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4717:1: ( rule__While__Group__4__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4718:2: rule__While__Group__4__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4715:1: ( rule__While__Group__4__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4716:2: rule__While__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__While__Group__4__Impl_in_rule__While__Group__49615);
+            pushFollow(FOLLOW_rule__While__Group__4__Impl_in_rule__While__Group__49613);
             rule__While__Group__4__Impl();
 
             state._fsp--;
@@ -13887,25 +13800,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__Group__4__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4724:1: rule__While__Group__4__Impl : ( ( rule__While__BlAssignment_4 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4722:1: rule__While__Group__4__Impl : ( ( rule__While__BlAssignment_4 ) ) ;
     public final void rule__While__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4728:1: ( ( ( rule__While__BlAssignment_4 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4729:1: ( ( rule__While__BlAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4726:1: ( ( ( rule__While__BlAssignment_4 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4727:1: ( ( rule__While__BlAssignment_4 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4729:1: ( ( rule__While__BlAssignment_4 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4730:1: ( rule__While__BlAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4727:1: ( ( rule__While__BlAssignment_4 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4728:1: ( rule__While__BlAssignment_4 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getBlAssignment_4()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4731:1: ( rule__While__BlAssignment_4 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4731:2: rule__While__BlAssignment_4
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4729:1: ( rule__While__BlAssignment_4 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4729:2: rule__While__BlAssignment_4
             {
-            pushFollow(FOLLOW_rule__While__BlAssignment_4_in_rule__While__Group__4__Impl9642);
+            pushFollow(FOLLOW_rule__While__BlAssignment_4_in_rule__While__Group__4__Impl9640);
             rule__While__BlAssignment_4();
 
             state._fsp--;
@@ -13938,21 +13851,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Declaration__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4751:1: rule__Declaration__Group__0 : rule__Declaration__Group__0__Impl rule__Declaration__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4749:1: rule__Declaration__Group__0 : rule__Declaration__Group__0__Impl rule__Declaration__Group__1 ;
     public final void rule__Declaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4755:1: ( rule__Declaration__Group__0__Impl rule__Declaration__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4756:2: rule__Declaration__Group__0__Impl rule__Declaration__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4753:1: ( rule__Declaration__Group__0__Impl rule__Declaration__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4754:2: rule__Declaration__Group__0__Impl rule__Declaration__Group__1
             {
-            pushFollow(FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__09682);
+            pushFollow(FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__09680);
             rule__Declaration__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__09685);
+            pushFollow(FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__09683);
             rule__Declaration__Group__1();
 
             state._fsp--;
@@ -13976,25 +13889,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Declaration__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4763:1: rule__Declaration__Group__0__Impl : ( ( rule__Declaration__TypeAssignment_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4761:1: rule__Declaration__Group__0__Impl : ( ( rule__Declaration__TypeAssignment_0 ) ) ;
     public final void rule__Declaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4767:1: ( ( ( rule__Declaration__TypeAssignment_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4768:1: ( ( rule__Declaration__TypeAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4765:1: ( ( ( rule__Declaration__TypeAssignment_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4766:1: ( ( rule__Declaration__TypeAssignment_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4768:1: ( ( rule__Declaration__TypeAssignment_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4769:1: ( rule__Declaration__TypeAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4766:1: ( ( rule__Declaration__TypeAssignment_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4767:1: ( rule__Declaration__TypeAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationAccess().getTypeAssignment_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4770:1: ( rule__Declaration__TypeAssignment_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4770:2: rule__Declaration__TypeAssignment_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4768:1: ( rule__Declaration__TypeAssignment_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4768:2: rule__Declaration__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl9712);
+            pushFollow(FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl9710);
             rule__Declaration__TypeAssignment_0();
 
             state._fsp--;
@@ -14027,16 +13940,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Declaration__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4780:1: rule__Declaration__Group__1 : rule__Declaration__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4778:1: rule__Declaration__Group__1 : rule__Declaration__Group__1__Impl ;
     public final void rule__Declaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4784:1: ( rule__Declaration__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4785:2: rule__Declaration__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4782:1: ( rule__Declaration__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4783:2: rule__Declaration__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__19742);
+            pushFollow(FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__19740);
             rule__Declaration__Group__1__Impl();
 
             state._fsp--;
@@ -14060,25 +13973,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Declaration__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4791:1: rule__Declaration__Group__1__Impl : ( ( rule__Declaration__NameAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4789:1: rule__Declaration__Group__1__Impl : ( ( rule__Declaration__NameAssignment_1 ) ) ;
     public final void rule__Declaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4795:1: ( ( ( rule__Declaration__NameAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4796:1: ( ( rule__Declaration__NameAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4793:1: ( ( ( rule__Declaration__NameAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4794:1: ( ( rule__Declaration__NameAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4796:1: ( ( rule__Declaration__NameAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4797:1: ( rule__Declaration__NameAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4794:1: ( ( rule__Declaration__NameAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4795:1: ( rule__Declaration__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationAccess().getNameAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4798:1: ( rule__Declaration__NameAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4798:2: rule__Declaration__NameAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4796:1: ( rule__Declaration__NameAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4796:2: rule__Declaration__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Declaration__NameAssignment_1_in_rule__Declaration__Group__1__Impl9769);
+            pushFollow(FOLLOW_rule__Declaration__NameAssignment_1_in_rule__Declaration__Group__1__Impl9767);
             rule__Declaration__NameAssignment_1();
 
             state._fsp--;
@@ -14111,21 +14024,21 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Return__Group__0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4812:1: rule__Return__Group__0 : rule__Return__Group__0__Impl rule__Return__Group__1 ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4810:1: rule__Return__Group__0 : rule__Return__Group__0__Impl rule__Return__Group__1 ;
     public final void rule__Return__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4816:1: ( rule__Return__Group__0__Impl rule__Return__Group__1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4817:2: rule__Return__Group__0__Impl rule__Return__Group__1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4814:1: ( rule__Return__Group__0__Impl rule__Return__Group__1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4815:2: rule__Return__Group__0__Impl rule__Return__Group__1
             {
-            pushFollow(FOLLOW_rule__Return__Group__0__Impl_in_rule__Return__Group__09803);
+            pushFollow(FOLLOW_rule__Return__Group__0__Impl_in_rule__Return__Group__09801);
             rule__Return__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Return__Group__1_in_rule__Return__Group__09806);
+            pushFollow(FOLLOW_rule__Return__Group__1_in_rule__Return__Group__09804);
             rule__Return__Group__1();
 
             state._fsp--;
@@ -14149,22 +14062,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Return__Group__0__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4824:1: rule__Return__Group__0__Impl : ( 'return' ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4822:1: rule__Return__Group__0__Impl : ( 'return' ) ;
     public final void rule__Return__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4828:1: ( ( 'return' ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4829:1: ( 'return' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4826:1: ( ( 'return' ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4827:1: ( 'return' )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4829:1: ( 'return' )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4830:1: 'return'
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4827:1: ( 'return' )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4828:1: 'return'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnAccess().getReturnKeyword_0()); 
             }
-            match(input,50,FOLLOW_50_in_rule__Return__Group__0__Impl9834); if (state.failed) return ;
+            match(input,50,FOLLOW_50_in_rule__Return__Group__0__Impl9832); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getReturnAccess().getReturnKeyword_0()); 
             }
@@ -14190,16 +14103,16 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Return__Group__1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4843:1: rule__Return__Group__1 : rule__Return__Group__1__Impl ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4841:1: rule__Return__Group__1 : rule__Return__Group__1__Impl ;
     public final void rule__Return__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4847:1: ( rule__Return__Group__1__Impl )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4848:2: rule__Return__Group__1__Impl
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4845:1: ( rule__Return__Group__1__Impl )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4846:2: rule__Return__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Return__Group__1__Impl_in_rule__Return__Group__19865);
+            pushFollow(FOLLOW_rule__Return__Group__1__Impl_in_rule__Return__Group__19863);
             rule__Return__Group__1__Impl();
 
             state._fsp--;
@@ -14223,25 +14136,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Return__Group__1__Impl"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4854:1: rule__Return__Group__1__Impl : ( ( rule__Return__ValAssignment_1 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4852:1: rule__Return__Group__1__Impl : ( ( rule__Return__ValAssignment_1 ) ) ;
     public final void rule__Return__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4858:1: ( ( ( rule__Return__ValAssignment_1 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4859:1: ( ( rule__Return__ValAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4856:1: ( ( ( rule__Return__ValAssignment_1 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4857:1: ( ( rule__Return__ValAssignment_1 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4859:1: ( ( rule__Return__ValAssignment_1 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4860:1: ( rule__Return__ValAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4857:1: ( ( rule__Return__ValAssignment_1 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4858:1: ( rule__Return__ValAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnAccess().getValAssignment_1()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4861:1: ( rule__Return__ValAssignment_1 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4861:2: rule__Return__ValAssignment_1
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4859:1: ( rule__Return__ValAssignment_1 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4859:2: rule__Return__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Return__ValAssignment_1_in_rule__Return__Group__1__Impl9892);
+            pushFollow(FOLLOW_rule__Return__ValAssignment_1_in_rule__Return__Group__1__Impl9890);
             rule__Return__ValAssignment_1();
 
             state._fsp--;
@@ -14274,22 +14187,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CLfile__ScriptsAssignment_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4876:1: rule__CLfile__ScriptsAssignment_0 : ( ruleScript ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4874:1: rule__CLfile__ScriptsAssignment_0 : ( ruleScript ) ;
     public final void rule__CLfile__ScriptsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4880:1: ( ( ruleScript ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4881:1: ( ruleScript )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4878:1: ( ( ruleScript ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4879:1: ( ruleScript )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4881:1: ( ruleScript )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4882:1: ruleScript
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4879:1: ( ruleScript )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4880:1: ruleScript
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCLfileAccess().getScriptsScriptParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleScript_in_rule__CLfile__ScriptsAssignment_09931);
+            pushFollow(FOLLOW_ruleScript_in_rule__CLfile__ScriptsAssignment_09929);
             ruleScript();
 
             state._fsp--;
@@ -14319,22 +14232,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CLfile__MetsAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4891:1: rule__CLfile__MetsAssignment_1 : ( ruleMetaMethods ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4889:1: rule__CLfile__MetsAssignment_1 : ( ruleMetaMethods ) ;
     public final void rule__CLfile__MetsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4895:1: ( ( ruleMetaMethods ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4896:1: ( ruleMetaMethods )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4893:1: ( ( ruleMetaMethods ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4894:1: ( ruleMetaMethods )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4896:1: ( ruleMetaMethods )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4897:1: ruleMetaMethods
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4894:1: ( ruleMetaMethods )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4895:1: ruleMetaMethods
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCLfileAccess().getMetsMetaMethodsParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleMetaMethods_in_rule__CLfile__MetsAssignment_19962);
+            pushFollow(FOLLOW_ruleMetaMethods_in_rule__CLfile__MetsAssignment_19960);
             ruleMetaMethods();
 
             state._fsp--;
@@ -14364,22 +14277,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__NameAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4906:1: rule__Script__NameAssignment_1 : ( RULE_CAPITALFIRST ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4904:1: rule__Script__NameAssignment_1 : ( RULE_CAPITALFIRST ) ;
     public final void rule__Script__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4910:1: ( ( RULE_CAPITALFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4911:1: ( RULE_CAPITALFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4908:1: ( ( RULE_CAPITALFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4909:1: ( RULE_CAPITALFIRST )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4911:1: ( RULE_CAPITALFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4912:1: RULE_CAPITALFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4909:1: ( RULE_CAPITALFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4910:1: RULE_CAPITALFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getNameCAPITALFIRSTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_CAPITALFIRST,FOLLOW_RULE_CAPITALFIRST_in_rule__Script__NameAssignment_19993); if (state.failed) return ;
+            match(input,RULE_CAPITALFIRST,FOLLOW_RULE_CAPITALFIRST_in_rule__Script__NameAssignment_19991); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getScriptAccess().getNameCAPITALFIRSTTerminalRuleCall_1_0()); 
             }
@@ -14405,25 +14318,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__RobottypesAssignment_4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4921:1: rule__Script__RobottypesAssignment_4 : ( ( rule__Script__RobottypesAlternatives_4_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4919:1: rule__Script__RobottypesAssignment_4 : ( ( rule__Script__RobottypesAlternatives_4_0 ) ) ;
     public final void rule__Script__RobottypesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4925:1: ( ( ( rule__Script__RobottypesAlternatives_4_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4926:1: ( ( rule__Script__RobottypesAlternatives_4_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4923:1: ( ( ( rule__Script__RobottypesAlternatives_4_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4924:1: ( ( rule__Script__RobottypesAlternatives_4_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4926:1: ( ( rule__Script__RobottypesAlternatives_4_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4927:1: ( rule__Script__RobottypesAlternatives_4_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4924:1: ( ( rule__Script__RobottypesAlternatives_4_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4925:1: ( rule__Script__RobottypesAlternatives_4_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobottypesAlternatives_4_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4928:1: ( rule__Script__RobottypesAlternatives_4_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4928:2: rule__Script__RobottypesAlternatives_4_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4926:1: ( rule__Script__RobottypesAlternatives_4_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4926:2: rule__Script__RobottypesAlternatives_4_0
             {
-            pushFollow(FOLLOW_rule__Script__RobottypesAlternatives_4_0_in_rule__Script__RobottypesAssignment_410024);
+            pushFollow(FOLLOW_rule__Script__RobottypesAlternatives_4_0_in_rule__Script__RobottypesAssignment_410022);
             rule__Script__RobottypesAlternatives_4_0();
 
             state._fsp--;
@@ -14456,25 +14369,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__RobotconfigsAssignment_6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4937:1: rule__Script__RobotconfigsAssignment_6 : ( ( rule__Script__RobotconfigsAlternatives_6_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4935:1: rule__Script__RobotconfigsAssignment_6 : ( ( rule__Script__RobotconfigsAlternatives_6_0 ) ) ;
     public final void rule__Script__RobotconfigsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4941:1: ( ( ( rule__Script__RobotconfigsAlternatives_6_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4942:1: ( ( rule__Script__RobotconfigsAlternatives_6_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4939:1: ( ( ( rule__Script__RobotconfigsAlternatives_6_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4940:1: ( ( rule__Script__RobotconfigsAlternatives_6_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4942:1: ( ( rule__Script__RobotconfigsAlternatives_6_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4943:1: ( rule__Script__RobotconfigsAlternatives_6_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4940:1: ( ( rule__Script__RobotconfigsAlternatives_6_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4941:1: ( rule__Script__RobotconfigsAlternatives_6_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobotconfigsAlternatives_6_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4944:1: ( rule__Script__RobotconfigsAlternatives_6_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4944:2: rule__Script__RobotconfigsAlternatives_6_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4942:1: ( rule__Script__RobotconfigsAlternatives_6_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4942:2: rule__Script__RobotconfigsAlternatives_6_0
             {
-            pushFollow(FOLLOW_rule__Script__RobotconfigsAlternatives_6_0_in_rule__Script__RobotconfigsAssignment_610057);
+            pushFollow(FOLLOW_rule__Script__RobotconfigsAlternatives_6_0_in_rule__Script__RobotconfigsAssignment_610055);
             rule__Script__RobotconfigsAlternatives_6_0();
 
             state._fsp--;
@@ -14507,25 +14420,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__RobottypesAssignment_8_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4953:1: rule__Script__RobottypesAssignment_8_2 : ( ( rule__Script__RobottypesAlternatives_8_2_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4951:1: rule__Script__RobottypesAssignment_8_2 : ( ( rule__Script__RobottypesAlternatives_8_2_0 ) ) ;
     public final void rule__Script__RobottypesAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4957:1: ( ( ( rule__Script__RobottypesAlternatives_8_2_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4958:1: ( ( rule__Script__RobottypesAlternatives_8_2_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4955:1: ( ( ( rule__Script__RobottypesAlternatives_8_2_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4956:1: ( ( rule__Script__RobottypesAlternatives_8_2_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4958:1: ( ( rule__Script__RobottypesAlternatives_8_2_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4959:1: ( rule__Script__RobottypesAlternatives_8_2_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4956:1: ( ( rule__Script__RobottypesAlternatives_8_2_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4957:1: ( rule__Script__RobottypesAlternatives_8_2_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobottypesAlternatives_8_2_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4960:1: ( rule__Script__RobottypesAlternatives_8_2_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4960:2: rule__Script__RobottypesAlternatives_8_2_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4958:1: ( rule__Script__RobottypesAlternatives_8_2_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4958:2: rule__Script__RobottypesAlternatives_8_2_0
             {
-            pushFollow(FOLLOW_rule__Script__RobottypesAlternatives_8_2_0_in_rule__Script__RobottypesAssignment_8_210090);
+            pushFollow(FOLLOW_rule__Script__RobottypesAlternatives_8_2_0_in_rule__Script__RobottypesAssignment_8_210088);
             rule__Script__RobottypesAlternatives_8_2_0();
 
             state._fsp--;
@@ -14558,25 +14471,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__RobotconfigsAssignment_8_4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4969:1: rule__Script__RobotconfigsAssignment_8_4 : ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4967:1: rule__Script__RobotconfigsAssignment_8_4 : ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) ) ;
     public final void rule__Script__RobotconfigsAssignment_8_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4973:1: ( ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4974:1: ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4971:1: ( ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4972:1: ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4974:1: ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4975:1: ( rule__Script__RobotconfigsAlternatives_8_4_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4972:1: ( ( rule__Script__RobotconfigsAlternatives_8_4_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4973:1: ( rule__Script__RobotconfigsAlternatives_8_4_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getRobotconfigsAlternatives_8_4_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4976:1: ( rule__Script__RobotconfigsAlternatives_8_4_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4976:2: rule__Script__RobotconfigsAlternatives_8_4_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4974:1: ( rule__Script__RobotconfigsAlternatives_8_4_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4974:2: rule__Script__RobotconfigsAlternatives_8_4_0
             {
-            pushFollow(FOLLOW_rule__Script__RobotconfigsAlternatives_8_4_0_in_rule__Script__RobotconfigsAssignment_8_410123);
+            pushFollow(FOLLOW_rule__Script__RobotconfigsAlternatives_8_4_0_in_rule__Script__RobotconfigsAssignment_8_410121);
             rule__Script__RobotconfigsAlternatives_8_4_0();
 
             state._fsp--;
@@ -14609,22 +14522,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Script__MethodsAssignment_10"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4985:1: rule__Script__MethodsAssignment_10 : ( ruleUserMethod ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4983:1: rule__Script__MethodsAssignment_10 : ( ruleUserMethod ) ;
     public final void rule__Script__MethodsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4989:1: ( ( ruleUserMethod ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4990:1: ( ruleUserMethod )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4987:1: ( ( ruleUserMethod ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4988:1: ( ruleUserMethod )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4990:1: ( ruleUserMethod )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4991:1: ruleUserMethod
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4988:1: ( ruleUserMethod )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4989:1: ruleUserMethod
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getMethodsUserMethodParserRuleCall_10_0()); 
             }
-            pushFollow(FOLLOW_ruleUserMethod_in_rule__Script__MethodsAssignment_1010156);
+            pushFollow(FOLLOW_ruleUserMethod_in_rule__Script__MethodsAssignment_1010154);
             ruleUserMethod();
 
             state._fsp--;
@@ -14654,22 +14567,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethods__MethodsAssignment_3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5000:1: rule__MetaMethods__MethodsAssignment_3 : ( ruleMetaMethod ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:4998:1: rule__MetaMethods__MethodsAssignment_3 : ( ruleMetaMethod ) ;
     public final void rule__MetaMethods__MethodsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5004:1: ( ( ruleMetaMethod ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5005:1: ( ruleMetaMethod )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5002:1: ( ( ruleMetaMethod ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5003:1: ( ruleMetaMethod )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5005:1: ( ruleMetaMethod )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5006:1: ruleMetaMethod
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5003:1: ( ruleMetaMethod )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5004:1: ruleMetaMethod
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodsAccess().getMethodsMetaMethodParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleMetaMethod_in_rule__MetaMethods__MethodsAssignment_310187);
+            pushFollow(FOLLOW_ruleMetaMethod_in_rule__MetaMethods__MethodsAssignment_310185);
             ruleMetaMethod();
 
             state._fsp--;
@@ -14699,22 +14612,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__ExsAssignment_2_0_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5015:1: rule__Block__ExsAssignment_2_0_0 : ( ruleSimpleExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5013:1: rule__Block__ExsAssignment_2_0_0 : ( ruleSimpleExpression ) ;
     public final void rule__Block__ExsAssignment_2_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5019:1: ( ( ruleSimpleExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5020:1: ( ruleSimpleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5017:1: ( ( ruleSimpleExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5018:1: ( ruleSimpleExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5020:1: ( ruleSimpleExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5021:1: ruleSimpleExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5018:1: ( ruleSimpleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5019:1: ruleSimpleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getExsSimpleExpressionParserRuleCall_2_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleSimpleExpression_in_rule__Block__ExsAssignment_2_0_010218);
+            pushFollow(FOLLOW_ruleSimpleExpression_in_rule__Block__ExsAssignment_2_0_010216);
             ruleSimpleExpression();
 
             state._fsp--;
@@ -14744,22 +14657,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Block__ExsAssignment_2_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5030:1: rule__Block__ExsAssignment_2_1 : ( ruleStructureExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5028:1: rule__Block__ExsAssignment_2_1 : ( ruleStructureExpression ) ;
     public final void rule__Block__ExsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5034:1: ( ( ruleStructureExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5035:1: ( ruleStructureExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5032:1: ( ( ruleStructureExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5033:1: ( ruleStructureExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5035:1: ( ruleStructureExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5036:1: ruleStructureExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5033:1: ( ruleStructureExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5034:1: ruleStructureExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockAccess().getExsStructureExpressionParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleStructureExpression_in_rule__Block__ExsAssignment_2_110249);
+            pushFollow(FOLLOW_ruleStructureExpression_in_rule__Block__ExsAssignment_2_110247);
             ruleStructureExpression();
 
             state._fsp--;
@@ -14789,25 +14702,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__VariAssignment_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5045:1: rule__Assignment__VariAssignment_0 : ( ( rule__Assignment__VariAlternatives_0_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5043:1: rule__Assignment__VariAssignment_0 : ( ( rule__Assignment__VariAlternatives_0_0 ) ) ;
     public final void rule__Assignment__VariAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5049:1: ( ( ( rule__Assignment__VariAlternatives_0_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5050:1: ( ( rule__Assignment__VariAlternatives_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5047:1: ( ( ( rule__Assignment__VariAlternatives_0_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5048:1: ( ( rule__Assignment__VariAlternatives_0_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5050:1: ( ( rule__Assignment__VariAlternatives_0_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5051:1: ( rule__Assignment__VariAlternatives_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5048:1: ( ( rule__Assignment__VariAlternatives_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5049:1: ( rule__Assignment__VariAlternatives_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getVariAlternatives_0_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5052:1: ( rule__Assignment__VariAlternatives_0_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5052:2: rule__Assignment__VariAlternatives_0_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5050:1: ( rule__Assignment__VariAlternatives_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5050:2: rule__Assignment__VariAlternatives_0_0
             {
-            pushFollow(FOLLOW_rule__Assignment__VariAlternatives_0_0_in_rule__Assignment__VariAssignment_010280);
+            pushFollow(FOLLOW_rule__Assignment__VariAlternatives_0_0_in_rule__Assignment__VariAssignment_010278);
             rule__Assignment__VariAlternatives_0_0();
 
             state._fsp--;
@@ -14840,22 +14753,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__OpAssignment_1_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5061:1: rule__Assignment__OpAssignment_1_0 : ( ruleMathOperator ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5059:1: rule__Assignment__OpAssignment_1_0 : ( ruleMathOperator ) ;
     public final void rule__Assignment__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5065:1: ( ( ruleMathOperator ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5066:1: ( ruleMathOperator )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5063:1: ( ( ruleMathOperator ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5064:1: ( ruleMathOperator )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5066:1: ( ruleMathOperator )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5067:1: ruleMathOperator
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5064:1: ( ruleMathOperator )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5065:1: ruleMathOperator
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getOpMathOperatorParserRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleMathOperator_in_rule__Assignment__OpAssignment_1_010313);
+            pushFollow(FOLLOW_ruleMathOperator_in_rule__Assignment__OpAssignment_1_010311);
             ruleMathOperator();
 
             state._fsp--;
@@ -14885,22 +14798,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Assignment__ValueAssignment_1_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5076:1: rule__Assignment__ValueAssignment_1_2 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5074:1: rule__Assignment__ValueAssignment_1_2 : ( ruleValueExpression ) ;
     public final void rule__Assignment__ValueAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5080:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5081:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5078:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5079:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5081:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5082:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5079:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5080:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getValueValueExpressionParserRuleCall_1_2_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__Assignment__ValueAssignment_1_210344);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__Assignment__ValueAssignment_1_210342);
             ruleValueExpression();
 
             state._fsp--;
@@ -14930,22 +14843,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__ParametersAssignment_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5091:1: rule__Call__ParametersAssignment_2 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5089:1: rule__Call__ParametersAssignment_2 : ( ruleValueExpression ) ;
     public final void rule__Call__ParametersAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5095:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5096:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5093:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5094:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5096:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5097:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5094:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5095:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getParametersValueExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_210375);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_210373);
             ruleValueExpression();
 
             state._fsp--;
@@ -14975,22 +14888,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Call__ParametersAssignment_3_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5106:1: rule__Call__ParametersAssignment_3_1 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5104:1: rule__Call__ParametersAssignment_3_1 : ( ruleValueExpression ) ;
     public final void rule__Call__ParametersAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5110:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5111:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5108:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5109:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5111:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5112:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5109:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5110:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCallAccess().getParametersValueExpressionParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_3_110406);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_3_110404);
             ruleValueExpression();
 
             state._fsp--;
@@ -15020,22 +14933,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__TypeAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5121:1: rule__MetaMethod__TypeAssignment_1 : ( ruleMethodtype ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5119:1: rule__MetaMethod__TypeAssignment_1 : ( ruleMethodtype ) ;
     public final void rule__MetaMethod__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5125:1: ( ( ruleMethodtype ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5126:1: ( ruleMethodtype )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5123:1: ( ( ruleMethodtype ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5124:1: ( ruleMethodtype )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5126:1: ( ruleMethodtype )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5127:1: ruleMethodtype
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5124:1: ( ruleMethodtype )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5125:1: ruleMethodtype
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getTypeMethodtypeParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleMethodtype_in_rule__MetaMethod__TypeAssignment_110437);
+            pushFollow(FOLLOW_ruleMethodtype_in_rule__MetaMethod__TypeAssignment_110435);
             ruleMethodtype();
 
             state._fsp--;
@@ -15065,22 +14978,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__NameAssignment_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5136:1: rule__MetaMethod__NameAssignment_2 : ( RULE_CAPITALFIRST ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5134:1: rule__MetaMethod__NameAssignment_2 : ( RULE_CAPITALFIRST ) ;
     public final void rule__MetaMethod__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5140:1: ( ( RULE_CAPITALFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5141:1: ( RULE_CAPITALFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5138:1: ( ( RULE_CAPITALFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5139:1: ( RULE_CAPITALFIRST )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5141:1: ( RULE_CAPITALFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5142:1: RULE_CAPITALFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5139:1: ( RULE_CAPITALFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5140:1: RULE_CAPITALFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getNameCAPITALFIRSTTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_CAPITALFIRST,FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethod__NameAssignment_210468); if (state.failed) return ;
+            match(input,RULE_CAPITALFIRST,FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethod__NameAssignment_210466); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodAccess().getNameCAPITALFIRSTTerminalRuleCall_2_0()); 
             }
@@ -15106,22 +15019,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__ParametersAssignment_4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5151:1: rule__MetaMethod__ParametersAssignment_4 : ( ruleDeclaration ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5149:1: rule__MetaMethod__ParametersAssignment_4 : ( ruleDeclaration ) ;
     public final void rule__MetaMethod__ParametersAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5155:1: ( ( ruleDeclaration ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5156:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5153:1: ( ( ruleDeclaration ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5154:1: ( ruleDeclaration )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5156:1: ( ruleDeclaration )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5157:1: ruleDeclaration
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5154:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5155:1: ruleDeclaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getParametersDeclarationParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_410499);
+            pushFollow(FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_410497);
             ruleDeclaration();
 
             state._fsp--;
@@ -15151,22 +15064,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethod__ParametersAssignment_5_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5166:1: rule__MetaMethod__ParametersAssignment_5_1 : ( ruleDeclaration ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5164:1: rule__MetaMethod__ParametersAssignment_5_1 : ( ruleDeclaration ) ;
     public final void rule__MetaMethod__ParametersAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5170:1: ( ( ruleDeclaration ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5171:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5168:1: ( ( ruleDeclaration ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5169:1: ( ruleDeclaration )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5171:1: ( ruleDeclaration )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5172:1: ruleDeclaration
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5169:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5170:1: ruleDeclaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodAccess().getParametersDeclarationParserRuleCall_5_1_0()); 
             }
-            pushFollow(FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_5_110530);
+            pushFollow(FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_5_110528);
             ruleDeclaration();
 
             state._fsp--;
@@ -15196,22 +15109,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__TypeAssignment_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5181:1: rule__UserMethod__TypeAssignment_0 : ( ruleMethodtype ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5179:1: rule__UserMethod__TypeAssignment_0 : ( ruleMethodtype ) ;
     public final void rule__UserMethod__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5185:1: ( ( ruleMethodtype ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5186:1: ( ruleMethodtype )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5183:1: ( ( ruleMethodtype ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5184:1: ( ruleMethodtype )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5186:1: ( ruleMethodtype )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5187:1: ruleMethodtype
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5184:1: ( ruleMethodtype )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5185:1: ruleMethodtype
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getTypeMethodtypeParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleMethodtype_in_rule__UserMethod__TypeAssignment_010561);
+            pushFollow(FOLLOW_ruleMethodtype_in_rule__UserMethod__TypeAssignment_010559);
             ruleMethodtype();
 
             state._fsp--;
@@ -15241,22 +15154,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__NameAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5196:1: rule__UserMethod__NameAssignment_1 : ( RULE_LOWERFIRST ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5194:1: rule__UserMethod__NameAssignment_1 : ( RULE_LOWERFIRST ) ;
     public final void rule__UserMethod__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5200:1: ( ( RULE_LOWERFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5201:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5198:1: ( ( RULE_LOWERFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5199:1: ( RULE_LOWERFIRST )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5201:1: ( RULE_LOWERFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5202:1: RULE_LOWERFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5199:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5200:1: RULE_LOWERFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getNameLOWERFIRSTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__UserMethod__NameAssignment_110592); if (state.failed) return ;
+            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__UserMethod__NameAssignment_110590); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getUserMethodAccess().getNameLOWERFIRSTTerminalRuleCall_1_0()); 
             }
@@ -15282,22 +15195,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__ParametersAssignment_3"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5211:1: rule__UserMethod__ParametersAssignment_3 : ( ruleDeclaration ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5209:1: rule__UserMethod__ParametersAssignment_3 : ( ruleDeclaration ) ;
     public final void rule__UserMethod__ParametersAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5215:1: ( ( ruleDeclaration ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5216:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5213:1: ( ( ruleDeclaration ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5214:1: ( ruleDeclaration )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5216:1: ( ruleDeclaration )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5217:1: ruleDeclaration
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5214:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5215:1: ruleDeclaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getParametersDeclarationParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_310623);
+            pushFollow(FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_310621);
             ruleDeclaration();
 
             state._fsp--;
@@ -15327,22 +15240,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__ParametersAssignment_4_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5226:1: rule__UserMethod__ParametersAssignment_4_1 : ( ruleDeclaration ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5224:1: rule__UserMethod__ParametersAssignment_4_1 : ( ruleDeclaration ) ;
     public final void rule__UserMethod__ParametersAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5230:1: ( ( ruleDeclaration ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5231:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5228:1: ( ( ruleDeclaration ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5229:1: ( ruleDeclaration )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5231:1: ( ruleDeclaration )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5232:1: ruleDeclaration
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5229:1: ( ruleDeclaration )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5230:1: ruleDeclaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getParametersDeclarationParserRuleCall_4_1_0()); 
             }
-            pushFollow(FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_4_110654);
+            pushFollow(FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_4_110652);
             ruleDeclaration();
 
             state._fsp--;
@@ -15372,22 +15285,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethod__BlAssignment_6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5241:1: rule__UserMethod__BlAssignment_6 : ( ruleBlock ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5239:1: rule__UserMethod__BlAssignment_6 : ( ruleBlock ) ;
     public final void rule__UserMethod__BlAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5245:1: ( ( ruleBlock ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5246:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5243:1: ( ( ruleBlock ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5244:1: ( ruleBlock )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5246:1: ( ruleBlock )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5247:1: ruleBlock
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5244:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5245:1: ruleBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodAccess().getBlBlockParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleBlock_in_rule__UserMethod__BlAssignment_610685);
+            pushFollow(FOLLOW_ruleBlock_in_rule__UserMethod__BlAssignment_610683);
             ruleBlock();
 
             state._fsp--;
@@ -15417,28 +15330,28 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__UserMethodCall__MethodAssignment"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5256:1: rule__UserMethodCall__MethodAssignment : ( ( RULE_LOWERFIRST ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5254:1: rule__UserMethodCall__MethodAssignment : ( ( RULE_LOWERFIRST ) ) ;
     public final void rule__UserMethodCall__MethodAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5260:1: ( ( ( RULE_LOWERFIRST ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5261:1: ( ( RULE_LOWERFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5258:1: ( ( ( RULE_LOWERFIRST ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5259:1: ( ( RULE_LOWERFIRST ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5261:1: ( ( RULE_LOWERFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5262:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5259:1: ( ( RULE_LOWERFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5260:1: ( RULE_LOWERFIRST )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodCallAccess().getMethodMethodCrossReference_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5263:1: ( RULE_LOWERFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5264:1: RULE_LOWERFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5261:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5262:1: RULE_LOWERFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUserMethodCallAccess().getMethodMethodLOWERFIRSTTerminalRuleCall_0_1()); 
             }
-            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__UserMethodCall__MethodAssignment10720); if (state.failed) return ;
+            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__UserMethodCall__MethodAssignment10718); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getUserMethodCallAccess().getMethodMethodLOWERFIRSTTerminalRuleCall_0_1()); 
             }
@@ -15470,28 +15383,28 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MetaMethodCall__MethodAssignment"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5275:1: rule__MetaMethodCall__MethodAssignment : ( ( RULE_CAPITALFIRST ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5273:1: rule__MetaMethodCall__MethodAssignment : ( ( RULE_CAPITALFIRST ) ) ;
     public final void rule__MetaMethodCall__MethodAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5279:1: ( ( ( RULE_CAPITALFIRST ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5280:1: ( ( RULE_CAPITALFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5277:1: ( ( ( RULE_CAPITALFIRST ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5278:1: ( ( RULE_CAPITALFIRST ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5280:1: ( ( RULE_CAPITALFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5281:1: ( RULE_CAPITALFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5278:1: ( ( RULE_CAPITALFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5279:1: ( RULE_CAPITALFIRST )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodCallAccess().getMethodMethodCrossReference_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5282:1: ( RULE_CAPITALFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5283:1: RULE_CAPITALFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5280:1: ( RULE_CAPITALFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5281:1: RULE_CAPITALFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMetaMethodCallAccess().getMethodMethodCAPITALFIRSTTerminalRuleCall_0_1()); 
             }
-            match(input,RULE_CAPITALFIRST,FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethodCall__MethodAssignment10759); if (state.failed) return ;
+            match(input,RULE_CAPITALFIRST,FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethodCall__MethodAssignment10757); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMetaMethodCallAccess().getMethodMethodCAPITALFIRSTTerminalRuleCall_0_1()); 
             }
@@ -15523,22 +15436,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__ExAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5294:1: rule__ParanValueExpression__ExAssignment_1 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5292:1: rule__ParanValueExpression__ExAssignment_1 : ( ruleValueExpression ) ;
     public final void rule__ParanValueExpression__ExAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5298:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5299:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5296:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5297:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5299:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5300:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5297:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5298:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getExValueExpressionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__ExAssignment_110794);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__ExAssignment_110792);
             ruleValueExpression();
 
             state._fsp--;
@@ -15568,25 +15481,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__OpAssignment_3_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5309:1: rule__ParanValueExpression__OpAssignment_3_0 : ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5307:1: rule__ParanValueExpression__OpAssignment_3_0 : ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) ) ;
     public final void rule__ParanValueExpression__OpAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5313:1: ( ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5314:1: ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5311:1: ( ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5312:1: ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5314:1: ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5315:1: ( rule__ParanValueExpression__OpAlternatives_3_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5312:1: ( ( rule__ParanValueExpression__OpAlternatives_3_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5313:1: ( rule__ParanValueExpression__OpAlternatives_3_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getOpAlternatives_3_0_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5316:1: ( rule__ParanValueExpression__OpAlternatives_3_0_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5316:2: rule__ParanValueExpression__OpAlternatives_3_0_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5314:1: ( rule__ParanValueExpression__OpAlternatives_3_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5314:2: rule__ParanValueExpression__OpAlternatives_3_0_0
             {
-            pushFollow(FOLLOW_rule__ParanValueExpression__OpAlternatives_3_0_0_in_rule__ParanValueExpression__OpAssignment_3_010825);
+            pushFollow(FOLLOW_rule__ParanValueExpression__OpAlternatives_3_0_0_in_rule__ParanValueExpression__OpAssignment_3_010823);
             rule__ParanValueExpression__OpAlternatives_3_0_0();
 
             state._fsp--;
@@ -15619,22 +15532,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ParanValueExpression__VarrightAssignment_3_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5325:1: rule__ParanValueExpression__VarrightAssignment_3_1 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5323:1: rule__ParanValueExpression__VarrightAssignment_3_1 : ( ruleValueExpression ) ;
     public final void rule__ParanValueExpression__VarrightAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5329:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5330:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5327:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5328:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5330:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5331:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5328:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5329:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParanValueExpressionAccess().getVarrightValueExpressionParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__VarrightAssignment_3_110858);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__VarrightAssignment_3_110856);
             ruleValueExpression();
 
             state._fsp--;
@@ -15664,22 +15577,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__VarleftAssignment_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5340:1: rule__BasicValueExpression__VarleftAssignment_0 : ( ruleValue ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5338:1: rule__BasicValueExpression__VarleftAssignment_0 : ( ruleValue ) ;
     public final void rule__BasicValueExpression__VarleftAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5344:1: ( ( ruleValue ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5345:1: ( ruleValue )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5342:1: ( ( ruleValue ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5343:1: ( ruleValue )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5345:1: ( ruleValue )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5346:1: ruleValue
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5343:1: ( ruleValue )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5344:1: ruleValue
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getVarleftValueParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleValue_in_rule__BasicValueExpression__VarleftAssignment_010889);
+            pushFollow(FOLLOW_ruleValue_in_rule__BasicValueExpression__VarleftAssignment_010887);
             ruleValue();
 
             state._fsp--;
@@ -15709,25 +15622,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__OpAssignment_1_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5355:1: rule__BasicValueExpression__OpAssignment_1_0 : ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5353:1: rule__BasicValueExpression__OpAssignment_1_0 : ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) ) ;
     public final void rule__BasicValueExpression__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5359:1: ( ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5360:1: ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5357:1: ( ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5358:1: ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5360:1: ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5361:1: ( rule__BasicValueExpression__OpAlternatives_1_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5358:1: ( ( rule__BasicValueExpression__OpAlternatives_1_0_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5359:1: ( rule__BasicValueExpression__OpAlternatives_1_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getOpAlternatives_1_0_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5362:1: ( rule__BasicValueExpression__OpAlternatives_1_0_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5362:2: rule__BasicValueExpression__OpAlternatives_1_0_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5360:1: ( rule__BasicValueExpression__OpAlternatives_1_0_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5360:2: rule__BasicValueExpression__OpAlternatives_1_0_0
             {
-            pushFollow(FOLLOW_rule__BasicValueExpression__OpAlternatives_1_0_0_in_rule__BasicValueExpression__OpAssignment_1_010920);
+            pushFollow(FOLLOW_rule__BasicValueExpression__OpAlternatives_1_0_0_in_rule__BasicValueExpression__OpAssignment_1_010918);
             rule__BasicValueExpression__OpAlternatives_1_0_0();
 
             state._fsp--;
@@ -15760,22 +15673,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BasicValueExpression__VarrightAssignment_1_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5371:1: rule__BasicValueExpression__VarrightAssignment_1_1 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5369:1: rule__BasicValueExpression__VarrightAssignment_1_1 : ( ruleValueExpression ) ;
     public final void rule__BasicValueExpression__VarrightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5375:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5376:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5373:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5374:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5376:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5377:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5374:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5375:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBasicValueExpressionAccess().getVarrightValueExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__BasicValueExpression__VarrightAssignment_1_110953);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__BasicValueExpression__VarrightAssignment_1_110951);
             ruleValueExpression();
 
             state._fsp--;
@@ -15805,22 +15718,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Crement__ValueAssignment_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5386:1: rule__Crement__ValueAssignment_0 : ( ruleVarReference ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5384:1: rule__Crement__ValueAssignment_0 : ( ruleVarReference ) ;
     public final void rule__Crement__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5390:1: ( ( ruleVarReference ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5391:1: ( ruleVarReference )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5388:1: ( ( ruleVarReference ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5389:1: ( ruleVarReference )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5391:1: ( ruleVarReference )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5392:1: ruleVarReference
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5389:1: ( ruleVarReference )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5390:1: ruleVarReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCrementAccess().getValueVarReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleVarReference_in_rule__Crement__ValueAssignment_010984);
+            pushFollow(FOLLOW_ruleVarReference_in_rule__Crement__ValueAssignment_010982);
             ruleVarReference();
 
             state._fsp--;
@@ -15850,22 +15763,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Crement__OpAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5401:1: rule__Crement__OpAssignment_1 : ( ruleCrementOperator ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5399:1: rule__Crement__OpAssignment_1 : ( ruleCrementOperator ) ;
     public final void rule__Crement__OpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5405:1: ( ( ruleCrementOperator ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5406:1: ( ruleCrementOperator )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5403:1: ( ( ruleCrementOperator ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5404:1: ( ruleCrementOperator )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5406:1: ( ruleCrementOperator )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5407:1: ruleCrementOperator
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5404:1: ( ruleCrementOperator )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5405:1: ruleCrementOperator
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCrementAccess().getOpCrementOperatorParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleCrementOperator_in_rule__Crement__OpAssignment_111015);
+            pushFollow(FOLLOW_ruleCrementOperator_in_rule__Crement__OpAssignment_111013);
             ruleCrementOperator();
 
             state._fsp--;
@@ -15895,22 +15808,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__ExAssignment_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5416:1: rule__If__ExAssignment_2 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5414:1: rule__If__ExAssignment_2 : ( ruleValueExpression ) ;
     public final void rule__If__ExAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5420:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5421:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5418:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5419:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5421:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5422:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5419:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5420:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getExValueExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__If__ExAssignment_211046);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__If__ExAssignment_211044);
             ruleValueExpression();
 
             state._fsp--;
@@ -15940,22 +15853,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__If__BlAssignment_4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5431:1: rule__If__BlAssignment_4 : ( ruleBlock ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5429:1: rule__If__BlAssignment_4 : ( ruleBlock ) ;
     public final void rule__If__BlAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5435:1: ( ( ruleBlock ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5436:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5433:1: ( ( ruleBlock ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5434:1: ( ruleBlock )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5436:1: ( ruleBlock )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5437:1: ruleBlock
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5434:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5435:1: ruleBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfAccess().getBlBlockParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleBlock_in_rule__If__BlAssignment_411077);
+            pushFollow(FOLLOW_ruleBlock_in_rule__If__BlAssignment_411075);
             ruleBlock();
 
             state._fsp--;
@@ -15985,22 +15898,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Else__ExAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5446:1: rule__Else__ExAssignment_1 : ( ruleExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5444:1: rule__Else__ExAssignment_1 : ( ruleExpression ) ;
     public final void rule__Else__ExAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5450:1: ( ( ruleExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5451:1: ( ruleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5448:1: ( ( ruleExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5449:1: ( ruleExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5451:1: ( ruleExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5452:1: ruleExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5449:1: ( ruleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5450:1: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getElseAccess().getExExpressionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleExpression_in_rule__Else__ExAssignment_111108);
+            pushFollow(FOLLOW_ruleExpression_in_rule__Else__ExAssignment_111106);
             ruleExpression();
 
             state._fsp--;
@@ -16030,22 +15943,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__InitAssignment_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5461:1: rule__For__InitAssignment_2 : ( ruleSimpleExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5459:1: rule__For__InitAssignment_2 : ( ruleSimpleExpression ) ;
     public final void rule__For__InitAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5465:1: ( ( ruleSimpleExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5466:1: ( ruleSimpleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5463:1: ( ( ruleSimpleExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5464:1: ( ruleSimpleExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5466:1: ( ruleSimpleExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5467:1: ruleSimpleExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5464:1: ( ruleSimpleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5465:1: ruleSimpleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getInitSimpleExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleSimpleExpression_in_rule__For__InitAssignment_211139);
+            pushFollow(FOLLOW_ruleSimpleExpression_in_rule__For__InitAssignment_211137);
             ruleSimpleExpression();
 
             state._fsp--;
@@ -16075,22 +15988,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__CheckAssignment_4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5476:1: rule__For__CheckAssignment_4 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5474:1: rule__For__CheckAssignment_4 : ( ruleValueExpression ) ;
     public final void rule__For__CheckAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5480:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5481:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5478:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5479:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5481:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5482:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5479:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5480:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getCheckValueExpressionParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__For__CheckAssignment_411170);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__For__CheckAssignment_411168);
             ruleValueExpression();
 
             state._fsp--;
@@ -16120,22 +16033,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__ActionAssignment_6"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5491:1: rule__For__ActionAssignment_6 : ( ruleSimpleExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5489:1: rule__For__ActionAssignment_6 : ( ruleSimpleExpression ) ;
     public final void rule__For__ActionAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5495:1: ( ( ruleSimpleExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5496:1: ( ruleSimpleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5493:1: ( ( ruleSimpleExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5494:1: ( ruleSimpleExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5496:1: ( ruleSimpleExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5497:1: ruleSimpleExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5494:1: ( ruleSimpleExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5495:1: ruleSimpleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getActionSimpleExpressionParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleSimpleExpression_in_rule__For__ActionAssignment_611201);
+            pushFollow(FOLLOW_ruleSimpleExpression_in_rule__For__ActionAssignment_611199);
             ruleSimpleExpression();
 
             state._fsp--;
@@ -16165,22 +16078,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__For__BlAssignment_8"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5506:1: rule__For__BlAssignment_8 : ( ruleBlock ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5504:1: rule__For__BlAssignment_8 : ( ruleBlock ) ;
     public final void rule__For__BlAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5510:1: ( ( ruleBlock ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5511:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5508:1: ( ( ruleBlock ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5509:1: ( ruleBlock )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5511:1: ( ruleBlock )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5512:1: ruleBlock
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5509:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5510:1: ruleBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForAccess().getBlBlockParserRuleCall_8_0()); 
             }
-            pushFollow(FOLLOW_ruleBlock_in_rule__For__BlAssignment_811232);
+            pushFollow(FOLLOW_ruleBlock_in_rule__For__BlAssignment_811230);
             ruleBlock();
 
             state._fsp--;
@@ -16210,22 +16123,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__ExAssignment_2"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5521:1: rule__While__ExAssignment_2 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5519:1: rule__While__ExAssignment_2 : ( ruleValueExpression ) ;
     public final void rule__While__ExAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5525:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5526:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5523:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5524:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5526:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5527:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5524:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5525:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getExValueExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__While__ExAssignment_211263);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__While__ExAssignment_211261);
             ruleValueExpression();
 
             state._fsp--;
@@ -16255,22 +16168,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__While__BlAssignment_4"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5536:1: rule__While__BlAssignment_4 : ( ruleBlock ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5534:1: rule__While__BlAssignment_4 : ( ruleBlock ) ;
     public final void rule__While__BlAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5540:1: ( ( ruleBlock ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5541:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5538:1: ( ( ruleBlock ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5539:1: ( ruleBlock )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5541:1: ( ruleBlock )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5542:1: ruleBlock
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5539:1: ( ruleBlock )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5540:1: ruleBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileAccess().getBlBlockParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleBlock_in_rule__While__BlAssignment_411294);
+            pushFollow(FOLLOW_ruleBlock_in_rule__While__BlAssignment_411292);
             ruleBlock();
 
             state._fsp--;
@@ -16300,25 +16213,25 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BooleanValue__ValueAssignment"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5551:1: rule__BooleanValue__ValueAssignment : ( ( rule__BooleanValue__ValueAlternatives_0 ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5549:1: rule__BooleanValue__ValueAssignment : ( ( rule__BooleanValue__ValueAlternatives_0 ) ) ;
     public final void rule__BooleanValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5555:1: ( ( ( rule__BooleanValue__ValueAlternatives_0 ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5556:1: ( ( rule__BooleanValue__ValueAlternatives_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5553:1: ( ( ( rule__BooleanValue__ValueAlternatives_0 ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5554:1: ( ( rule__BooleanValue__ValueAlternatives_0 ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5556:1: ( ( rule__BooleanValue__ValueAlternatives_0 ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5557:1: ( rule__BooleanValue__ValueAlternatives_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5554:1: ( ( rule__BooleanValue__ValueAlternatives_0 ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5555:1: ( rule__BooleanValue__ValueAlternatives_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBooleanValueAccess().getValueAlternatives_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5558:1: ( rule__BooleanValue__ValueAlternatives_0 )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5558:2: rule__BooleanValue__ValueAlternatives_0
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5556:1: ( rule__BooleanValue__ValueAlternatives_0 )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5556:2: rule__BooleanValue__ValueAlternatives_0
             {
-            pushFollow(FOLLOW_rule__BooleanValue__ValueAlternatives_0_in_rule__BooleanValue__ValueAssignment11325);
+            pushFollow(FOLLOW_rule__BooleanValue__ValueAlternatives_0_in_rule__BooleanValue__ValueAssignment11323);
             rule__BooleanValue__ValueAlternatives_0();
 
             state._fsp--;
@@ -16351,22 +16264,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__StringValue__ValueAssignment"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5567:1: rule__StringValue__ValueAssignment : ( RULE_STRING ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5565:1: rule__StringValue__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__StringValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5571:1: ( ( RULE_STRING ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5572:1: ( RULE_STRING )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5569:1: ( ( RULE_STRING ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5570:1: ( RULE_STRING )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5572:1: ( RULE_STRING )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5573:1: RULE_STRING
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5570:1: ( RULE_STRING )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5571:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringValue__ValueAssignment11358); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringValue__ValueAssignment11356); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); 
             }
@@ -16392,22 +16305,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__NumberValue__ValueAssignment"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5582:1: rule__NumberValue__ValueAssignment : ( ruleINTSTRING ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5580:1: rule__NumberValue__ValueAssignment : ( ruleINTSTRING ) ;
     public final void rule__NumberValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5586:1: ( ( ruleINTSTRING ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5587:1: ( ruleINTSTRING )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5584:1: ( ( ruleINTSTRING ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5585:1: ( ruleINTSTRING )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5587:1: ( ruleINTSTRING )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5588:1: ruleINTSTRING
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5585:1: ( ruleINTSTRING )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5586:1: ruleINTSTRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNumberValueAccess().getValueINTSTRINGParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleINTSTRING_in_rule__NumberValue__ValueAssignment11389);
+            pushFollow(FOLLOW_ruleINTSTRING_in_rule__NumberValue__ValueAssignment11387);
             ruleINTSTRING();
 
             state._fsp--;
@@ -16437,28 +16350,28 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__VarReference__VariAssignment"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5597:1: rule__VarReference__VariAssignment : ( ( RULE_LOWERFIRST ) ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5595:1: rule__VarReference__VariAssignment : ( ( RULE_LOWERFIRST ) ) ;
     public final void rule__VarReference__VariAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5601:1: ( ( ( RULE_LOWERFIRST ) ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5602:1: ( ( RULE_LOWERFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5599:1: ( ( ( RULE_LOWERFIRST ) ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5600:1: ( ( RULE_LOWERFIRST ) )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5602:1: ( ( RULE_LOWERFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5603:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5600:1: ( ( RULE_LOWERFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5601:1: ( RULE_LOWERFIRST )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarReferenceAccess().getVariDeclarationCrossReference_0()); 
             }
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5604:1: ( RULE_LOWERFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5605:1: RULE_LOWERFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5602:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5603:1: RULE_LOWERFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarReferenceAccess().getVariDeclarationLOWERFIRSTTerminalRuleCall_0_1()); 
             }
-            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__VarReference__VariAssignment11424); if (state.failed) return ;
+            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__VarReference__VariAssignment11422); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getVarReferenceAccess().getVariDeclarationLOWERFIRSTTerminalRuleCall_0_1()); 
             }
@@ -16490,22 +16403,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Declaration__TypeAssignment_0"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5616:1: rule__Declaration__TypeAssignment_0 : ( ruleDatatype ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5614:1: rule__Declaration__TypeAssignment_0 : ( ruleDatatype ) ;
     public final void rule__Declaration__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5620:1: ( ( ruleDatatype ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5621:1: ( ruleDatatype )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5618:1: ( ( ruleDatatype ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5619:1: ( ruleDatatype )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5621:1: ( ruleDatatype )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5622:1: ruleDatatype
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5619:1: ( ruleDatatype )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5620:1: ruleDatatype
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationAccess().getTypeDatatypeParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleDatatype_in_rule__Declaration__TypeAssignment_011459);
+            pushFollow(FOLLOW_ruleDatatype_in_rule__Declaration__TypeAssignment_011457);
             ruleDatatype();
 
             state._fsp--;
@@ -16535,22 +16448,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Declaration__NameAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5631:1: rule__Declaration__NameAssignment_1 : ( RULE_LOWERFIRST ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5629:1: rule__Declaration__NameAssignment_1 : ( RULE_LOWERFIRST ) ;
     public final void rule__Declaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5635:1: ( ( RULE_LOWERFIRST ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5636:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5633:1: ( ( RULE_LOWERFIRST ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5634:1: ( RULE_LOWERFIRST )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5636:1: ( RULE_LOWERFIRST )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5637:1: RULE_LOWERFIRST
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5634:1: ( RULE_LOWERFIRST )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5635:1: RULE_LOWERFIRST
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationAccess().getNameLOWERFIRSTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__Declaration__NameAssignment_111490); if (state.failed) return ;
+            match(input,RULE_LOWERFIRST,FOLLOW_RULE_LOWERFIRST_in_rule__Declaration__NameAssignment_111488); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDeclarationAccess().getNameLOWERFIRSTTerminalRuleCall_1_0()); 
             }
@@ -16576,22 +16489,22 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Return__ValAssignment_1"
-    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5646:1: rule__Return__ValAssignment_1 : ( ruleValueExpression ) ;
+    // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5644:1: rule__Return__ValAssignment_1 : ( ruleValueExpression ) ;
     public final void rule__Return__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5650:1: ( ( ruleValueExpression ) )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5651:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5648:1: ( ( ruleValueExpression ) )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5649:1: ( ruleValueExpression )
             {
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5651:1: ( ruleValueExpression )
-            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5652:1: ruleValueExpression
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5649:1: ( ruleValueExpression )
+            // ../org.xtext.commonlang.ui/src-gen/org/xtext/ui/contentassist/antlr/internal/InternalCommonlang.g:5650:1: ruleValueExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnAccess().getValValueExpressionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValueExpression_in_rule__Return__ValAssignment_111521);
+            pushFollow(FOLLOW_ruleValueExpression_in_rule__Return__ValAssignment_111519);
             ruleValueExpression();
 
             state._fsp--;
@@ -16753,369 +16666,370 @@ public class InternalCommonlangParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_ruleWhile_in_rule__StructureExpression__Alternatives2635 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__Expression__Alternatives2667 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStructureExpression_in_rule__Expression__Alternatives2684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__Assignment__VariAlternatives_0_02735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUserMethodCall_in_rule__Call__Alternatives_02767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMetaMethodCall_in_rule__Call__Alternatives_02784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParanValueExpression_in_rule__ValueExpression__Alternatives2817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBasicValueExpression_in_rule__ValueExpression__Alternatives2834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComparisonOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComparisonOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__ComparisonOperator__Alternatives2999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__ComparisonOperator__Alternatives3019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__ComparisonOperator__Alternatives3039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__ComparisonOperator__Alternatives3059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__ComparisonOperator__Alternatives3079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__ComparisonOperator__Alternatives3099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__BooleanOperator__Alternatives3134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__BooleanOperator__Alternatives3154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__BooleanOperator__Alternatives3174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__BooleanOperator__Alternatives3194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__MathOperator__Alternatives3229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__MathOperator__Alternatives3249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__MathOperator__Alternatives3269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__MathOperator__Alternatives3289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__CrementOperator__Alternatives3324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__CrementOperator__Alternatives3344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCall_in_rule__Value__Alternatives3378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarReference_in_rule__Value__Alternatives3395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBasicValue_in_rule__Value__Alternatives3412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanValue_in_rule__BasicValue__Alternatives3444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_rule__BasicValue__Alternatives3461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringValue_in_rule__BasicValue__Alternatives3478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__BooleanValue__ValueAlternatives_03511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__BooleanValue__ValueAlternatives_03531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Methodtype__Alternatives3566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDatatype_in_rule__Methodtype__Alternatives3585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Datatype__Alternatives3618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Datatype__Alternatives3638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__Datatype__Alternatives3658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CLfile__Group__0__Impl_in_rule__CLfile__Group__03690 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_rule__CLfile__Group__1_in_rule__CLfile__Group__03693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CLfile__ScriptsAssignment_0_in_rule__CLfile__Group__0__Impl3720 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__CLfile__Group__1__Impl_in_rule__CLfile__Group__13751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CLfile__MetsAssignment_1_in_rule__CLfile__Group__1__Impl3778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__0__Impl_in_rule__Script__Group__03812 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Script__Group__1_in_rule__Script__Group__03815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Script__Group__0__Impl3843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__1__Impl_in_rule__Script__Group__13874 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__2_in_rule__Script__Group__13877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__NameAssignment_1_in_rule__Script__Group__1__Impl3904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__2__Impl_in_rule__Script__Group__23934 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__3_in_rule__Script__Group__23937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Script__Group__2__Impl3965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__3__Impl_in_rule__Script__Group__33996 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Script__Group__4_in_rule__Script__Group__33999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Script__Group__3__Impl4027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__4__Impl_in_rule__Script__Group__44058 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__5_in_rule__Script__Group__44061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobottypesAssignment_4_in_rule__Script__Group__4__Impl4088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__5__Impl_in_rule__Script__Group__54118 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Script__Group__6_in_rule__Script__Group__54121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Script__Group__5__Impl4149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__6__Impl_in_rule__Script__Group__64180 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__7_in_rule__Script__Group__64183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobotconfigsAssignment_6_in_rule__Script__Group__6__Impl4210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__7__Impl_in_rule__Script__Group__74240 = new BitSet(new long[]{0x0000014000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__8_in_rule__Script__Group__74243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__Script__Group__7__Impl4271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__8__Impl_in_rule__Script__Group__84302 = new BitSet(new long[]{0x0000014000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__9_in_rule__Script__Group__84305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__0_in_rule__Script__Group__8__Impl4332 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__9__Impl_in_rule__Script__Group__94363 = new BitSet(new long[]{0x0000020780000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__10_in_rule__Script__Group__94366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__Script__Group__9__Impl4394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__10__Impl_in_rule__Script__Group__104425 = new BitSet(new long[]{0x0000020780000000L});
-    public static final BitSet FOLLOW_rule__Script__Group__11_in_rule__Script__Group__104428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__MethodsAssignment_10_in_rule__Script__Group__10__Impl4455 = new BitSet(new long[]{0x0000000780000002L});
-    public static final BitSet FOLLOW_rule__Script__Group__11__Impl_in_rule__Script__Group__114486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__Script__Group__11__Impl4514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__0__Impl_in_rule__Script__Group_8__04569 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__1_in_rule__Script__Group_8__04572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Script__Group_8__0__Impl4600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__1__Impl_in_rule__Script__Group_8__14631 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__2_in_rule__Script__Group_8__14634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Script__Group_8__1__Impl4662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__2__Impl_in_rule__Script__Group_8__24693 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__3_in_rule__Script__Group_8__24696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobottypesAssignment_8_2_in_rule__Script__Group_8__2__Impl4723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__3__Impl_in_rule__Script__Group_8__34753 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__4_in_rule__Script__Group_8__34756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Script__Group_8__3__Impl4784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__4__Impl_in_rule__Script__Group_8__44815 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__5_in_rule__Script__Group_8__44818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobotconfigsAssignment_8_4_in_rule__Script__Group_8__4__Impl4845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__Group_8__5__Impl_in_rule__Script__Group_8__54875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__Script__Group_8__5__Impl4903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__0__Impl_in_rule__MetaMethods__Group__04946 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__1_in_rule__MetaMethods__Group__04949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__1__Impl_in_rule__MetaMethods__Group__15007 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__2_in_rule__MetaMethods__Group__15010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__MetaMethods__Group__1__Impl5038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__2__Impl_in_rule__MetaMethods__Group__25069 = new BitSet(new long[]{0x0000220000000000L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__3_in_rule__MetaMethods__Group__25072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__MetaMethods__Group__2__Impl5100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__3__Impl_in_rule__MetaMethods__Group__35131 = new BitSet(new long[]{0x0000220000000000L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__4_in_rule__MetaMethods__Group__35134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethods__MethodsAssignment_3_in_rule__MetaMethods__Group__3__Impl5161 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethods__Group__4__Impl_in_rule__MetaMethods__Group__45192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__MetaMethods__Group__4__Impl5220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__05261 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__Block__Group__1_in_rule__Block__Group__05264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__15322 = new BitSet(new long[]{0x0007C30780000060L});
-    public static final BitSet FOLLOW_rule__Block__Group__2_in_rule__Block__Group__15325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__Block__Group__1__Impl5353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__25384 = new BitSet(new long[]{0x0007C30780000060L});
-    public static final BitSet FOLLOW_rule__Block__Group__3_in_rule__Block__Group__25387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Alternatives_2_in_rule__Block__Group__2__Impl5414 = new BitSet(new long[]{0x0007C10780000062L});
-    public static final BitSet FOLLOW_rule__Block__Group__3__Impl_in_rule__Block__Group__35445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__Block__Group__3__Impl5473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group_2_0__0__Impl_in_rule__Block__Group_2_0__05512 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_rule__Block__Group_2_0__1_in_rule__Block__Group_2_0__05515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__ExsAssignment_2_0_0_in_rule__Block__Group_2_0__0__Impl5542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group_2_0__1__Impl_in_rule__Block__Group_2_0__15572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__Block__Group_2_0__1__Impl5600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__Group__0__Impl_in_rule__Assignment__Group__05635 = new BitSet(new long[]{0x0000100007800000L});
-    public static final BitSet FOLLOW_rule__Assignment__Group__1_in_rule__Assignment__Group__05638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__VariAssignment_0_in_rule__Assignment__Group__0__Impl5665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__Group__1__Impl_in_rule__Assignment__Group__15695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__Group_1__0_in_rule__Assignment__Group__1__Impl5722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__Group_1__0__Impl_in_rule__Assignment__Group_1__05756 = new BitSet(new long[]{0x0000100007800000L});
-    public static final BitSet FOLLOW_rule__Assignment__Group_1__1_in_rule__Assignment__Group_1__05759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__OpAssignment_1_0_in_rule__Assignment__Group_1__0__Impl5786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__Group_1__1__Impl_in_rule__Assignment__Group_1__15817 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__Assignment__Group_1__2_in_rule__Assignment__Group_1__15820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__Assignment__Group_1__1__Impl5848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__Group_1__2__Impl_in_rule__Assignment__Group_1__25879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__ValueAssignment_1_2_in_rule__Assignment__Group_1__2__Impl5906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group__0__Impl_in_rule__Call__Group__05942 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Call__Group__1_in_rule__Call__Group__05945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Alternatives_0_in_rule__Call__Group__0__Impl5972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group__1__Impl_in_rule__Call__Group__16002 = new BitSet(new long[]{0x000000E0600000F0L});
-    public static final BitSet FOLLOW_rule__Call__Group__2_in_rule__Call__Group__16005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Call__Group__1__Impl6033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group__2__Impl_in_rule__Call__Group__26064 = new BitSet(new long[]{0x000000E0600000F0L});
-    public static final BitSet FOLLOW_rule__Call__Group__3_in_rule__Call__Group__26067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__ParametersAssignment_2_in_rule__Call__Group__2__Impl6094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group__3__Impl_in_rule__Call__Group__36125 = new BitSet(new long[]{0x000000E0600000F0L});
-    public static final BitSet FOLLOW_rule__Call__Group__4_in_rule__Call__Group__36128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group_3__0_in_rule__Call__Group__3__Impl6155 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group__4__Impl_in_rule__Call__Group__46186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__Call__Group__4__Impl6214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group_3__0__Impl_in_rule__Call__Group_3__06255 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__Call__Group_3__1_in_rule__Call__Group_3__06258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Call__Group_3__0__Impl6289 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Call__Group_3__0__Impl6305 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__Call__Group_3__1__Impl_in_rule__Call__Group_3__16340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Call__ParametersAssignment_3_1_in_rule__Call__Group_3__1__Impl6367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__0__Impl_in_rule__MetaMethod__Group__06401 = new BitSet(new long[]{0x0000000780000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__1_in_rule__MetaMethod__Group__06404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__MetaMethod__Group__0__Impl6432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__1__Impl_in_rule__MetaMethod__Group__16463 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__2_in_rule__MetaMethod__Group__16466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__TypeAssignment_1_in_rule__MetaMethod__Group__1__Impl6493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__2__Impl_in_rule__MetaMethod__Group__26523 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__3_in_rule__MetaMethod__Group__26526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__NameAssignment_2_in_rule__MetaMethod__Group__2__Impl6553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__3__Impl_in_rule__MetaMethod__Group__36583 = new BitSet(new long[]{0x000000C780000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__4_in_rule__MetaMethod__Group__36586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__MetaMethod__Group__3__Impl6614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__4__Impl_in_rule__MetaMethod__Group__46645 = new BitSet(new long[]{0x000000C780000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__5_in_rule__MetaMethod__Group__46648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__ParametersAssignment_4_in_rule__MetaMethod__Group__4__Impl6675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__5__Impl_in_rule__MetaMethod__Group__56706 = new BitSet(new long[]{0x000000C780000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__6_in_rule__MetaMethod__Group__56709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__0_in_rule__MetaMethod__Group__5__Impl6736 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__6__Impl_in_rule__MetaMethod__Group__66767 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__7_in_rule__MetaMethod__Group__66770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__MetaMethod__Group__6__Impl6798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group__7__Impl_in_rule__MetaMethod__Group__76829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__MetaMethod__Group__7__Impl6857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__0__Impl_in_rule__MetaMethod__Group_5__06904 = new BitSet(new long[]{0x0000000780000000L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__1_in_rule__MetaMethod__Group_5__06907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6938 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6954 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__1__Impl_in_rule__MetaMethod__Group_5__16989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MetaMethod__ParametersAssignment_5_1_in_rule__MetaMethod__Group_5__1__Impl7016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__0__Impl_in_rule__UserMethod__Group__07050 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__1_in_rule__UserMethod__Group__07053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__TypeAssignment_0_in_rule__UserMethod__Group__0__Impl7080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__1__Impl_in_rule__UserMethod__Group__17110 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__2_in_rule__UserMethod__Group__17113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__NameAssignment_1_in_rule__UserMethod__Group__1__Impl7140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__2__Impl_in_rule__UserMethod__Group__27170 = new BitSet(new long[]{0x000000C780000000L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__3_in_rule__UserMethod__Group__27173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__UserMethod__Group__2__Impl7201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__3__Impl_in_rule__UserMethod__Group__37232 = new BitSet(new long[]{0x000000C780000000L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__4_in_rule__UserMethod__Group__37235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__ParametersAssignment_3_in_rule__UserMethod__Group__3__Impl7262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__4__Impl_in_rule__UserMethod__Group__47293 = new BitSet(new long[]{0x000000C780000000L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__5_in_rule__UserMethod__Group__47296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group_4__0_in_rule__UserMethod__Group__4__Impl7323 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__5__Impl_in_rule__UserMethod__Group__57354 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__6_in_rule__UserMethod__Group__57357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__UserMethod__Group__5__Impl7385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group__6__Impl_in_rule__UserMethod__Group__67416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__BlAssignment_6_in_rule__UserMethod__Group__6__Impl7443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group_4__0__Impl_in_rule__UserMethod__Group_4__07487 = new BitSet(new long[]{0x0000000780000000L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group_4__1_in_rule__UserMethod__Group_4__07490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7521 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7537 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__Group_4__1__Impl_in_rule__UserMethod__Group_4__17572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserMethod__ParametersAssignment_4_1_in_rule__UserMethod__Group_4__1__Impl7599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__0__Impl_in_rule__ParanValueExpression__Group__07633 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__1_in_rule__ParanValueExpression__Group__07636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ParanValueExpression__Group__0__Impl7664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__1__Impl_in_rule__ParanValueExpression__Group__17695 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__2_in_rule__ParanValueExpression__Group__17698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__ExAssignment_1_in_rule__ParanValueExpression__Group__1__Impl7725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__2__Impl_in_rule__ParanValueExpression__Group__27755 = new BitSet(new long[]{0x0000000007FFE000L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__3_in_rule__ParanValueExpression__Group__27758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__ParanValueExpression__Group__2__Impl7786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__3__Impl_in_rule__ParanValueExpression__Group__37817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__0_in_rule__ParanValueExpression__Group__3__Impl7844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__0__Impl_in_rule__ParanValueExpression__Group_3__07883 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__1_in_rule__ParanValueExpression__Group_3__07886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__OpAssignment_3_0_in_rule__ParanValueExpression__Group_3__0__Impl7913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__1__Impl_in_rule__ParanValueExpression__Group_3__17943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__VarrightAssignment_3_1_in_rule__ParanValueExpression__Group_3__1__Impl7970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group__0__Impl_in_rule__BasicValueExpression__Group__08004 = new BitSet(new long[]{0x0000000007FFE000L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group__1_in_rule__BasicValueExpression__Group__08007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__VarleftAssignment_0_in_rule__BasicValueExpression__Group__0__Impl8034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group__1__Impl_in_rule__BasicValueExpression__Group__18064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__0_in_rule__BasicValueExpression__Group__1__Impl8091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__0__Impl_in_rule__BasicValueExpression__Group_1__08126 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__1_in_rule__BasicValueExpression__Group_1__08129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__OpAssignment_1_0_in_rule__BasicValueExpression__Group_1__0__Impl8156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__1__Impl_in_rule__BasicValueExpression__Group_1__18186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__VarrightAssignment_1_1_in_rule__BasicValueExpression__Group_1__1__Impl8213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Crement__Group__0__Impl_in_rule__Crement__Group__08247 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_rule__Crement__Group__1_in_rule__Crement__Group__08250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Crement__ValueAssignment_0_in_rule__Crement__Group__0__Impl8277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Crement__Group__1__Impl_in_rule__Crement__Group__18307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Crement__OpAssignment_1_in_rule__Crement__Group__1__Impl8334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__Group__0__Impl_in_rule__If__Group__08368 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__If__Group__1_in_rule__If__Group__08371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__If__Group__0__Impl8399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__Group__1__Impl_in_rule__If__Group__18430 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__If__Group__2_in_rule__If__Group__18433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__If__Group__1__Impl8461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__Group__2__Impl_in_rule__If__Group__28492 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__If__Group__3_in_rule__If__Group__28495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__ExAssignment_2_in_rule__If__Group__2__Impl8522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__Group__3__Impl_in_rule__If__Group__38552 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__If__Group__4_in_rule__If__Group__38555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__If__Group__3__Impl8583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__Group__4__Impl_in_rule__If__Group__48614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__If__BlAssignment_4_in_rule__If__Group__4__Impl8641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Else__Group__0__Impl_in_rule__Else__Group__08681 = new BitSet(new long[]{0x0007C10780000060L});
-    public static final BitSet FOLLOW_rule__Else__Group__1_in_rule__Else__Group__08684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__Else__Group__0__Impl8712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Else__Group__1__Impl_in_rule__Else__Group__18743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Else__ExAssignment_1_in_rule__Else__Group__1__Impl8770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__0__Impl_in_rule__For__Group__08804 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__For__Group__1_in_rule__For__Group__08807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__For__Group__0__Impl8835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__1__Impl_in_rule__For__Group__18866 = new BitSet(new long[]{0x0004000780000060L});
-    public static final BitSet FOLLOW_rule__For__Group__2_in_rule__For__Group__18869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__For__Group__1__Impl8897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__2__Impl_in_rule__For__Group__28928 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_rule__For__Group__3_in_rule__For__Group__28931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__InitAssignment_2_in_rule__For__Group__2__Impl8958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__3__Impl_in_rule__For__Group__38988 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__For__Group__4_in_rule__For__Group__38991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__For__Group__3__Impl9019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__4__Impl_in_rule__For__Group__49050 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_rule__For__Group__5_in_rule__For__Group__49053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__CheckAssignment_4_in_rule__For__Group__4__Impl9080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__5__Impl_in_rule__For__Group__59110 = new BitSet(new long[]{0x0004000780000060L});
-    public static final BitSet FOLLOW_rule__For__Group__6_in_rule__For__Group__59113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__For__Group__5__Impl9141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__6__Impl_in_rule__For__Group__69172 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__For__Group__7_in_rule__For__Group__69175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__ActionAssignment_6_in_rule__For__Group__6__Impl9202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__7__Impl_in_rule__For__Group__79232 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__For__Group__8_in_rule__For__Group__79235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__For__Group__7__Impl9263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__Group__8__Impl_in_rule__For__Group__89294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__For__BlAssignment_8_in_rule__For__Group__8__Impl9321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__Group__0__Impl_in_rule__While__Group__09369 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__While__Group__1_in_rule__While__Group__09372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__While__Group__0__Impl9400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__Group__1__Impl_in_rule__While__Group__19431 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__While__Group__2_in_rule__While__Group__19434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__While__Group__1__Impl9462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__Group__2__Impl_in_rule__While__Group__29493 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__While__Group__3_in_rule__While__Group__29496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__ExAssignment_2_in_rule__While__Group__2__Impl9523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__Group__3__Impl_in_rule__While__Group__39553 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__While__Group__4_in_rule__While__Group__39556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__While__Group__3__Impl9584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__Group__4__Impl_in_rule__While__Group__49615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__While__BlAssignment_4_in_rule__While__Group__4__Impl9642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__09682 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__09685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl9712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__19742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__NameAssignment_1_in_rule__Declaration__Group__1__Impl9769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Return__Group__0__Impl_in_rule__Return__Group__09803 = new BitSet(new long[]{0x00000020600000F0L});
-    public static final BitSet FOLLOW_rule__Return__Group__1_in_rule__Return__Group__09806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__Return__Group__0__Impl9834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Return__Group__1__Impl_in_rule__Return__Group__19865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Return__ValAssignment_1_in_rule__Return__Group__1__Impl9892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleScript_in_rule__CLfile__ScriptsAssignment_09931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMetaMethods_in_rule__CLfile__MetsAssignment_19962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CAPITALFIRST_in_rule__Script__NameAssignment_19993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobottypesAlternatives_4_0_in_rule__Script__RobottypesAssignment_410024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobotconfigsAlternatives_6_0_in_rule__Script__RobotconfigsAssignment_610057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobottypesAlternatives_8_2_0_in_rule__Script__RobottypesAssignment_8_210090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Script__RobotconfigsAlternatives_8_4_0_in_rule__Script__RobotconfigsAssignment_8_410123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUserMethod_in_rule__Script__MethodsAssignment_1010156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMetaMethod_in_rule__MetaMethods__MethodsAssignment_310187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__Block__ExsAssignment_2_0_010218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructureExpression_in_rule__Block__ExsAssignment_2_110249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Assignment__VariAlternatives_0_0_in_rule__Assignment__VariAssignment_010280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathOperator_in_rule__Assignment__OpAssignment_1_010313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Assignment__ValueAssignment_1_210344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_210375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_3_110406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethodtype_in_rule__MetaMethod__TypeAssignment_110437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethod__NameAssignment_210468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_410499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_5_110530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethodtype_in_rule__UserMethod__TypeAssignment_010561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__UserMethod__NameAssignment_110592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_310623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_4_110654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlock_in_rule__UserMethod__BlAssignment_610685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__UserMethodCall__MethodAssignment10720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethodCall__MethodAssignment10759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__ExAssignment_110794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParanValueExpression__OpAlternatives_3_0_0_in_rule__ParanValueExpression__OpAssignment_3_010825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__VarrightAssignment_3_110858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__BasicValueExpression__VarleftAssignment_010889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BasicValueExpression__OpAlternatives_1_0_0_in_rule__BasicValueExpression__OpAssignment_1_010920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__BasicValueExpression__VarrightAssignment_1_110953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarReference_in_rule__Crement__ValueAssignment_010984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCrementOperator_in_rule__Crement__OpAssignment_111015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__If__ExAssignment_211046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlock_in_rule__If__BlAssignment_411077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__Else__ExAssignment_111108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__For__InitAssignment_211139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__For__CheckAssignment_411170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__For__ActionAssignment_611201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlock_in_rule__For__BlAssignment_811232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__While__ExAssignment_211263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlock_in_rule__While__BlAssignment_411294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanValue__ValueAlternatives_0_in_rule__BooleanValue__ValueAssignment11325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringValue__ValueAssignment11358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleINTSTRING_in_rule__NumberValue__ValueAssignment11389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__VarReference__VariAssignment11424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDatatype_in_rule__Declaration__TypeAssignment_011459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__Declaration__NameAssignment_111490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Return__ValAssignment_111521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarReference_in_rule__Assignment__VariAlternatives_0_02716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__Assignment__VariAlternatives_0_02733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUserMethodCall_in_rule__Call__Alternatives_02765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMetaMethodCall_in_rule__Call__Alternatives_02782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParanValueExpression_in_rule__ValueExpression__Alternatives2815 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicValueExpression_in_rule__ValueExpression__Alternatives2832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMathOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComparisonOperator_in_rule__ParanValueExpression__OpAlternatives_3_0_02898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMathOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComparisonOperator_in_rule__BasicValueExpression__OpAlternatives_1_0_02964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__ComparisonOperator__Alternatives2997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__ComparisonOperator__Alternatives3017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__ComparisonOperator__Alternatives3037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__ComparisonOperator__Alternatives3057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__ComparisonOperator__Alternatives3077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__ComparisonOperator__Alternatives3097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__BooleanOperator__Alternatives3132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__BooleanOperator__Alternatives3152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__BooleanOperator__Alternatives3172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__BooleanOperator__Alternatives3192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__MathOperator__Alternatives3227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__MathOperator__Alternatives3247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__MathOperator__Alternatives3267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__MathOperator__Alternatives3287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__CrementOperator__Alternatives3322 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__CrementOperator__Alternatives3342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCall_in_rule__Value__Alternatives3376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarReference_in_rule__Value__Alternatives3393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicValue_in_rule__Value__Alternatives3410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanValue_in_rule__BasicValue__Alternatives3442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_rule__BasicValue__Alternatives3459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringValue_in_rule__BasicValue__Alternatives3476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__BooleanValue__ValueAlternatives_03509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__BooleanValue__ValueAlternatives_03529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Methodtype__Alternatives3564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDatatype_in_rule__Methodtype__Alternatives3583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Datatype__Alternatives3616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__Datatype__Alternatives3636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__Datatype__Alternatives3656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CLfile__Group__0__Impl_in_rule__CLfile__Group__03688 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_rule__CLfile__Group__1_in_rule__CLfile__Group__03691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CLfile__ScriptsAssignment_0_in_rule__CLfile__Group__0__Impl3718 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__CLfile__Group__1__Impl_in_rule__CLfile__Group__13749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CLfile__MetsAssignment_1_in_rule__CLfile__Group__1__Impl3776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__0__Impl_in_rule__Script__Group__03810 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Script__Group__1_in_rule__Script__Group__03813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Script__Group__0__Impl3841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__1__Impl_in_rule__Script__Group__13872 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__2_in_rule__Script__Group__13875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__NameAssignment_1_in_rule__Script__Group__1__Impl3902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__2__Impl_in_rule__Script__Group__23932 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__3_in_rule__Script__Group__23935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__Script__Group__2__Impl3963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__3__Impl_in_rule__Script__Group__33994 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__Script__Group__4_in_rule__Script__Group__33997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Script__Group__3__Impl4025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__4__Impl_in_rule__Script__Group__44056 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__5_in_rule__Script__Group__44059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobottypesAssignment_4_in_rule__Script__Group__4__Impl4086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__5__Impl_in_rule__Script__Group__54116 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__Script__Group__6_in_rule__Script__Group__54119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Script__Group__5__Impl4147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__6__Impl_in_rule__Script__Group__64178 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__7_in_rule__Script__Group__64181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobotconfigsAssignment_6_in_rule__Script__Group__6__Impl4208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__7__Impl_in_rule__Script__Group__74238 = new BitSet(new long[]{0x0000014000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__8_in_rule__Script__Group__74241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__Script__Group__7__Impl4269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__8__Impl_in_rule__Script__Group__84300 = new BitSet(new long[]{0x0000014000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__9_in_rule__Script__Group__84303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__0_in_rule__Script__Group__8__Impl4330 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__9__Impl_in_rule__Script__Group__94361 = new BitSet(new long[]{0x0000020780000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__10_in_rule__Script__Group__94364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__Script__Group__9__Impl4392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__10__Impl_in_rule__Script__Group__104423 = new BitSet(new long[]{0x0000020780000000L});
+    public static final BitSet FOLLOW_rule__Script__Group__11_in_rule__Script__Group__104426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__MethodsAssignment_10_in_rule__Script__Group__10__Impl4453 = new BitSet(new long[]{0x0000000780000002L});
+    public static final BitSet FOLLOW_rule__Script__Group__11__Impl_in_rule__Script__Group__114484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__Script__Group__11__Impl4512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__0__Impl_in_rule__Script__Group_8__04567 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__1_in_rule__Script__Group_8__04570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Script__Group_8__0__Impl4598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__1__Impl_in_rule__Script__Group_8__14629 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__2_in_rule__Script__Group_8__14632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Script__Group_8__1__Impl4660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__2__Impl_in_rule__Script__Group_8__24691 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__3_in_rule__Script__Group_8__24694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobottypesAssignment_8_2_in_rule__Script__Group_8__2__Impl4721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__3__Impl_in_rule__Script__Group_8__34751 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__4_in_rule__Script__Group_8__34754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Script__Group_8__3__Impl4782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__4__Impl_in_rule__Script__Group_8__44813 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__5_in_rule__Script__Group_8__44816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobotconfigsAssignment_8_4_in_rule__Script__Group_8__4__Impl4843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__Group_8__5__Impl_in_rule__Script__Group_8__54873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__Script__Group_8__5__Impl4901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__0__Impl_in_rule__MetaMethods__Group__04944 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__1_in_rule__MetaMethods__Group__04947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__1__Impl_in_rule__MetaMethods__Group__15005 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__2_in_rule__MetaMethods__Group__15008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__MetaMethods__Group__1__Impl5036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__2__Impl_in_rule__MetaMethods__Group__25067 = new BitSet(new long[]{0x0000220000000000L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__3_in_rule__MetaMethods__Group__25070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__MetaMethods__Group__2__Impl5098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__3__Impl_in_rule__MetaMethods__Group__35129 = new BitSet(new long[]{0x0000220000000000L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__4_in_rule__MetaMethods__Group__35132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethods__MethodsAssignment_3_in_rule__MetaMethods__Group__3__Impl5159 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethods__Group__4__Impl_in_rule__MetaMethods__Group__45190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__MetaMethods__Group__4__Impl5218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__05259 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__Block__Group__1_in_rule__Block__Group__05262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__15320 = new BitSet(new long[]{0x0007C30780000060L});
+    public static final BitSet FOLLOW_rule__Block__Group__2_in_rule__Block__Group__15323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__Block__Group__1__Impl5351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__25382 = new BitSet(new long[]{0x0007C30780000060L});
+    public static final BitSet FOLLOW_rule__Block__Group__3_in_rule__Block__Group__25385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Alternatives_2_in_rule__Block__Group__2__Impl5412 = new BitSet(new long[]{0x0007C10780000062L});
+    public static final BitSet FOLLOW_rule__Block__Group__3__Impl_in_rule__Block__Group__35443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__Block__Group__3__Impl5471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group_2_0__0__Impl_in_rule__Block__Group_2_0__05510 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_rule__Block__Group_2_0__1_in_rule__Block__Group_2_0__05513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__ExsAssignment_2_0_0_in_rule__Block__Group_2_0__0__Impl5540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group_2_0__1__Impl_in_rule__Block__Group_2_0__15570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__Block__Group_2_0__1__Impl5598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__Group__0__Impl_in_rule__Assignment__Group__05633 = new BitSet(new long[]{0x0000100007800000L});
+    public static final BitSet FOLLOW_rule__Assignment__Group__1_in_rule__Assignment__Group__05636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__VariAssignment_0_in_rule__Assignment__Group__0__Impl5663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__Group__1__Impl_in_rule__Assignment__Group__15693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__Group_1__0_in_rule__Assignment__Group__1__Impl5720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__Group_1__0__Impl_in_rule__Assignment__Group_1__05754 = new BitSet(new long[]{0x0000100007800000L});
+    public static final BitSet FOLLOW_rule__Assignment__Group_1__1_in_rule__Assignment__Group_1__05757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__OpAssignment_1_0_in_rule__Assignment__Group_1__0__Impl5784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__Group_1__1__Impl_in_rule__Assignment__Group_1__15815 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__Assignment__Group_1__2_in_rule__Assignment__Group_1__15818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__Assignment__Group_1__1__Impl5846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__Group_1__2__Impl_in_rule__Assignment__Group_1__25877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__ValueAssignment_1_2_in_rule__Assignment__Group_1__2__Impl5904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group__0__Impl_in_rule__Call__Group__05940 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__Call__Group__1_in_rule__Call__Group__05943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Alternatives_0_in_rule__Call__Group__0__Impl5970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group__1__Impl_in_rule__Call__Group__16000 = new BitSet(new long[]{0x000000E0600000F0L});
+    public static final BitSet FOLLOW_rule__Call__Group__2_in_rule__Call__Group__16003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Call__Group__1__Impl6031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group__2__Impl_in_rule__Call__Group__26062 = new BitSet(new long[]{0x000000E0600000F0L});
+    public static final BitSet FOLLOW_rule__Call__Group__3_in_rule__Call__Group__26065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__ParametersAssignment_2_in_rule__Call__Group__2__Impl6092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group__3__Impl_in_rule__Call__Group__36123 = new BitSet(new long[]{0x000000E0600000F0L});
+    public static final BitSet FOLLOW_rule__Call__Group__4_in_rule__Call__Group__36126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group_3__0_in_rule__Call__Group__3__Impl6153 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group__4__Impl_in_rule__Call__Group__46184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__Call__Group__4__Impl6212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group_3__0__Impl_in_rule__Call__Group_3__06253 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__Call__Group_3__1_in_rule__Call__Group_3__06256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Call__Group_3__0__Impl6287 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Call__Group_3__0__Impl6303 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__Call__Group_3__1__Impl_in_rule__Call__Group_3__16338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Call__ParametersAssignment_3_1_in_rule__Call__Group_3__1__Impl6365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__0__Impl_in_rule__MetaMethod__Group__06399 = new BitSet(new long[]{0x0000000780000000L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__1_in_rule__MetaMethod__Group__06402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__MetaMethod__Group__0__Impl6430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__1__Impl_in_rule__MetaMethod__Group__16461 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__2_in_rule__MetaMethod__Group__16464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__TypeAssignment_1_in_rule__MetaMethod__Group__1__Impl6491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__2__Impl_in_rule__MetaMethod__Group__26521 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__3_in_rule__MetaMethod__Group__26524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__NameAssignment_2_in_rule__MetaMethod__Group__2__Impl6551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__3__Impl_in_rule__MetaMethod__Group__36581 = new BitSet(new long[]{0x000000C780000020L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__4_in_rule__MetaMethod__Group__36584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__MetaMethod__Group__3__Impl6612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__4__Impl_in_rule__MetaMethod__Group__46643 = new BitSet(new long[]{0x000000C780000020L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__5_in_rule__MetaMethod__Group__46646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__ParametersAssignment_4_in_rule__MetaMethod__Group__4__Impl6673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__5__Impl_in_rule__MetaMethod__Group__56704 = new BitSet(new long[]{0x000000C780000020L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__6_in_rule__MetaMethod__Group__56707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__0_in_rule__MetaMethod__Group__5__Impl6734 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__6__Impl_in_rule__MetaMethod__Group__66765 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__7_in_rule__MetaMethod__Group__66768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__MetaMethod__Group__6__Impl6796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group__7__Impl_in_rule__MetaMethod__Group__76827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__MetaMethod__Group__7__Impl6855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__0__Impl_in_rule__MetaMethod__Group_5__06902 = new BitSet(new long[]{0x0000000780000020L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__1_in_rule__MetaMethod__Group_5__06905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6936 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_38_in_rule__MetaMethod__Group_5__0__Impl6952 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__Group_5__1__Impl_in_rule__MetaMethod__Group_5__16987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MetaMethod__ParametersAssignment_5_1_in_rule__MetaMethod__Group_5__1__Impl7014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__0__Impl_in_rule__UserMethod__Group__07048 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__1_in_rule__UserMethod__Group__07051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__TypeAssignment_0_in_rule__UserMethod__Group__0__Impl7078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__1__Impl_in_rule__UserMethod__Group__17108 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__2_in_rule__UserMethod__Group__17111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__NameAssignment_1_in_rule__UserMethod__Group__1__Impl7138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__2__Impl_in_rule__UserMethod__Group__27168 = new BitSet(new long[]{0x000000C780000020L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__3_in_rule__UserMethod__Group__27171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__UserMethod__Group__2__Impl7199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__3__Impl_in_rule__UserMethod__Group__37230 = new BitSet(new long[]{0x000000C780000020L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__4_in_rule__UserMethod__Group__37233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__ParametersAssignment_3_in_rule__UserMethod__Group__3__Impl7260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__4__Impl_in_rule__UserMethod__Group__47291 = new BitSet(new long[]{0x000000C780000020L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__5_in_rule__UserMethod__Group__47294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group_4__0_in_rule__UserMethod__Group__4__Impl7321 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__5__Impl_in_rule__UserMethod__Group__57352 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__6_in_rule__UserMethod__Group__57355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__UserMethod__Group__5__Impl7383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group__6__Impl_in_rule__UserMethod__Group__67414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__BlAssignment_6_in_rule__UserMethod__Group__6__Impl7441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group_4__0__Impl_in_rule__UserMethod__Group_4__07485 = new BitSet(new long[]{0x0000000780000020L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group_4__1_in_rule__UserMethod__Group_4__07488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7519 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_38_in_rule__UserMethod__Group_4__0__Impl7535 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__Group_4__1__Impl_in_rule__UserMethod__Group_4__17570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserMethod__ParametersAssignment_4_1_in_rule__UserMethod__Group_4__1__Impl7597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__0__Impl_in_rule__ParanValueExpression__Group__07631 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__1_in_rule__ParanValueExpression__Group__07634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__ParanValueExpression__Group__0__Impl7662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__1__Impl_in_rule__ParanValueExpression__Group__17693 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__2_in_rule__ParanValueExpression__Group__17696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__ExAssignment_1_in_rule__ParanValueExpression__Group__1__Impl7723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__2__Impl_in_rule__ParanValueExpression__Group__27753 = new BitSet(new long[]{0x0000000007FFE000L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__3_in_rule__ParanValueExpression__Group__27756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__ParanValueExpression__Group__2__Impl7784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group__3__Impl_in_rule__ParanValueExpression__Group__37815 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__0_in_rule__ParanValueExpression__Group__3__Impl7842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__0__Impl_in_rule__ParanValueExpression__Group_3__07881 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__1_in_rule__ParanValueExpression__Group_3__07884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__OpAssignment_3_0_in_rule__ParanValueExpression__Group_3__0__Impl7911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__Group_3__1__Impl_in_rule__ParanValueExpression__Group_3__17941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__VarrightAssignment_3_1_in_rule__ParanValueExpression__Group_3__1__Impl7968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group__0__Impl_in_rule__BasicValueExpression__Group__08002 = new BitSet(new long[]{0x0000000007FFE000L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group__1_in_rule__BasicValueExpression__Group__08005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__VarleftAssignment_0_in_rule__BasicValueExpression__Group__0__Impl8032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group__1__Impl_in_rule__BasicValueExpression__Group__18062 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__0_in_rule__BasicValueExpression__Group__1__Impl8089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__0__Impl_in_rule__BasicValueExpression__Group_1__08124 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__1_in_rule__BasicValueExpression__Group_1__08127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__OpAssignment_1_0_in_rule__BasicValueExpression__Group_1__0__Impl8154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__Group_1__1__Impl_in_rule__BasicValueExpression__Group_1__18184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__VarrightAssignment_1_1_in_rule__BasicValueExpression__Group_1__1__Impl8211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Crement__Group__0__Impl_in_rule__Crement__Group__08245 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_rule__Crement__Group__1_in_rule__Crement__Group__08248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Crement__ValueAssignment_0_in_rule__Crement__Group__0__Impl8275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Crement__Group__1__Impl_in_rule__Crement__Group__18305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Crement__OpAssignment_1_in_rule__Crement__Group__1__Impl8332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__Group__0__Impl_in_rule__If__Group__08366 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__If__Group__1_in_rule__If__Group__08369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__If__Group__0__Impl8397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__Group__1__Impl_in_rule__If__Group__18428 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__If__Group__2_in_rule__If__Group__18431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__If__Group__1__Impl8459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__Group__2__Impl_in_rule__If__Group__28490 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__If__Group__3_in_rule__If__Group__28493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__ExAssignment_2_in_rule__If__Group__2__Impl8520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__Group__3__Impl_in_rule__If__Group__38550 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__If__Group__4_in_rule__If__Group__38553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__If__Group__3__Impl8581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__Group__4__Impl_in_rule__If__Group__48612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__If__BlAssignment_4_in_rule__If__Group__4__Impl8639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Else__Group__0__Impl_in_rule__Else__Group__08679 = new BitSet(new long[]{0x0007C10780000060L});
+    public static final BitSet FOLLOW_rule__Else__Group__1_in_rule__Else__Group__08682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_rule__Else__Group__0__Impl8710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Else__Group__1__Impl_in_rule__Else__Group__18741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Else__ExAssignment_1_in_rule__Else__Group__1__Impl8768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__0__Impl_in_rule__For__Group__08802 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__For__Group__1_in_rule__For__Group__08805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__For__Group__0__Impl8833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__1__Impl_in_rule__For__Group__18864 = new BitSet(new long[]{0x0004000780000060L});
+    public static final BitSet FOLLOW_rule__For__Group__2_in_rule__For__Group__18867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__For__Group__1__Impl8895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__2__Impl_in_rule__For__Group__28926 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_rule__For__Group__3_in_rule__For__Group__28929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__InitAssignment_2_in_rule__For__Group__2__Impl8956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__3__Impl_in_rule__For__Group__38986 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__For__Group__4_in_rule__For__Group__38989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__For__Group__3__Impl9017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__4__Impl_in_rule__For__Group__49048 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_rule__For__Group__5_in_rule__For__Group__49051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__CheckAssignment_4_in_rule__For__Group__4__Impl9078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__5__Impl_in_rule__For__Group__59108 = new BitSet(new long[]{0x0004000780000060L});
+    public static final BitSet FOLLOW_rule__For__Group__6_in_rule__For__Group__59111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__For__Group__5__Impl9139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__6__Impl_in_rule__For__Group__69170 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__For__Group__7_in_rule__For__Group__69173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__ActionAssignment_6_in_rule__For__Group__6__Impl9200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__7__Impl_in_rule__For__Group__79230 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__For__Group__8_in_rule__For__Group__79233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__For__Group__7__Impl9261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__Group__8__Impl_in_rule__For__Group__89292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__For__BlAssignment_8_in_rule__For__Group__8__Impl9319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__Group__0__Impl_in_rule__While__Group__09367 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__While__Group__1_in_rule__While__Group__09370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rule__While__Group__0__Impl9398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__Group__1__Impl_in_rule__While__Group__19429 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__While__Group__2_in_rule__While__Group__19432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__While__Group__1__Impl9460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__Group__2__Impl_in_rule__While__Group__29491 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__While__Group__3_in_rule__While__Group__29494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__ExAssignment_2_in_rule__While__Group__2__Impl9521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__Group__3__Impl_in_rule__While__Group__39551 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__While__Group__4_in_rule__While__Group__39554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__While__Group__3__Impl9582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__Group__4__Impl_in_rule__While__Group__49613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__While__BlAssignment_4_in_rule__While__Group__4__Impl9640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__09680 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__09683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl9710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__19740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__NameAssignment_1_in_rule__Declaration__Group__1__Impl9767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Return__Group__0__Impl_in_rule__Return__Group__09801 = new BitSet(new long[]{0x00000020600000F0L});
+    public static final BitSet FOLLOW_rule__Return__Group__1_in_rule__Return__Group__09804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__Return__Group__0__Impl9832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Return__Group__1__Impl_in_rule__Return__Group__19863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Return__ValAssignment_1_in_rule__Return__Group__1__Impl9890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleScript_in_rule__CLfile__ScriptsAssignment_09929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMetaMethods_in_rule__CLfile__MetsAssignment_19960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CAPITALFIRST_in_rule__Script__NameAssignment_19991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobottypesAlternatives_4_0_in_rule__Script__RobottypesAssignment_410022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobotconfigsAlternatives_6_0_in_rule__Script__RobotconfigsAssignment_610055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobottypesAlternatives_8_2_0_in_rule__Script__RobottypesAssignment_8_210088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Script__RobotconfigsAlternatives_8_4_0_in_rule__Script__RobotconfigsAssignment_8_410121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUserMethod_in_rule__Script__MethodsAssignment_1010154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMetaMethod_in_rule__MetaMethods__MethodsAssignment_310185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__Block__ExsAssignment_2_0_010216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructureExpression_in_rule__Block__ExsAssignment_2_110247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Assignment__VariAlternatives_0_0_in_rule__Assignment__VariAssignment_010278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMathOperator_in_rule__Assignment__OpAssignment_1_010311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Assignment__ValueAssignment_1_210342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_210373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Call__ParametersAssignment_3_110404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethodtype_in_rule__MetaMethod__TypeAssignment_110435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethod__NameAssignment_210466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_410497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__MetaMethod__ParametersAssignment_5_110528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethodtype_in_rule__UserMethod__TypeAssignment_010559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__UserMethod__NameAssignment_110590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_310621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__UserMethod__ParametersAssignment_4_110652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlock_in_rule__UserMethod__BlAssignment_610683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__UserMethodCall__MethodAssignment10718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CAPITALFIRST_in_rule__MetaMethodCall__MethodAssignment10757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__ExAssignment_110792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParanValueExpression__OpAlternatives_3_0_0_in_rule__ParanValueExpression__OpAssignment_3_010823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__ParanValueExpression__VarrightAssignment_3_110856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__BasicValueExpression__VarleftAssignment_010887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BasicValueExpression__OpAlternatives_1_0_0_in_rule__BasicValueExpression__OpAssignment_1_010918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__BasicValueExpression__VarrightAssignment_1_110951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarReference_in_rule__Crement__ValueAssignment_010982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCrementOperator_in_rule__Crement__OpAssignment_111013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__If__ExAssignment_211044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlock_in_rule__If__BlAssignment_411075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__Else__ExAssignment_111106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__For__InitAssignment_211137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__For__CheckAssignment_411168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_rule__For__ActionAssignment_611199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlock_in_rule__For__BlAssignment_811230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__While__ExAssignment_211261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlock_in_rule__While__BlAssignment_411292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanValue__ValueAlternatives_0_in_rule__BooleanValue__ValueAssignment11323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringValue__ValueAssignment11356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleINTSTRING_in_rule__NumberValue__ValueAssignment11387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__VarReference__VariAssignment11422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDatatype_in_rule__Declaration__TypeAssignment_011457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWERFIRST_in_rule__Declaration__NameAssignment_111488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueExpression_in_rule__Return__ValAssignment_111519 = new BitSet(new long[]{0x0000000000000002L});
 
 }

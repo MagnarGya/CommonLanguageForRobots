@@ -685,27 +685,32 @@ ruleAssignment returns [EObject current=null]
 ((
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAssignmentRule());
-	        }
-        }
-	otherlv_0=RULE_LOWERFIRST
-	{
-		newLeafNode(otherlv_0, grammarAccess.getAssignmentAccess().getVariDeclarationCrossReference_0_0_0()); 
-	}
-
-    |		{ 
-	        newCompositeNode(grammarAccess.getAssignmentAccess().getVariDeclarationParserRuleCall_0_0_1()); 
+		{ 
+	        newCompositeNode(grammarAccess.getAssignmentAccess().getVariVarReferenceParserRuleCall_0_0_0()); 
 	    }
-		lv_vari_0_4=ruleDeclaration		{
+		lv_vari_0_1=ruleVarReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAssignmentRule());
 	        }
        		set(
        			$current, 
        			"vari",
-        		lv_vari_0_4, 
+        		lv_vari_0_1, 
+        		"VarReference");
+	        afterParserOrEnumRuleCall();
+	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getAssignmentAccess().getVariDeclarationParserRuleCall_0_0_1()); 
+	    }
+		lv_vari_0_2=ruleDeclaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssignmentRule());
+	        }
+       		set(
+       			$current, 
+       			"vari",
+        		lv_vari_0_2, 
         		"Declaration");
 	        afterParserOrEnumRuleCall();
 	    }

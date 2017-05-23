@@ -2,6 +2,7 @@
  */
 package org.xtext.commonlang;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,12 +33,12 @@ public interface Assignment extends SimpleExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Vari</em>' containment reference.
-   * @see #setVari(Declaration)
+   * @see #setVari(EObject)
    * @see org.xtext.commonlang.CommonlangPackage#getAssignment_Vari()
    * @model containment="true"
    * @generated
    */
-  Declaration getVari();
+  EObject getVari();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.Assignment#getVari <em>Vari</em>}' containment reference.
@@ -47,7 +48,7 @@ public interface Assignment extends SimpleExpression
    * @see #getVari()
    * @generated
    */
-  void setVari(Declaration value);
+  void setVari(EObject value);
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' attribute.

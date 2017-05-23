@@ -363,8 +363,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVariAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Alternatives cVariAlternatives_0_0 = (Alternatives)cVariAssignment_0.eContents().get(0);
-		private final CrossReference cVariDeclarationCrossReference_0_0_0 = (CrossReference)cVariAlternatives_0_0.eContents().get(0);
-		private final RuleCall cVariDeclarationLOWERFIRSTTerminalRuleCall_0_0_0_1 = (RuleCall)cVariDeclarationCrossReference_0_0_0.eContents().get(1);
+		private final RuleCall cVariVarReferenceParserRuleCall_0_0_0 = (RuleCall)cVariAlternatives_0_0.eContents().get(0);
 		private final RuleCall cVariDeclarationParserRuleCall_0_0_1 = (RuleCall)cVariAlternatives_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Assignment cOpAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
@@ -374,23 +373,20 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueValueExpressionParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
 		
 		//Assignment:
-		//	vari=([Declaration|LOWERFIRST] | Declaration) (=> op=MathOperator? "=" value=ValueExpression);
+		//	vari=(VarReference | Declaration) (=> op=MathOperator? "=" value=ValueExpression);
 		@Override public ParserRule getRule() { return rule; }
 
-		//vari=([Declaration|LOWERFIRST] | Declaration) (=> op=MathOperator? "=" value=ValueExpression)
+		//vari=(VarReference | Declaration) (=> op=MathOperator? "=" value=ValueExpression)
 		public Group getGroup() { return cGroup; }
 
-		//vari=([Declaration|LOWERFIRST] | Declaration)
+		//vari=(VarReference | Declaration)
 		public Assignment getVariAssignment_0() { return cVariAssignment_0; }
 
-		//([Declaration|LOWERFIRST] | Declaration)
+		//VarReference | Declaration
 		public Alternatives getVariAlternatives_0_0() { return cVariAlternatives_0_0; }
 
-		//[Declaration|LOWERFIRST]
-		public CrossReference getVariDeclarationCrossReference_0_0_0() { return cVariDeclarationCrossReference_0_0_0; }
-
-		//LOWERFIRST
-		public RuleCall getVariDeclarationLOWERFIRSTTerminalRuleCall_0_0_0_1() { return cVariDeclarationLOWERFIRSTTerminalRuleCall_0_0_0_1; }
+		//VarReference
+		public RuleCall getVariVarReferenceParserRuleCall_0_0_0() { return cVariVarReferenceParserRuleCall_0_0_0; }
 
 		//Declaration
 		public RuleCall getVariDeclarationParserRuleCall_0_0_1() { return cVariDeclarationParserRuleCall_0_0_1; }
@@ -1529,7 +1525,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Assignment:
-	//	vari=([Declaration|LOWERFIRST] | Declaration) (=> op=MathOperator? "=" value=ValueExpression);
+	//	vari=(VarReference | Declaration) (=> op=MathOperator? "=" value=ValueExpression);
 	public AssignmentElements getAssignmentAccess() {
 		return pAssignment;
 	}

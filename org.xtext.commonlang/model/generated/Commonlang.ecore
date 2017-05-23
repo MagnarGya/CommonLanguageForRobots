@@ -28,7 +28,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="StructureExpression" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//SimpleExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vari" eType="#//Declaration"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vari" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ValueExpression"
