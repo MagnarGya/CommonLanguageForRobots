@@ -594,31 +594,21 @@ ruleStructureExpression returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getStructureExpressionAccess().getElseParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getStructureExpressionAccess().getForParserRuleCall_2()); 
     }
-    this_Else_2=ruleElse
+    this_For_2=ruleFor
     { 
-        $current = $this_Else_2.current; 
+        $current = $this_For_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getStructureExpressionAccess().getForParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getStructureExpressionAccess().getWhileParserRuleCall_3()); 
     }
-    this_For_3=ruleFor
+    this_While_3=ruleWhile
     { 
-        $current = $this_For_3.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getStructureExpressionAccess().getWhileParserRuleCall_4()); 
-    }
-    this_While_4=ruleWhile
-    { 
-        $current = $this_While_4.current; 
+        $current = $this_While_3.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1738,7 +1728,25 @@ ruleIf returns [EObject current=null]
 	    }
 
 )
-))
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getIfAccess().getElElseParserRuleCall_5_0()); 
+	    }
+		lv_el_5_0=ruleElse		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getIfRule());
+	        }
+       		set(
+       			$current, 
+       			"el",
+        		lv_el_5_0, 
+        		"Else");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)
 ;
 
 
@@ -2311,16 +2319,16 @@ ruleReturn returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getReturnAccess().getValValueExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getReturnAccess().getValueValueExpressionParserRuleCall_1_0()); 
 	    }
-		lv_val_1_0=ruleValueExpression		{
+		lv_value_1_0=ruleValueExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getReturnRule());
 	        }
        		set(
        			$current, 
-       			"val",
-        		lv_val_1_0, 
+       			"value",
+        		lv_value_1_0, 
         		"ValueExpression");
 	        afterParserOrEnumRuleCall();
 	    }

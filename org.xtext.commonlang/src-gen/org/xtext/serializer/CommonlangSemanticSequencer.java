@@ -284,20 +284,10 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (ex=ValueExpression bl=Block)
+	 *     (ex=ValueExpression bl=Block el=Else?)
 	 */
 	protected void sequence_If(EObject context, If semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.IF__EX) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.IF__EX));
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.IF__BL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.IF__BL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIfAccess().getExValueExpressionParserRuleCall_2_0(), semanticObject.getEx());
-		feeder.accept(grammarAccess.getIfAccess().getBlBlockParserRuleCall_4_0(), semanticObject.getBl());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -355,16 +345,16 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     val=ValueExpression
+	 *     value=ValueExpression
 	 */
 	protected void sequence_Return(EObject context, Return semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.RETURN__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.RETURN__VAL));
+			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.RETURN__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.RETURN__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReturnAccess().getValValueExpressionParserRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getReturnAccess().getValueValueExpressionParserRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

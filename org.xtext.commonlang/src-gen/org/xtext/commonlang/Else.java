@@ -2,6 +2,7 @@
  */
 package org.xtext.commonlang;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ package org.xtext.commonlang;
  * @model
  * @generated
  */
-public interface Else extends StructureExpression
+public interface Else extends EObject
 {
   /**
    * Returns the value of the '<em><b>Ex</b></em>' containment reference.

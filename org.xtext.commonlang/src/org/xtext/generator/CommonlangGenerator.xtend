@@ -102,7 +102,6 @@ class CommonlangGenerator implements IGenerator {
 			If : e.compile
 			For : e.compile
 			While : e.compile
-			Else : e.compile
 			Assignment : e.compile
 			Block : e.compile
 			Call : e.compile
@@ -118,7 +117,8 @@ class CommonlangGenerator implements IGenerator {
 	def compile(If e) '''
 		new If(
 			«e.ex.compile»,
-			«e.bl.compile»
+			«e.bl.compile»,
+			«IF e.el != null»«e.el.compile»«ELSE»null«ENDIF»
 		)'''
 	
 	def compile(For e) '''

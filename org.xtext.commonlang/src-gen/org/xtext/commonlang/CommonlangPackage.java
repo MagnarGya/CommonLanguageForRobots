@@ -760,13 +760,22 @@ public interface CommonlangPackage extends EPackage
   int IF__BL = STRUCTURE_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>El</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__EL = STRUCTURE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>If</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_FEATURE_COUNT = STRUCTURE_EXPRESSION_FEATURE_COUNT + 2;
+  int IF_FEATURE_COUNT = STRUCTURE_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.ElseImpl <em>Else</em>}' class.
@@ -785,7 +794,7 @@ public interface CommonlangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELSE__EX = STRUCTURE_EXPRESSION_FEATURE_COUNT + 0;
+  int ELSE__EX = 0;
 
   /**
    * The number of structural features of the '<em>Else</em>' class.
@@ -794,7 +803,7 @@ public interface CommonlangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELSE_FEATURE_COUNT = STRUCTURE_EXPRESSION_FEATURE_COUNT + 1;
+  int ELSE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.ForImpl <em>For</em>}' class.
@@ -1095,13 +1104,13 @@ public interface CommonlangPackage extends EPackage
   int RETURN = 29;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN__VAL = SIMPLE_EXPRESSION_FEATURE_COUNT + 0;
+  int RETURN__VALUE = SIMPLE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Return</em>' class.
@@ -1579,6 +1588,17 @@ public interface CommonlangPackage extends EPackage
   EReference getIf_Bl();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.If#getEl <em>El</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>El</em>'.
+   * @see org.xtext.commonlang.If#getEl()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_El();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.commonlang.Else <em>Else</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1810,15 +1830,15 @@ public interface CommonlangPackage extends EPackage
   EClass getReturn();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.Return#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.Return#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Val</em>'.
-   * @see org.xtext.commonlang.Return#getVal()
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.commonlang.Return#getValue()
    * @see #getReturn()
    * @generated
    */
-  EReference getReturn_Val();
+  EReference getReturn_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2234,6 +2254,14 @@ public interface CommonlangPackage extends EPackage
     EReference IF__BL = eINSTANCE.getIf_Bl();
 
     /**
+     * The meta object literal for the '<em><b>El</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__EL = eINSTANCE.getIf_El();
+
+    /**
      * The meta object literal for the '{@link org.xtext.commonlang.impl.ElseImpl <em>Else</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2432,12 +2460,12 @@ public interface CommonlangPackage extends EPackage
     EClass RETURN = eINSTANCE.getReturn();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RETURN__VAL = eINSTANCE.getReturn_Val();
+    EReference RETURN__VALUE = eINSTANCE.getReturn_Value();
 
   }
 

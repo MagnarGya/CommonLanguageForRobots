@@ -73,8 +73,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ex" eType="#//ValueExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bl" eType="#//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="el" eType="#//Else" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Else" eSuperTypes="#//StructureExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="Else">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ex" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
@@ -107,7 +108,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="#//SimpleExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//ValueExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ValueExpression"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

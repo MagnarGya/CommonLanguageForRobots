@@ -13,6 +13,7 @@ package org.xtext.commonlang;
  * <ul>
  *   <li>{@link org.xtext.commonlang.If#getEx <em>Ex</em>}</li>
  *   <li>{@link org.xtext.commonlang.If#getBl <em>Bl</em>}</li>
+ *   <li>{@link org.xtext.commonlang.If#getEl <em>El</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface If extends StructureExpression
    * @generated
    */
   void setBl(Block value);
+
+  /**
+   * Returns the value of the '<em><b>El</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>El</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>El</em>' containment reference.
+   * @see #setEl(Else)
+   * @see org.xtext.commonlang.CommonlangPackage#getIf_El()
+   * @model containment="true"
+   * @generated
+   */
+  Else getEl();
+
+  /**
+   * Sets the value of the '{@link org.xtext.commonlang.If#getEl <em>El</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>El</em>' containment reference.
+   * @see #getEl()
+   * @generated
+   */
+  void setEl(Else value);
 
 } // If

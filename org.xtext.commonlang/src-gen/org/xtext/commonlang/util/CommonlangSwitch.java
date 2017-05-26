@@ -234,8 +234,6 @@ public class CommonlangSwitch<T> extends Switch<T>
       {
         Else else_ = (Else)theEObject;
         T result = caseElse(else_);
-        if (result == null) result = caseStructureExpression(else_);
-        if (result == null) result = caseExpression(else_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

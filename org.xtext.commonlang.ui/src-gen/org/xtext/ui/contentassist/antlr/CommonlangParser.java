@@ -122,6 +122,7 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCrementAccess().getOpAssignment_1(), "rule__Crement__OpAssignment_1");
 					put(grammarAccess.getIfAccess().getExAssignment_2(), "rule__If__ExAssignment_2");
 					put(grammarAccess.getIfAccess().getBlAssignment_4(), "rule__If__BlAssignment_4");
+					put(grammarAccess.getIfAccess().getElAssignment_5(), "rule__If__ElAssignment_5");
 					put(grammarAccess.getElseAccess().getExAssignment_1(), "rule__Else__ExAssignment_1");
 					put(grammarAccess.getForAccess().getInitAssignment_2(), "rule__For__InitAssignment_2");
 					put(grammarAccess.getForAccess().getCheckAssignment_4(), "rule__For__CheckAssignment_4");
@@ -135,7 +136,7 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVarReferenceAccess().getVariAssignment(), "rule__VarReference__VariAssignment");
 					put(grammarAccess.getDeclarationAccess().getTypeAssignment_0(), "rule__Declaration__TypeAssignment_0");
 					put(grammarAccess.getDeclarationAccess().getNameAssignment_1(), "rule__Declaration__NameAssignment_1");
-					put(grammarAccess.getReturnAccess().getValAssignment_1(), "rule__Return__ValAssignment_1");
+					put(grammarAccess.getReturnAccess().getValueAssignment_1(), "rule__Return__ValueAssignment_1");
 				}
 			};
 		}

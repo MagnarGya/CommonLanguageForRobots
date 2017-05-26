@@ -311,15 +311,14 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBlockParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIfParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cElseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cForParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cWhileParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cForParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWhileParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//StructureExpression:
-		//	Block | If | Else | For | While;
+		//	Block | If | For | While;
 		@Override public ParserRule getRule() { return rule; }
 
-		//Block | If | Else | For | While
+		//Block | If | For | While
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Block
@@ -328,14 +327,11 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		//If
 		public RuleCall getIfParserRuleCall_1() { return cIfParserRuleCall_1; }
 
-		//Else
-		public RuleCall getElseParserRuleCall_2() { return cElseParserRuleCall_2; }
-
 		//For
-		public RuleCall getForParserRuleCall_3() { return cForParserRuleCall_3; }
+		public RuleCall getForParserRuleCall_2() { return cForParserRuleCall_2; }
 
 		//While
-		public RuleCall getWhileParserRuleCall_4() { return cWhileParserRuleCall_4; }
+		public RuleCall getWhileParserRuleCall_3() { return cWhileParserRuleCall_3; }
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
@@ -944,12 +940,14 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBlAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cBlBlockParserRuleCall_4_0 = (RuleCall)cBlAssignment_4.eContents().get(0);
+		private final Assignment cElAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cElElseParserRuleCall_5_0 = (RuleCall)cElAssignment_5.eContents().get(0);
 		
 		//If:
-		//	"if" "(" ex=ValueExpression ")" bl=Block;
+		//	"if" "(" ex=ValueExpression ")" bl=Block el=Else?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"if" "(" ex=ValueExpression ")" bl=Block
+		//"if" "(" ex=ValueExpression ")" bl=Block el=Else?
 		public Group getGroup() { return cGroup; }
 
 		//"if"
@@ -972,6 +970,12 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Block
 		public RuleCall getBlBlockParserRuleCall_4_0() { return cBlBlockParserRuleCall_4_0; }
+
+		//el=Else?
+		public Assignment getElAssignment_5() { return cElAssignment_5; }
+
+		//Else
+		public RuleCall getElElseParserRuleCall_5_0() { return cElElseParserRuleCall_5_0; }
 	}
 
 	public class ElseElements extends AbstractParserRuleElementFinder {
@@ -1258,24 +1262,24 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Return");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cReturnKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValValueExpressionParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueValueExpressionParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//Return:
-		//	"return" val=ValueExpression;
+		//	"return" value=ValueExpression;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"return" val=ValueExpression
+		//"return" value=ValueExpression
 		public Group getGroup() { return cGroup; }
 
 		//"return"
 		public Keyword getReturnKeyword_0() { return cReturnKeyword_0; }
 
-		//val=ValueExpression
-		public Assignment getValAssignment_1() { return cValAssignment_1; }
+		//value=ValueExpression
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
 		//ValueExpression
-		public RuleCall getValValueExpressionParserRuleCall_1_0() { return cValValueExpressionParserRuleCall_1_0; }
+		public RuleCall getValueValueExpressionParserRuleCall_1_0() { return cValueValueExpressionParserRuleCall_1_0; }
 	}
 
 	public class MethodtypeElements extends AbstractParserRuleElementFinder {
@@ -1505,7 +1509,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StructureExpression:
-	//	Block | If | Else | For | While;
+	//	Block | If | For | While;
 	public StructureExpressionElements getStructureExpressionAccess() {
 		return pStructureExpression;
 	}
@@ -1687,7 +1691,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//If:
-	//	"if" "(" ex=ValueExpression ")" bl=Block;
+	//	"if" "(" ex=ValueExpression ")" bl=Block el=Else?;
 	public IfElements getIfAccess() {
 		return pIf;
 	}
@@ -1797,7 +1801,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Return:
-	//	"return" val=ValueExpression;
+	//	"return" value=ValueExpression;
 	public ReturnElements getReturnAccess() {
 		return pReturn;
 	}

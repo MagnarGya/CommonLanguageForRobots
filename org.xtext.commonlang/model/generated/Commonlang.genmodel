@@ -63,6 +63,7 @@
     <genClasses ecoreClass="Commonlang.ecore#//If">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/ex"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/bl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//If/el"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Else">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Else/ex"/>
@@ -92,7 +93,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//Declaration/name"/>
     </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//Return">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Return/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//Return/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

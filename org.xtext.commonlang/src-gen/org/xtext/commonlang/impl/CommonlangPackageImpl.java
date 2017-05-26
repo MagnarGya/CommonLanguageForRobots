@@ -768,6 +768,16 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getIf_El()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getElse()
   {
     return elseEClass;
@@ -988,7 +998,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReturn_Val()
+  public EReference getReturn_Value()
   {
     return (EReference)returnEClass.getEStructuralFeatures().get(0);
   }
@@ -1085,6 +1095,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     ifEClass = createEClass(IF);
     createEReference(ifEClass, IF__EX);
     createEReference(ifEClass, IF__BL);
+    createEReference(ifEClass, IF__EL);
 
     elseEClass = createEClass(ELSE);
     createEReference(elseEClass, ELSE__EX);
@@ -1118,7 +1129,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     createEAttribute(declarationEClass, DECLARATION__NAME);
 
     returnEClass = createEClass(RETURN);
-    createEReference(returnEClass, RETURN__VAL);
+    createEReference(returnEClass, RETURN__VALUE);
   }
 
   /**
@@ -1164,7 +1175,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     basicValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
     crementEClass.getESuperTypes().add(this.getSimpleExpression());
     ifEClass.getESuperTypes().add(this.getStructureExpression());
-    elseEClass.getESuperTypes().add(this.getStructureExpression());
     forEClass.getESuperTypes().add(this.getStructureExpression());
     whileEClass.getESuperTypes().add(this.getStructureExpression());
     basicValueEClass.getESuperTypes().add(this.getValue());
@@ -1237,6 +1247,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIf_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIf_Bl(), this.getBlock(), null, "bl", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_El(), this.getElse(), null, "el", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElse_Ex(), this.getExpression(), null, "ex", null, 0, 1, Else.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1270,7 +1281,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEAttribute(getDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnEClass, Return.class, "Return", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReturn_Val(), this.getValueExpression(), null, "val", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReturn_Value(), this.getValueExpression(), null, "value", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

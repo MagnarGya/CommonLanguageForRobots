@@ -28,7 +28,7 @@ SimpleExpression:
 ;
 
 StructureExpression:
-	Block | If | Else | For | While
+	Block | If | For | While
 ;
 
 Expression:
@@ -99,7 +99,7 @@ CrementOperator:
 	'++' | '--'
 ;
 If:
-	'if' '(' ex=ValueExpression ')' bl=Block
+	'if' '(' ex=ValueExpression ')' bl=Block (el=Else)?
 ;
 
 Else:
@@ -143,7 +143,7 @@ Declaration:
 ;
 
 Return:
-	'return' val=ValueExpression
+	'return' value=ValueExpression
 ;
 
 Methodtype:

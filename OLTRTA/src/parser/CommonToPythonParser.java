@@ -90,6 +90,9 @@ public class CommonToPythonParser implements CommonToLanguageParser{
 
         returnString += "if " + parseExpression(_if.ex) + ":";
         returnString += parseBlock(_if.bl);
+        if (_if.el != null) {
+        	returnString += parseElse(_if.el);
+        }
 
         return returnString;
 	}

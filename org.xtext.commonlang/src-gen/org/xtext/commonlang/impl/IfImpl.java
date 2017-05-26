@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Block;
 import org.xtext.commonlang.CommonlangPackage;
+import org.xtext.commonlang.Else;
 import org.xtext.commonlang.If;
 import org.xtext.commonlang.ValueExpression;
 
@@ -24,6 +25,7 @@ import org.xtext.commonlang.ValueExpression;
  * <ul>
  *   <li>{@link org.xtext.commonlang.impl.IfImpl#getEx <em>Ex</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.IfImpl#getBl <em>Bl</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.IfImpl#getEl <em>El</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +52,16 @@ public class IfImpl extends StructureExpressionImpl implements If
    * @ordered
    */
   protected Block bl;
+
+  /**
+   * The cached value of the '{@link #getEl() <em>El</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEl()
+   * @generated
+   * @ordered
+   */
+  protected Else el;
 
   /**
    * <!-- begin-user-doc -->
@@ -173,6 +185,54 @@ public class IfImpl extends StructureExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
+  public Else getEl()
+  {
+    return el;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEl(Else newEl, NotificationChain msgs)
+  {
+    Else oldEl = el;
+    el = newEl;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.IF__EL, oldEl, newEl);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEl(Else newEl)
+  {
+    if (newEl != el)
+    {
+      NotificationChain msgs = null;
+      if (el != null)
+        msgs = ((InternalEObject)el).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.IF__EL, null, msgs);
+      if (newEl != null)
+        msgs = ((InternalEObject)newEl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.IF__EL, null, msgs);
+      msgs = basicSetEl(newEl, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.IF__EL, newEl, newEl));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -182,6 +242,8 @@ public class IfImpl extends StructureExpressionImpl implements If
         return basicSetEx(null, msgs);
       case CommonlangPackage.IF__BL:
         return basicSetBl(null, msgs);
+      case CommonlangPackage.IF__EL:
+        return basicSetEl(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -200,6 +262,8 @@ public class IfImpl extends StructureExpressionImpl implements If
         return getEx();
       case CommonlangPackage.IF__BL:
         return getBl();
+      case CommonlangPackage.IF__EL:
+        return getEl();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -219,6 +283,9 @@ public class IfImpl extends StructureExpressionImpl implements If
         return;
       case CommonlangPackage.IF__BL:
         setBl((Block)newValue);
+        return;
+      case CommonlangPackage.IF__EL:
+        setEl((Else)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,6 +307,9 @@ public class IfImpl extends StructureExpressionImpl implements If
       case CommonlangPackage.IF__BL:
         setBl((Block)null);
         return;
+      case CommonlangPackage.IF__EL:
+        setEl((Else)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -258,6 +328,8 @@ public class IfImpl extends StructureExpressionImpl implements If
         return ex != null;
       case CommonlangPackage.IF__BL:
         return bl != null;
+      case CommonlangPackage.IF__EL:
+        return el != null;
     }
     return super.eIsSet(featureID);
   }

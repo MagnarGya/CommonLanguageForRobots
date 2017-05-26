@@ -19,6 +19,12 @@ import org.xtext.commonlang.For
 import org.xtext.commonlang.ParanValueExpression
 import org.xtext.commonlang.BasicValueExpression
 import org.xtext.commonlang.Declaration
+import org.xtext.commonlang.Method
+import org.xtext.commonlang.UserMethod
+import org.xtext.commonlang.Return
+import org.xtext.commonlang.Expression
+import org.xtext.commonlang.Block
+import org.xtext.commonlang.CommonlangPackage.Literals
 
 /**
  * This class contains custom validation rules. 
@@ -149,6 +155,48 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 					}
 				}				
 			}
+		}
+	}
+	
+	@Check
+	def checkMethodReturn(UserMethod method) {
+		var type = method.type;
+		var block = method.bl;
+		
+		if (type != "void") {
+			if (!block.returnsValue(type)) {
+				error("Method has return type "+type+" but may not return a valid value",null)
+			}
+		}
+	}
+	
+	def boolean returnsValue(Expression ex, String type) {
+		switch (ex) {
+			Block : {
+						var returns = false;
+						for (x : ex.exs) {
+							if (returns == true) {
+								warning("Code after a return statement",null)
+							}
+							if (x.returnsValue(type)) {
+								returns = true;
+							}
+						}
+						return returns;
+					}
+			If : 
+					if (ex.el != null) {
+						return ex.bl.returnsValue(type) && ex.el.ex.returnsValue(type)
+					} else {
+						return false
+					}
+			Return : if (type == ex.value.getTypeOfValueExpression) {			
+						return true
+					} else {
+						error("Must return value of type "+type,null)
+						return true
+					}
+			default : return false
 		}
 	}
 	
