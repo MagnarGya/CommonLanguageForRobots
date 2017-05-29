@@ -36,18 +36,18 @@ public class CodeOutputWriter {
         script += postFix();
         
 		try {
-			String path = new File(".\\src\\"+botmethods.robot).getCanonicalPath();
+			String path = new File(".\\src-gen\\"+botmethods.robot).getCanonicalPath();
 			File folder = new File(path);
 			File file;
 			if(folder.exists()){
-				path = new File(".\\src\\"+botmethods.robot+"\\"+name+botmethods.name+""+botmethods.extension).getCanonicalPath();
+				path = new File(".\\src-gen\\"+botmethods.robot+"\\"+name+botmethods.name+""+botmethods.extension).getCanonicalPath();
 				file = new File(path);
 				if(!(file.exists())){
 					file.createNewFile();
 				}
 			}else{
 				folder.mkdir();
-				path = new File(".\\src\\"+botmethods.robot+"\\"+name+botmethods.name+""+botmethods.extension).getCanonicalPath();
+				path = new File(".\\src-gen\\"+botmethods.robot+"\\"+name+botmethods.name+""+botmethods.extension).getCanonicalPath();
 				file = new File(path);
 				file.createNewFile();
 			}
