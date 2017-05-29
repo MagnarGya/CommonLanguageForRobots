@@ -10,41 +10,41 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.xtext.commonlang.BasicValueExpression;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Return;
-import org.xtext.commonlang.ValueExpression;
+import org.xtext.commonlang.Value;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Return</b></em>'.
+ * An implementation of the model object '<em><b>Basic Value Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.ReturnImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.BasicValueExpressionImpl#getVarleft <em>Varleft</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReturnImpl extends SimpleExpressionImpl implements Return
+public class BasicValueExpressionImpl extends ValueExpressionImpl implements BasicValueExpression
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getVarleft() <em>Varleft</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVarleft()
    * @generated
    * @ordered
    */
-  protected ValueExpression value;
+  protected Value varleft;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReturnImpl()
+  protected BasicValueExpressionImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   @Override
   protected EClass eStaticClass()
   {
-    return CommonlangPackage.Literals.RETURN;
+    return CommonlangPackage.Literals.BASIC_VALUE_EXPRESSION;
   }
 
   /**
@@ -65,9 +65,9 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public ValueExpression getValue()
+  public Value getVarleft()
   {
-    return value;
+    return varleft;
   }
 
   /**
@@ -75,13 +75,13 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(ValueExpression newValue, NotificationChain msgs)
+  public NotificationChain basicSetVarleft(Value newVarleft, NotificationChain msgs)
   {
-    ValueExpression oldValue = value;
-    value = newValue;
+    Value oldVarleft = varleft;
+    varleft = newVarleft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.RETURN__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT, oldVarleft, newVarleft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ValueExpression newValue)
+  public void setVarleft(Value newVarleft)
   {
-    if (newValue != value)
+    if (newVarleft != varleft)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.RETURN__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.RETURN__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (varleft != null)
+        msgs = ((InternalEObject)varleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT, null, msgs);
+      if (newVarleft != null)
+        msgs = ((InternalEObject)newVarleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT, null, msgs);
+      msgs = basicSetVarleft(newVarleft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.RETURN__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT, newVarleft, newVarleft));
   }
 
   /**
@@ -118,8 +118,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        return basicSetValue(null, msgs);
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT:
+        return basicSetVarleft(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        return getValue();
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT:
+        return getVarleft();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        setValue((ValueExpression)newValue);
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT:
+        setVarleft((Value)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        setValue((ValueExpression)null);
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT:
+        setVarleft((Value)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        return value != null;
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION__VARLEFT:
+        return varleft != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReturnImpl
+} //BasicValueExpressionImpl

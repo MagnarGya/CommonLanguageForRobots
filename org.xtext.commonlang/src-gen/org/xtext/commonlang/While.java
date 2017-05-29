@@ -31,12 +31,12 @@ public interface While extends StructureExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ex</em>' containment reference.
-   * @see #setEx(Bool)
+   * @see #setEx(ValueExpression)
    * @see org.xtext.commonlang.CommonlangPackage#getWhile_Ex()
    * @model containment="true"
    * @generated
    */
-  Bool getEx();
+  ValueExpression getEx();
 
   /**
    * Sets the value of the '{@link org.xtext.commonlang.While#getEx <em>Ex</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface While extends StructureExpression
    * @see #getEx()
    * @generated
    */
-  void setEx(Bool value);
+  void setEx(ValueExpression value);
 
   /**
    * Returns the value of the '<em><b>Bl</b></em>' containment reference.

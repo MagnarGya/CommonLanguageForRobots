@@ -145,9 +145,24 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
         return createMetaMethodCallAdapter();
       }
       @Override
-      public Adapter caseBool(Bool object)
+      public Adapter caseValueExpression(ValueExpression object)
       {
-        return createBoolAdapter();
+        return createValueExpressionAdapter();
+      }
+      @Override
+      public Adapter caseParanValueExpression(ParanValueExpression object)
+      {
+        return createParanValueExpressionAdapter();
+      }
+      @Override
+      public Adapter caseBasicValueExpression(BasicValueExpression object)
+      {
+        return createBasicValueExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCrement(Crement object)
+      {
+        return createCrementAdapter();
       }
       @Override
       public Adapter caseIf(If object)
@@ -442,16 +457,61 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Bool <em>Bool</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.ValueExpression <em>Value Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.commonlang.Bool
+   * @see org.xtext.commonlang.ValueExpression
    * @generated
    */
-  public Adapter createBoolAdapter()
+  public Adapter createValueExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.ParanValueExpression <em>Paran Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.ParanValueExpression
+   * @generated
+   */
+  public Adapter createParanValueExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.BasicValueExpression <em>Basic Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.BasicValueExpression
+   * @generated
+   */
+  public Adapter createBasicValueExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.Crement <em>Crement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.Crement
+   * @generated
+   */
+  public Adapter createCrementAdapter()
   {
     return null;
   }

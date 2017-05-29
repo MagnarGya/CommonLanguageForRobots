@@ -2,6 +2,8 @@ package input;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import parser.CodeOutputWriter;
 import CommonLanguageObjects.Block;
@@ -61,31 +63,34 @@ public class RobotScript {
 	}
 	
 	Expression checkExpression(Expression exp){
+		String methodRegex = "[a-zA-Z]([a-zA-Z_0-9])*[(]";
+		
 		switch (exp.getClass().toString()) {
         case "class CommonLanguageObjects.If": return checkIf((If)exp);
         case "class CommonLanguageObjects.Else": return checkElse((Else)exp);
         case "class CommonLanguageObjects.Block": return checkBlock((Block)exp);
         case "class CommonLanguageObjects.While": return checkWhile((While)exp);
         case "class CommonLanguageObjects.For": return checkFor((For)exp);
-        default: if(exp.content.matches(".*[(].*[)].*")) {
-        	String checkstring = exp.content.substring(0,exp.content.lastIndexOf('('));
-        	checkstring = checkstring.substring(getIndex(checkstring));
-        	boolean isMethod = false;
-        	for(Method method : methodlist){
-        		if(method.name.contains(checkstring)){
-        			isMethod = true;
-        		}
-        	}
-        	if(isMethod){
-        		return exp;
-        	}else{
-        		System.err.println(checkstring + " is called as a method, but isn't defined. \n"
-        				+ "Removed the method call and any surrounding structure");
-        		return null;
-        	}
-        }else{
+        default: 
+        	if(exp.content.matches(".*"+methodRegex+".*")) {	
+	        	Matcher m = Pattern.compile(methodRegex).matcher(exp.content);
+	        	String methodString = "";
+	        	while (m.find()) {
+	        		boolean isMethod = false;
+	        		methodString = exp.content.substring(m.start(), m.end()-1);
+	        		for(Method method : methodlist){
+	            		if(method.name.contains(methodString)) {
+	            			isMethod = true;
+	            		}
+	            	}
+	            	if(!isMethod){
+	            		System.err.println(methodString + " is called as a method, but isn't defined. \n"
+	            				+ "Removed the method call and any surrounding structure");
+	            		return null;
+	            	}
+	        	}
+        	} 
         	return exp;
-        }
 		}
 	}
 	

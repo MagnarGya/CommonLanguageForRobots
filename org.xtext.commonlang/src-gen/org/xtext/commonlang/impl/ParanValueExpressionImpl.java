@@ -11,40 +11,40 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Return;
+import org.xtext.commonlang.ParanValueExpression;
 import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Return</b></em>'.
+ * An implementation of the model object '<em><b>Paran Value Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.commonlang.impl.ReturnImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.ParanValueExpressionImpl#getEx <em>Ex</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReturnImpl extends SimpleExpressionImpl implements Return
+public class ParanValueExpressionImpl extends ValueExpressionImpl implements ParanValueExpression
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getEx() <em>Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getEx()
    * @generated
    * @ordered
    */
-  protected ValueExpression value;
+  protected ValueExpression ex;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReturnImpl()
+  protected ParanValueExpressionImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   @Override
   protected EClass eStaticClass()
   {
-    return CommonlangPackage.Literals.RETURN;
+    return CommonlangPackage.Literals.PARAN_VALUE_EXPRESSION;
   }
 
   /**
@@ -65,9 +65,9 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public ValueExpression getValue()
+  public ValueExpression getEx()
   {
-    return value;
+    return ex;
   }
 
   /**
@@ -75,13 +75,13 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(ValueExpression newValue, NotificationChain msgs)
+  public NotificationChain basicSetEx(ValueExpression newEx, NotificationChain msgs)
   {
-    ValueExpression oldValue = value;
-    value = newValue;
+    ValueExpression oldEx = ex;
+    ex = newEx;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.RETURN__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonlangPackage.PARAN_VALUE_EXPRESSION__EX, oldEx, newEx);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ValueExpression newValue)
+  public void setEx(ValueExpression newEx)
   {
-    if (newValue != value)
+    if (newEx != ex)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.RETURN__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.RETURN__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (ex != null)
+        msgs = ((InternalEObject)ex).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.PARAN_VALUE_EXPRESSION__EX, null, msgs);
+      if (newEx != null)
+        msgs = ((InternalEObject)newEx).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonlangPackage.PARAN_VALUE_EXPRESSION__EX, null, msgs);
+      msgs = basicSetEx(newEx, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.RETURN__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.PARAN_VALUE_EXPRESSION__EX, newEx, newEx));
   }
 
   /**
@@ -118,8 +118,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        return basicSetValue(null, msgs);
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION__EX:
+        return basicSetEx(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        return getValue();
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION__EX:
+        return getEx();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        setValue((ValueExpression)newValue);
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION__EX:
+        setEx((ValueExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        setValue((ValueExpression)null);
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION__EX:
+        setEx((ValueExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class ReturnImpl extends SimpleExpressionImpl implements Return
   {
     switch (featureID)
     {
-      case CommonlangPackage.RETURN__VALUE:
-        return value != null;
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION__EX:
+        return ex != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReturnImpl
+} //ParanValueExpressionImpl

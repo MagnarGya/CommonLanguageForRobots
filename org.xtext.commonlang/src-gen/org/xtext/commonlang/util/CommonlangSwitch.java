@@ -189,10 +189,35 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CommonlangPackage.BOOL:
+      case CommonlangPackage.VALUE_EXPRESSION:
       {
-        Bool bool = (Bool)theEObject;
-        T result = caseBool(bool);
+        ValueExpression valueExpression = (ValueExpression)theEObject;
+        T result = caseValueExpression(valueExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION:
+      {
+        ParanValueExpression paranValueExpression = (ParanValueExpression)theEObject;
+        T result = caseParanValueExpression(paranValueExpression);
+        if (result == null) result = caseValueExpression(paranValueExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION:
+      {
+        BasicValueExpression basicValueExpression = (BasicValueExpression)theEObject;
+        T result = caseBasicValueExpression(basicValueExpression);
+        if (result == null) result = caseValueExpression(basicValueExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CommonlangPackage.CREMENT:
+      {
+        Crement crement = (Crement)theEObject;
+        T result = caseCrement(crement);
+        if (result == null) result = caseSimpleExpression(crement);
+        if (result == null) result = caseExpression(crement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -209,8 +234,6 @@ public class CommonlangSwitch<T> extends Switch<T>
       {
         Else else_ = (Else)theEObject;
         T result = caseElse(else_);
-        if (result == null) result = caseStructureExpression(else_);
-        if (result == null) result = caseExpression(else_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -527,17 +550,65 @@ public class CommonlangSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Value Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Value Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBool(Bool object)
+  public T caseValueExpression(ValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Paran Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Paran Value Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParanValueExpression(ParanValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Basic Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Basic Value Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBasicValueExpression(BasicValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Crement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Crement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCrement(Crement object)
   {
     return null;
   }

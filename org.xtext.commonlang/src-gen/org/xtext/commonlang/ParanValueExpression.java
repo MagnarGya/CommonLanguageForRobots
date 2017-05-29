@@ -2,25 +2,24 @@
  */
 package org.xtext.commonlang;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Else</b></em>'.
+ * A representation of the model object '<em><b>Paran Value Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.commonlang.Else#getEx <em>Ex</em>}</li>
+ *   <li>{@link org.xtext.commonlang.ParanValueExpression#getEx <em>Ex</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.xtext.commonlang.CommonlangPackage#getElse()
+ * @see org.xtext.commonlang.CommonlangPackage#getParanValueExpression()
  * @model
  * @generated
  */
-public interface Else extends EObject
+public interface ParanValueExpression extends ValueExpression
 {
   /**
    * Returns the value of the '<em><b>Ex</b></em>' containment reference.
@@ -31,21 +30,21 @@ public interface Else extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ex</em>' containment reference.
-   * @see #setEx(Expression)
-   * @see org.xtext.commonlang.CommonlangPackage#getElse_Ex()
+   * @see #setEx(ValueExpression)
+   * @see org.xtext.commonlang.CommonlangPackage#getParanValueExpression_Ex()
    * @model containment="true"
    * @generated
    */
-  Expression getEx();
+  ValueExpression getEx();
 
   /**
-   * Sets the value of the '{@link org.xtext.commonlang.Else#getEx <em>Ex</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.commonlang.ParanValueExpression#getEx <em>Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Ex</em>' containment reference.
    * @see #getEx()
    * @generated
    */
-  void setEx(Expression value);
+  void setEx(ValueExpression value);
 
-} // Else
+} // ParanValueExpression

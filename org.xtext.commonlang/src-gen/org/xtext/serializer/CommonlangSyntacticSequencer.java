@@ -59,9 +59,9 @@ public class CommonlangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     method=[Method|CAPITALFIRST] '(' (ambiguity) parameters+=Value
-	 *     method=[Method|LOWERFIRST] '(' (ambiguity) parameters+=Value
-	 *     parameters+=Value (ambiguity) parameters+=Value
+	 *     method=[Method|CAPITALFIRST] '(' (ambiguity) parameters+=ValueExpression
+	 *     method=[Method|LOWERFIRST] '(' (ambiguity) parameters+=ValueExpression
+	 *     parameters+=ValueExpression (ambiguity) parameters+=ValueExpression
 	 */
 	protected void emit_Call_CommaKeyword_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

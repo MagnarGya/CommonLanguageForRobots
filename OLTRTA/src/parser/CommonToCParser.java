@@ -68,7 +68,9 @@ public class CommonToCParser implements CommonToLanguageParser{
 
         returnString += "if (" + parseExpression(_if.ex).replaceAll(";\n", "") + ")";
         returnString += parseBlock(_if.bl);
-
+        if (_if.el != null) {
+        	returnString += parseElse(_if.el);
+        }
         return returnString;
 	}
 

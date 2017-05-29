@@ -78,7 +78,10 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.USER_METHOD: return createUserMethod();
       case CommonlangPackage.USER_METHOD_CALL: return createUserMethodCall();
       case CommonlangPackage.META_METHOD_CALL: return createMetaMethodCall();
-      case CommonlangPackage.BOOL: return createBool();
+      case CommonlangPackage.VALUE_EXPRESSION: return createValueExpression();
+      case CommonlangPackage.PARAN_VALUE_EXPRESSION: return createParanValueExpression();
+      case CommonlangPackage.BASIC_VALUE_EXPRESSION: return createBasicValueExpression();
+      case CommonlangPackage.CREMENT: return createCrement();
       case CommonlangPackage.IF: return createIf();
       case CommonlangPackage.ELSE: return createElse();
       case CommonlangPackage.FOR: return createFor();
@@ -255,10 +258,43 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bool createBool()
+  public ValueExpression createValueExpression()
   {
-    BoolImpl bool = new BoolImpl();
-    return bool;
+    ValueExpressionImpl valueExpression = new ValueExpressionImpl();
+    return valueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParanValueExpression createParanValueExpression()
+  {
+    ParanValueExpressionImpl paranValueExpression = new ParanValueExpressionImpl();
+    return paranValueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BasicValueExpression createBasicValueExpression()
+  {
+    BasicValueExpressionImpl basicValueExpression = new BasicValueExpressionImpl();
+    return basicValueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Crement createCrement()
+  {
+    CrementImpl crement = new CrementImpl();
+    return crement;
   }
 
   /**

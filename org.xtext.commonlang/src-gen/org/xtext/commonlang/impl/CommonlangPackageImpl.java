@@ -11,13 +11,14 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.BasicValue;
+import org.xtext.commonlang.BasicValueExpression;
 import org.xtext.commonlang.Block;
-import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.BooleanValue;
 import org.xtext.commonlang.CLfile;
 import org.xtext.commonlang.Call;
 import org.xtext.commonlang.CommonlangFactory;
 import org.xtext.commonlang.CommonlangPackage;
+import org.xtext.commonlang.Crement;
 import org.xtext.commonlang.Declaration;
 import org.xtext.commonlang.Else;
 import org.xtext.commonlang.Expression;
@@ -28,6 +29,7 @@ import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
 import org.xtext.commonlang.Method;
 import org.xtext.commonlang.NumberValue;
+import org.xtext.commonlang.ParanValueExpression;
 import org.xtext.commonlang.Return;
 import org.xtext.commonlang.Script;
 import org.xtext.commonlang.SimpleExpression;
@@ -36,6 +38,7 @@ import org.xtext.commonlang.StructureExpression;
 import org.xtext.commonlang.UserMethod;
 import org.xtext.commonlang.UserMethodCall;
 import org.xtext.commonlang.Value;
+import org.xtext.commonlang.ValueExpression;
 import org.xtext.commonlang.VarReference;
 import org.xtext.commonlang.While;
 
@@ -150,7 +153,28 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boolEClass = null;
+  private EClass valueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass paranValueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basicValueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass crementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -474,9 +498,19 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAssignment_Op()
+  {
+    return (EAttribute)assignmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getAssignment_Value()
   {
-    return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -604,9 +638,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBool()
+  public EClass getValueExpression()
   {
-    return boolEClass;
+    return valueExpressionEClass;
   }
 
   /**
@@ -614,9 +648,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBool_Varleft()
+  public EAttribute getValueExpression_Op()
   {
-    return (EReference)boolEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)valueExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -624,9 +658,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBool_Op()
+  public EReference getValueExpression_Varright()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(1);
+    return (EReference)valueExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -634,9 +668,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBool_Varright()
+  public EClass getParanValueExpression()
   {
-    return (EReference)boolEClass.getEStructuralFeatures().get(2);
+    return paranValueExpressionEClass;
   }
 
   /**
@@ -644,9 +678,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBool_Bop()
+  public EReference getParanValueExpression_Ex()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(3);
+    return (EReference)paranValueExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -654,9 +688,49 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBool_Bnext()
+  public EClass getBasicValueExpression()
   {
-    return (EReference)boolEClass.getEStructuralFeatures().get(4);
+    return basicValueExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBasicValueExpression_Varleft()
+  {
+    return (EReference)basicValueExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCrement()
+  {
+    return crementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCrement_Value()
+  {
+    return (EReference)crementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCrement_Op()
+  {
+    return (EAttribute)crementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -687,6 +761,16 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
   public EReference getIf_Bl()
   {
     return (EReference)ifEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_El()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -914,7 +998,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReturn_Val()
+  public EReference getReturn_Value()
   {
     return (EReference)returnEClass.getEStructuralFeatures().get(0);
   }
@@ -973,6 +1057,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     assignmentEClass = createEClass(ASSIGNMENT);
     createEReference(assignmentEClass, ASSIGNMENT__VARI);
+    createEAttribute(assignmentEClass, ASSIGNMENT__OP);
     createEReference(assignmentEClass, ASSIGNMENT__VALUE);
 
     callEClass = createEClass(CALL);
@@ -993,16 +1078,24 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     metaMethodCallEClass = createEClass(META_METHOD_CALL);
 
-    boolEClass = createEClass(BOOL);
-    createEReference(boolEClass, BOOL__VARLEFT);
-    createEAttribute(boolEClass, BOOL__OP);
-    createEReference(boolEClass, BOOL__VARRIGHT);
-    createEAttribute(boolEClass, BOOL__BOP);
-    createEReference(boolEClass, BOOL__BNEXT);
+    valueExpressionEClass = createEClass(VALUE_EXPRESSION);
+    createEAttribute(valueExpressionEClass, VALUE_EXPRESSION__OP);
+    createEReference(valueExpressionEClass, VALUE_EXPRESSION__VARRIGHT);
+
+    paranValueExpressionEClass = createEClass(PARAN_VALUE_EXPRESSION);
+    createEReference(paranValueExpressionEClass, PARAN_VALUE_EXPRESSION__EX);
+
+    basicValueExpressionEClass = createEClass(BASIC_VALUE_EXPRESSION);
+    createEReference(basicValueExpressionEClass, BASIC_VALUE_EXPRESSION__VARLEFT);
+
+    crementEClass = createEClass(CREMENT);
+    createEReference(crementEClass, CREMENT__VALUE);
+    createEAttribute(crementEClass, CREMENT__OP);
 
     ifEClass = createEClass(IF);
     createEReference(ifEClass, IF__EX);
     createEReference(ifEClass, IF__BL);
+    createEReference(ifEClass, IF__EL);
 
     elseEClass = createEClass(ELSE);
     createEReference(elseEClass, ELSE__EX);
@@ -1036,7 +1129,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     createEAttribute(declarationEClass, DECLARATION__NAME);
 
     returnEClass = createEClass(RETURN);
-    createEReference(returnEClass, RETURN__VAL);
+    createEReference(returnEClass, RETURN__VALUE);
   }
 
   /**
@@ -1078,8 +1171,10 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     userMethodEClass.getESuperTypes().add(this.getMethod());
     userMethodCallEClass.getESuperTypes().add(this.getCall());
     metaMethodCallEClass.getESuperTypes().add(this.getCall());
+    paranValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
+    basicValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
+    crementEClass.getESuperTypes().add(this.getSimpleExpression());
     ifEClass.getESuperTypes().add(this.getStructureExpression());
-    elseEClass.getESuperTypes().add(this.getStructureExpression());
     forEClass.getESuperTypes().add(this.getStructureExpression());
     whileEClass.getESuperTypes().add(this.getStructureExpression());
     basicValueEClass.getESuperTypes().add(this.getValue());
@@ -1113,11 +1208,12 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssignment_Vari(), this.getDeclaration(), null, "vari", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAssignment_Value(), this.getValue(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Vari(), ecorePackage.getEObject(), null, "vari", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAssignment_Op(), ecorePackage.getEString(), "op", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Value(), this.getValueExpression(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCall_Parameters(), this.getValue(), null, "parameters", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCall_Parameters(), this.getValueExpression(), null, "parameters", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCall_Method(), this.getMethod(), null, "method", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1134,28 +1230,36 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     initEClass(metaMethodCallEClass, MetaMethodCall.class, "MetaMethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBool_Varleft(), this.getValue(), null, "varleft", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_Op(), ecorePackage.getEString(), "op", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBool_Varright(), this.getValue(), null, "varright", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_Bop(), ecorePackage.getEString(), "bop", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBool_Bnext(), this.getBool(), null, "bnext", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(valueExpressionEClass, ValueExpression.class, "ValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getValueExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getValueExpression_Varright(), this.getValueExpression(), null, "varright", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(paranValueExpressionEClass, ParanValueExpression.class, "ParanValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParanValueExpression_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, ParanValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(basicValueExpressionEClass, BasicValueExpression.class, "BasicValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBasicValueExpression_Varleft(), this.getValue(), null, "varleft", null, 0, 1, BasicValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(crementEClass, Crement.class, "Crement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCrement_Value(), this.getVarReference(), null, "value", null, 0, 1, Crement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCrement_Op(), ecorePackage.getEString(), "op", null, 0, 1, Crement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIf_Ex(), this.getBool(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIf_Bl(), this.getBlock(), null, "bl", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_El(), this.getElse(), null, "el", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElse_Ex(), this.getExpression(), null, "ex", null, 0, 1, Else.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forEClass, For.class, "For", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFor_Init(), this.getExpression(), null, "init", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFor_Check(), this.getBool(), null, "check", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFor_Action(), this.getExpression(), null, "action", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFor_Init(), this.getSimpleExpression(), null, "init", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFor_Check(), this.getValueExpression(), null, "check", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFor_Action(), this.getSimpleExpression(), null, "action", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFor_Bl(), this.getBlock(), null, "bl", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhile_Ex(), this.getBool(), null, "ex", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhile_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWhile_Bl(), this.getBlock(), null, "bl", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1177,7 +1281,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEAttribute(getDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnEClass, Return.class, "Return", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReturn_Val(), this.getValue(), null, "val", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReturn_Value(), this.getValueExpression(), null, "value", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

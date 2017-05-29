@@ -8,7 +8,7 @@ CLfile:
 ;
 
 Script:
-	'script' name=CAPITALFIRST 'targets' '(''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')'(',''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')')* ')' '{'
+	'script' name=CAPITALFIRST 'targets' '('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')'(',''('robottypes+=(LOWERFIRST|CAPITALFIRST) ',' robotconfigs+=(LOWERFIRST|CAPITALFIRST)')')* '{'
 		(methods+=UserMethod*)
 	'}'
 ;
@@ -24,11 +24,11 @@ Block:
 ;
 
 SimpleExpression:
-	Call | Assignment | Return
+	 Crement | Call | Assignment | Return
 ;
 
 StructureExpression:
-	Block | If | Else | For | While
+	Block | If | For | While
 ;
 
 Expression:
@@ -37,11 +37,11 @@ Expression:
 
 
 Assignment:
-	vari=([Declaration|LOWERFIRST] | Declaration) ( => '=' value=Value)
+	vari=(VarReference | Declaration) ( => op=MathOperator?'=' value=ValueExpression)
 ;
 
 Call:
-	(UserMethodCall | MetaMethodCall) '('parameters+=Value? (','+ parameters+=Value)*')'
+	(UserMethodCall | MetaMethodCall) '('parameters+=ValueExpression? (','+ parameters+=ValueExpression)*')'
 ;
 
 Method:
@@ -67,8 +67,20 @@ MetaMethodCall:
 terminal LOWERFIRST: ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal CAPITALFIRST: ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-Bool:
-	varleft=Value (=> op=ComparisonOperator varright=Value)? (bop=BooleanOperator bnext=Bool)?
+ValueExpression:
+	ParanValueExpression | BasicValueExpression
+;
+
+ParanValueExpression:
+	'('ex=ValueExpression')' (op=(MathOperator|BooleanOperator|ComparisonOperator) varright=ValueExpression)?
+;
+
+BasicValueExpression:
+	varleft=(Value) (op=(MathOperator|BooleanOperator|ComparisonOperator) varright=ValueExpression)?
+;
+
+Crement:
+	value=VarReference op=CrementOperator
 ;
 
 ComparisonOperator:
@@ -79,8 +91,15 @@ BooleanOperator:
 	'&&' | '||' | '!&&' | '!||'
 ;
 
+MathOperator:
+	'+' | '-' | '*' | '/'
+;
+
+CrementOperator:
+	'++' | '--'
+;
 If:
-	'if' '(' ex=Bool ')' bl=Block
+	'if' '(' ex=ValueExpression ')' bl=Block (el=Else)?
 ;
 
 Else:
@@ -88,11 +107,11 @@ Else:
 ;
 
 For:
-	'for' '(' init=Expression ';' check=Bool ';' action=Expression')' bl=Block
+	'for' '(' init=SimpleExpression ';' check=ValueExpression ';' action=SimpleExpression')' bl=Block
 ;
 
 While:
-	'while' '(' ex=Bool ')' bl=Block
+	'while' '(' ex=ValueExpression ')' bl=Block
 ;
 
 Value:
@@ -124,7 +143,7 @@ Declaration:
 ;
 
 Return:
-	'return' val=Value
+	'return' value=ValueExpression
 ;
 
 Methodtype:

@@ -14,10 +14,6 @@ import org.xtext.commonlang.While
 import org.xtext.commonlang.Else
 import org.xtext.commonlang.Assignment
 import org.xtext.commonlang.Block
-import org.xtext.commonlang.UserMethodCall
-import org.xtext.commonlang.MetaMethodCall
-import org.xtext.commonlang.Bool
-import org.xtext.commonlang.Method
 import org.xtext.commonlang.Declaration
 import org.xtext.commonlang.BasicValue
 import org.xtext.commonlang.VarReference
@@ -25,10 +21,12 @@ import org.xtext.commonlang.Value
 import org.eclipse.xtext.generator.IGenerator
 import java.util.ArrayList
 import org.xtext.commonlang.StringValue
-import org.xtext.commonlang.MetaMethods
 import org.xtext.commonlang.UserMethod
 import org.xtext.commonlang.Call
-import org.eclipse.emf.common.util.EList
+import org.xtext.commonlang.ValueExpression
+import org.xtext.commonlang.Crement
+import org.xtext.commonlang.ParanValueExpression
+import org.xtext.commonlang.BasicValueExpression
 
 /**
  * Generates code from your model files on save.
@@ -104,17 +102,32 @@ class CommonlangGenerator implements IGenerator {
 			If : e.compile
 			For : e.compile
 			While : e.compile
-			Else : e.compile
 			Assignment : e.compile
 			Block : e.compile
 			Call : e.compile
+			Crement : e.compile
 		}
 	}
+	
+	def compile(Crement e){
+		var postfix = "";
+		
+		if (e.op == "++") {
+			postfix = "+=1";
+		} else {
+			postfix = "-=1";
+		}
+		'''
+		new Expression(
+			"«e.value.makeString»«postfix»"
+		)'''
+		}
 	
 	def compile(If e) '''
 		new If(
 			«e.ex.compile»,
-			«e.bl.compile»
+			«e.bl.compile»,
+			«IF e.el != null»«e.el.compile»«ELSE»null«ENDIF»
 		)'''
 	
 	def compile(For e) '''
@@ -136,10 +149,18 @@ class CommonlangGenerator implements IGenerator {
 			«e.ex.compile»
 		)'''
 	
-	def compile(Assignment e) '''
+	def compile(Assignment e) {
+		var varstring = ""
+		var ref = e.vari;
+		switch ref {
+			VarReference : varstring = ref.makeString.toString
+			Declaration : varstring = ref.makeString.toString
+		}
+		'''
 		new Expression(
-			"«e.vari.makeString» = «e.value.makeString»"
+			"«varstring» «e.op»= «e.value.makeString»"
 		)'''
+	}
 	
 	def compile(Block e) {
 	val exlist = new ArrayList<CharSequence>();
@@ -159,6 +180,11 @@ class CommonlangGenerator implements IGenerator {
 			VarReference : (e as VarReference).makeString
 		}
 	}
+		
+	def compile(ValueExpression e) '''
+		new Expression(
+			"«e.makeString»"
+		)'''
 	
 	def compile(Declaration e) '''
 		new Expression(
@@ -166,7 +192,6 @@ class CommonlangGenerator implements IGenerator {
 		)'''
 	
 	def compile(Call e) {
-	
 	'''
 		new Expression(
 			"«e.makeString»"
@@ -186,13 +211,16 @@ class CommonlangGenerator implements IGenerator {
 		«e.method.name»(«parlist.join(',')»)'''
 	}
 	
-	def compile(Bool e) '''
-		new Expression(
-			"«e.makeString»"
-		)'''
-		
-	def CharSequence makeString(Bool e) '''
-		«e.varleft.makeString»«e.op»«e.varright.makeString»«e.bop»«IF e.bnext != null»«e.bnext.makeString»«ENDIF»'''
+	def CharSequence makeString(ValueExpression e) {
+		switch (e) {
+			BasicValueExpression: '''«e.makeString»'''
+			ParanValueExpression: '''(«e.ex.makeString»)«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
+		}
+	}
+	
+	def CharSequence makeString(BasicValueExpression e) {'''
+		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
+	}
 	
 	def makeString(Declaration e) '''
 		«e.type» «e.name»'''

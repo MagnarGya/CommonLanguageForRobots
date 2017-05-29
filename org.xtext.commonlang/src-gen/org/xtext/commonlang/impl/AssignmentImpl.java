@@ -6,14 +6,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Assignment;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Declaration;
-import org.xtext.commonlang.Value;
+import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +23,7 @@ import org.xtext.commonlang.Value;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.commonlang.impl.AssignmentImpl#getVari <em>Vari</em>}</li>
+ *   <li>{@link org.xtext.commonlang.impl.AssignmentImpl#getOp <em>Op</em>}</li>
  *   <li>{@link org.xtext.commonlang.impl.AssignmentImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -39,7 +40,27 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * @generated
    * @ordered
    */
-  protected Declaration vari;
+  protected EObject vari;
+
+  /**
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -49,7 +70,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * @generated
    * @ordered
    */
-  protected Value value;
+  protected ValueExpression value;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,7 +98,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public Declaration getVari()
+  public EObject getVari()
   {
     return vari;
   }
@@ -87,9 +108,9 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVari(Declaration newVari, NotificationChain msgs)
+  public NotificationChain basicSetVari(EObject newVari, NotificationChain msgs)
   {
-    Declaration oldVari = vari;
+    EObject oldVari = vari;
     vari = newVari;
     if (eNotificationRequired())
     {
@@ -104,7 +125,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVari(Declaration newVari)
+  public void setVari(EObject newVari)
   {
     if (newVari != vari)
     {
@@ -125,7 +146,30 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public Value getValue()
+  public String getOp()
+  {
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(String newOp)
+  {
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CommonlangPackage.ASSIGNMENT__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueExpression getValue()
   {
     return value;
   }
@@ -135,9 +179,9 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(Value newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(ValueExpression newValue, NotificationChain msgs)
   {
-    Value oldValue = value;
+    ValueExpression oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
@@ -152,7 +196,7 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Value newValue)
+  public void setValue(ValueExpression newValue)
   {
     if (newValue != value)
     {
@@ -198,6 +242,8 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     {
       case CommonlangPackage.ASSIGNMENT__VARI:
         return getVari();
+      case CommonlangPackage.ASSIGNMENT__OP:
+        return getOp();
       case CommonlangPackage.ASSIGNMENT__VALUE:
         return getValue();
     }
@@ -215,10 +261,13 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     switch (featureID)
     {
       case CommonlangPackage.ASSIGNMENT__VARI:
-        setVari((Declaration)newValue);
+        setVari((EObject)newValue);
+        return;
+      case CommonlangPackage.ASSIGNMENT__OP:
+        setOp((String)newValue);
         return;
       case CommonlangPackage.ASSIGNMENT__VALUE:
-        setValue((Value)newValue);
+        setValue((ValueExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,10 +284,13 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     switch (featureID)
     {
       case CommonlangPackage.ASSIGNMENT__VARI:
-        setVari((Declaration)null);
+        setVari((EObject)null);
+        return;
+      case CommonlangPackage.ASSIGNMENT__OP:
+        setOp(OP_EDEFAULT);
         return;
       case CommonlangPackage.ASSIGNMENT__VALUE:
-        setValue((Value)null);
+        setValue((ValueExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +308,29 @@ public class AssignmentImpl extends SimpleExpressionImpl implements Assignment
     {
       case CommonlangPackage.ASSIGNMENT__VARI:
         return vari != null;
+      case CommonlangPackage.ASSIGNMENT__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case CommonlangPackage.ASSIGNMENT__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //AssignmentImpl

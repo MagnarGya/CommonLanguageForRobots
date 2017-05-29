@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.commonlang.Block;
-import org.xtext.commonlang.Bool;
 import org.xtext.commonlang.CommonlangPackage;
-import org.xtext.commonlang.Expression;
 import org.xtext.commonlang.For;
+import org.xtext.commonlang.SimpleExpression;
+import org.xtext.commonlang.ValueExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * @generated
    * @ordered
    */
-  protected Expression init;
+  protected SimpleExpression init;
 
   /**
    * The cached value of the '{@link #getCheck() <em>Check</em>}' containment reference.
@@ -52,7 +52,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * @generated
    * @ordered
    */
-  protected Bool check;
+  protected ValueExpression check;
 
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
@@ -62,7 +62,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * @generated
    * @ordered
    */
-  protected Expression action;
+  protected SimpleExpression action;
 
   /**
    * The cached value of the '{@link #getBl() <em>Bl</em>}' containment reference.
@@ -100,7 +100,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getInit()
+  public SimpleExpression getInit()
   {
     return init;
   }
@@ -110,9 +110,9 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInit(Expression newInit, NotificationChain msgs)
+  public NotificationChain basicSetInit(SimpleExpression newInit, NotificationChain msgs)
   {
-    Expression oldInit = init;
+    SimpleExpression oldInit = init;
     init = newInit;
     if (eNotificationRequired())
     {
@@ -127,7 +127,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInit(Expression newInit)
+  public void setInit(SimpleExpression newInit)
   {
     if (newInit != init)
     {
@@ -148,7 +148,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bool getCheck()
+  public ValueExpression getCheck()
   {
     return check;
   }
@@ -158,9 +158,9 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCheck(Bool newCheck, NotificationChain msgs)
+  public NotificationChain basicSetCheck(ValueExpression newCheck, NotificationChain msgs)
   {
-    Bool oldCheck = check;
+    ValueExpression oldCheck = check;
     check = newCheck;
     if (eNotificationRequired())
     {
@@ -175,7 +175,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCheck(Bool newCheck)
+  public void setCheck(ValueExpression newCheck)
   {
     if (newCheck != check)
     {
@@ -196,7 +196,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getAction()
+  public SimpleExpression getAction()
   {
     return action;
   }
@@ -206,9 +206,9 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAction(Expression newAction, NotificationChain msgs)
+  public NotificationChain basicSetAction(SimpleExpression newAction, NotificationChain msgs)
   {
-    Expression oldAction = action;
+    SimpleExpression oldAction = action;
     action = newAction;
     if (eNotificationRequired())
     {
@@ -223,7 +223,7 @@ public class ForImpl extends StructureExpressionImpl implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAction(Expression newAction)
+  public void setAction(SimpleExpression newAction)
   {
     if (newAction != action)
     {
@@ -342,13 +342,13 @@ public class ForImpl extends StructureExpressionImpl implements For
     switch (featureID)
     {
       case CommonlangPackage.FOR__INIT:
-        setInit((Expression)newValue);
+        setInit((SimpleExpression)newValue);
         return;
       case CommonlangPackage.FOR__CHECK:
-        setCheck((Bool)newValue);
+        setCheck((ValueExpression)newValue);
         return;
       case CommonlangPackage.FOR__ACTION:
-        setAction((Expression)newValue);
+        setAction((SimpleExpression)newValue);
         return;
       case CommonlangPackage.FOR__BL:
         setBl((Block)newValue);
@@ -368,13 +368,13 @@ public class ForImpl extends StructureExpressionImpl implements For
     switch (featureID)
     {
       case CommonlangPackage.FOR__INIT:
-        setInit((Expression)null);
+        setInit((SimpleExpression)null);
         return;
       case CommonlangPackage.FOR__CHECK:
-        setCheck((Bool)null);
+        setCheck((ValueExpression)null);
         return;
       case CommonlangPackage.FOR__ACTION:
-        setAction((Expression)null);
+        setAction((SimpleExpression)null);
         return;
       case CommonlangPackage.FOR__BL:
         setBl((Block)null);

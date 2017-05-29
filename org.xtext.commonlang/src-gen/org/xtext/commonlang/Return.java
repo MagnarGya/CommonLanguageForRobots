@@ -11,7 +11,7 @@ package org.xtext.commonlang;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.commonlang.Return#getVal <em>Val</em>}</li>
+ *   <li>{@link org.xtext.commonlang.Return#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package org.xtext.commonlang;
 public interface Return extends SimpleExpression
 {
   /**
-   * Returns the value of the '<em><b>Val</b></em>' containment reference.
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Val</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Val</em>' containment reference.
-   * @see #setVal(Value)
-   * @see org.xtext.commonlang.CommonlangPackage#getReturn_Val()
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(ValueExpression)
+   * @see org.xtext.commonlang.CommonlangPackage#getReturn_Value()
    * @model containment="true"
    * @generated
    */
-  Value getVal();
+  ValueExpression getValue();
 
   /**
-   * Sets the value of the '{@link org.xtext.commonlang.Return#getVal <em>Val</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.commonlang.Return#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Val</em>' containment reference.
-   * @see #getVal()
+   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @see #getValue()
    * @generated
    */
-  void setVal(Value value);
+  void setValue(ValueExpression value);
 
 } // Return

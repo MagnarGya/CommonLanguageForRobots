@@ -149,13 +149,40 @@ public interface CommonlangFactory extends EFactory
   MetaMethodCall createMetaMethodCall();
 
   /**
-   * Returns a new object of class '<em>Bool</em>'.
+   * Returns a new object of class '<em>Value Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool</em>'.
+   * @return a new object of class '<em>Value Expression</em>'.
    * @generated
    */
-  Bool createBool();
+  ValueExpression createValueExpression();
+
+  /**
+   * Returns a new object of class '<em>Paran Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Paran Value Expression</em>'.
+   * @generated
+   */
+  ParanValueExpression createParanValueExpression();
+
+  /**
+   * Returns a new object of class '<em>Basic Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Basic Value Expression</em>'.
+   * @generated
+   */
+  BasicValueExpression createBasicValueExpression();
+
+  /**
+   * Returns a new object of class '<em>Crement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Crement</em>'.
+   * @generated
+   */
+  Crement createCrement();
 
   /**
    * Returns a new object of class '<em>If</em>'.

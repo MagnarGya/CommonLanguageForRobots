@@ -2,7 +2,6 @@
 import java.util.ArrayList;
 
 import input.Navigate;
-import input.RobberAndPoliceScenario;
 import input.RobotScript;
 import parser.*;
 import CommonLanguageObjects.*;
@@ -50,8 +49,7 @@ public class Testrun {
 		/*
 		Navigate nav = new Navigate();
 		nav.buildModel();*/
-		RobberAndPoliceScenario Raps = new RobberAndPoliceScenario();
-		Raps.buildModel();
+
 	}
 
 }

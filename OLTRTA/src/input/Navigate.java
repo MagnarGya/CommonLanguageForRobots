@@ -4,6 +4,10 @@ import input.RobotScript;
 import CommonLanguageObjects.*;
 
 public class Navigate extends RobotScript {
+	public static void main(String[] args) {
+		Navigate roboscript = new Navigate();
+		roboscript.buildModel();
+	}
 	public void buildModel() {
 		name = "Navigate";
 		robotlist = new ArrayList<String>();
@@ -16,14 +20,22 @@ public class Navigate extends RobotScript {
 					},
 					new Block(new Expression[] {
 						new Expression(
+							"int i = (2+(2)/2+((5+2)))"
+						),new Expression(
 							"ReadSensors()"
 						),new If(
 							new Expression(
-								"SeeingLeft()"
+								"Touching()&&Peeing()||\"Yo mama\"==\"fat\""
+							),
+							new Block(new Expression[] {
+							})
+						),new If(
+							new Expression(
+								"false==(\"String\"==\"String\")"
 							),
 							new Block(new Expression[] {
 								new Expression(
-									"TurnRight(45)"
+									"TurnRight()"
 								)
 							})
 						),new Else(
@@ -33,7 +45,7 @@ public class Navigate extends RobotScript {
 								),
 								new Block(new Expression[] {
 									new Expression(
-										"TurnLeft(45)"
+										"TurnLeft()"
 									)
 								})
 							)
@@ -44,14 +56,14 @@ public class Navigate extends RobotScript {
 								),
 								new Block(new Expression[] {
 									new Expression(
-										"MoveBackward(500)"
+										"MoveBackward()"
 									)
 								})
 							)
 						),new Else(
 							new Block(new Expression[] {
 								new Expression(
-									"MoveForward(100)"
+									"MoveForward()"
 								)
 							})
 						)
