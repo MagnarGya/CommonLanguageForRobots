@@ -66,15 +66,15 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 					  	}
 		}
 		
-		if (assignment.op != null) {
-			if (!(assignment.op == "+" && thisType == "string")) {
-				error("Invalid operation for type "+thisType,null)
-			}
-		}
-		
 		if (thisType != thatType) {
 			error("Type mismatch: Expected "+ thatType +" got " + thisType,null)
 		}
+		
+		if (assignment.op != null) {
+			 if (thisType != 'int') {
+				error("Invalid operation for type "+thisType,null)
+			}
+		}		
 	}
 	
 	@Check
@@ -128,11 +128,7 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 		
 		if (valExp.op != null) {
 			if (thisType != thatType) {
-				if (!((thisType == 'string' && thatType == 'int'
-					|| thisType == 'int' && thatType == 'string')
-					&& valExp.op == '+')) {
 				error("Type mismatch: Cannot perform "+valExp.op+" on "+thisType+" and "+thatType,null)
-				}
 			}
 			
 			if (valExp.op.isComparison) {
@@ -147,13 +143,7 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 					}
 				}				
 			} else if (valExp.op.isMath && (thisType != 'int' || thatType != 'int')) {
-				if (!((thisType == 'string' && thatType == 'int'
-					|| thisType == 'int' && thatType == 'string'
-					|| thisType == 'string' && thatType == 'string')
-					&& valExp.op == '+')) {
-						
 					error("Operator "+valExp.op+" is invalid for types "+thisType+" and "+thatType,null)
-				}
 			}
 		}
 	}
@@ -211,10 +201,6 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 			if (thisVal.op.isComparison) {
 				if (type == thisVal.varright.getTypeOfValueExpression) {
 					type = 'boolean';
-				}
-			} else if (thisVal.op.isMath) {
-				if (thisVal.varright.getTypeOfValueExpression == 'string' || type == 'string') {
-					type = 'string';
 				}
 			}
 		}

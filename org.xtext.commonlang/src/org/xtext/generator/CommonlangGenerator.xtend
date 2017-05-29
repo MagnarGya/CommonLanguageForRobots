@@ -28,6 +28,7 @@ import org.xtext.commonlang.Crement
 import org.xtext.commonlang.ParanValueExpression
 import org.xtext.commonlang.BasicValueExpression
 import org.xtext.commonlang.NegNumberValue
+import org.xtext.commonlang.Return
 
 /**
  * Generates code from your model files on save.
@@ -107,8 +108,14 @@ class CommonlangGenerator implements IGenerator {
 			Block : e.compile
 			Call : e.compile
 			Crement : e.compile
+			Return : e.compile
 		}
 	}
+	
+	def compile(Return e) '''
+		new Expression(
+			"return «e.value.makeString»"
+		)'''
 	
 	def compile(Crement e){
 		var postfix = "";
@@ -202,11 +209,7 @@ class CommonlangGenerator implements IGenerator {
 	def makeString(Call e) {
 	val parlist = new ArrayList<CharSequence>();
 	for (par:e.parameters) {
-		
-		switch (par) {
-			VarReference : parlist.add(par.vari.name)
-			BasicValue : parlist.add(par.makeString)
-		}
+		parlist.add(par.makeString)
 	}
 	'''
 		«e.method.name»(«parlist.join(',')»)'''
