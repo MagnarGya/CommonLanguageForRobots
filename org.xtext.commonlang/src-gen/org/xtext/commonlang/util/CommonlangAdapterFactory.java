@@ -210,6 +210,11 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
         return createNumberValueAdapter();
       }
       @Override
+      public Adapter caseNegNumberValue(NegNumberValue object)
+      {
+        return createNegNumberValueAdapter();
+      }
+      @Override
       public Adapter caseVarReference(VarReference object)
       {
         return createVarReferenceAdapter();
@@ -647,6 +652,21 @@ public class CommonlangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNumberValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.commonlang.NegNumberValue <em>Neg Number Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.commonlang.NegNumberValue
+   * @generated
+   */
+  public Adapter createNegNumberValueAdapter()
   {
     return null;
   }

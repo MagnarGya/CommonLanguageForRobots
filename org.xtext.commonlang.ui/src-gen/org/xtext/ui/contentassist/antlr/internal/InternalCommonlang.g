@@ -899,6 +899,34 @@ finally {
 
 
 
+// Entry rule entryRuleNegNumberValue
+entryRuleNegNumberValue 
+:
+{ before(grammarAccess.getNegNumberValueRule()); }
+	 ruleNegNumberValue
+{ after(grammarAccess.getNegNumberValueRule()); } 
+	 EOF 
+;
+
+// Rule NegNumberValue
+ruleNegNumberValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getGroup()); }
+(rule__NegNumberValue__Group__0)
+{ after(grammarAccess.getNegNumberValueAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleVarReference
 entryRuleVarReference 
 :
@@ -1605,9 +1633,15 @@ rule__BasicValue__Alternatives
 )
 
     |(
-{ before(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_2()); }
+{ before(grammarAccess.getBasicValueAccess().getNegNumberValueParserRuleCall_2()); }
+	ruleNegNumberValue
+{ after(grammarAccess.getBasicValueAccess().getNegNumberValueParserRuleCall_2()); }
+)
+
+    |(
+{ before(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_3()); }
 	ruleStringValue
-{ after(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_2()); }
+{ after(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_3()); }
 )
 
 ;
@@ -4771,6 +4805,69 @@ finally {
 
 
 
+rule__NegNumberValue__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group__0__Impl
+	rule__NegNumberValue__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getHyphenMinusKeyword_0()); }
+
+	'-' 
+
+{ after(grammarAccess.getNegNumberValueAccess().getHyphenMinusKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__NegNumberValue__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getValueAssignment_1()); }
+(rule__NegNumberValue__ValueAssignment_1)
+{ after(grammarAccess.getNegNumberValueAccess().getValueAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
 rule__Declaration__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -5625,6 +5722,21 @@ rule__NumberValue__ValueAssignment
 (
 { before(grammarAccess.getNumberValueAccess().getValueINTSTRINGParserRuleCall_0()); }
 	ruleINTSTRING{ after(grammarAccess.getNumberValueAccess().getValueINTSTRINGParserRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__ValueAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getValueINTSTRINGParserRuleCall_1_0()); }
+	ruleINTSTRING{ after(grammarAccess.getNegNumberValueAccess().getValueINTSTRINGParserRuleCall_1_0()); }
 )
 
 ;

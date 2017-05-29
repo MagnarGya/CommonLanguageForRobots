@@ -27,6 +27,7 @@ import org.xtext.commonlang.ValueExpression
 import org.xtext.commonlang.Crement
 import org.xtext.commonlang.ParanValueExpression
 import org.xtext.commonlang.BasicValueExpression
+import org.xtext.commonlang.NegNumberValue
 
 /**
  * Generates code from your model files on save.
@@ -227,6 +228,7 @@ class CommonlangGenerator implements IGenerator {
 	
 	def makeString(BasicValue e) { 
 		switch(e) {
+			NegNumberValue : '''-«e.value»'''
 			StringValue : '''\"«e.value»\"'''
 			default : '''«e.value»'''
 		}

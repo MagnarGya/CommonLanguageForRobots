@@ -91,6 +91,7 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.BOOLEAN_VALUE: return createBooleanValue();
       case CommonlangPackage.STRING_VALUE: return createStringValue();
       case CommonlangPackage.NUMBER_VALUE: return createNumberValue();
+      case CommonlangPackage.NEG_NUMBER_VALUE: return createNegNumberValue();
       case CommonlangPackage.VAR_REFERENCE: return createVarReference();
       case CommonlangPackage.DECLARATION: return createDeclaration();
       case CommonlangPackage.RETURN: return createReturn();
@@ -394,6 +395,17 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
   {
     NumberValueImpl numberValue = new NumberValueImpl();
     return numberValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NegNumberValue createNegNumberValue()
+  {
+    NegNumberValueImpl negNumberValue = new NegNumberValueImpl();
+    return negNumberValue;
   }
 
   /**

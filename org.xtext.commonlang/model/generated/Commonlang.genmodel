@@ -85,6 +85,7 @@
     <genClasses ecoreClass="Commonlang.ecore#//BooleanValue"/>
     <genClasses ecoreClass="Commonlang.ecore#//StringValue"/>
     <genClasses ecoreClass="Commonlang.ecore#//NumberValue"/>
+    <genClasses ecoreClass="Commonlang.ecore#//NegNumberValue"/>
     <genClasses ecoreClass="Commonlang.ecore#//VarReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Commonlang.ecore#//VarReference/vari"/>
     </genClasses>

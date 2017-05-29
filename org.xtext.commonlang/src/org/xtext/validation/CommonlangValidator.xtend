@@ -25,6 +25,7 @@ import org.xtext.commonlang.Return
 import org.xtext.commonlang.Expression
 import org.xtext.commonlang.Block
 import org.xtext.commonlang.CommonlangPackage.Literals
+import org.xtext.commonlang.NegNumberValue
 
 /**
  * This class contains custom validation rules. 
@@ -65,6 +66,11 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 					  	}
 		}
 		
+		if (assignment.op != null) {
+			if (!(assignment.op == "+" && thisType == "string")) {
+				error("Invalid operation for type "+thisType,null)
+			}
+		}
 		
 		if (thisType != thatType) {
 			error("Type mismatch: Expected "+ thatType +" got " + thisType,null)
@@ -105,34 +111,16 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 	@Check
 	def checkParanValueExpression(ParanValueExpression valExp) {
 		var thisType = valExp.ex.getTypeOfValueExpression
-		var thatType = "null"
-		if (valExp.varright != null) {
-			thatType = valExp.varright.getTypeOfValueExpression
-		}
-		
-		if (valExp.op != null) {
-			if (thisType != thatType) {
-				error("Type mismatch: Cannot perform "+valExp.op+" on "+thisType+" and "+thatType,null)
-			}
-			
-			if (valExp.op.isComparison) {
-				if (valExp.op.isSizeComparison) {
-					if (thisType != 'int' || thatType != 'int') {
-						error("Cannot compare sizes of "+thisType+" and "+thatType,null)
-					}
-				}
-				if (valExp.varright.op != null) {
-					if (valExp.varright.op.isComparison) {
-						error("Cannot string together comparisons",null)
-					}
-				}				
-			}
-		}
+		valueExpressions(thisType,valExp);
 	}
 	
 	@Check
 	def checkBasicValueExpression(BasicValueExpression valExp) {
 		var thisType = valExp.varleft.getTypeOfValue
+		valueExpressions(thisType,valExp);
+	}
+	
+	def valueExpressions(String thisType, ValueExpression valExp) {
 		var thatType = "null"
 		if (valExp.varright != null) {
 			thatType = valExp.varright.getTypeOfValueExpression
@@ -140,7 +128,11 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 		
 		if (valExp.op != null) {
 			if (thisType != thatType) {
+				if (!((thisType == 'string' && thatType == 'int'
+					|| thisType == 'int' && thatType == 'string')
+					&& valExp.op == '+')) {
 				error("Type mismatch: Cannot perform "+valExp.op+" on "+thisType+" and "+thatType,null)
+				}
 			}
 			
 			if (valExp.op.isComparison) {
@@ -154,6 +146,14 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 						error("Cannot string together comparisons",null)
 					}
 				}				
+			} else if (valExp.op.isMath && (thisType != 'int' || thatType != 'int')) {
+				if (!((thisType == 'string' && thatType == 'int'
+					|| thisType == 'int' && thatType == 'string'
+					|| thisType == 'string' && thatType == 'string')
+					&& valExp.op == '+')) {
+						
+					error("Operator "+valExp.op+" is invalid for types "+thisType+" and "+thatType,null)
+				}
 			}
 		}
 	}
@@ -212,9 +212,12 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 				if (type == thisVal.varright.getTypeOfValueExpression) {
 					type = 'boolean';
 				}
+			} else if (thisVal.op.isMath) {
+				if (thisVal.varright.getTypeOfValueExpression == 'string' || type == 'string') {
+					type = 'string';
+				}
 			}
 		}
-
 		return type
 	}
 	
@@ -224,6 +227,7 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 			Call : thisType = thisVal.method.type
 			VarReference : thisType = thisVal.vari.type
 			NumberValue : thisType = "int"
+			NegNumberValue : thisType = "int"
 			StringValue : thisType = "string"
 			BooleanValue : thisType = "boolean"
 		}
@@ -256,6 +260,16 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 			case ">",
 			case "<=",
 			case ">=" : return true
+		}
+		return false
+	}
+	
+	def isMath(String operator) {
+		switch (operator) {
+			case '+',
+			case '-',
+			case '*',
+			case '/' : return true
 		}
 		return false
 	}

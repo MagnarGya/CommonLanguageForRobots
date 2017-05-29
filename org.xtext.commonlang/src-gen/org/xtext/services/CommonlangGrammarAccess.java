@@ -1135,13 +1135,14 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBooleanValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNumberValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cStringValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cNegNumberValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cStringValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//BasicValue:
-		//	BooleanValue | NumberValue | StringValue;
+		//	BooleanValue | NumberValue | NegNumberValue | StringValue;
 		@Override public ParserRule getRule() { return rule; }
 
-		//BooleanValue | NumberValue | StringValue
+		//BooleanValue | NumberValue | NegNumberValue | StringValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//BooleanValue
@@ -1150,8 +1151,11 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		//NumberValue
 		public RuleCall getNumberValueParserRuleCall_1() { return cNumberValueParserRuleCall_1; }
 
+		//NegNumberValue
+		public RuleCall getNegNumberValueParserRuleCall_2() { return cNegNumberValueParserRuleCall_2; }
+
 		//StringValue
-		public RuleCall getStringValueParserRuleCall_2() { return cStringValueParserRuleCall_2; }
+		public RuleCall getStringValueParserRuleCall_3() { return cStringValueParserRuleCall_3; }
 	}
 
 	public class BooleanValueElements extends AbstractParserRuleElementFinder {
@@ -1208,6 +1212,30 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INTSTRING
 		public RuleCall getValueINTSTRINGParserRuleCall_0() { return cValueINTSTRINGParserRuleCall_0; }
+	}
+
+	public class NegNumberValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NegNumberValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueINTSTRINGParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//NegNumberValue:
+		//	"-" value=INTSTRING;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"-" value=INTSTRING
+		public Group getGroup() { return cGroup; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+
+		//value=INTSTRING
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//INTSTRING
+		public RuleCall getValueINTSTRINGParserRuleCall_1_0() { return cValueINTSTRINGParserRuleCall_1_0; }
 	}
 
 	public class VarReferenceElements extends AbstractParserRuleElementFinder {
@@ -1372,6 +1400,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	private final BooleanValueElements pBooleanValue;
 	private final StringValueElements pStringValue;
 	private final NumberValueElements pNumberValue;
+	private final NegNumberValueElements pNegNumberValue;
 	private final VarReferenceElements pVarReference;
 	private final DeclarationElements pDeclaration;
 	private final ReturnElements pReturn;
@@ -1421,6 +1450,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBooleanValue = new BooleanValueElements();
 		this.pStringValue = new StringValueElements();
 		this.pNumberValue = new NumberValueElements();
+		this.pNegNumberValue = new NegNumberValueElements();
 		this.pVarReference = new VarReferenceElements();
 		this.pDeclaration = new DeclarationElements();
 		this.pReturn = new ReturnElements();
@@ -1741,7 +1771,7 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BasicValue:
-	//	BooleanValue | NumberValue | StringValue;
+	//	BooleanValue | NumberValue | NegNumberValue | StringValue;
 	public BasicValueElements getBasicValueAccess() {
 		return pBasicValue;
 	}
@@ -1778,6 +1808,16 @@ public class CommonlangGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getNumberValueRule() {
 		return getNumberValueAccess().getRule();
+	}
+
+	//NegNumberValue:
+	//	"-" value=INTSTRING;
+	public NegNumberValueElements getNegNumberValueAccess() {
+		return pNegNumberValue;
+	}
+	
+	public ParserRule getNegNumberValueRule() {
+		return getNegNumberValueAccess().getRule();
 	}
 
 	//VarReference:

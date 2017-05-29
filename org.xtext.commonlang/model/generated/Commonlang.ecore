@@ -100,6 +100,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//BasicValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//BasicValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberValue" eSuperTypes="#//BasicValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegNumberValue" eSuperTypes="#//BasicValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="VarReference" eSuperTypes="#//Value">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vari" eType="#//Declaration"/>
   </eClassifiers>

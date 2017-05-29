@@ -119,7 +119,7 @@ Value:
 ;
 
 BasicValue:
-	BooleanValue | NumberValue | StringValue
+	BooleanValue | NumberValue | NegNumberValue | StringValue
 ;
 
 BooleanValue:
@@ -132,6 +132,10 @@ StringValue:
 
 NumberValue:
 	value=INTSTRING
+;
+
+NegNumberValue:
+	'-'value=INTSTRING
 ;
 
 VarReference:

@@ -266,6 +266,15 @@ public interface CommonlangFactory extends EFactory
   NumberValue createNumberValue();
 
   /**
+   * Returns a new object of class '<em>Neg Number Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Neg Number Value</em>'.
+   * @generated
+   */
+  NegNumberValue createNegNumberValue();
+
+  /**
    * Returns a new object of class '<em>Var Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

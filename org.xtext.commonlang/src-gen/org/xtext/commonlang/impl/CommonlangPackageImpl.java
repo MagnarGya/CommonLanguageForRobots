@@ -28,6 +28,7 @@ import org.xtext.commonlang.MetaMethod;
 import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
 import org.xtext.commonlang.Method;
+import org.xtext.commonlang.NegNumberValue;
 import org.xtext.commonlang.NumberValue;
 import org.xtext.commonlang.ParanValueExpression;
 import org.xtext.commonlang.Return;
@@ -238,6 +239,13 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * @generated
    */
   private EClass numberValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass negNumberValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -938,6 +946,16 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNegNumberValue()
+  {
+    return negNumberValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVarReference()
   {
     return varReferenceEClass;
@@ -1121,6 +1139,8 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
 
     numberValueEClass = createEClass(NUMBER_VALUE);
 
+    negNumberValueEClass = createEClass(NEG_NUMBER_VALUE);
+
     varReferenceEClass = createEClass(VAR_REFERENCE);
     createEReference(varReferenceEClass, VAR_REFERENCE__VARI);
 
@@ -1181,6 +1201,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     booleanValueEClass.getESuperTypes().add(this.getBasicValue());
     stringValueEClass.getESuperTypes().add(this.getBasicValue());
     numberValueEClass.getESuperTypes().add(this.getBasicValue());
+    negNumberValueEClass.getESuperTypes().add(this.getBasicValue());
     varReferenceEClass.getESuperTypes().add(this.getValue());
     returnEClass.getESuperTypes().add(this.getSimpleExpression());
 
@@ -1272,6 +1293,8 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(numberValueEClass, NumberValue.class, "NumberValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(negNumberValueEClass, NegNumberValue.class, "NegNumberValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(varReferenceEClass, VarReference.class, "VarReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVarReference_Vari(), this.getDeclaration(), null, "vari", null, 0, 1, VarReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

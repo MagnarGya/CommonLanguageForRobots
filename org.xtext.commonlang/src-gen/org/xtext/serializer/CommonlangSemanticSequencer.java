@@ -30,6 +30,7 @@ import org.xtext.commonlang.If;
 import org.xtext.commonlang.MetaMethod;
 import org.xtext.commonlang.MetaMethodCall;
 import org.xtext.commonlang.MetaMethods;
+import org.xtext.commonlang.NegNumberValue;
 import org.xtext.commonlang.NumberValue;
 import org.xtext.commonlang.ParanValueExpression;
 import org.xtext.commonlang.Return;
@@ -98,6 +99,9 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 				else break;
 			case CommonlangPackage.META_METHODS:
 				sequence_MetaMethods(context, (MetaMethods) semanticObject); 
+				return; 
+			case CommonlangPackage.NEG_NUMBER_VALUE:
+				sequence_NegNumberValue(context, (NegNumberValue) semanticObject); 
 				return; 
 			case CommonlangPackage.NUMBER_VALUE:
 				sequence_NumberValue(context, (NumberValue) semanticObject); 
@@ -315,6 +319,22 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 */
 	protected void sequence_MetaMethods(EObject context, MetaMethods semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=INTSTRING
+	 */
+	protected void sequence_NegNumberValue(EObject context, NegNumberValue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.BASIC_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.BASIC_VALUE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNegNumberValueAccess().getValueINTSTRINGParserRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

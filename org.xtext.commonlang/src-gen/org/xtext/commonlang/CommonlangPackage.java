@@ -1029,6 +1029,34 @@ public interface CommonlangPackage extends EPackage
   int NUMBER_VALUE_FEATURE_COUNT = BASIC_VALUE_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.commonlang.impl.NegNumberValueImpl <em>Neg Number Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.commonlang.impl.NegNumberValueImpl
+   * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNegNumberValue()
+   * @generated
+   */
+  int NEG_NUMBER_VALUE = 27;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEG_NUMBER_VALUE__VALUE = BASIC_VALUE__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Neg Number Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEG_NUMBER_VALUE_FEATURE_COUNT = BASIC_VALUE_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.VarReferenceImpl <em>Var Reference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1036,7 +1064,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getVarReference()
    * @generated
    */
-  int VAR_REFERENCE = 27;
+  int VAR_REFERENCE = 28;
 
   /**
    * The feature id for the '<em><b>Vari</b></em>' reference.
@@ -1064,7 +1092,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getDeclaration()
    * @generated
    */
-  int DECLARATION = 28;
+  int DECLARATION = 29;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1101,7 +1129,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getReturn()
    * @generated
    */
-  int RETURN = 29;
+  int RETURN = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1767,6 +1795,16 @@ public interface CommonlangPackage extends EPackage
   EClass getNumberValue();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.commonlang.NegNumberValue <em>Neg Number Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Neg Number Value</em>'.
+   * @see org.xtext.commonlang.NegNumberValue
+   * @generated
+   */
+  EClass getNegNumberValue();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.commonlang.VarReference <em>Var Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2404,6 +2442,16 @@ public interface CommonlangPackage extends EPackage
      * @generated
      */
     EClass NUMBER_VALUE = eINSTANCE.getNumberValue();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.commonlang.impl.NegNumberValueImpl <em>Neg Number Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.commonlang.impl.NegNumberValueImpl
+     * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNegNumberValue()
+     * @generated
+     */
+    EClass NEG_NUMBER_VALUE = eINSTANCE.getNegNumberValue();
 
     /**
      * The meta object literal for the '{@link org.xtext.commonlang.impl.VarReferenceImpl <em>Var Reference</em>}' class.
