@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <robot>
 	<setup>
-	<parsertype>C</parsertype>
+		<parsertype>C</parsertype>
 		<globalvariables>
       		<e name="&lt;Servo.h&gt;" type="#include"/>
       		<e name="&lt;SPI.h&gt;" type="#include"/>

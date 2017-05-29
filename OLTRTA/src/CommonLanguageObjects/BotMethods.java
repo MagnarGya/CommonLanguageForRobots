@@ -165,7 +165,7 @@ public class BotMethods implements Serializable {
 				}
 				List<Expression> exp = new ArrayList<Expression>();
 				String[] blocklines = block.split("\n		");
-				for(int j = 1; j < blocklines.length; j++){
+				for(int j = 0; j < blocklines.length; j++){
 					exp.add(new Expression(blocklines[j]));
 				}
 				methods.add(new Method(type, name, para.toArray(new Parameter[0]),new Block(exp.toArray(new Expression[0]))));
