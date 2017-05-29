@@ -109,10 +109,19 @@ class CommonlangGenerator implements IGenerator {
 		}
 	}
 	
-	def compile(Crement e)'''
+	def compile(Crement e){
+		var postfix = "";
+		
+		if (e.op == "++") {
+			postfix = "+=1";
+		} else {
+			postfix = "-=1";
+		}
+		'''
 		new Expression(
-			"«e.value.makeString»«e.op»"
+			"«e.value.makeString»«postfix»"
 		)'''
+		}
 	
 	def compile(If e) '''
 		new If(
