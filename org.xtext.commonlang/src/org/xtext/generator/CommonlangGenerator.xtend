@@ -86,7 +86,7 @@ class CommonlangGenerator implements IGenerator {
 	def compile(UserMethod e) {
 	val parlist = new ArrayList<CharSequence>();
 	for (par:e.parameters) {
-		parlist.add(par.compile);
+		parlist.add(par.makeParameter);
 	}
 	'''
 	new Method(
@@ -98,6 +98,14 @@ class CommonlangGenerator implements IGenerator {
 		«e.bl.compile»
 	)'''
 	}
+
+	def makeParameter(Declaration e)
+		'''
+		new Parameter(
+			"«e.type»",
+			"«e.name»"
+			)'''
+	
 
 	def CharSequence compile(Expression e) {
 		switch e {
@@ -111,6 +119,7 @@ class CommonlangGenerator implements IGenerator {
 			Return : e.compile
 		}
 	}
+	
 	
 	def compile(Return e) '''
 		new Expression(
