@@ -1186,7 +1186,129 @@ ruleValueExpression returns [EObject current=null]
         $current = $this_BasicValueExpression_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getValueExpressionAccess().getNegNumberValueParserRuleCall_2()); 
+    }
+    this_NegNumberValue_2=ruleNegNumberValue
+    { 
+        $current = $this_NegNumberValue_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleNegNumberValue
+entryRuleNegNumberValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNegNumberValueRule()); }
+	 iv_ruleNegNumberValue=ruleNegNumberValue 
+	 { $current=$iv_ruleNegNumberValue.current; } 
+	 EOF 
+;
+
+// Rule NegNumberValue
+ruleNegNumberValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='-' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getNegNumberValueAccess().getHyphenMinusKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNegNumberValueAccess().getVarleftValueParserRuleCall_1_0()); 
+	    }
+		lv_varleft_1_0=ruleValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegNumberValueRule());
+	        }
+       		set(
+       			$current, 
+       			"varleft",
+        		lv_varleft_1_0, 
+        		"Value");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)((
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNegNumberValueAccess().getOpMathOperatorParserRuleCall_2_0_0_0()); 
+	    }
+		lv_op_2_1=ruleMathOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegNumberValueRule());
+	        }
+       		set(
+       			$current, 
+       			"op",
+        		lv_op_2_1, 
+        		"MathOperator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getNegNumberValueAccess().getOpBooleanOperatorParserRuleCall_2_0_0_1()); 
+	    }
+		lv_op_2_2=ruleBooleanOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegNumberValueRule());
+	        }
+       		set(
+       			$current, 
+       			"op",
+        		lv_op_2_2, 
+        		"BooleanOperator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getNegNumberValueAccess().getOpComparisonOperatorParserRuleCall_2_0_0_2()); 
+	    }
+		lv_op_2_3=ruleComparisonOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegNumberValueRule());
+	        }
+       		set(
+       			$current, 
+       			"op",
+        		lv_op_2_3, 
+        		"ComparisonOperator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNegNumberValueAccess().getVarrightValueExpressionParserRuleCall_2_1_0()); 
+	    }
+		lv_varright_3_0=ruleValueExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegNumberValueRule());
+	        }
+       		set(
+       			$current, 
+       			"varright",
+        		lv_varright_3_0, 
+        		"ValueExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 
@@ -2064,21 +2186,11 @@ ruleBasicValue returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getBasicValueAccess().getNegNumberValueParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_2()); 
     }
-    this_NegNumberValue_2=ruleNegNumberValue
+    this_StringValue_2=ruleStringValue
     { 
-        $current = $this_NegNumberValue_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getBasicValueAccess().getStringValueParserRuleCall_3()); 
-    }
-    this_StringValue_3=ruleStringValue
-    { 
-        $current = $this_StringValue_3.current; 
+        $current = $this_StringValue_2.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -2211,49 +2323,6 @@ ruleNumberValue returns [EObject current=null]
 
 )
 )
-;
-
-
-
-
-
-// Entry rule entryRuleNegNumberValue
-entryRuleNegNumberValue returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getNegNumberValueRule()); }
-	 iv_ruleNegNumberValue=ruleNegNumberValue 
-	 { $current=$iv_ruleNegNumberValue.current; } 
-	 EOF 
-;
-
-// Rule NegNumberValue
-ruleNegNumberValue returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='-' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getNegNumberValueAccess().getHyphenMinusKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getNegNumberValueAccess().getValueINTSTRINGParserRuleCall_1_0()); 
-	    }
-		lv_value_1_0=ruleINTSTRING		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getNegNumberValueRule());
-	        }
-       		set(
-       			$current, 
-       			"value",
-        		lv_value_1_0, 
-        		"INTSTRING");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
 ;
 
 

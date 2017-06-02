@@ -603,6 +603,52 @@ public interface CommonlangPackage extends EPackage
   int VALUE_EXPRESSION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtext.commonlang.impl.NegNumberValueImpl <em>Neg Number Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.commonlang.impl.NegNumberValueImpl
+   * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNegNumberValue()
+   * @generated
+   */
+  int NEG_NUMBER_VALUE = 15;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEG_NUMBER_VALUE__OP = VALUE_EXPRESSION__OP;
+
+  /**
+   * The feature id for the '<em><b>Varright</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEG_NUMBER_VALUE__VARRIGHT = VALUE_EXPRESSION__VARRIGHT;
+
+  /**
+   * The feature id for the '<em><b>Varleft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEG_NUMBER_VALUE__VARLEFT = VALUE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Neg Number Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEG_NUMBER_VALUE_FEATURE_COUNT = VALUE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.ParanValueExpressionImpl <em>Paran Value Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -610,7 +656,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getParanValueExpression()
    * @generated
    */
-  int PARAN_VALUE_EXPRESSION = 15;
+  int PARAN_VALUE_EXPRESSION = 16;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -656,7 +702,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBasicValueExpression()
    * @generated
    */
-  int BASIC_VALUE_EXPRESSION = 16;
+  int BASIC_VALUE_EXPRESSION = 17;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -702,7 +748,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getCrement()
    * @generated
    */
-  int CREMENT = 17;
+  int CREMENT = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -739,7 +785,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getIf()
    * @generated
    */
-  int IF = 18;
+  int IF = 19;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -785,7 +831,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getElse()
    * @generated
    */
-  int ELSE = 19;
+  int ELSE = 20;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -813,7 +859,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getFor()
    * @generated
    */
-  int FOR = 20;
+  int FOR = 21;
 
   /**
    * The feature id for the '<em><b>Init</b></em>' containment reference.
@@ -868,7 +914,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 21;
+  int WHILE = 22;
 
   /**
    * The feature id for the '<em><b>Ex</b></em>' containment reference.
@@ -905,7 +951,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getValue()
    * @generated
    */
-  int VALUE = 22;
+  int VALUE = 23;
 
   /**
    * The number of structural features of the '<em>Value</em>' class.
@@ -924,7 +970,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBasicValue()
    * @generated
    */
-  int BASIC_VALUE = 23;
+  int BASIC_VALUE = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -952,7 +998,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 24;
+  int BOOLEAN_VALUE = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -980,7 +1026,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 25;
+  int STRING_VALUE = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1008,7 +1054,7 @@ public interface CommonlangPackage extends EPackage
    * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNumberValue()
    * @generated
    */
-  int NUMBER_VALUE = 26;
+  int NUMBER_VALUE = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1027,34 +1073,6 @@ public interface CommonlangPackage extends EPackage
    * @ordered
    */
   int NUMBER_VALUE_FEATURE_COUNT = BASIC_VALUE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.commonlang.impl.NegNumberValueImpl <em>Neg Number Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.commonlang.impl.NegNumberValueImpl
-   * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNegNumberValue()
-   * @generated
-   */
-  int NEG_NUMBER_VALUE = 27;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEG_NUMBER_VALUE__VALUE = BASIC_VALUE__VALUE;
-
-  /**
-   * The number of structural features of the '<em>Neg Number Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEG_NUMBER_VALUE_FEATURE_COUNT = BASIC_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.commonlang.impl.VarReferenceImpl <em>Var Reference</em>}' class.
@@ -1510,6 +1528,27 @@ public interface CommonlangPackage extends EPackage
   EReference getValueExpression_Varright();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.commonlang.NegNumberValue <em>Neg Number Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Neg Number Value</em>'.
+   * @see org.xtext.commonlang.NegNumberValue
+   * @generated
+   */
+  EClass getNegNumberValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.commonlang.NegNumberValue#getVarleft <em>Varleft</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Varleft</em>'.
+   * @see org.xtext.commonlang.NegNumberValue#getVarleft()
+   * @see #getNegNumberValue()
+   * @generated
+   */
+  EReference getNegNumberValue_Varleft();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.commonlang.ParanValueExpression <em>Paran Value Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1793,16 +1832,6 @@ public interface CommonlangPackage extends EPackage
    * @generated
    */
   EClass getNumberValue();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.commonlang.NegNumberValue <em>Neg Number Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Neg Number Value</em>'.
-   * @see org.xtext.commonlang.NegNumberValue
-   * @generated
-   */
-  EClass getNegNumberValue();
 
   /**
    * Returns the meta object for class '{@link org.xtext.commonlang.VarReference <em>Var Reference</em>}'.
@@ -2204,6 +2233,24 @@ public interface CommonlangPackage extends EPackage
     EReference VALUE_EXPRESSION__VARRIGHT = eINSTANCE.getValueExpression_Varright();
 
     /**
+     * The meta object literal for the '{@link org.xtext.commonlang.impl.NegNumberValueImpl <em>Neg Number Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.commonlang.impl.NegNumberValueImpl
+     * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNegNumberValue()
+     * @generated
+     */
+    EClass NEG_NUMBER_VALUE = eINSTANCE.getNegNumberValue();
+
+    /**
+     * The meta object literal for the '<em><b>Varleft</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NEG_NUMBER_VALUE__VARLEFT = eINSTANCE.getNegNumberValue_Varleft();
+
+    /**
      * The meta object literal for the '{@link org.xtext.commonlang.impl.ParanValueExpressionImpl <em>Paran Value Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2442,16 +2489,6 @@ public interface CommonlangPackage extends EPackage
      * @generated
      */
     EClass NUMBER_VALUE = eINSTANCE.getNumberValue();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.commonlang.impl.NegNumberValueImpl <em>Neg Number Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.commonlang.impl.NegNumberValueImpl
-     * @see org.xtext.commonlang.impl.CommonlangPackageImpl#getNegNumberValue()
-     * @generated
-     */
-    EClass NEG_NUMBER_VALUE = eINSTANCE.getNegNumberValue();
 
     /**
      * The meta object literal for the '{@link org.xtext.commonlang.impl.VarReferenceImpl <em>Var Reference</em>}' class.

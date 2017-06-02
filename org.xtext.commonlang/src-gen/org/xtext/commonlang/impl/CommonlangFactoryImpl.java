@@ -79,6 +79,7 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.USER_METHOD_CALL: return createUserMethodCall();
       case CommonlangPackage.META_METHOD_CALL: return createMetaMethodCall();
       case CommonlangPackage.VALUE_EXPRESSION: return createValueExpression();
+      case CommonlangPackage.NEG_NUMBER_VALUE: return createNegNumberValue();
       case CommonlangPackage.PARAN_VALUE_EXPRESSION: return createParanValueExpression();
       case CommonlangPackage.BASIC_VALUE_EXPRESSION: return createBasicValueExpression();
       case CommonlangPackage.CREMENT: return createCrement();
@@ -91,7 +92,6 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.BOOLEAN_VALUE: return createBooleanValue();
       case CommonlangPackage.STRING_VALUE: return createStringValue();
       case CommonlangPackage.NUMBER_VALUE: return createNumberValue();
-      case CommonlangPackage.NEG_NUMBER_VALUE: return createNegNumberValue();
       case CommonlangPackage.VAR_REFERENCE: return createVarReference();
       case CommonlangPackage.DECLARATION: return createDeclaration();
       case CommonlangPackage.RETURN: return createReturn();
@@ -270,6 +270,17 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
    * <!-- end-user-doc -->
    * @generated
    */
+  public NegNumberValue createNegNumberValue()
+  {
+    NegNumberValueImpl negNumberValue = new NegNumberValueImpl();
+    return negNumberValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ParanValueExpression createParanValueExpression()
   {
     ParanValueExpressionImpl paranValueExpression = new ParanValueExpressionImpl();
@@ -395,17 +406,6 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
   {
     NumberValueImpl numberValue = new NumberValueImpl();
     return numberValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NegNumberValue createNegNumberValue()
-  {
-    NegNumberValueImpl negNumberValue = new NegNumberValueImpl();
-    return negNumberValue;
   }
 
   /**

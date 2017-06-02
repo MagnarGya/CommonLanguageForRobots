@@ -226,9 +226,14 @@ class CommonlangGenerator implements IGenerator {
 	
 	def CharSequence makeString(ValueExpression e) {
 		switch (e) {
+			NegNumberValue : '''-«e.makeString»'''
 			BasicValueExpression: '''«e.makeString»'''
 			ParanValueExpression: '''(«e.ex.makeString»)«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
 		}
+	}
+	
+	def makeString(NegNumberValue e) {'''
+		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
 	}
 	
 	def CharSequence makeString(BasicValueExpression e) {'''
@@ -239,8 +244,7 @@ class CommonlangGenerator implements IGenerator {
 		«e.type» «e.name»'''
 	
 	def makeString(BasicValue e) { 
-		switch(e) {
-			NegNumberValue : '''-«e.value»'''
+		switch(e) {		
 			StringValue : '''\"«e.value»\"'''
 			default : '''«e.value»'''
 		}

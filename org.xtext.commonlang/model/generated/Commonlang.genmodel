@@ -50,6 +50,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Commonlang.ecore#//ValueExpression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//ValueExpression/varright"/>
     </genClasses>
+    <genClasses ecoreClass="Commonlang.ecore#//NegNumberValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//NegNumberValue/varleft"/>
+    </genClasses>
     <genClasses ecoreClass="Commonlang.ecore#//ParanValueExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Commonlang.ecore#//ParanValueExpression/ex"/>
     </genClasses>
@@ -85,7 +88,6 @@
     <genClasses ecoreClass="Commonlang.ecore#//BooleanValue"/>
     <genClasses ecoreClass="Commonlang.ecore#//StringValue"/>
     <genClasses ecoreClass="Commonlang.ecore#//NumberValue"/>
-    <genClasses ecoreClass="Commonlang.ecore#//NegNumberValue"/>
     <genClasses ecoreClass="Commonlang.ecore#//VarReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Commonlang.ecore#//VarReference/vari"/>
     </genClasses>

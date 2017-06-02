@@ -324,17 +324,10 @@ public class CommonlangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     value=INTSTRING
+	 *     (varleft=Value ((op=MathOperator | op=BooleanOperator | op=ComparisonOperator) varright=ValueExpression)?)
 	 */
 	protected void sequence_NegNumberValue(EObject context, NegNumberValue semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CommonlangPackage.Literals.BASIC_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CommonlangPackage.Literals.BASIC_VALUE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNegNumberValueAccess().getValueINTSTRINGParserRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

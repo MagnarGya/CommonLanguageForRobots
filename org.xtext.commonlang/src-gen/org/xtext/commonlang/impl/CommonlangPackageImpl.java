@@ -161,6 +161,13 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass negNumberValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass paranValueExpressionEClass = null;
 
   /**
@@ -239,13 +246,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * @generated
    */
   private EClass numberValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass negNumberValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -676,6 +676,26 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNegNumberValue()
+  {
+    return negNumberValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNegNumberValue_Varleft()
+  {
+    return (EReference)negNumberValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getParanValueExpression()
   {
     return paranValueExpressionEClass;
@@ -946,16 +966,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNegNumberValue()
-  {
-    return negNumberValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getVarReference()
   {
     return varReferenceEClass;
@@ -1100,6 +1110,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     createEAttribute(valueExpressionEClass, VALUE_EXPRESSION__OP);
     createEReference(valueExpressionEClass, VALUE_EXPRESSION__VARRIGHT);
 
+    negNumberValueEClass = createEClass(NEG_NUMBER_VALUE);
+    createEReference(negNumberValueEClass, NEG_NUMBER_VALUE__VARLEFT);
+
     paranValueExpressionEClass = createEClass(PARAN_VALUE_EXPRESSION);
     createEReference(paranValueExpressionEClass, PARAN_VALUE_EXPRESSION__EX);
 
@@ -1138,8 +1151,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     stringValueEClass = createEClass(STRING_VALUE);
 
     numberValueEClass = createEClass(NUMBER_VALUE);
-
-    negNumberValueEClass = createEClass(NEG_NUMBER_VALUE);
 
     varReferenceEClass = createEClass(VAR_REFERENCE);
     createEReference(varReferenceEClass, VAR_REFERENCE__VARI);
@@ -1191,6 +1202,7 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     userMethodEClass.getESuperTypes().add(this.getMethod());
     userMethodCallEClass.getESuperTypes().add(this.getCall());
     metaMethodCallEClass.getESuperTypes().add(this.getCall());
+    negNumberValueEClass.getESuperTypes().add(this.getValueExpression());
     paranValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
     basicValueExpressionEClass.getESuperTypes().add(this.getValueExpression());
     crementEClass.getESuperTypes().add(this.getSimpleExpression());
@@ -1201,7 +1213,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     booleanValueEClass.getESuperTypes().add(this.getBasicValue());
     stringValueEClass.getESuperTypes().add(this.getBasicValue());
     numberValueEClass.getESuperTypes().add(this.getBasicValue());
-    negNumberValueEClass.getESuperTypes().add(this.getBasicValue());
     varReferenceEClass.getESuperTypes().add(this.getValue());
     returnEClass.getESuperTypes().add(this.getSimpleExpression());
 
@@ -1255,6 +1266,9 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEAttribute(getValueExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getValueExpression_Varright(), this.getValueExpression(), null, "varright", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(negNumberValueEClass, NegNumberValue.class, "NegNumberValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNegNumberValue_Varleft(), this.getValue(), null, "varleft", null, 0, 1, NegNumberValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(paranValueExpressionEClass, ParanValueExpression.class, "ParanValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParanValueExpression_Ex(), this.getValueExpression(), null, "ex", null, 0, 1, ParanValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1293,8 +1307,6 @@ public class CommonlangPackageImpl extends EPackageImpl implements CommonlangPac
     initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(numberValueEClass, NumberValue.class, "NumberValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(negNumberValueEClass, NegNumberValue.class, "NegNumberValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(varReferenceEClass, VarReference.class, "VarReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVarReference_Vari(), this.getDeclaration(), null, "vari", null, 0, 1, VarReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

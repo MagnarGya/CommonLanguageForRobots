@@ -49,6 +49,7 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCallAccess().getAlternatives_0(), "rule__Call__Alternatives_0");
 					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
 					put(grammarAccess.getValueExpressionAccess().getAlternatives(), "rule__ValueExpression__Alternatives");
+					put(grammarAccess.getNegNumberValueAccess().getOpAlternatives_2_0_0(), "rule__NegNumberValue__OpAlternatives_2_0_0");
 					put(grammarAccess.getParanValueExpressionAccess().getOpAlternatives_3_0_0(), "rule__ParanValueExpression__OpAlternatives_3_0_0");
 					put(grammarAccess.getBasicValueExpressionAccess().getOpAlternatives_1_0_0(), "rule__BasicValueExpression__OpAlternatives_1_0_0");
 					put(grammarAccess.getComparisonOperatorAccess().getAlternatives(), "rule__ComparisonOperator__Alternatives");
@@ -74,6 +75,8 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMetaMethodAccess().getGroup_5(), "rule__MetaMethod__Group_5__0");
 					put(grammarAccess.getUserMethodAccess().getGroup(), "rule__UserMethod__Group__0");
 					put(grammarAccess.getUserMethodAccess().getGroup_4(), "rule__UserMethod__Group_4__0");
+					put(grammarAccess.getNegNumberValueAccess().getGroup(), "rule__NegNumberValue__Group__0");
+					put(grammarAccess.getNegNumberValueAccess().getGroup_2(), "rule__NegNumberValue__Group_2__0");
 					put(grammarAccess.getParanValueExpressionAccess().getGroup(), "rule__ParanValueExpression__Group__0");
 					put(grammarAccess.getParanValueExpressionAccess().getGroup_3(), "rule__ParanValueExpression__Group_3__0");
 					put(grammarAccess.getBasicValueExpressionAccess().getGroup(), "rule__BasicValueExpression__Group__0");
@@ -83,7 +86,6 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElseAccess().getGroup(), "rule__Else__Group__0");
 					put(grammarAccess.getForAccess().getGroup(), "rule__For__Group__0");
 					put(grammarAccess.getWhileAccess().getGroup(), "rule__While__Group__0");
-					put(grammarAccess.getNegNumberValueAccess().getGroup(), "rule__NegNumberValue__Group__0");
 					put(grammarAccess.getDeclarationAccess().getGroup(), "rule__Declaration__Group__0");
 					put(grammarAccess.getReturnAccess().getGroup(), "rule__Return__Group__0");
 					put(grammarAccess.getCLfileAccess().getScriptsAssignment_0(), "rule__CLfile__ScriptsAssignment_0");
@@ -113,6 +115,9 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUserMethodAccess().getBlAssignment_6(), "rule__UserMethod__BlAssignment_6");
 					put(grammarAccess.getUserMethodCallAccess().getMethodAssignment(), "rule__UserMethodCall__MethodAssignment");
 					put(grammarAccess.getMetaMethodCallAccess().getMethodAssignment(), "rule__MetaMethodCall__MethodAssignment");
+					put(grammarAccess.getNegNumberValueAccess().getVarleftAssignment_1(), "rule__NegNumberValue__VarleftAssignment_1");
+					put(grammarAccess.getNegNumberValueAccess().getOpAssignment_2_0(), "rule__NegNumberValue__OpAssignment_2_0");
+					put(grammarAccess.getNegNumberValueAccess().getVarrightAssignment_2_1(), "rule__NegNumberValue__VarrightAssignment_2_1");
 					put(grammarAccess.getParanValueExpressionAccess().getExAssignment_1(), "rule__ParanValueExpression__ExAssignment_1");
 					put(grammarAccess.getParanValueExpressionAccess().getOpAssignment_3_0(), "rule__ParanValueExpression__OpAssignment_3_0");
 					put(grammarAccess.getParanValueExpressionAccess().getVarrightAssignment_3_1(), "rule__ParanValueExpression__VarrightAssignment_3_1");
@@ -134,7 +139,6 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanValueAccess().getValueAssignment(), "rule__BooleanValue__ValueAssignment");
 					put(grammarAccess.getStringValueAccess().getValueAssignment(), "rule__StringValue__ValueAssignment");
 					put(grammarAccess.getNumberValueAccess().getValueAssignment(), "rule__NumberValue__ValueAssignment");
-					put(grammarAccess.getNegNumberValueAccess().getValueAssignment_1(), "rule__NegNumberValue__ValueAssignment_1");
 					put(grammarAccess.getVarReferenceAccess().getVariAssignment(), "rule__VarReference__VariAssignment");
 					put(grammarAccess.getDeclarationAccess().getTypeAssignment_0(), "rule__Declaration__TypeAssignment_0");
 					put(grammarAccess.getDeclarationAccess().getNameAssignment_1(), "rule__Declaration__NameAssignment_1");

@@ -143,9 +143,9 @@ class CommonlangTesting {
 		sc.assertError(CommonlangPackage::eINSTANCE.valueExpression,null,"Operator + is invalid for types string and string")
 		sc.assertError(CommonlangPackage::eINSTANCE.assignment,null,"Invalid operation for type string")
 		//Negative non-number
-		sc.assertError(CommonlangPackage::eINSTANCE.negNumberValue,"org.eclipse.xtext.diagnostics.Diagnostic.Syntax","mismatched input 'false' expecting RULE_INT")
-		sc.assertError(CommonlangPackage::eINSTANCE.assignment,null,"Type mismatch: Expected boolean got int")
-		sc.assertError(CommonlangPackage::eINSTANCE.assignment,null,"Type mismatch: Expected string got int")
+		sc.assertError(CommonlangPackage::eINSTANCE.assignment,null,"Type mismatch: Expected int got boolean")
+		sc.assertError(CommonlangPackage::eINSTANCE.negNumberValue,null,"Negative value must be a numeric value, but got boolean")
+		sc.assertError(CommonlangPackage::eINSTANCE.negNumberValue,null,"Negative value must be a numeric value, but got string")
 		//Comparison operators with invalid values
 		sc.assertError(CommonlangPackage::eINSTANCE.valueExpression,null,"Cannot compare sizes of boolean and boolean")
 		sc.assertError(CommonlangPackage::eINSTANCE.valueExpression,null,"Cannot compare sizes of string and string")
@@ -219,310 +219,314 @@ class CommonlangTesting {
 	}
 	
 	var generatedScript = '''
-			package input;
-			import java.util.ArrayList;
-			import input.RobotScript;
-			import CommonLanguageObjects.*;
-			
-			public class Test extends RobotScript {
-				public static void main(String[] args) {
-					Test roboscript = new Test();
-					roboscript.buildModel();
-				}
-				public void buildModel() {
-					name = "Test";
-					robotlist = new ArrayList<String>();
-					sc = new Script(
-						new Method[] {
-							new Method(
-								"void",
-								"assignments",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
+		package input;
+		import java.util.ArrayList;
+		import input.RobotScript;
+		import CommonLanguageObjects.*;
+		
+		public class Test extends RobotScript {
+			public static void main(String[] args) {
+				Test roboscript = new Test();
+				roboscript.buildModel();
+			}
+			public void buildModel() {
+				name = "Test";
+				robotlist = new ArrayList<String>();
+				sc = new Script(
+					new Method[] {
+						new Method(
+							"void",
+							"assignments",
+							new Parameter[] {
+							},
+							new Block(new Expression[] {
+								new Expression(
+									"int i = 0"
+								),new Expression(
+									"string s = \"\""
+								),new Expression(
+									"boolean b = true"
+								),new Expression(
+									"i = 1"
+								),new Expression(
+									"s = \"Hello\""
+								),new Expression(
+									"b = false"
+								),new Expression(
+									"i+=1"
+								),new Expression(
+									"i-=1"
+								)
+							})
+						),new Method(
+							"void",
+							"call",
+							new Parameter[] {
+							},
+							new Block(new Expression[] {
+								new Expression(
+									"assignments()"
+								),new Expression(
+									"MoveForward(5)"
+								)
+							})
+						),new Method(
+							"void",
+							"values",
+							new Parameter[] {
+								new Parameter(
+									"int",
+									"x"
+									)
+							},
+							new Block(new Expression[] {
+								new Expression(
+									"int i = (1+2)/3*2-5"
+								),new Expression(
+									"i = -x+(-1)"
+								),new Expression(
+									"boolean b = true"
+								),new Expression(
+									"b = (true&&false)||i==2"
+								),new Expression(
+									"string s = \"Hello\""
+								)
+							})
+						),new Method(
+							"void",
+							"operators",
+							new Parameter[] {
+							},
+							new Block(new Expression[] {
+								new Expression(
+									"int i = 1+2"
+								),new Expression(
+									"i = 2-3"
+								),new Expression(
+									"i = 2/3"
+								),new Expression(
+									"i = 2*3"
+								),new Expression(
+									"boolean b = true||false"
+								),new Expression(
+									"b = true&&false"
+								),new Expression(
+									"b = true!&&false"
+								),new Expression(
+									"b = true!||false"
+								),new Expression(
+									"b = i>2"
+								),new Expression(
+									"b = i<2"
+								),new Expression(
+									"b = i<=2"
+								),new Expression(
+									"b = i>=2"
+								),new Expression(
+									"b = i==2"
+								),new Expression(
+									"b = i!=2"
+								)
+							})
+						),new Method(
+							"void",
+							"structures",
+							new Parameter[] {
+							},
+							new Block(new Expression[] {
+								new If(
+									new Expression(
+										"true&&false"
+									),
+									new Block(new Expression[] {
+										new Expression(
+											"LightOn()"
+										)
+									}),
+									new Else(
+										new Block(new Expression[] {
+											new Expression(
+												"LightOff()"
+											)
+										})
+									)
+								),new While(
+									new Expression(
+										"false"
+									),
+									new Block(new Expression[] {
+										new Expression(
+											"Idle(5)"
+										)
+									})
+								),new For(
 									new Expression(
 										"int i = 0"
-									),new Expression(
-										"string s = \"\""
-									),new Expression(
-										"boolean b = true"
-									),new Expression(
-										"i = 1"
-									),new Expression(
-										"s = \"Hello\""
-									),new Expression(
-										"b = false"
-									),new Expression(
+									),
+									new Expression(
+										"i<10"
+									),
+									new Expression(
 										"i+=1"
-									),new Expression(
-										"i-=1"
-									)
-								})
-							),new Method(
-								"void",
-								"call",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
-									new Expression(
-										"assignments()"
-									),new Expression(
-										"MoveForward(5)"
-									)
-								})
-							),new Method(
-								"void",
-								"values",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
-									new Expression(
-										"int i = (1+2)/3*2-5"
-									),new Expression(
-										"i = -5"
-									),new Expression(
-										"boolean b = true"
-									),new Expression(
-										"b = (true&&false)||i==2"
-									),new Expression(
-										"string s = \"Hello\""
-									)
-								})
-							),new Method(
-								"void",
-								"operators",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
-									new Expression(
-										"int i = 1+2"
-									),new Expression(
-										"i = 2-3"
-									),new Expression(
-										"i = 2/3"
-									),new Expression(
-										"i = 2*3"
-									),new Expression(
-										"boolean b = true||false"
-									),new Expression(
-										"b = true&&false"
-									),new Expression(
-										"b = true!&&false"
-									),new Expression(
-										"b = true!||false"
-									),new Expression(
-										"b = i>2"
-									),new Expression(
-										"b = i<2"
-									),new Expression(
-										"b = i<=2"
-									),new Expression(
-										"b = i>=2"
-									),new Expression(
-										"b = i==2"
-									),new Expression(
-										"b = i!=2"
-									)
-								})
-							),new Method(
-								"void",
-								"structures",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
-									new If(
+									),
+									new Block(new Expression[] {
 										new Expression(
-											"true&&false"
-										),
-										new Block(new Expression[] {
-											new Expression(
-												"LightOn()"
-											)
-										}),
-										new Else(
-											new Block(new Expression[] {
-												new Expression(
-													"LightOff()"
-												)
-											})
+											"TurnLeft(i)"
 										)
-									),new While(
+									})
+								)
+							})
+						),new Method(
+							"int",
+							"returnsValue",
+							new Parameter[] {
+							},
+							new Block(new Expression[] {
+								new Expression(
+									"return 5"
+								)
+							})
+						),new Method(
+							"boolean",
+							"returnStructure",
+							new Parameter[] {
+							},
+							new Block(new Expression[] {
+								new If(
+									new Expression(
+										"false"
+									),
+									new Block(new Expression[] {
 										new Expression(
-											"false"
-										),
+											"return true"
+										)
+									}),
+									new Else(
 										new Block(new Expression[] {
 											new Expression(
-												"Idle(5)"
-											)
-										})
-									),new For(
-										new Expression(
-											"int i = 0"
-										),
-										new Expression(
-											"i<10"
-										),
-										new Expression(
-											"i+=1"
-										),
-										new Block(new Expression[] {
-											new Expression(
-												"TurnLeft(i)"
+												"return false"
 											)
 										})
 									)
-								})
-							),new Method(
-								"int",
-								"returnsValue",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
-									new Expression(
-										"return 5"
-									)
-								})
-							),new Method(
-								"boolean",
-								"returnStructure",
-								new Parameter[] {
-								},
-								new Block(new Expression[] {
-									new If(
-										new Expression(
-											"false"
-										),
-										new Block(new Expression[] {
-											new Expression(
-												"return true"
-											)
-										}),
-										new Else(
-											new Block(new Expression[] {
-												new Expression(
-													"return false"
-												)
-											})
-										)
-									)
-								})
-							)
-						}
-					);
-					robotlist.add("RobotType,Robot");
-					generateCode();
-				};
+								)
+							})
+						)
+					}
+				);
+				robotlist.add("RobotType,Robot");
+				generateCode();
 			};
+		};
 	'''
 	
 	var validScript = '''
-			script Test targets (RobotType,Robot) {
-				void assignments() {
-					//Instantiate
-					int i = 0;
-					string s = "";
-					boolean b = true;
-					//Assign to existing variable
-					i = 1;
-					s = "Hello";
-					b = false;
-					//Increment and decrement
-					i++;
-					i--;
-				}
+		script Test targets (RobotType,Robot) {
+			void assignments() {
+				//Instantiate
+				int i = 0;
+				string s = "";
+				boolean b = true;
+				//Assign to existing variable
+				i = 1;
+				s = "Hello";
+				b = false;
+				//Increment and decrement
+				i++;
+				i--;
+			}
+			
+			void call() {
+				//User method
+				assignments(); 
+				//Metamethod
+				MoveForward(5);
+			}
+			
+			void values(int x) {
+				//Mathematical expression
+				int i = (1 + 2 )/ 3 * 2 - 5;
+				//Negative number 
+				i = -x + (-1);
+				//Boolean values
+				boolean b = true;
+				b = (true && false) || i == 2;
+				//String values
+				string s = "Hello";
+			}
+			
+			void operators() {
+				//Mathematical operators
+				int i = 1 + 2;
+				i = 2-3;
+				i = 2/3;
+				i = 2*3;
 				
-				void call() {
-					//User method
-					assignments(); 
-					//Metamethod
-					MoveForward(5);
-				}
+				//Boolean operators
+				boolean b = true || false;
+				b = true && false;
+				b = true !&& false;
+				b = true !|| false;
 				
-				void values() {
-					//Mathematical expression
-					int i = (1 + 2 )/ 3 * 2 - 5;
-					//Negative number 
-					i = -5;
-					//Boolean values
-					boolean b = true;
-					b = (true && false) || i == 2;
-					//String values
-					string s = "Hello";
+				//Comparison operators
+				b = i > 2;
+				b = i < 2;
+				b = i <=2;
+				b = i >=2;
+				b = i == 2;
+				b = i != 2;
+			}
+			
+			void structures() {
+				//If - else
+				if (true && false) {
+					LightOn();
+				} else {
+					LightOff();
 				}
-				
-				void operators() {
-					//Mathematical operators
-					int i = 1 + 2;
-					i = 2-3;
-					i = 2/3;
-					i = 2*3;
-					
-					//Boolean operators
-					boolean b = true || false;
-					b = true && false;
-					b = true !&& false;
-					b = true !|| false;
-					
-					//Comparison operators
-					b = i > 2;
-					b = i < 2;
-					b = i <=2;
-					b = i >=2;
-					b = i == 2;
-					b = i != 2;
+				//While
+				while (false) {
+					Idle(5);
 				}
-				
-				void structures() {
-					//If - else
-					if (true && false) {
-						LightOn();
-					} else {
-						LightOff();
-					}
-					//While
-					while (false) {
-						Idle(5);
-					}
-					//For
-					for (int i = 0; i < 10; i++) {
-						TurnLeft(i);
-					}
-				}
-				
-				int returnsValue() {
-					//return value
-					return 5;
-				}
-				
-				boolean returnStructure() {
-					//Returns value through structure
-					if (false) {
-						return true;
-					} else {
-						return false; 
-					}
+				//For
+				for (int i = 0; i < 10; i++) {
+					TurnLeft(i);
 				}
 			}
 			
-			metamethodscollection {
-				meta void ReadSensors();
-				meta boolean Touching();
-				meta boolean TouchingBoth();
-				meta boolean TouchingLeft();
-				meta boolean TouchingRight();
-				meta boolean Seeing();
-				meta boolean SeeingBoth();
-				meta boolean SeeingLeft();
-				meta boolean SeeingRight();
-				meta void MoveForward(int time);
-				meta void MoveBackward(int time);
-				meta void TurnRight(int time);
-				meta void TurnLeft(int time);
-				meta void Idle(int time);
-				meta void LightOn();
-				meta void LightOff();
-				meta boolean FoundObject();
-				meta void FollowObject();
-				meta void Delay(int time);
-			}'''
+			int returnsValue() {
+				//return value
+				return 5;
+			}
+			
+			boolean returnStructure() {
+				//Returns value through structure
+				if (false) {
+					return true;
+				} else {
+					return false; 
+				}
+			}
+		}
+		
+		metamethodscollection {
+			meta void ReadSensors();
+			meta boolean Touching();
+			meta boolean TouchingBoth();
+			meta boolean TouchingLeft();
+			meta boolean TouchingRight();
+			meta boolean Seeing();
+			meta boolean SeeingBoth();
+			meta boolean SeeingLeft();
+			meta boolean SeeingRight();
+			meta void MoveForward(int time);
+			meta void MoveBackward(int time);
+			meta void TurnRight(int time);
+			meta void TurnLeft(int time);
+			meta void Idle(int time);
+			meta void LightOn();
+			meta void LightOff();
+			meta boolean FoundObject();
+			meta void FollowObject();
+			meta void Delay(int time);
+		}'''
 }

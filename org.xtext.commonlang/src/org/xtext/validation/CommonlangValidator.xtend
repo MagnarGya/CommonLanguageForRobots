@@ -120,6 +120,15 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 		valueExpressions(thisType,valExp);
 	}
 	
+	@Check
+	def checkNegNumberValue(NegNumberValue valExp) {
+		var thisType = valExp.varleft.getTypeOfValue
+		if (thisType != 'int') {
+			error("Negative value must be a numeric value, but got "+thisType,null)
+		}
+		valueExpressions(thisType,valExp);
+	}
+	
 	def valueExpressions(String thisType, ValueExpression valExp) {
 		var thatType = "null"
 		if (valExp.varright != null) {
@@ -195,6 +204,7 @@ class CommonlangValidator extends AbstractCommonlangValidator {
 		switch(thisVal){
 			ParanValueExpression : type = thisVal.ex.getTypeOfValueExpression
 			BasicValueExpression : type = thisVal.varleft.getTypeOfValue
+			NegNumberValue : type = thisVal.varleft.getTypeOfValue
 		}
 		
 		if (thisVal.op != null) {
