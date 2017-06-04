@@ -52,6 +52,14 @@ public class CommonToCParser implements CommonToLanguageParser{
 		}
 	}
 
+	public String fixDeclarationTypes(String str) {
+		if (str.startsWith("boolean ",0)) {
+			str = ("bool "+str.substring(8));
+		} 
+		
+		return str;
+	}
+	
 	@Override
 	public String parseFor(For _for) {
 		String returnString = "";
@@ -77,7 +85,11 @@ public class CommonToCParser implements CommonToLanguageParser{
 	@Override
 	public String parseMethod(Method _method) {
 		String returnString = "";
-
+		
+		if (_method.type.equals("boolean")) {
+			_method.type = "bool";
+		}
+		
         returnString += _method.type + " " + _method.name + "(";
         if (_method.parameters != null) {
             for (Parameter param : _method.parameters) {
@@ -97,6 +109,9 @@ public class CommonToCParser implements CommonToLanguageParser{
 	public String parseParameter(Parameter _parameter) {
 		String returnString = "";
 
+		if (_parameter.type.equals("boolean")) {
+			_parameter.type = "bool";
+		}
         returnString += _parameter.type + " " + _parameter.content;
 
         return returnString;

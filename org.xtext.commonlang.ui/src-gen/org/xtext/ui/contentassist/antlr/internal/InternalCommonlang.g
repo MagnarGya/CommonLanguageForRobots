@@ -451,6 +451,34 @@ finally {
 
 
 
+// Entry rule entryRuleNegNumberValue
+entryRuleNegNumberValue 
+:
+{ before(grammarAccess.getNegNumberValueRule()); }
+	 ruleNegNumberValue
+{ after(grammarAccess.getNegNumberValueRule()); } 
+	 EOF 
+;
+
+// Rule NegNumberValue
+ruleNegNumberValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getGroup()); }
+(rule__NegNumberValue__Group__0)
+{ after(grammarAccess.getNegNumberValueAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleParanValueExpression
 entryRuleParanValueExpression 
 :
@@ -1328,6 +1356,40 @@ rule__ValueExpression__Alternatives
 { before(grammarAccess.getValueExpressionAccess().getBasicValueExpressionParserRuleCall_1()); }
 	ruleBasicValueExpression
 { after(grammarAccess.getValueExpressionAccess().getBasicValueExpressionParserRuleCall_1()); }
+)
+
+    |(
+{ before(grammarAccess.getValueExpressionAccess().getNegNumberValueParserRuleCall_2()); }
+	ruleNegNumberValue
+{ after(grammarAccess.getValueExpressionAccess().getNegNumberValueParserRuleCall_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__OpAlternatives_2_0_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getOpMathOperatorParserRuleCall_2_0_0_0()); }
+	ruleMathOperator
+{ after(grammarAccess.getNegNumberValueAccess().getOpMathOperatorParserRuleCall_2_0_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getNegNumberValueAccess().getOpBooleanOperatorParserRuleCall_2_0_0_1()); }
+	ruleBooleanOperator
+{ after(grammarAccess.getNegNumberValueAccess().getOpBooleanOperatorParserRuleCall_2_0_0_1()); }
+)
+
+    |(
+{ before(grammarAccess.getNegNumberValueAccess().getOpComparisonOperatorParserRuleCall_2_0_0_2()); }
+	ruleComparisonOperator
+{ after(grammarAccess.getNegNumberValueAccess().getOpComparisonOperatorParserRuleCall_2_0_0_2()); }
 )
 
 ;
@@ -3698,6 +3760,161 @@ finally {
 
 
 
+rule__NegNumberValue__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group__0__Impl
+	rule__NegNumberValue__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getHyphenMinusKeyword_0()); }
+
+	'-' 
+
+{ after(grammarAccess.getNegNumberValueAccess().getHyphenMinusKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__NegNumberValue__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group__1__Impl
+	rule__NegNumberValue__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getVarleftAssignment_1()); }
+(rule__NegNumberValue__VarleftAssignment_1)
+{ after(grammarAccess.getNegNumberValueAccess().getVarleftAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__NegNumberValue__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getGroup_2()); }
+(rule__NegNumberValue__Group_2__0)?
+{ after(grammarAccess.getNegNumberValueAccess().getGroup_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+rule__NegNumberValue__Group_2__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group_2__0__Impl
+	rule__NegNumberValue__Group_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group_2__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getOpAssignment_2_0()); }
+(rule__NegNumberValue__OpAssignment_2_0)
+{ after(grammarAccess.getNegNumberValueAccess().getOpAssignment_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__NegNumberValue__Group_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegNumberValue__Group_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__Group_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getVarrightAssignment_2_1()); }
+(rule__NegNumberValue__VarrightAssignment_2_1)
+{ after(grammarAccess.getNegNumberValueAccess().getVarrightAssignment_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
 rule__ParanValueExpression__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -5307,6 +5524,52 @@ rule__MetaMethodCall__MethodAssignment
 	RULE_CAPITALFIRST{ after(grammarAccess.getMetaMethodCallAccess().getMethodMethodCAPITALFIRSTTerminalRuleCall_0_1()); }
 )
 { after(grammarAccess.getMetaMethodCallAccess().getMethodMethodCrossReference_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__VarleftAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getVarleftValueParserRuleCall_1_0()); }
+	ruleValue{ after(grammarAccess.getNegNumberValueAccess().getVarleftValueParserRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__OpAssignment_2_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getOpAlternatives_2_0_0()); }
+(rule__NegNumberValue__OpAlternatives_2_0_0)
+{ after(grammarAccess.getNegNumberValueAccess().getOpAlternatives_2_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegNumberValue__VarrightAssignment_2_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegNumberValueAccess().getVarrightValueExpressionParserRuleCall_2_1_0()); }
+	ruleValueExpression{ after(grammarAccess.getNegNumberValueAccess().getVarrightValueExpressionParserRuleCall_2_1_0()); }
 )
 
 ;

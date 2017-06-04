@@ -44,10 +44,16 @@ public class RobotScript {
 		}
 	}
 	
-	If checkIf(If ifb){
+	Expression checkIf(If ifb){
 		if(checkExpression(ifb.ex)==null){
+			if (ifb.el != null) {
+				return (checkExpression(ifb.el.ex));
+			}
 			return null;
 		}else{
+			if (ifb.el != null) {
+				ifb.el = checkElse(ifb.el);
+			}
 			ifb.bl = checkBlock(ifb.bl);
 			return ifb;
 		}
@@ -108,50 +114,34 @@ public class RobotScript {
 		for(int i = 0; i < bl.exs.length; i++){
 			//Store the current and next expression
 			Expression current = bl.exs[i];
-			//Next is null if current is at the end of the list
-			Expression next = null;
-			if (i+1 < bl.exs.length) {
-				next = bl.exs[i+1];
-			}
 			//Check the current expression. Null if current is null
 			Expression checked = null;
 			if (current != null) {	
 				checked = checkExpression(current);
-				//If the current expression is null, but the next isnt
-				if (checked == null && next != null) {
+				//If the current expression is null
+				if (checked.getClass() == Block.class) {
+					Block blex = (Block)(checked);
 					
-					//If the current is an IF and next is an ELSE
-					if (current.getClass() == If.class && next.getClass() == Else.class) {
-						//Get the else's expression
-						Expression elseEx = ((Else)next).ex;
-						//If the else is not a block, replace the else with it's expression
-						if (elseEx.getClass() != Block.class) {
-							bl.exs[i+1] = elseEx;
-						} else {
-							//If the else expression has a block following it, insert it's contents into the code
-							
-							//Create a new list for the current block, with the total size of both
-							int elseBlockLength = ((Block)elseEx).exs.length;
-							Expression[] newList = new Expression[elseBlockLength + bl.exs.length];
+					int blockLength = blex.exs.length;
+					Expression[] newList = new Expression[blockLength + bl.exs.length];
 
-							//Copy up to (not including) index of If statement
-							for (int k = 0; k < i; k++) {
-								newList[k] = bl.exs[k];
-							}
-							//Fill in the contents of the block into the current one
-							for (int k = 0; k < elseBlockLength; k++) {
-								newList[i+k+2] = ((Block)elseEx).exs[k];
-							}
-							//Append the last parts of the current block
-							for (int k = i+2; k < bl.exs.length; k++) {
-								newList[k+elseBlockLength] = bl.exs[k];
-							}
-							bl.exs = newList;
-						}
+					//Copy up to (not including) current index
+					for (int k = 0; k < i; k++) {
+						newList[k] = bl.exs[k];
 					}
+					//Fill in the contents of the block into the current one
+					for (int k = 0; k < blockLength; k++) {
+						newList[i+k+1] = blex.exs[k];
+					}
+					//Append the last parts of the current block
+					for (int k = i+1; k < bl.exs.length; k++) {
+						newList[k+blockLength] = bl.exs[k];
+					}
+					bl.exs = newList;
+					checked = null;
 				}
 			}
-			//Finally assign the value to array at nice
+			//Finally assign the value to array
 			bl.exs[i] = checked;
 		}
 		

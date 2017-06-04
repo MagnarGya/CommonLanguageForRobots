@@ -196,6 +196,14 @@ public class CommonlangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CommonlangPackage.NEG_NUMBER_VALUE:
+      {
+        NegNumberValue negNumberValue = (NegNumberValue)theEObject;
+        T result = caseNegNumberValue(negNumberValue);
+        if (result == null) result = caseValueExpression(negNumberValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CommonlangPackage.PARAN_VALUE_EXPRESSION:
       {
         ParanValueExpression paranValueExpression = (ParanValueExpression)theEObject;
@@ -561,6 +569,22 @@ public class CommonlangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseValueExpression(ValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Neg Number Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Neg Number Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNegNumberValue(NegNumberValue object)
   {
     return null;
   }

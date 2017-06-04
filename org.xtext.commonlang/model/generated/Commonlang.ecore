@@ -56,6 +56,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="varright" eType="#//ValueExpression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NegNumberValue" eSuperTypes="#//ValueExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varleft" eType="#//Value"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParanValueExpression" eSuperTypes="#//ValueExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ex" eType="#//ValueExpression"
         containment="true"/>

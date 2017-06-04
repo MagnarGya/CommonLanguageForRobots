@@ -68,7 +68,11 @@ terminal LOWERFIRST: ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal CAPITALFIRST: ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 ValueExpression:
-	ParanValueExpression | BasicValueExpression
+	ParanValueExpression | BasicValueExpression | NegNumberValue
+;
+
+NegNumberValue:
+	'-'varleft=(Value) (op=(MathOperator|BooleanOperator|ComparisonOperator) varright=ValueExpression)?
 ;
 
 ParanValueExpression:

@@ -49,6 +49,7 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCallAccess().getAlternatives_0(), "rule__Call__Alternatives_0");
 					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
 					put(grammarAccess.getValueExpressionAccess().getAlternatives(), "rule__ValueExpression__Alternatives");
+					put(grammarAccess.getNegNumberValueAccess().getOpAlternatives_2_0_0(), "rule__NegNumberValue__OpAlternatives_2_0_0");
 					put(grammarAccess.getParanValueExpressionAccess().getOpAlternatives_3_0_0(), "rule__ParanValueExpression__OpAlternatives_3_0_0");
 					put(grammarAccess.getBasicValueExpressionAccess().getOpAlternatives_1_0_0(), "rule__BasicValueExpression__OpAlternatives_1_0_0");
 					put(grammarAccess.getComparisonOperatorAccess().getAlternatives(), "rule__ComparisonOperator__Alternatives");
@@ -74,6 +75,8 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMetaMethodAccess().getGroup_5(), "rule__MetaMethod__Group_5__0");
 					put(grammarAccess.getUserMethodAccess().getGroup(), "rule__UserMethod__Group__0");
 					put(grammarAccess.getUserMethodAccess().getGroup_4(), "rule__UserMethod__Group_4__0");
+					put(grammarAccess.getNegNumberValueAccess().getGroup(), "rule__NegNumberValue__Group__0");
+					put(grammarAccess.getNegNumberValueAccess().getGroup_2(), "rule__NegNumberValue__Group_2__0");
 					put(grammarAccess.getParanValueExpressionAccess().getGroup(), "rule__ParanValueExpression__Group__0");
 					put(grammarAccess.getParanValueExpressionAccess().getGroup_3(), "rule__ParanValueExpression__Group_3__0");
 					put(grammarAccess.getBasicValueExpressionAccess().getGroup(), "rule__BasicValueExpression__Group__0");
@@ -112,6 +115,9 @@ public class CommonlangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUserMethodAccess().getBlAssignment_6(), "rule__UserMethod__BlAssignment_6");
 					put(grammarAccess.getUserMethodCallAccess().getMethodAssignment(), "rule__UserMethodCall__MethodAssignment");
 					put(grammarAccess.getMetaMethodCallAccess().getMethodAssignment(), "rule__MetaMethodCall__MethodAssignment");
+					put(grammarAccess.getNegNumberValueAccess().getVarleftAssignment_1(), "rule__NegNumberValue__VarleftAssignment_1");
+					put(grammarAccess.getNegNumberValueAccess().getOpAssignment_2_0(), "rule__NegNumberValue__OpAssignment_2_0");
+					put(grammarAccess.getNegNumberValueAccess().getVarrightAssignment_2_1(), "rule__NegNumberValue__VarrightAssignment_2_1");
 					put(grammarAccess.getParanValueExpressionAccess().getExAssignment_1(), "rule__ParanValueExpression__ExAssignment_1");
 					put(grammarAccess.getParanValueExpressionAccess().getOpAssignment_3_0(), "rule__ParanValueExpression__OpAssignment_3_0");
 					put(grammarAccess.getParanValueExpressionAccess().getVarrightAssignment_3_1(), "rule__ParanValueExpression__VarrightAssignment_3_1");

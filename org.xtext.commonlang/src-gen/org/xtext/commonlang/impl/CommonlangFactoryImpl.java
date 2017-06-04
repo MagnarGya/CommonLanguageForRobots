@@ -79,6 +79,7 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
       case CommonlangPackage.USER_METHOD_CALL: return createUserMethodCall();
       case CommonlangPackage.META_METHOD_CALL: return createMetaMethodCall();
       case CommonlangPackage.VALUE_EXPRESSION: return createValueExpression();
+      case CommonlangPackage.NEG_NUMBER_VALUE: return createNegNumberValue();
       case CommonlangPackage.PARAN_VALUE_EXPRESSION: return createParanValueExpression();
       case CommonlangPackage.BASIC_VALUE_EXPRESSION: return createBasicValueExpression();
       case CommonlangPackage.CREMENT: return createCrement();
@@ -262,6 +263,17 @@ public class CommonlangFactoryImpl extends EFactoryImpl implements CommonlangFac
   {
     ValueExpressionImpl valueExpression = new ValueExpressionImpl();
     return valueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NegNumberValue createNegNumberValue()
+  {
+    NegNumberValueImpl negNumberValue = new NegNumberValueImpl();
+    return negNumberValue;
   }
 
   /**

@@ -27,6 +27,8 @@ import org.xtext.commonlang.ValueExpression
 import org.xtext.commonlang.Crement
 import org.xtext.commonlang.ParanValueExpression
 import org.xtext.commonlang.BasicValueExpression
+import org.xtext.commonlang.NegNumberValue
+import org.xtext.commonlang.Return
 
 /**
  * Generates code from your model files on save.
@@ -84,7 +86,7 @@ class CommonlangGenerator implements IGenerator {
 	def compile(UserMethod e) {
 	val parlist = new ArrayList<CharSequence>();
 	for (par:e.parameters) {
-		parlist.add(par.compile);
+		parlist.add(par.makeParameter);
 	}
 	'''
 	new Method(
@@ -97,6 +99,14 @@ class CommonlangGenerator implements IGenerator {
 	)'''
 	}
 
+	def makeParameter(Declaration e)
+		'''
+		new Parameter(
+			"«e.type»",
+			"«e.name»"
+			)'''
+	
+
 	def CharSequence compile(Expression e) {
 		switch e {
 			If : e.compile
@@ -106,8 +116,15 @@ class CommonlangGenerator implements IGenerator {
 			Block : e.compile
 			Call : e.compile
 			Crement : e.compile
+			Return : e.compile
 		}
 	}
+	
+	
+	def compile(Return e) '''
+		new Expression(
+			"return «e.value.makeString»"
+		)'''
 	
 	def compile(Crement e){
 		var postfix = "";
@@ -201,11 +218,7 @@ class CommonlangGenerator implements IGenerator {
 	def makeString(Call e) {
 	val parlist = new ArrayList<CharSequence>();
 	for (par:e.parameters) {
-		
-		switch (par) {
-			VarReference : parlist.add(par.vari.name)
-			BasicValue : parlist.add(par.makeString)
-		}
+		parlist.add(par.makeString)
 	}
 	'''
 		«e.method.name»(«parlist.join(',')»)'''
@@ -213,9 +226,14 @@ class CommonlangGenerator implements IGenerator {
 	
 	def CharSequence makeString(ValueExpression e) {
 		switch (e) {
+			NegNumberValue : '''-«e.makeString»'''
 			BasicValueExpression: '''«e.makeString»'''
 			ParanValueExpression: '''(«e.ex.makeString»)«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
 		}
+	}
+	
+	def makeString(NegNumberValue e) {'''
+		«e.varleft.makeString»«IF e.varright != null»«e.op»«e.varright.makeString»«ENDIF»'''
 	}
 	
 	def CharSequence makeString(BasicValueExpression e) {'''
@@ -226,7 +244,7 @@ class CommonlangGenerator implements IGenerator {
 		«e.type» «e.name»'''
 	
 	def makeString(BasicValue e) { 
-		switch(e) {
+		switch(e) {		
 			StringValue : '''\"«e.value»\"'''
 			default : '''«e.value»'''
 		}
