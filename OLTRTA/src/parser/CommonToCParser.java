@@ -47,7 +47,7 @@ public class CommonToCParser implements CommonToLanguageParser{
         case "class CommonLanguageObjects.Block": return parseBlock((Block)_exp);
         case "class CommonLanguageObjects.While": return parseWhile((While)_exp);
         case "class CommonLanguageObjects.For": return parseFor((For)_exp);
-        case "class CommonLanguageObjects.Declaration": return _exp.content + ";\n";
+        case "class CommonLanguageObjects.Declaration": return _exp.content + "\n";
         default: return _exp.content+";\n";
 		}
 	}

@@ -6,15 +6,15 @@
       		<e name="&lt;Servo.h&gt;" type="#include"/>
       		<e name="&lt;SPI.h&gt;" type="#include"/>
       		<e name="&lt;Pixy.h&gt;" type="#include"/>
-      		<e name="pixy" type="Pixy"/>
-		    <e name="servoRight" type="Servo"/>
-	  	    <e name="servoLeft" type="Servo"/>
-      		<e name="touchingLeft" type="int"/>
-	      	<e name="touchingRight" type="int"/>
-      		<e name="seeingLeft" type="int"/>
-      		<e name="seeingRight" type="int"/>
-      		<e name="objectDetected" type="bool"/>
-      		<e name="x" type="int"/>
+      		<e name="pixy;" type="Pixy"/>
+		    <e name="servoRight;" type="Servo"/>
+	  	    <e name="servoLeft;" type="Servo"/>
+      		<e name="touchingLeft;" type="int"/>
+	      	<e name="touchingRight;" type="int"/>
+      		<e name="seeingLeft;" type="int"/>
+      		<e name="seeingRight;" type="int"/>
+      		<e name="objectDetected;" type="bool"/>
+      		<e name="x;" type="int"/>
     	</globalvariables>
     	<method>
 			<setup parameters="" return="void">
